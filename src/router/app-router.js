@@ -17,7 +17,7 @@ function AppRouter() {
       <Route path="/kien-thuc" element={<KienThuc />} />
       <Route path="/lien-he" element={<LienHe />} />
 
-      {/* Trải bài Tarot 1 lá (miễn phí) */}
+      {/* Trải bài Tarot miễn phí 1 lá */}
       <Route path="/dich-vu/tarot-free-1-card" element={<TarotFree1Card />} />
     </Routes>
   );

@@ -12,8 +12,8 @@ function DichVu() {
             Trải bài Tarot 1 lá (miễn phí)
           </Link>
         </li>
-        <li>Trải bài 3 lá (đang phát triển)</li>
-        <li>Chiêm tinh</li>
+        <li>Trải bài Tarot 3 lá (đang phát triển)</li>
+        <li>Chiêm tinh cá nhân</li>
         <li>Thần số học</li>
       </ul>
     </div>

@@ -5,7 +5,7 @@ function TrangChu() {
   return (
     <div className="page page-home">
       <h1>Trang chủ</h1>
-      <p>Chào mừng bạn đến hệ thống Khoa học Tâm linh.</p>
+      <p>Hệ thống Khoa học Tâm linh – Trải nghiệm Tarot miễn phí.</p>
     </div>
   );
 }

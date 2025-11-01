@@ -6,7 +6,7 @@ function LienHe() {
     <div className="page page-lien-he">
       <h1>Liên hệ</h1>
       <p>
-        <strong>Họ và tên:</strong> Đỗ Khắc Gia Khoa
+        <strong>Chủ dự án:</strong> Đỗ Khắc Gia Khoa
       </p>
       <p>
         <strong>Email:</strong> dokhacgiakhoa@gmail.com

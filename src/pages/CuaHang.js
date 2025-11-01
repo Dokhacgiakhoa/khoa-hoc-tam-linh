@@ -5,7 +5,7 @@ function CuaHang() {
   return (
     <div className="page page-cua-hang">
       <h1>Cửa hàng</h1>
-      <p>Sắp có các sản phẩm đá, bài Tarot, phụ kiện tâm linh...</p>
+      <p>Sắp có: bài Tarot, đá phong thủy, phụ kiện.</p>
     </div>
   );
 }
