@@ -1,3 +1,7 @@
+/* ========================================================= */
+/* ================ React App Default Styles ================ */
+/* ========================================================= */
+
 .App {
   text-align: center;
 }
@@ -21,7 +25,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
 }
 
 .App-link {
@@ -36,3 +40,59 @@
     transform: rotate(360deg);
   }
 }
+
+/* ========================================================= */
+/* ================== Mega Menu (Bootstrap) ================= */
+/* ========================================================= */
+
+/* Fix dropdown alignment on large screens */
+@media (min-width: 992px) {
+  .navbar .dropdown-menu {
+    top: 100%;
+  }
+
+  .navbar .dropdown.position-static .dropdown-menu {
+    left: 0;
+    right: 0;
+  }
+}
+
+/* ========================================================= */
+/* =================== Global Utility ======================= */
+/* ========================================================= */
+
+/* Reset card image override from Bootstrap */
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility: Soft shadow for global cards */
+.card.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Utility: Rounded container spacing */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Utility: Prevent text overflow in cards */
+.card-title,
+.card-text {
+  word-break: break-word;
+}
+
+/* ========================================================= */
+/* ===================== Custom Fixes ======================= */
+/* ========================================================= */
+
+/* Đảm bảo mọi ảnh trong card bình thường vẫn full width */
+.card > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tarot phần riêng đã được chuyển sang TarotMienPhiMotLa.css */
