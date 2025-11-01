@@ -1,243 +1,126 @@
-import React, { useEffect, useRef, useState } from "react";
-import Tarot_78 from "../../data/tarot-main"; // đã gộp 5 file: major, wands, swords, cups, pentacles
+// src/components/tarot-free-1-card/tarot-free-1-card.js
+import React, { useState } from "react";
+import TarotData from "../../data/tarot-main";
+import "./tarot-free-1-card.css";
 
-function TarotMienPhiMotLa() {
-  // state chính
-  const [dangXao, setDangXao] = useState(false);
-  const [laDuocRut, setLaDuocRut] = useState(null);
-  const [laNguoc, setLaNguoc] = useState(false);
-  const [dangRut, setDangRut] = useState(false); // để animate lá bay + flip
-  const timerRef = useRef(null);
+const CHANCE_REVERSED = 0.25;
 
-  // tiện ích: random 1 lá
-  const layNgauNhienLa = () => {
-    const idx = Math.floor(Math.random() * Tarot_78.length);
-    return Tarot_78[idx];
+function TarotFree1Card() {
+  const [card, setCard] = useState(null);
+  const [isReversed, setIsReversed] = useState(false);
+  const [isShuffling, setIsShuffling] = useState(false);
+
+  const handleStartShuffle = () => {
+    setIsShuffling(true);
   };
 
-  // tiện ích: 25% ngược
-  const randomNguoc = () => {
-    return Math.random() < 0.25; // 25% bị ngược
+  const handleStopShuffle = () => {
+    setIsShuffling(false);
   };
 
-  // tiện ích: chuyển đường dẫn ảnh tương đối sang đúng với GH Pages
-  const getImageSrc = (card) => {
-    if (!card || !card.Anh) return "";
-    // card.Anh ví dụ: "./images/Tarot/Major/0-the-fool.png"
-    return process.env.PUBLIC_URL + card.Anh.replace("./", "/");
+  const handleDrawCard = () => {
+    if (!TarotData || TarotData.length === 0) return;
+    const index = Math.floor(Math.random() * TarotData.length);
+    const picked = TarotData[index];
+    const reversed = Math.random() < CHANCE_REVERSED;
+
+    setCard(picked);
+    setIsReversed(reversed);
   };
 
-  // lấy nội dung hiển thị
-  const layNoiDungYnghia = (card, isReversed) => {
-    if (!card) return { tieuDe: "", noiDung: "", tuKhoa: [] };
+  const getMeaning = () => {
+    if (!card) return null;
+
+    // nếu bị đảo và có nghĩa ngược
     if (isReversed && card.NghiaNguoc) {
-      return {
-        tieuDe: "Nghĩa ngược",
-        noiDung: card.NghiaNguoc.MoTa || "",
-        tuKhoa: card.NghiaNguoc.TuKhoa || [],
-      };
+      return card.NghiaNguoc;
     }
-    if (card.NghiaXuoi) {
-      return {
-        tieuDe: "Nghĩa xuôi",
-        noiDung: card.NghiaXuoi.MoTa || "",
-        tuKhoa: card.NghiaXuoi.TuKhoa || [],
-      };
+
+    // ưu tiên nghĩa xuôi
+    if (card.NghiaXuong) {
+      return card.NghiaXuong;
     }
+
     // fallback
     return {
-      tieuDe: "Ý nghĩa chung",
-      noiDung: card.YNghiaChung?.MoTa || "",
-      tuKhoa: card.YNghiaChung?.TuKhoa || [],
+      MoTa: card.YNghiaChung || "",
+      TuKhoa: card.TuKhoaChung || [],
+      ChuDe: card.ChuDe || {},
     };
   };
 
-  // bấm/giữ để xáo
-  const batDauXao = () => {
-    setDangXao(true);
-
-    // nếu muốn hiệu ứng xáo liên tục đổi lá preview thì có thể setInterval
-    timerRef.current = setInterval(() => {
-      setLaDuocRut(layNgauNhienLa());
-      setLaNguoc(false);
-    }, 150);
-  };
-
-  // thả ra dừng xáo
-  const dungXao = () => {
-    setDangXao(false);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-  };
-
-  // rút bài
-  const rutBai = () => {
-    // dừng xáo nếu đang xáo
-    dungXao();
-
-    const card = layNgauNhienLa();
-    const isRev = randomNguoc();
-
-    // bật hiệu ứng
-    setDangRut(true);
-    setLaDuocRut(card);
-    setLaNguoc(isRev);
-
-    // tắt hiệu ứng sau 600ms (khớp CSS flip)
-    setTimeout(() => {
-      setDangRut(false);
-    }, 600);
-  };
-
-  // dọn interval khi unmount
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
-
-  // nội dung nghĩa
-  const nghia = layNoiDungYnghia(laDuocRut, laNguoc);
+  const meaning = getMeaning();
 
   return (
-    <div className="tarot-wrapper container my-5" id="trai-bai-tarot-1-la">
-      {/* tiêu đề */}
-      <div className="mb-4 text-center">
-        <h2 className="h4 mb-2">Trải bài Tarot miễn phí – 1 lá</h2>
-        <p className="text-muted mb-0">
-          Ấn giữ bộ bài để xáo. Bấm “Rút bài” để xem thông điệp hôm nay.
-        </p>
+    <div className="tarot-free-wrapper">
+      <h1 className="tarot-title">Trải bài Tarot 1 lá (miễn phí)</h1>
+      <p className="tarot-subtitle">
+        Giữ chuột vào bộ bài để xáo, thả ra rồi bấm “Rút bài”.
+      </p>
+
+      {/* Bộ bài */}
+      <div
+        className={`tarot-deck ${isShuffling ? "tarot-deck--shuffling" : ""}`}
+        onMouseDown={handleStartShuffle}
+        onMouseUp={handleStopShuffle}
+        onMouseLeave={handleStopShuffle}
+      >
+        {/* 5 lá giả cùng 1 hình mặt sau */}
+        <div className="tarot-deck-card deck-1" />
+        <div className="tarot-deck-card deck-2" />
+        <div className="tarot-deck-card deck-3" />
+        <div className="tarot-deck-card deck-4" />
+        <div className="tarot-deck-card deck-5" />
       </div>
 
-      <div className="row g-4 align-items-center">
-        {/* CỘT BỘ BÀI + KẾT QUẢ HÌNH ẢNH */}
-        <div className="col-lg-6 d-flex flex-column align-items-center gap-3">
-          {/* bộ bài */}
-          <div
-            className={`tarot-deck ${dangXao ? "tarot-deck--shuffling" : ""}`}
-            onMouseDown={batDauXao}
-            onMouseUp={dungXao}
-            onMouseLeave={dungXao}
-            onTouchStart={batDauXao}
-            onTouchEnd={dungXao}
-          >
-            {/* 5 lá chồng nhau – CSS sẽ xử lý nghiêng 3D */}
-            <div className="tarot-deck__card tarot-deck__card--1"></div>
-            <div className="tarot-deck__card tarot-deck__card--2"></div>
-            <div className="tarot-deck__card tarot-deck__card--3"></div>
-            <div className="tarot-deck__card tarot-deck__card--4"></div>
-            <div className="tarot-deck__card tarot-deck__card--5"></div>
-          </div>
+      <button className="tarot-btn" onClick={handleDrawCard}>
+        Rút bài
+      </button>
 
-          {/* lá kết quả */}
-          <div
-            className={`
-              tarot-result-card
-              ${dangRut ? "is-animating" : ""}
-              ${laNguoc ? "is-reversed" : ""}
-            `}
-          >
-            {laDuocRut ? (
-              <img
-                src={getImageSrc(laDuocRut)}
-                alt={laDuocRut.Ten}
-                className="tarot-card-img"
-                loading="lazy"
-              />
-            ) : (
-              <div className="tarot-card-placeholder">Chưa rút lá nào</div>
+      {card && (
+        <div className="tarot-result">
+          <div className="tarot-result-card">
+            <img
+              src={process.env.PUBLIC_URL + card.Anh}
+              alt={card.Ten}
+              className={`tarot-card-img ${isReversed ? "is-reversed" : ""}`}
+            />
+          </div>
+          <div className="tarot-result-content">
+            <h2>{card.Ten}</h2>
+            <p className="tarot-card-group">{card.Nhom}</p>
+
+            {meaning?.MoTa && <p>{meaning.MoTa}</p>}
+
+            {meaning?.TuKhoa?.length > 0 && (
+              <ul className="tarot-keywords">
+                {meaning.TuKhoa.map((kw) => (
+                  <li key={kw}>{kw}</li>
+                ))}
+              </ul>
+            )}
+
+            {meaning?.ChuDe && (
+              <div className="tarot-topics">
+                <p>
+                  <strong>Tình duyên:</strong> {meaning.ChuDe.TinhDuyen}
+                </p>
+                <p>
+                  <strong>Công việc:</strong> {meaning.ChuDe.CongViec}
+                </p>
+                <p>
+                  <strong>Tài chính:</strong> {meaning.ChuDe.TaiChinh}
+                </p>
+                <p>
+                  <strong>Sức khỏe:</strong> {meaning.ChuDe.SucKhoe}
+                </p>
+              </div>
             )}
           </div>
-
-          {/* nút rút */}
-          <button
-            type="button"
-            className="btn btn-primary px-4"
-            onClick={rutBai}
-          >
-            Rút bài
-          </button>
         </div>
-
-        {/* CỘT NỘI DUNG */}
-        <div className="col-lg-6">
-          <div className="card shadow-sm h-100">
-            <div className="card-body">
-              {laDuocRut ? (
-                <>
-                  <p className="text-muted mb-1">
-                    {laDuocRut.Nhom} • {laNguoc ? "Ngược" : "Xuôi"}
-                  </p>
-                  <h3 className="h5 mb-2">{laDuocRut.Ten}</h3>
-                  <h4 className="small text-uppercase text-primary">
-                    {nghia.tieuDe}
-                  </h4>
-                  <p>{nghia.noiDung}</p>
-
-                  {/* từ khóa */}
-                  {nghia.tuKhoa && nghia.tuKhoa.length > 0 && (
-                    <p className="mb-3">
-                      <strong>Từ khóa:</strong>{" "}
-                      {nghia.tuKhoa.map((k, i) => (
-                        <span key={i} className="badge bg-light text-dark me-1">
-                          {k}
-                        </span>
-                      ))}
-                    </p>
-                  )}
-
-                  {/* 4 chủ đề nếu có */}
-                  {laDuocRut.ChuDe && (
-                    <div className="row g-2">
-                      <div className="col-sm-6">
-                        <p className="mb-1 small text-muted">Tình duyên</p>
-                        <p className="mb-2">
-                          {laDuocRut.ChuDe.TinhDuyen || "—"}
-                        </p>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="mb-1 small text-muted">Công việc</p>
-                        <p className="mb-2">
-                          {laDuocRut.ChuDe.CongViec || "—"}
-                        </p>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="mb-1 small text-muted">Tài chính</p>
-                        <p className="mb-2">
-                          {laDuocRut.ChuDe.TaiChinh || "—"}
-                        </p>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="mb-1 small text-muted">Sức khỏe</p>
-                        <p className="mb-0">{laDuocRut.ChuDe.SucKhoe || "—"}</p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* meta nếu có */}
-                  {laDuocRut.Meta && (
-                    <p className="mt-3 mb-0 small text-muted">
-                      {typeof laDuocRut.Meta === "string" ? laDuocRut.Meta : ""}
-                    </p>
-                  )}
-                </>
-              ) : (
-                <>
-                  <h3 className="h5">Chưa có lá nào được rút</h3>
-                  <p className="text-muted mb-0">
-                    Giữ chuột trên bộ bài để xáo, sau đó bấm “Rút bài” để xem
-                    thông điệp hôm nay.
-                  </p>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
 
-export default TarotMienPhiMotLa;
+export default TarotFree1Card;

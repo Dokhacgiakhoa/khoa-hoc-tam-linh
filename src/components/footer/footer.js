@@ -1,10 +1,13 @@
+// src/components/footer/footer.js
+import React from "react";
+import "./footer.css";
+
 function Footer() {
   return (
-    <footer className="bg-dark text-light py-4 mt-auto">
-      <div className="container text-center">
-        <p className="mb-1">© {new Date().getFullYear()} Khoa học Tâm linh.</p>
-        <p className="mb-0 small">Xây bởi Đỗ Khắc Gia Khoa & Jocelyn 😎</p>
-      </div>
+    <footer className="site-footer">
+      <p>
+        © {new Date().getFullYear()} Khoa học Tâm linh. All rights reserved.
+      </p>
     </footer>
   );
 }

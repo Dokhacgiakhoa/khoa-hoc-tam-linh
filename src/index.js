@@ -1,11 +1,16 @@
+// src/index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
 import App from "./App";
-import "./index.css"; // nếu có
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* basename để chạy GitHub Pages */}
+    <BrowserRouter basename="/asm-rmwd">
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
