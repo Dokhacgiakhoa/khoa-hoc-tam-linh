@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/asm-rmwd/static/css/main.8b9a860a.css",
+    "main.js": "/asm-rmwd/static/js/main.7ebb8b06.js",
+    "index.html": "/asm-rmwd/index.html",
+    "main.8b9a860a.css.map": "/asm-rmwd/static/css/main.8b9a860a.css.map",
+    "main.7ebb8b06.js.map": "/asm-rmwd/static/js/main.7ebb8b06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b9a860a.css",
+    "static/js/main.7ebb8b06.js"
+  ]
+}
