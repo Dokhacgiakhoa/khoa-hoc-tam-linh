@@ -6,7 +6,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 1,
     Ten: "Ace of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/ace-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/ace-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Cơ hội vật chất mới: tiền, việc làm, khách hàng, tài nguyên, đất đai. Hạt giống rất thực tế.",
       TuKhoa: [
@@ -38,7 +38,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 2,
     Ten: "Two of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/2-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/2-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Xoay xở 2 việc cùng lúc, cân bằng nguồn lực, juggling. Đủ nhưng không dư.",
       TuKhoa: [
@@ -70,7 +70,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 3,
     Ten: "Three of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/3-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/3-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Làm việc nhóm, mỗi người một chuyên môn, xây nền móng bền vững.",
       TuKhoa: [
@@ -103,7 +103,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 4,
     Ten: "Four of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/4-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/4-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Giữ chặt, sợ mất, kiểm soát tài sản, không muốn chia sẻ.",
       TuKhoa: ["giữ tiền", "bảo thủ", "ổn định", "sợ rủi ro", "kiểm soát"],
@@ -129,7 +129,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 5,
     Ten: "Five of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/5-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/5-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Thiếu thốn tạm thời, cảm giác bị bỏ rơi, lo về tiền, nhưng luôn có chỗ để xin giúp.",
       TuKhoa: [
@@ -161,7 +161,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 6,
     Ten: "Six of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/6-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/6-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Cho – nhận cân bằng, từ thiện, hỗ trợ, chia sẻ nguồn lực.",
       TuKhoa: ["hỗ trợ", "từ thiện", "chia sẻ", "được cấp vốn", "nhà tài trợ"],
@@ -187,7 +187,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 7,
     Ten: "Seven of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/7-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/7-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Chờ quả chín, đầu tư dài hạn, xem lại hiệu suất. Giai đoạn kiểm tra.",
       TuKhoa: ["kiên nhẫn", "đầu tư dài", "xem lại", "chờ đợi", "tối ưu"],
@@ -213,7 +213,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 8,
     Ten: "Eight of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/8-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/8-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Học nghề, mài skill, làm đi làm lại để giỏi. Lao động chăm chỉ.",
       TuKhoa: [
@@ -245,7 +245,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 9,
     Ten: "Nine of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/9-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/9-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Độc lập tài chính, hưởng thành quả, sống thanh nhàn, tự hào về những gì đã xây.",
       TuKhoa: [
@@ -277,7 +277,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 10,
     Ten: "Ten of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/10-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/10-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Tài sản gia đình, của để dành, bền vững nhiều thế hệ. Đỉnh của bộ Tiền.",
       TuKhoa: [
@@ -309,7 +309,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 11,
     Ten: "Page of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/page-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/page-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Người trẻ ham học, muốn kiếm tiền, thực tế, chăm chỉ.",
       TuKhoa: [
@@ -341,7 +341,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 12,
     Ten: "Knight of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/knight-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/knight-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Chăm chỉ, làm đều, tiến chậm mà chắc. Người rất có trách nhiệm.",
       TuKhoa: [
@@ -373,7 +373,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 13,
     Ten: "Queen of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/queen-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/queen-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Chăm sóc, nuôi dưỡng, biết kiếm tiền và giữ tiền. Nữ năng lượng thực tế.",
       TuKhoa: [
@@ -404,7 +404,7 @@ const TAROT_PENTACLES = [
     SoThuTu: 14,
     Ten: "King of Pentacles",
     Nhom: "Pentacles",
-    Anh: "./images/Tarot/Pentacles/king-of-pentacles.png",
+    Anh: "/images/tarot-cards/pentacles/king-of-pentacles.png",
     YNghiaChung: {
       MoTa: "Làm chủ vật chất, doanh nhân, giàu kinh nghiệm, đáng tin, quyền lực thực tế.",
       TuKhoa: ["doanh nhân", "làm chủ", "giàu có", "quản trị", "tài sản lớn"],

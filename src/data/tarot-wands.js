@@ -6,7 +6,7 @@ const TAROT_WANDS = [
     SoThuTu: 1,
     Ten: "Ace of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/ace-of-wands.png",
+    Anh: "/images/tarot-cards/wands/ace-of-wands.png",
     YNghiaChung: {
       MoTa: "Khởi đầu đầy cảm hứng, ý tưởng bùng nổ, năng lượng sáng tạo mạnh. Lá gậy Át luôn là tín hiệu: hãy bắt tay làm đi.",
       TuKhoa: [
@@ -41,7 +41,7 @@ const TAROT_WANDS = [
     SoThuTu: 2,
     Ten: "Two of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/2-of-wands.png",
+    Anh: "/images/tarot-cards/wands/2-of-wands.png",
     YNghiaChung: {
       MoTa: "Lên kế hoạch, nhìn xa, chọn hướng đi. Bạn đã ra khỏi giai đoạn ‘chỉ nghĩ’, giờ phải ‘chọn 1 hướng’.",
       TuKhoa: [
@@ -74,7 +74,7 @@ const TAROT_WANDS = [
     SoThuTu: 3,
     Ten: "Three of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/3-of-wands.png",
+    Anh: "/images/tarot-cards/wands/3-of-wands.png",
     YNghiaChung: {
       MoTa: "Mở rộng, bắt đầu nhìn thấy kết quả đầu tiên, làm việc với tầm nhìn rộng hơn (hợp tác, ra thị trường, đi xa).",
       TuKhoa: [
@@ -106,7 +106,7 @@ const TAROT_WANDS = [
     SoThuTu: 4,
     Ten: "Four of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/4-of-wands.png",
+    Anh: "/images/tarot-cards/wands/4-of-wands.png",
     YNghiaChung: {
       MoTa: "Ăn mừng, ổn định tạm thời, milestone đẹp (khai trương, cưới, ra mắt sản phẩm).",
       TuKhoa: [
@@ -139,7 +139,7 @@ const TAROT_WANDS = [
     SoThuTu: 5,
     Ten: "Five of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/5-of-wands.png",
+    Anh: "/images/tarot-cards/wands/5-of-wands.png",
     YNghiaChung: {
       MoTa: "Cạnh tranh, xung đột nhỏ, mỗi người một ý. Không phải đánh nhau, mà là chưa đồng bộ.",
       TuKhoa: [
@@ -171,7 +171,7 @@ const TAROT_WANDS = [
     SoThuTu: 6,
     Ten: "Six of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/6-of-wands.png",
+    Anh: "/images/tarot-cards/wands/6-of-wands.png",
     YNghiaChung: {
       MoTa: "Chiến thắng, được ghi nhận, được mọi người công nhận năng lực.",
       TuKhoa: [
@@ -203,7 +203,7 @@ const TAROT_WANDS = [
     SoThuTu: 7,
     Ten: "Seven of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/7-of-wands.png",
+    Anh: "/images/tarot-cards/wands/7-of-wands.png",
     YNghiaChung: {
       MoTa: "Giữ lập trường, bảo vệ quan điểm, cạnh tranh lên level cao hơn.",
       TuKhoa: [
@@ -235,7 +235,7 @@ const TAROT_WANDS = [
     SoThuTu: 8,
     Ten: "Eight of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/8-of-wands.png",
+    Anh: "/images/tarot-cards/wands/8-of-wands.png",
     YNghiaChung: {
       MoTa: "Tốc độ, tin tức đến nhanh, mọi việc diễn tiến liên tục. Lá này đúng kiểu ‘bắn 8 mũi tên đi 1 lượt’.",
       TuKhoa: [
@@ -268,7 +268,7 @@ const TAROT_WANDS = [
     SoThuTu: 9,
     Ten: "Nine of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/9-of-wands.png",
+    Anh: "/images/tarot-cards/wands/9-of-wands.png",
     YNghiaChung: {
       MoTa: "Kiên trì tới chặng cuối, mệt nhưng chưa thua. Cần giữ vững để về đích.",
       TuKhoa: [
@@ -300,7 +300,7 @@ const TAROT_WANDS = [
     SoThuTu: 10,
     Ten: "Ten of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/10-of-wands.png",
+    Anh: "/images/tarot-cards/wands/10-of-wands.png",
     YNghiaChung: {
       MoTa: "Gánh nặng, ôm quá nhiều việc, tự mình vác hết. Kết thúc chu kỳ bằng mồ hôi.",
       TuKhoa: [
@@ -332,7 +332,7 @@ const TAROT_WANDS = [
     SoThuTu: 11,
     Ten: "Page of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/page-of-wands.png",
+    Anh: "/images/tarot-cards/wands/page-of-wands.png",
     YNghiaChung: {
       MoTa: "Tin tức mới, cơ hội mới, cảm hứng mới – thường tới từ người trẻ hoặc một kênh mới.",
       TuKhoa: [
@@ -364,7 +364,7 @@ const TAROT_WANDS = [
     SoThuTu: 12,
     Ten: "Knight of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/knight-of-wands.png",
+    Anh: "/images/tarot-cards/wands/knight-of-wands.png",
     YNghiaChung: {
       MoTa: "Hành động nhanh, dám làm, dám xông pha. Năng lượng nam tính hướng tới mục tiêu.",
       TuKhoa: [
@@ -396,7 +396,7 @@ const TAROT_WANDS = [
     SoThuTu: 13,
     Ten: "Queen of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/queen-of-wands.png",
+    Anh: "/images/tarot-cards/wands/queen-of-wands.png",
     YNghiaChung: {
       MoTa: "Tự tin, quyến rũ, làm chủ sức hút, vừa sáng tạo vừa biết dẫn dắt người khác.",
       TuKhoa: [
@@ -428,7 +428,7 @@ const TAROT_WANDS = [
     SoThuTu: 14,
     Ten: "King of Wands",
     Nhom: "Wands",
-    Anh: "./images/Tarot/Wands/king-of-wands.png",
+    Anh: "/images/tarot-cards/wands/king-of-wands.png",
     YNghiaChung: {
       MoTa: "Tầm nhìn lớn, lãnh đạo theo cảm hứng, dám làm việc khó và kéo người khác đi cùng.",
       TuKhoa: [

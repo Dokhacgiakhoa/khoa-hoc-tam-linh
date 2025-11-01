@@ -31,17 +31,9 @@ function TarotFree1Card() {
   const getMeaning = () => {
     if (!card) return null;
 
-    // nếu bị đảo và có nghĩa ngược
-    if (isReversed && card.NghiaNguoc) {
-      return card.NghiaNguoc;
-    }
+    if (isReversed && card.NghiaNguoc) return card.NghiaNguoc;
+    if (card.NghiaXuong) return card.NghiaXuong;
 
-    // ưu tiên nghĩa xuôi
-    if (card.NghiaXuong) {
-      return card.NghiaXuong;
-    }
-
-    // fallback
     return {
       MoTa: card.YNghiaChung || "",
       TuKhoa: card.TuKhoaChung || [],
@@ -50,6 +42,9 @@ function TarotFree1Card() {
   };
 
   const meaning = getMeaning();
+
+  // base cho ảnh: chạy được cả local lẫn GH Pages
+  const baseUrl = process.env.PUBLIC_URL || "";
 
   return (
     <div className="tarot-free-wrapper">
@@ -65,7 +60,7 @@ function TarotFree1Card() {
         onMouseUp={handleStopShuffle}
         onMouseLeave={handleStopShuffle}
       >
-        {/* 5 lá giả cùng 1 hình mặt sau */}
+        {/* 5 lá giả */}
         <div className="tarot-deck-card deck-1" />
         <div className="tarot-deck-card deck-2" />
         <div className="tarot-deck-card deck-3" />
@@ -81,7 +76,7 @@ function TarotFree1Card() {
         <div className="tarot-result">
           <div className="tarot-result-card">
             <img
-              src={process.env.PUBLIC_URL + card.Anh}
+              src={`${baseUrl}${card.Anh}`}
               alt={card.Ten}
               className={`tarot-card-img ${isReversed ? "is-reversed" : ""}`}
             />

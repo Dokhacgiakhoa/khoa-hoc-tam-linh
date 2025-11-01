@@ -6,7 +6,7 @@ const TAROT_CUPS = [
     SoThuTu: 1,
     Ten: "Ace of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/ace-of-cups.png",
+    Anh: "/images/tarot-cards/cups/ace-of-cups.png",
     YNghiaChung: {
       MoTa: "Cảm xúc mới, tình yêu mới, kết nối mới, trái tim mở. Lá Át của tình cảm.",
       TuKhoa: [
@@ -38,7 +38,7 @@ const TAROT_CUPS = [
     SoThuTu: 2,
     Ten: "Two of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/2-of-cups.png",
+    Anh: "/images/tarot-cards/cups/2-of-cups.png",
     YNghiaChung: {
       MoTa: "Kết nối 2 chiều, hợp tác hài hòa, đôi lứa, mối quan hệ đối xứng.",
       TuKhoa: [
@@ -70,7 +70,7 @@ const TAROT_CUPS = [
     SoThuTu: 3,
     Ten: "Three of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/3-of-cups.png",
+    Anh: "/images/tarot-cards/cups/3-of-cups.png",
     YNghiaChung: {
       MoTa: "Ăn mừng, vui vẻ cùng bạn bè, cộng đồng ấm áp, người ủng hộ bạn.",
       TuKhoa: [
@@ -103,7 +103,7 @@ const TAROT_CUPS = [
     SoThuTu: 4,
     Ten: "Four of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/4-of-cups.png",
+    Anh: "/images/tarot-cards/cups/4-of-cups.png",
     YNghiaChung: {
       MoTa: "Chán chường, không hứng thú, có cơ hội đưa tới nhưng bạn chưa muốn nhận.",
       TuKhoa: [
@@ -135,7 +135,7 @@ const TAROT_CUPS = [
     SoThuTu: 5,
     Ten: "Five of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/5-of-cups.png",
+    Anh: "/images/tarot-cards/cups/5-of-cups.png",
     YNghiaChung: {
       MoTa: "Tiếc nuối, nhìn vào cái đã mất mà quên cái vẫn còn. Nỗi buồn cảm xúc.",
       TuKhoa: [
@@ -167,7 +167,7 @@ const TAROT_CUPS = [
     SoThuTu: 6,
     Ten: "Six of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/6-of-cups.png",
+    Anh: "/images/tarot-cards/cups/6-of-cups.png",
     YNghiaChung: {
       MoTa: "Hoài niệm, ký ức đẹp, người cũ quay lại, năng lượng trẻ thơ, gia đình.",
       TuKhoa: [
@@ -200,7 +200,7 @@ const TAROT_CUPS = [
     SoThuTu: 7,
     Ten: "Seven of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/7-of-cups.png",
+    Anh: "/images/tarot-cards/cups/7-of-cups.png",
     YNghiaChung: {
       MoTa: "Nhiều lựa chọn, tưởng tượng, mộng mơ, nhưng cũng dễ ảo tưởng.",
       TuKhoa: [
@@ -232,7 +232,7 @@ const TAROT_CUPS = [
     SoThuTu: 8,
     Ten: "Eight of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/8-of-cups.png",
+    Anh: "/images/tarot-cards/cups/8-of-cups.png",
     YNghiaChung: {
       MoTa: "Rời đi dù vẫn còn tình cảm, vì biết ở lại sẽ không lớn thêm. Đi tìm điều sâu hơn.",
       TuKhoa: [
@@ -264,7 +264,7 @@ const TAROT_CUPS = [
     SoThuTu: 9,
     Ten: "Nine of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/9-of-cups.png",
+    Anh: "/images/tarot-cards/cups/9-of-cups.png",
     YNghiaChung: {
       MoTa: "Hài lòng, tận hưởng, ước muốn được đáp lại. Lá ‘điều ước’ của bộ Cốc.",
       TuKhoa: ["hài lòng", "điều ước", "tận hưởng", "tự thưởng", "thoải mái"],
@@ -290,7 +290,7 @@ const TAROT_CUPS = [
     SoThuTu: 10,
     Ten: "Ten of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/10-of-cups.png",
+    Anh: "/images/tarot-cards/cups/10-of-cups.png",
     YNghiaChung: {
       MoTa: "Hạnh phúc gia đình, viên mãn cảm xúc, mọi người hòa hợp. Kết thúc đẹp của bộ Cốc.",
       TuKhoa: ["viên mãn", "gia đình", "hòa hợp", "yên bình", "kết thúc đẹp"],
@@ -316,7 +316,7 @@ const TAROT_CUPS = [
     SoThuTu: 11,
     Ten: "Page of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/page-of-cups.png",
+    Anh: "/images/tarot-cards/cups/page-of-cups.png",
     YNghiaChung: {
       MoTa: "Thông điệp tình cảm dễ thương, lời mời, lời khen, năng lượng trẻ con đáng yêu.",
       TuKhoa: [
@@ -347,7 +347,7 @@ const TAROT_CUPS = [
     SoThuTu: 12,
     Ten: "Knight of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/knight-of-cups.png",
+    Anh: "/images/tarot-cards/cups/knight-of-cups.png",
     YNghiaChung: {
       MoTa: "Người mang đến lời mời, sự lãng mạn, muốn chinh phục bằng cảm xúc.",
       TuKhoa: ["lãng mạn", "tỏ tình", "lời mời", "theo đuổi", "điềm đạm"],
@@ -373,7 +373,7 @@ const TAROT_CUPS = [
     SoThuTu: 13,
     Ten: "Queen of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/queen-of-cups.png",
+    Anh: "/images/tarot-cards/cups/queen-of-cups.png",
     YNghiaChung: {
       MoTa: "Trực giác mạnh, biết lắng nghe, giàu tình thương, chữa lành cảm xúc người khác.",
       TuKhoa: ["trực giác", "nữ tính", "chữa lành", "thấu cảm", "lắng nghe"],
@@ -399,7 +399,7 @@ const TAROT_CUPS = [
     SoThuTu: 14,
     Ten: "King of Cups",
     Nhom: "Cups",
-    Anh: "./images/Tarot/Cups/king-of-cups.png",
+    Anh: "/images/tarot-cards/cups/king-of-cups.png",
     YNghiaChung: {
       MoTa: "Làm chủ cảm xúc, bình tĩnh, khôn ngoan, biết dung hòa. Năng lượng trưởng thành của cảm xúc.",
       TuKhoa: [

@@ -6,7 +6,7 @@ const TAROT_SWORDS = [
     SoThuTu: 1,
     Ten: "Ace of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/ace-of-swords.png",
+    Anh: "/images/tarot-cards/swords/ace-of-swords.png",
     YNghiaChung: {
       MoTa: "Sự thật được soi sáng, ý tưởng sắc bén, nhìn rõ vấn đề. Lá Át của trí tuệ và giao tiếp.",
       TuKhoa: [
@@ -38,7 +38,7 @@ const TAROT_SWORDS = [
     SoThuTu: 2,
     Ten: "Two of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/2-of-swords.png",
+    Anh: "/images/tarot-cards/swords/2-of-swords.png",
     YNghiaChung: {
       MoTa: "Lưỡng lự, chặn cảm xúc, chưa muốn nhìn sự thật. Đang ‘tắt’ 1 kênh để đỡ đau đầu.",
       TuKhoa: ["do dự", "cân nhắc", "chặn cảm xúc", "né tránh", "chưa chọn"],
@@ -64,7 +64,7 @@ const TAROT_SWORDS = [
     SoThuTu: 3,
     Ten: "Three of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/3-of-swords.png",
+    Anh: "/images/tarot-cards/swords/3-of-swords.png",
     YNghiaChung: {
       MoTa: "Tổn thương, thất vọng, lời nói làm đau. Nhưng đồng thời là sự thật được nói ra.",
       TuKhoa: [
@@ -96,7 +96,7 @@ const TAROT_SWORDS = [
     SoThuTu: 4,
     Ten: "Four of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/4-of-swords.png",
+    Anh: "/images/tarot-cards/swords/4-of-swords.png",
     YNghiaChung: {
       MoTa: "Nghỉ ngơi, phục hồi tinh thần, tạm tránh xa drama để đầu óc trong lại.",
       TuKhoa: ["nghỉ", "hồi phục", "tạm dừng", "tĩnh lặng", "thiền", "reset"],
@@ -122,7 +122,7 @@ const TAROT_SWORDS = [
     SoThuTu: 5,
     Ten: "Five of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/5-of-swords.png",
+    Anh: "/images/tarot-cards/swords/5-of-swords.png",
     YNghiaChung: {
       MoTa: "Xung đột thắng – thua, nói để hơn chứ không phải để hiểu. Thắng nhưng không vui.",
       TuKhoa: ["tranh cãi", "thái quá", "cố chấp", "thắng thua", "căng thẳng"],
@@ -148,7 +148,7 @@ const TAROT_SWORDS = [
     SoThuTu: 6,
     Ten: "Six of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/6-of-swords.png",
+    Anh: "/images/tarot-cards/swords/6-of-swords.png",
     YNghiaChung: {
       MoTa: "Rời khỏi vùng căng thẳng, chuyển sang nơi bình yên hơn. Đi để lành.",
       TuKhoa: ["chuyển hướng", "rời xa", "tạm lánh", "điều chỉnh", "hồi phục"],
@@ -174,7 +174,7 @@ const TAROT_SWORDS = [
     SoThuTu: 7,
     Ten: "Seven of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/7-of-swords.png",
+    Anh: "/images/tarot-cards/swords/7-of-swords.png",
     YNghiaChung: {
       MoTa: "Ẩn giấu, làm một mình, chiến lược kín, đôi khi là lén lút. Không phải cái gì cũng nói ra.",
       TuKhoa: [
@@ -207,7 +207,7 @@ const TAROT_SWORDS = [
     SoThuTu: 8,
     Ten: "Eight of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/8-of-swords.png",
+    Anh: "/images/tarot-cards/swords/8-of-swords.png",
     YNghiaChung: {
       MoTa: "Tự trói mình bằng suy nghĩ, cảm giác bị kẹt nhưng thực ra vẫn có lối.",
       TuKhoa: [
@@ -239,7 +239,7 @@ const TAROT_SWORDS = [
     SoThuTu: 9,
     Ten: "Nine of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/9-of-swords.png",
+    Anh: "/images/tarot-cards/swords/9-of-swords.png",
     YNghiaChung: {
       MoTa: "Lo lắng, mất ngủ, overthinking. Nhiều cái chỉ là tưởng tượng xấu nhất.",
       TuKhoa: [
@@ -271,7 +271,7 @@ const TAROT_SWORDS = [
     SoThuTu: 10,
     Ten: "Ten of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/10-of-swords.png",
+    Anh: "/images/tarot-cards/swords/10-of-swords.png",
     YNghiaChung: {
       MoTa: "Kết thúc đau, vỡ mộng, nhận ra sự thật khó chấp nhận. Nhưng cũng là điểm không thể tệ hơn.",
       TuKhoa: [
@@ -303,7 +303,7 @@ const TAROT_SWORDS = [
     SoThuTu: 11,
     Ten: "Page of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/page-of-swords.png",
+    Anh: "/images/tarot-cards/swords/page-of-swords.png",
     YNghiaChung: {
       MoTa: "Tò mò, học hỏi, quan sát, muốn biết thêm. Năng lượng của người trẻ thích tìm hiểu.",
       TuKhoa: [
@@ -336,7 +336,7 @@ const TAROT_SWORDS = [
     SoThuTu: 12,
     Ten: "Knight of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/knight-of-swords.png",
+    Anh: "/images/tarot-cards/swords/knight-of-swords.png",
     YNghiaChung: {
       MoTa: "Hành động nhanh bằng lý trí, xông lên để nói sự thật. Đôi khi hơi cộc.",
       TuKhoa: [
@@ -368,7 +368,7 @@ const TAROT_SWORDS = [
     SoThuTu: 13,
     Ten: "Queen of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/queen-of-swords.png",
+    Anh: "/images/tarot-cards/swords/queen-of-swords.png",
     YNghiaChung: {
       MoTa: "Thông minh, tỉnh, quan sát tốt, không dễ bị thao túng. Nữ năng lượng lý trí.",
       TuKhoa: ["tỉnh táo", "độc lập", "phân tích sắc", "rõ ràng", "ranh giới"],
@@ -394,7 +394,7 @@ const TAROT_SWORDS = [
     SoThuTu: 14,
     Ten: "King of Swords",
     Nhom: "Swords",
-    Anh: "./images/Tarot/Swords/king-of-swords.png",
+    Anh: "/images/tarot-cards/swords/king-of-swords.png",
     YNghiaChung: {
       MoTa: "Quyền lực trí tuệ, lãnh đạo bằng luật và sự thật. Ra quyết định công bằng.",
       TuKhoa: [

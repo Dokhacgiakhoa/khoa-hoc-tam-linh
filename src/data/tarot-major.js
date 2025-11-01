@@ -4,7 +4,7 @@ const TAROT_MAJOR = [
     SoThuTu: 0,
     Ten: "The Fool",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/0-the-fool.png",
+    Anh: "/images/tarot-cards/major/0-the-fool.png",
     YNghiaChung: {
       MoTa: "Khởi đầu, tự do, tiềm năng vô hạn. Lá bài khuyến khích bạn bước ra khỏi vùng an toàn và tin vào hành trình riêng của mình.",
       TuKhoa: [
@@ -49,7 +49,7 @@ const TAROT_MAJOR = [
     SoThuTu: 1,
     Ten: "The Magician",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/1-the-magician.png",
+    Anh: "/images/tarot-cards/major/1-the-magician.png",
     YNghiaChung: {
       MoTa: "Ý chí, khả năng biểu hiện và biến ý tưởng thành hiện thực. Mọi nguồn lực bạn cần đều đã sẵn sàng.",
       TuKhoa: [
@@ -82,7 +82,7 @@ const TAROT_MAJOR = [
     SoThuTu: 2,
     Ten: "The High Priestess",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/2-the-high-priestess.png",
+    Anh: "/images/tarot-cards/major/2-the-high-priestess.png",
     YNghiaChung: {
       MoTa: "Trực giác, tri thức tiềm ẩn, sự im lặng và trí tuệ nội tâm. Biểu tượng cho điều ẩn giấu.",
       TuKhoa: [
@@ -115,7 +115,7 @@ const TAROT_MAJOR = [
     SoThuTu: 3,
     Ten: "The Empress",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/3-the-empress.png",
+    Anh: "/images/tarot-cards/major/3-the-empress.png",
     YNghiaChung: {
       MoTa: "Phồn thịnh, sáng tạo, nuôi dưỡng và tình yêu vô điều kiện. Biểu trưng cho năng lượng nữ tính.",
       TuKhoa: [
@@ -148,7 +148,7 @@ const TAROT_MAJOR = [
     SoThuTu: 4,
     Ten: "The Emperor",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/4-the-emperor.png",
+    Anh: "/images/tarot-cards/major/4-the-emperor.png",
     YNghiaChung: {
       MoTa: "Kỷ luật, quyền lực, kiểm soát và ổn định. Đại diện cho trật tự và nền tảng vững chắc.",
       TuKhoa: ["kỷ luật", "quyền lực", "ổn định", "kiểm soát", "tổ chức"],
@@ -174,7 +174,7 @@ const TAROT_MAJOR = [
     SoThuTu: 5,
     Ten: "The Hierophant",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/5-the-hierophant.png",
+    Anh: "/images/tarot-cards/major/5-the-hierophant.png",
     YNghiaChung: {
       MoTa: "Truyền thống, học hỏi, hệ thống giá trị, thầy dạy hoặc niềm tin tôn giáo.",
       TuKhoa: ["truyền thống", "niềm tin", "học hỏi", "tổ chức"],
@@ -200,7 +200,7 @@ const TAROT_MAJOR = [
     SoThuTu: 6,
     Ten: "The Lovers",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/6-the-lovers.png",
+    Anh: "/images/tarot-cards/major/6-the-lovers.png",
     YNghiaChung: {
       MoTa: "Sự lựa chọn, tình yêu, sự hài hòa và cam kết. Lá bài của kết nối tâm hồn.",
       TuKhoa: ["tình yêu", "lựa chọn", "cam kết", "đồng điệu"],
@@ -226,7 +226,7 @@ const TAROT_MAJOR = [
     SoThuTu: 7,
     Ten: "The Chariot",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/7-the-chariot.png",
+    Anh: "/images/tarot-cards/major/7-the-chariot.png",
     YNghiaChung: {
       MoTa: "Chiến thắng, ý chí, định hướng rõ ràng và khả năng kiểm soát cảm xúc.",
       TuKhoa: ["kiểm soát", "chiến thắng", "ý chí", "hành động"],
@@ -252,7 +252,7 @@ const TAROT_MAJOR = [
     SoThuTu: 8,
     Ten: "Strength",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/8-strength.png",
+    Anh: "/images/tarot-cards/major/8-strength.png",
     YNghiaChung: {
       MoTa: "Sức mạnh nội tâm, lòng can đảm và sự kiên nhẫn. Chế ngự bản năng bằng tình yêu thương.",
       TuKhoa: ["can đảm", "kiên nhẫn", "nội lực", "thấu hiểu"],
@@ -278,7 +278,7 @@ const TAROT_MAJOR = [
     SoThuTu: 9,
     Ten: "The Hermit",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/9-the-hermit.png",
+    Anh: "/images/tarot-cards/major/9-the-hermit.png",
     YNghiaChung: {
       MoTa: "Tự chiêm nghiệm, cô tịch, soi sáng con đường nội tâm. Biểu tượng của trí tuệ sâu sắc.",
       TuKhoa: ["nội tâm", "hướng nội", "chiêm nghiệm", "tĩnh lặng"],
@@ -304,7 +304,7 @@ const TAROT_MAJOR = [
     SoThuTu: 10,
     Ten: "Wheel of Fortune",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/10-wheel-of-fortune.png",
+    Anh: "/images/tarot-cards/major/10-wheel-of-fortune.png",
     YNghiaChung: {
       MoTa: "Chu kỳ, định mệnh, cơ hội và thay đổi bất ngờ. Bánh xe cuộc đời đang xoay.",
       TuKhoa: ["cơ hội", "biến chuyển", "định mệnh", "thay đổi"],
@@ -330,7 +330,7 @@ const TAROT_MAJOR = [
     SoThuTu: 11,
     Ten: "Justice",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/11-justice.png",
+    Anh: "/images/tarot-cards/major/11-justice.png",
     YNghiaChung: {
       MoTa: "Cân bằng, nhân quả, sự thật và trách nhiệm. Mọi việc đang/ sẽ được xử lý công bằng.",
       TuKhoa: [
@@ -363,7 +363,7 @@ const TAROT_MAJOR = [
     SoThuTu: 12,
     Ten: "The Hanged Man",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/12-the-hanged-man.png",
+    Anh: "/images/tarot-cards/major/12-the-hanged-man.png",
     YNghiaChung: {
       MoTa: "Tạm dừng, nhìn theo góc độ khác, chấp nhận hy sinh để đổi lại sự sáng rõ.",
       TuKhoa: [
@@ -396,7 +396,7 @@ const TAROT_MAJOR = [
     SoThuTu: 13,
     Ten: "Death",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/13-the-death.png",
+    Anh: "/images/tarot-cards/major/13-the-death.png",
     YNghiaChung: {
       MoTa: "Kết thúc một chu kỳ để mở sang chu kỳ mới. Chuyển hóa – không phải diệt vong.",
       TuKhoa: [
@@ -429,7 +429,7 @@ const TAROT_MAJOR = [
     SoThuTu: 14,
     Ten: "Temperance",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/14-temperance.png",
+    Anh: "/images/tarot-cards/major/14-temperance.png",
     YNghiaChung: {
       MoTa: "Hài hòa, tiết chế, trung dung, chữa lành. Không vội, không thái quá.",
       TuKhoa: [
@@ -462,7 +462,7 @@ const TAROT_MAJOR = [
     SoThuTu: 15,
     Ten: "The Devil",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/15-the-devil.png",
+    Anh: "/images/tarot-cards/major/15-the-devil.png",
     YNghiaChung: {
       MoTa: "Ràng buộc, nghiện, dục vọng, mô thức lặp. Tự trói mình vào cái không cần thiết.",
       TuKhoa: [
@@ -495,7 +495,7 @@ const TAROT_MAJOR = [
     SoThuTu: 16,
     Ten: "The Tower",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/16-the-tower.png",
+    Anh: "/images/tarot-cards/major/16-the-tower.png",
     YNghiaChung: {
       MoTa: "Biến cố bất ngờ, sụp đổ cấu trúc cũ, sự thật bị phơi bày. Nhưng đó là cái phải đổ.",
       TuKhoa: [
@@ -528,7 +528,7 @@ const TAROT_MAJOR = [
     SoThuTu: 17,
     Ten: "The Star",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/17-the-star.png",
+    Anh: "/images/tarot-cards/major/17-the-star.png",
     YNghiaChung: {
       MoTa: "Hy vọng, niềm tin, chữa lành và cảm hứng. Sau bão tố là bầu trời trong.",
       TuKhoa: [
@@ -560,7 +560,7 @@ const TAROT_MAJOR = [
     SoThuTu: 18,
     Ten: "The Moon",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/18-the-moon.png",
+    Anh: "/images/tarot-cards/major/18-the-moon.png",
     YNghiaChung: {
       MoTa: "Vô thức, ảo ảnh, lo lắng, cảm xúc dao động. Không phải mọi thứ đang thấy đều là thật.",
       TuKhoa: [
@@ -593,7 +593,7 @@ const TAROT_MAJOR = [
     SoThuTu: 19,
     Ten: "The Sun",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/19-the-sun.png",
+    Anh: "/images/tarot-cards/major/19-the-sun.png",
     YNghiaChung: {
       MoTa: "Thành công, rõ ràng, vui vẻ, năng lượng tích cực. Một trong những lá đẹp nhất.",
       TuKhoa: [
@@ -626,7 +626,7 @@ const TAROT_MAJOR = [
     SoThuTu: 20,
     Ten: "Judgement",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/20-judgement.png",
+    Anh: "/images/tarot-cards/major/20-judgement.png",
     YNghiaChung: {
       MoTa: "Tỉnh thức, gọi tên sự thật, được ‘thức dậy’ để làm đúng sứ mệnh.",
       TuKhoa: [
@@ -659,7 +659,7 @@ const TAROT_MAJOR = [
     SoThuTu: 21,
     Ten: "The World",
     Nhom: "Major",
-    Anh: "./images/Tarot/Major/21-the-world.png",
+    Anh: "/images/tarot-cards/major/21-the-world.png",
     YNghiaChung: {
       MoTa: "Hoàn thành, trọn vẹn, khép lại hành trình và sẵn sàng sang chương mới ở level cao hơn.",
       TuKhoa: [
