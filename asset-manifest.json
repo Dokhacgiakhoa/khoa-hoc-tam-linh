@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/asm-rmwd/static/css/main.c4e60154.css",
-    "main.js": "/asm-rmwd/static/js/main.03a33632.js",
-    "static/js/453.4edff7b0.chunk.js": "/asm-rmwd/static/js/453.4edff7b0.chunk.js",
-    "index.html": "/asm-rmwd/index.html",
-    "main.c4e60154.css.map": "/asm-rmwd/static/css/main.c4e60154.css.map",
-    "main.03a33632.js.map": "/asm-rmwd/static/js/main.03a33632.js.map",
-    "453.4edff7b0.chunk.js.map": "/asm-rmwd/static/js/453.4edff7b0.chunk.js.map"
+    "main.css": "./static/css/main.c4e60154.css",
+    "main.js": "./static/js/main.fc8094d6.js",
+    "static/js/453.4edff7b0.chunk.js": "./static/js/453.4edff7b0.chunk.js",
+    "index.html": "./index.html",
+    "main.c4e60154.css.map": "./static/css/main.c4e60154.css.map",
+    "main.fc8094d6.js.map": "./static/js/main.fc8094d6.js.map",
+    "453.4edff7b0.chunk.js.map": "./static/js/453.4edff7b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c4e60154.css",
-    "static/js/main.03a33632.js"
+    "static/js/main.fc8094d6.js"
   ]
 }
