@@ -57,7 +57,8 @@ function DichVu() {
           </p>
         </div>
         <div className="col-lg-4 text-lg-end">
-          <Link to="/LienHe" className="btn btn-primary">
+          {/* chữ thường */}
+          <Link to="/lien-he" className="btn btn-primary">
             Cần tư vấn chọn dịch vụ
           </Link>
         </div>
@@ -67,7 +68,7 @@ function DichVu() {
       <TarotMienPhiMotLa />
 
       {/* DANH SÁCH DỊCH VỤ */}
-      <div className="row g-4">
+      <div className="row g-4 mt-1">
         {DANH_SACH_DICH_VU.map((dv) => (
           <div key={dv.id} id={dv.id} className="col-md-6 col-lg-4">
             <div className="card h-100 shadow-sm">
@@ -78,13 +79,17 @@ function DichVu() {
                     <span className="badge bg-primary">{dv.nhan}</span>
                   )}
                 </div>
+
                 <p className="card-text text-muted flex-grow-1">{dv.moTa}</p>
+
                 <ul className="list-unstyled small mb-3">
                   <li>⏱ {dv.thoiLuong}</li>
                   <li>💰 {dv.gia}</li>
                   <li>🪙 Thanh toán bằng Linh Tệ</li>
                 </ul>
+
                 <div className="d-grid gap-2 mt-auto">
+                  {/* sau này bạn nối tới demo riêng thì đổi Link ở đây */}
                   <button className="btn btn-outline-primary btn-sm">
                     Xem demo
                   </button>
@@ -173,7 +178,8 @@ function DichVu() {
             </p>
           </div>
           <div className="col-lg-4 text-lg-end">
-            <Link to="/LienHe" className="btn btn-outline-dark">
+            {/* chữ thường */}
+            <Link to="/lien-he" className="btn btn-outline-dark">
               Liên hệ tích hợp AI
             </Link>
           </div>

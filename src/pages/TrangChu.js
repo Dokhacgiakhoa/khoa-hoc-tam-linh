@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function TrangChu() {
   return (
     <>
@@ -17,14 +19,17 @@ function TrangChu() {
                 Phù hợp với flow hệ thống web của cậu.
               </p>
               <div className="d-flex gap-2 flex-wrap">
-                <a href="/dich-vu" className="btn btn-warning btn-lg">
+                {/* đi tới trang dịch vụ */}
+                <Link to="/dich-vu" className="btn btn-warning btn-lg">
                   Bắt đầu xem ngay
-                </a>
-                <a href="/kien-thuc" className="btn btn-outline-light btn-lg">
+                </Link>
+                {/* đi tới trang kiến thức */}
+                <Link to="/kien-thuc" className="btn btn-outline-light btn-lg">
                   Xem kiến thức miễn phí
-                </a>
+                </Link>
               </div>
             </div>
+
             <div className="col-lg-6 mt-4 mt-lg-0">
               <div className="card border-0 shadow-lg">
                 <div className="card-body p-4">
@@ -33,24 +38,25 @@ function TrangChu() {
                     Chọn một công cụ để hệ thống gợi ý cho bạn.
                   </p>
                   <div className="d-grid gap-2">
-                    <a
-                      href="/dich-vu?tool=tarot"
+                    {/* ví dụ: /dich-vu?tool=tarot */}
+                    <Link
+                      to="/dich-vu?tool=tarot"
                       className="btn btn-outline-primary"
                     >
                       🔮 Xem Tarot nhanh (3 lá)
-                    </a>
-                    <a
-                      href="/dich-vu?tool=chom-sao"
+                    </Link>
+                    <Link
+                      to="/dich-vu?tool=chom-sao"
                       className="btn btn-outline-success"
                     >
                       🌌 Bản đồ sao cá nhân
-                    </a>
-                    <a
-                      href="/dich-vu?tool=thansohoc"
+                    </Link>
+                    <Link
+                      to="/dich-vu?tool=thansohoc"
                       className="btn btn-outline-dark"
                     >
                       🧮 Thần số học theo ngày sinh
-                    </a>
+                    </Link>
                   </div>
                   <p className="text-muted small mt-3 mb-0">
                     * Một số tính năng cần đăng nhập và có Linh Tệ.
@@ -75,12 +81,13 @@ function TrangChu() {
                     Giải đáp nhanh về tình cảm, công việc, tài chính, định
                     hướng.
                   </p>
-                  <a href="/dich-vu#tarot" className="btn btn-sm btn-primary">
+                  <Link to="/dich-vu#tarot" className="btn btn-sm btn-primary">
                     Xem chi tiết
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
+
             <div className="col-md-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
@@ -88,15 +95,16 @@ function TrangChu() {
                   <p className="card-text">
                     Phân tích tính cách, vòng đời và các mốc quan trọng.
                   </p>
-                  <a
-                    href="/dich-vu#chiem-tinh"
+                  <Link
+                    to="/dich-vu#chiem-tinh"
                     className="btn btn-sm btn-primary"
                   >
                     Xem chi tiết
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
+
             <div className="col-md-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
@@ -104,12 +112,12 @@ function TrangChu() {
                   <p className="card-text">
                     Đọc đường đời, sứ mệnh và năng lượng chủ đạo từ ngày sinh.
                   </p>
-                  <a
-                    href="/dich-vu#than-so-hoc"
+                  <Link
+                    to="/dich-vu#than-so-hoc"
                     className="btn btn-sm btn-primary"
                   >
                     Xem chi tiết
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -155,9 +163,9 @@ function TrangChu() {
             Hệ thống đã chuẩn bị sẵn cấu trúc front-end. Chỉ cần nối API là
             chạy.
           </p>
-          <a href="/lien-he" className="btn btn-light btn-lg">
+          <Link to="/lien-he" className="btn btn-light btn-lg">
             Liên hệ triển khai
-          </a>
+          </Link>
         </div>
       </section>
     </>

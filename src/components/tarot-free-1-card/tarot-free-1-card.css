@@ -1,0 +1,166 @@
+/* Khối bao toàn bộ component */
+.tarot-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bộ bài (deck) */
+.tarot-deck {
+  width: 180px;
+  height: 260px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease;
+}
+
+/* Khi đang xáo: nhấc bộ bài lên nhẹ */
+.tarot-deck--shuffling {
+  transform: translateY(-4px) rotateZ(-2deg);
+}
+
+/* 5 lá chồng nhau để giả bộ bài 3D */
+.tarot-deck__card {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(circle at 30% 30%, #272b33 0%, #0f1114 80%);
+  /* Nếu cậu có ảnh mặt sau thì bật dòng dưới và chỉnh path lại đúng GH pages */
+  /* background-image: url("../images/Tarot/back.png"); */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.25s ease;
+  transform-origin: center center;
+}
+
+/* các lá dưới lệch 1 chút cho đẹp */
+.tarot-deck__card--1 {
+  transform: rotate(-2deg);
+  z-index: 5;
+}
+.tarot-deck__card--2 {
+  transform: rotate(-5deg) translateY(4px);
+  z-index: 4;
+}
+.tarot-deck__card--3 {
+  transform: rotate(-8deg) translateY(8px);
+  z-index: 3;
+}
+.tarot-deck__card--4 {
+  transform: rotate(-11deg) translateY(12px);
+  z-index: 2;
+}
+.tarot-deck__card--5 {
+  transform: rotate(-14deg) translateY(16px);
+  z-index: 1;
+}
+
+/* Hiệu ứng xáo: lắc lên xuống nhẹ */
+.tarot-deck--shuffling .tarot-deck__card {
+  animation: tarotShuffle 0.5s ease-in-out infinite;
+}
+
+@keyframes tarotShuffle {
+  0% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+}
+
+/* Khối hiển thị lá kết quả */
+.tarot-result-card {
+  width: min(240px, 50vh);
+  aspect-ratio: 2 / 3;
+  position: relative;
+  perspective: 1000px;
+  margin-top: 0.75rem;
+}
+
+/* Ảnh lá bài */
+.tarot-card-img,
+.tarot-card-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: #111;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  transform-origin: center center;
+  transition: transform 0.6s ease;
+  backface-visibility: hidden;
+}
+
+/* Khi vừa rút: lật 3D */
+.tarot-result-card.is-animating .tarot-card-img {
+  transform: rotateY(180deg);
+}
+
+/* Khi lá bị ngược */
+.tarot-result-card.is-reversed .tarot-card-img {
+  transform: rotate(180deg);
+}
+
+/* Placeholder khi chưa rút */
+.tarot-card-placeholder {
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.02) 0 10px,
+      rgba(255, 255, 255, 0) 10px 20px
+    ),
+    #1a1d21;
+}
+
+/* Card nội dung bên phải (trong col-lg-6) */
+#trai-bai-tarot-1-la .card {
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+/* Badge keyword */
+#trai-bai-tarot-1-la .badge {
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .tarot-wrapper .row {
+    gap: 1.5rem;
+  }
+  .tarot-deck {
+    margin-bottom: 0.25rem;
+  }
+  .tarot-result-card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tarot-deck {
+    width: 150px;
+    height: 220px;
+  }
+  .tarot-result-card {
+    width: 180px;
+  }
+}
+
+/* chống kéo ảnh gây lệch trên mobile */
+.tarot-deck img,
+.tarot-result-card img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
