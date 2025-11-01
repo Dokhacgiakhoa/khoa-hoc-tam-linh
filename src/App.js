@@ -6,6 +6,7 @@ import CuaHang from "./pages/CuaHang";
 import KienThuc from "./pages/KienThuc";
 import LienHe from "./pages/LienHe";
 import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
