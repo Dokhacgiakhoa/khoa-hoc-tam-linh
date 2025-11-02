@@ -1,3 +1,3 @@
-## 2025-11-02 21:13:46 — Auto changelog
+## 2025-11-02 21:40:17 — Auto changelog
 
-* 6a0f4fb Setup full router & deploy config (Đỗ Khắc Gia Khoa)
+* f2b5375 fix: remove missing hero-bg.webp on GioiThieu page (Đỗ Khắc Gia Khoa)
