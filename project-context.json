@@ -1,11 +1,11 @@
 {
-  "projectName": "asm-rmwd",
-  "description": "React project for Khoa hoc Tam linh, deploy on GitHub Pages with basename '/asm-rmwd'.",
+  "projectName": "Khoa hoc Tam linh",
+  "description": "React project for Khoa hoc Tam linh, deploy on GitHub Pages with basename '/khoa-hoc-tam-linh'.",
   "framework": "React",
   "router": {
     "file": "src/router/app-router.js",
     "type": "BrowserRouter",
-    "basename": "/asm-rmwd"
+    "basename": "/khoa-hoc-tam-linh"
   },
   "components": [
     "src/components/footer/footer.js",
