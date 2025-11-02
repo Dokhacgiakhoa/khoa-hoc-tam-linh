@@ -34,11 +34,12 @@
   position: relative;
   padding: 5rem 0 4rem;
   background: linear-gradient(
-      135deg,
-      rgba(15, 10, 30, 0.95),
-      rgba(26, 9, 47, 0.95)
-    ),
-    url("/hero-bg.webp") center/cover no-repeat;
+    135deg,
+    rgba(15, 10, 30, 0.95),
+    rgba(26, 9, 47, 0.95)
+  );
+  /* nếu đã có ảnh ở /public thì bật lại dòng dưới */
+  /* background-image: url("/hero-bg.webp"); */
   overflow: hidden;
 }
 
