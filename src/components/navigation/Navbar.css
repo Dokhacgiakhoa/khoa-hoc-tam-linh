@@ -1,0 +1,137 @@
+/* navbar nền đen tím */
+.khtl-navbar {
+  background: #0f0a1e;
+  min-height: 58px;
+  z-index: 999;
+}
+
+.khtl-navbar .navbar-brand {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.khtl-navbar .navbar-brand:hover {
+  color: #ffd700;
+}
+
+.khtl-navbar .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.khtl-navbar .nav-link:hover,
+.khtl-navbar .nav-link:focus,
+.khtl-navbar .nav-link.active {
+  color: #ffd700;
+}
+
+/* mega menu */
+.khtl-mega {
+  position: static;
+}
+
+.khtl-mega .khtl-mega-menu {
+  width: 100%;
+  max-width: 1180px;
+  background: #140e28;
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  padding: 1.3rem 1.5rem;
+  border-radius: 14px;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+}
+
+.khtl-mega:hover .khtl-mega-menu,
+.khtl-mega:focus-within .khtl-mega-menu {
+  display: block;
+  position: absolute;
+}
+
+.khtl-mega-title {
+  color: #ffd700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+
+.khtl-mega-menu .dropdown-item {
+  background: transparent;
+  color: #ffffff;
+  padding: 0.25rem 0;
+  font-size: 0.82rem;
+}
+
+.khtl-mega-menu .dropdown-item:hover {
+  color: #ffd700;
+}
+
+.khtl-mega-text {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  margin-bottom: 0.7rem;
+}
+
+.khtl-btn-gold {
+  background: #ffd700;
+  color: #0f0a1e;
+  border: none;
+  font-weight: 600;
+  border-radius: 999px;
+  padding-inline: 1.1rem;
+}
+
+.khtl-btn-gold:hover {
+  filter: brightness(0.97);
+}
+
+/* học viện rộng hơn */
+.khtl-mega-wide {
+  max-width: 1240px;
+}
+
+/* tài khoản badge tổng */
+.khtl-account .khtl-badge-total {
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  position: absolute;
+  top: 2px;
+  right: -6px;
+  border: 1px solid #0f0a1e;
+}
+
+/* badge nhỏ trong menu */
+.khtl-badge-inline {
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 0 5px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+/* mobile */
+@media (max-width: 991.98px) {
+  .khtl-mega .khtl-mega-menu {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    box-shadow: none;
+    margin-top: 0.5rem;
+  }
+  .navbar-nav {
+    gap: 0 !important;
+  }
+  .khtl-navbar {
+    padding-bottom: 0.7rem;
+  }
+}
