@@ -3,47 +3,71 @@
   "description": "React project for Khoa hoc Tam linh, deploy on GitHub Pages with basename '/asm-rmwd'.",
   "framework": "React",
   "router": {
+    "file": "src/router/app-router.js",
     "type": "BrowserRouter",
     "basename": "/asm-rmwd"
   },
   "components": [
-    "Navbar",
-    "Footer",
-    "TarotMienPhiMotLa",
-    "TrangChu",
-    "DichVu",
-    "CuaHang",
-    "KienThuc",
-    "TaiKhoan"
+    "src/components/footer/footer.js",
+    "src/components/header",
+    "src/components/navigation/Navbar.js",
+    "src/components/tarot-free-1-card/tarot-free-1-card.js"
+  ],
+  "pages": [
+    "src/pages/TrangChu.js",
+    "src/pages/DichVu.js",
+    "src/pages/CuaHang.js",
+    "src/pages/KienThuc.js",
+    "src/pages/LienHe.js"
   ],
   "tarot": {
     "dataFiles": [
+      "src/data/tarot-main.js",
       "src/data/tarot-major.js",
-      "src/data/tarot-wands.js",
-      "src/data/tarot-swords.js",
       "src/data/tarot-cups.js",
-      "src/data/tarot-pentacles.js",
-      "src/data/tarot-main.js"
+      "src/data/tarot-swords.js",
+      "src/data/tarot-wands.js",
+      "src/data/tarot-pentacles.js"
     ],
-    "mainComponent": "src/components/TarotMienPhiMotLa.jsx",
+    "mainComponent": "src/components/tarot-free-1-card/tarot-free-1-card.js",
     "functions": ["batDauXao", "dungXao", "rutBai", "layNoiDungYnghia"],
-    "assetsPath": "public/images/Tarot/<Group>/<id>.png",
-    "notes": "Card co 25% kha nang nguoc, dung class .is-reversed de xoay 180 do."
+    "assetsPath": "public/images/tarot-cards/<group>/<id>.png",
+    "notes": "Bộ ảnh chia 5 folder: major, cups, swords, wands, pentacles. Mặt sau: public/images/tarot-cards/back.png. Có 25% khả năng đảo lá, dùng class .is-reversed để xoay 180deg."
   },
   "styles": [
-    "src/components/Navbar.css",
-    "src/components/Footer.css",
-    "src/components/TarotMienPhiMotLa.css",
-    "src/App.css"
+    "src/components/navigation/Navbar.css",
+    "src/components/footer/footer.css",
+    "src/components/tarot-free-1-card/tarot-free-1-card.css",
+    "src/App.css",
+    "src/index.css"
+  ],
+  "utils": [
+    "src/utils/format-text.js",
+    "src/utils/random-card.js",
+    "src/utils/shuffle-effect.js"
+  ],
+  "publicAssets": [
+    "public/images/tarot-cards/major/*.png",
+    "public/images/tarot-cards/cups/*.png",
+    "public/images/tarot-cards/swords/*.png",
+    "public/images/tarot-cards/wands/*.png",
+    "public/images/tarot-cards/pentacles/*.png",
+    "public/images/tarot-cards/back.png"
   ],
   "uiRules": [
-    "Navbar nen den tim, hover vang gold",
-    "Dropdown la mega menu, sat navbar",
-    "Lá bài ket qua cao 50vh, ty le 2/3",
-    "Bo bai 5 la xep lech, co animation khi xao"
+    "Navbar nền đen tím, hover vàng gold",
+    "Dropdown/mega menu bám sát navbar",
+    "Lá bài kết quả cao khoảng 50vh, tỷ lệ 2/3",
+    "Bộ bài 5 lá xếp lệch, có animation khi xáo"
   ],
   "deployment": {
     "target": "GitHub Pages",
-    "notes": "Phai dung duong dan tuong doi va process.env.PUBLIC_URL de tranh 404."
+    "notes": "Phải dùng đường dẫn tương đối và process.env.PUBLIC_URL để tránh 404 trên GitHub Pages."
+  },
+  "meta": {
+    "author": "Đỗ Khắc Gia Khoa",
+    "repo": "https://github.com/Dokhacgiakhoa/asm-rmwd",
+    "branch": "master",
+    "lastUpdated": "2025-11-03"
   }
 }
