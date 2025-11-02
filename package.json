@@ -1,8 +1,9 @@
 {
-  "name": "asm-rmwd",
+  "homepage": "https://dokhacgiakhoa.github.io/khoa-hoc-tam-linh",
+  "name": "khoa-hoc-tam-linh",
+  "author": "Do-khac-gia-khoa",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

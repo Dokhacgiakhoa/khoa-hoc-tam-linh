@@ -1,0 +1,473 @@
+/* src/pages/GioiThieu.css */
+
+:root {
+  --gt-bg: #0f0a1e;
+  --gt-bg-soft: rgba(15, 10, 30, 0.35);
+  --gt-surface: rgba(255, 255, 255, 0.02);
+  --gt-text: #ffffff;
+  --gt-muted: rgba(255, 255, 255, 0.6);
+  --gt-gold: #ffd700;
+  --gt-border: rgba(255, 255, 255, 0.08);
+  --gt-radius-lg: 1.5rem;
+  --gt-radius-md: 1rem;
+}
+
+.gt-page {
+  background: radial-gradient(
+      circle at top,
+      rgba(129, 47, 255, 0.35),
+      transparent 35%
+    ),
+    var(--gt-bg);
+  color: var(--gt-text);
+  min-height: 100vh;
+  padding-top: 4.5rem; /* để không đè navbar fixed-top */
+}
+
+.container-gt {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gt-hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background: linear-gradient(
+      135deg,
+      rgba(15, 10, 30, 0.95),
+      rgba(26, 9, 47, 0.95)
+    ),
+    url("/hero-bg.webp") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.gt-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 215, 0, 0.07),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.gt-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.gt-badge {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: var(--gt-text);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.gt-title {
+  font-size: clamp(2.6rem, 3.5vw, 3.3rem);
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+}
+
+.gt-title span {
+  display: inline;
+  color: var(--gt-muted);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.35vw, 1.5rem);
+}
+
+.gt-subtitle {
+  color: var(--gt-muted);
+  max-width: 48rem;
+  margin-bottom: 1.5rem;
+}
+
+.gt-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-gt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--gt-text);
+}
+
+.btn-gt.primary {
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #170d29;
+  border: none;
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.28);
+}
+
+.btn-gt.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 45px rgba(255, 215, 0, 0.35);
+}
+
+.btn-gt.ghost {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.btn-gt.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-gt.small {
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+}
+
+.btn-gt.full {
+  width: 100%;
+  justify-content: center;
+}
+
+.gt-section {
+  padding: 4rem 0;
+}
+
+.gt-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-700 {
+  max-width: 700px;
+}
+
+.gt-text {
+  color: var(--gt-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.gt-grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.gap-40 {
+  gap: 2.5rem;
+}
+
+.gt-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.gt-mini-card {
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.04),
+    rgba(15, 10, 30, 0.4)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border-radius: 1.3rem;
+  padding: 1rem 1.25rem 1.1rem;
+}
+
+.gt-mini-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  color: var(--gt-muted);
+}
+
+.gt-ecosystem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.gt-eco-item {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.1rem 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gt-eco-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.gt-eco-item p {
+  font-size: 0.9rem;
+  color: var(--gt-muted);
+  flex: 1;
+}
+
+.gt-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  width: fit-content;
+}
+
+.gt-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gt-role-box {
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 1.3rem;
+  padding: 1.2rem 1.2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.gt-role-highlight {
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.08),
+    rgba(9, 3, 19, 0.4)
+  );
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.12);
+}
+
+.gt-role-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gt-muted);
+}
+
+.gt-role-box h3 {
+  font-size: 1.05rem;
+}
+
+.gt-role-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0.6rem;
+}
+
+.gt-role-list li {
+  font-size: 0.85rem;
+  color: var(--gt-muted);
+  display: flex;
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+.gt-role-list li::before {
+  content: "•";
+  color: var(--gt-gold);
+}
+
+.gt-team-cards {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.gt-team-card {
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 1.15rem;
+  padding: 1.2rem 1.2rem 1.1rem;
+}
+
+.gt-team-role {
+  color: var(--gt-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.gt-team-text {
+  color: var(--gt-muted);
+  font-size: 0.85rem;
+}
+
+.gt-bullet {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.gt-bullet li {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  width: fit-content;
+}
+
+.gt-form-box {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 1.3rem;
+  padding: 1.2rem 1.25rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.gt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.gt-form input,
+.gt-form select,
+.gt-form textarea {
+  background: rgba(15, 10, 30, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 0.7rem;
+  padding: 0.5rem 0.65rem;
+  color: var(--gt-text);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.gt-form input:focus,
+.gt-form select:focus,
+.gt-form textarea:focus {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.gt-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.gt-policy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gt-policy-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 1.15rem;
+  padding: 1rem 1rem 1.1rem;
+}
+
+.gt-contact {
+  display: grid;
+  grid-template-columns: 0.65fr 0.35fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.gt-map-box {
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  min-height: 190px;
+  overflow: hidden;
+}
+
+.gt-map-placeholder {
+  height: 190px;
+  display: grid;
+  place-items: center;
+  color: var(--gt-muted);
+  font-size: 0.85rem;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.04),
+    rgba(15, 10, 30, 0.6)
+  );
+}
+
+.gt-footer {
+  text-align: center;
+  padding: 1.5rem 1rem 3rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  margin-top: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .gt-grid-2,
+  .gt-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-hero {
+    text-align: left;
+  }
+
+  .gt-actions {
+    flex-wrap: wrap;
+  }
+
+  .gt-page {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .gt-title {
+    font-size: 2.3rem;
+  }
+
+  .gt-section {
+    padding: 3rem 0;
+  }
+
+  .gt-ecosystem {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-roles {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-contact {
+    gap: 1rem;
+  }
+}

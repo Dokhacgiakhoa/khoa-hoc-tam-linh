@@ -1,16 +1,20 @@
 import React from "react";
-import "./App.css";
-import Navbar from "./components/navigation/Navbar";
-import Footer from "./components/footer/footer";
-import AppRouter from "./router/app-router";
+import AppRouter from "./AppRouter";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="app-shell">
+    <div className="app-root bg-dark-layout">
+      {/* Navbar cố định trên cùng */}
       <Navbar />
-      <main className="app-main">
+
+      {/* Phần nội dung có top padding để tránh đè lên navbar fixed-top */}
+      <main style={{ minHeight: "100vh", paddingTop: "72px" }}>
         <AppRouter />
       </main>
+
+      {/* Footer cố định cuối trang */}
       <Footer />
     </div>
   );
