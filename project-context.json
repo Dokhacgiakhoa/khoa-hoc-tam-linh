@@ -1,0 +1,49 @@
+{
+  "projectName": "asm-rmwd",
+  "description": "React project for Khoa hoc Tam linh, deploy on GitHub Pages with basename '/asm-rmwd'.",
+  "framework": "React",
+  "router": {
+    "type": "BrowserRouter",
+    "basename": "/asm-rmwd"
+  },
+  "components": [
+    "Navbar",
+    "Footer",
+    "TarotMienPhiMotLa",
+    "TrangChu",
+    "DichVu",
+    "CuaHang",
+    "KienThuc",
+    "TaiKhoan"
+  ],
+  "tarot": {
+    "dataFiles": [
+      "src/data/tarot-major.js",
+      "src/data/tarot-wands.js",
+      "src/data/tarot-swords.js",
+      "src/data/tarot-cups.js",
+      "src/data/tarot-pentacles.js",
+      "src/data/tarot-main.js"
+    ],
+    "mainComponent": "src/components/TarotMienPhiMotLa.jsx",
+    "functions": ["batDauXao", "dungXao", "rutBai", "layNoiDungYnghia"],
+    "assetsPath": "public/images/Tarot/<Group>/<id>.png",
+    "notes": "Card co 25% kha nang nguoc, dung class .is-reversed de xoay 180 do."
+  },
+  "styles": [
+    "src/components/Navbar.css",
+    "src/components/Footer.css",
+    "src/components/TarotMienPhiMotLa.css",
+    "src/App.css"
+  ],
+  "uiRules": [
+    "Navbar nen den tim, hover vang gold",
+    "Dropdown la mega menu, sat navbar",
+    "Lá bài ket qua cao 50vh, ty le 2/3",
+    "Bo bai 5 la xep lech, co animation khi xao"
+  ],
+  "deployment": {
+    "target": "GitHub Pages",
+    "notes": "Phai dung duong dan tuong doi va process.env.PUBLIC_URL de tranh 404."
+  }
+}
