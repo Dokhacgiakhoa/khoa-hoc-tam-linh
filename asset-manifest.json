@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/khoa-hoc-tam-linh/static/css/main.39cc8cfe.css",
-    "main.js": "/khoa-hoc-tam-linh/static/js/main.0dccb60d.js",
+    "main.js": "/khoa-hoc-tam-linh/static/js/main.e44e630b.js",
     "static/css/32.ac70bcaf.chunk.css": "/khoa-hoc-tam-linh/static/css/32.ac70bcaf.chunk.css",
     "static/js/32.18dedf74.chunk.js": "/khoa-hoc-tam-linh/static/js/32.18dedf74.chunk.js",
     "static/css/603.e3c51ad6.chunk.css": "/khoa-hoc-tam-linh/static/css/603.e3c51ad6.chunk.css",
@@ -18,7 +18,7 @@
     "static/js/697.2e1824fd.chunk.js": "/khoa-hoc-tam-linh/static/js/697.2e1824fd.chunk.js",
     "index.html": "/khoa-hoc-tam-linh/index.html",
     "main.39cc8cfe.css.map": "/khoa-hoc-tam-linh/static/css/main.39cc8cfe.css.map",
-    "main.0dccb60d.js.map": "/khoa-hoc-tam-linh/static/js/main.0dccb60d.js.map",
+    "main.e44e630b.js.map": "/khoa-hoc-tam-linh/static/js/main.e44e630b.js.map",
     "32.ac70bcaf.chunk.css.map": "/khoa-hoc-tam-linh/static/css/32.ac70bcaf.chunk.css.map",
     "32.18dedf74.chunk.js.map": "/khoa-hoc-tam-linh/static/js/32.18dedf74.chunk.js.map",
     "603.e3c51ad6.chunk.css.map": "/khoa-hoc-tam-linh/static/css/603.e3c51ad6.chunk.css.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.39cc8cfe.css",
-    "static/js/main.0dccb60d.js"
+    "static/js/main.e44e630b.js"
   ]
 }
