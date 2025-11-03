@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/634.53831a43.chunk.css","mappings":"AAAA,SAEE,kBAAmB,CACnB,UAAW,CAFX,eAGF","sources":["pages/dich-vu/dich-vu.css"],"sourcesContent":[".dich-vu {\r\n  min-height: 60vh;\r\n  background: #0f0a1e;\r\n  color: #fff;\r\n}\r\n"],"names":[],"sourceRoot":""}

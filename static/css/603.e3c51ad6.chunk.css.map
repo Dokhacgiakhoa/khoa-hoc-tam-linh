@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/603.e3c51ad6.chunk.css","mappings":"AAAA,YAEE,kBAAmB,CACnB,UAAW,CAFX,eAGF","sources":["pages/gioi-thieu/gioi-thieu.css"],"sourcesContent":[".gioi-thieu {\r\n  min-height: 60vh;\r\n  background: #0f0a1e;\r\n  color: #fff;\r\n}\r\n"],"names":[],"sourceRoot":""}
