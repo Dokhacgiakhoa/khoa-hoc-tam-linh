@@ -1,11 +1,11 @@
 import React from "react";
-import "./trang-chu.css";
+import "./gioi-thieu.css";
 
-export default function TrangChu() {
+export default function GioiThieu() {
   return (
-    <section className="trang-chu">
+    <section className="gioi-thieu">
       <div className="container py-5">
-        <h1>Trang chủ</h1>
+        <h1>Giới thiệu</h1>
         <p>Trang rỗng để test route.</p>
       </div>
     </section>

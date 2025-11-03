@@ -1,0 +1,27 @@
+:root {
+  --kh-bg: #0f0a1e;
+  --kh-text: #fff;
+  --kh-gold: #ffd700;
+}
+
+.navbar-wrap {
+  background: var(--kh-bg) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+.navbar-wrap .brand-text {
+  color: var(--kh-text);
+}
+.navbar-wrap .nav-link {
+  color: var(--kh-text);
+  font-weight: 500;
+}
+.navbar-wrap .nav-link.active,
+.navbar-wrap .nav-link:hover {
+  color: var(--kh-gold);
+  font-weight: 600;
+}
+.navbar-wrap .notif-badge {
+  background: var(--kh-gold);
+  color: #000;
+  font-weight: 700;
+}
