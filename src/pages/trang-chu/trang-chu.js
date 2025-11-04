@@ -283,41 +283,82 @@ function Home() {
             </p>
           </div>
 
-          <div className="slider-wrap">
-            <div className="slider" role="list">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <article className="slide card-3d" role="listitem" key={i}>
-                  <img
-                    src={
-                      process.env.PUBLIC_URL +
-                      `/images/products/product-${i}.webp`
-                    }
-                    alt={`Sản phẩm ${i}`}
-                    className="card-img-top"
-                    loading="lazy"
-                  />
-                  <div className="card-body">
-                    <h3 className="card-title">Sản phẩm {i}</h3>
-                    <p className="card-text">
-                      Mô tả ngắn gọn về sản phẩm {i}.{" "}
-                      {i === 5 ? "Made for You ✴️" : ""}
-                    </p>
-                    <div className="d-flex gap-2">
-                      <Link to="/cua-hang" className="btn btn-sm btn-gold">
-                        Thêm vào giỏ
-                      </Link>
-                      <Link
-                        to={`/cua-hang/san-pham-${i}`}
-                        className="btn btn-sm btn-outline-gold"
-                      >
-                        Xem chi tiết
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          {/* Data demo lượt xem - có thể thay bằng API sau */}
+          {(() => {
+            const views = { 1: 1280, 2: 945, 3: 1532, 4: 802, 5: 2176 };
+
+            return (
+              <div className="slider-wrap">
+                <div className="slider" role="list">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <article className="slide card-3d" role="listitem" key={i}>
+                      <div className="card-media position-relative">
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            `/images/products/product-${i}.png`
+                          }
+                          alt={`Sản phẩm ${i}`}
+                          className="card-img-top img-square"
+                          loading="lazy"
+                          decoding="async"
+                        />
+
+                        {/* Badge lượt xem */}
+                        <span
+                          className="view-badge"
+                          aria-label={`Lượt xem: ${views[i]}`}
+                        >
+                          <svg
+                            className="view-icon"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7Zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"
+                              fill="currentColor"
+                            />
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="2.5"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <span className="view-num">
+                            {views[i].toLocaleString("vi-VN")}
+                          </span>
+                        </span>
+                      </div>
+
+                      <div className="card-body">
+                        <h3 className="card-title">Sản phẩm {i}</h3>
+                        <p className="card-text">
+                          Mô tả ngắn gọn về sản phẩm {i}.{" "}
+                          {i === 5 ? "Made for You ✴️" : ""}
+                        </p>
+                        <div className="d-flex gap-2">
+                          <Link to="/cua-hang" className="btn btn-sm btn-gold">
+                            Thêm vào giỏ
+                          </Link>
+                          <Link
+                            to={`/cua-hang/san-pham-${i}`}
+                            className="btn btn-sm btn-outline-gold"
+                          >
+                            Xem chi tiết
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
