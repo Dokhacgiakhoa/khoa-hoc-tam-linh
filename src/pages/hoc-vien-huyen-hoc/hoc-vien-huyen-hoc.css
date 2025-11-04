@@ -1,223 +1,231 @@
-/* ===== HERO ===== */
+/* =========================================================
+   🎓 HỌC VIỆN HUYỀN HỌC – PAGE CSS (SCOPED)
+   File: src/pages/hoc-vien-huyen-hoc/hoc-vien-huyen-hoc.css
+   ========================================================= */
+
+/* --------------------
+   HERO
+-------------------- */
 .academy-hero {
-  padding: clamp(3rem, 6vw, 5rem) 0;
-  background: radial-gradient(
-      900px 500px at 15% 15%,
-      rgba(255, 215, 0, 0.12),
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0) 70%
-    );
+  padding: clamp(2.4rem, 4.4vw, 4.8rem) 0 0;
 }
+
 .academy-title {
-  font-size: var(--fs-hero);
-  font-weight: var(--fw-title);
-  line-height: 1.15;
-}
-.academy-sub {
-  opacity: 0.92;
-  max-width: 780px;
-  margin-top: 0.5rem;
-}
-.academy-hero-img {
-  border: 1px solid var(--khctl-soft);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  padding: clamp(2.8rem, 5vw, 5rem) 0;
-}
-.section.alt {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0)
-  );
-}
-.section-head {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.section-title {
   font-size: var(--fs-h1);
-  font-weight: var(--fw-title);
-}
-.section-desc {
-  opacity: 0.9;
-  max-width: 760px;
-  margin: 0.5rem auto 0;
+  margin-bottom: 0.5rem;
 }
 
-/* ===== TRACK CARDS (Ngũ Huyền Thuật) ===== */
-.track-card {
-  /* kế thừa .card-3d từ global */
+.academy-sub {
+  opacity: 0.9;
+  max-width: 720px;
 }
-.track-card .track-media {
-  position: relative;
-  background: #080612;
-  height: 180px;
-  overflow: hidden;
-}
-.track-card .track-img {
+
+.academy-hero-img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+  box-shadow: var(--elev-1);
+}
+
+/* --------------------
+   NGŨ HUYỀN THUẬT – TRACKS
+-------------------- */
+.academy-tracks .track-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.academy-tracks .track-media {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--kh-soft);
+}
+
+.academy-tracks .track-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
 }
-.track-card .track-badge {
+
+.academy-tracks .track-card:hover .track-img {
+  transform: scale(1.03);
+}
+
+.academy-tracks .track-badge {
   position: absolute;
-  left: 0.6rem;
-  top: 0.6rem;
-  background: var(--khctl-gold);
-  color: #1b142f;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  font-weight: var(--fw-title);
-  font-size: 0.75rem;
-}
-.track-desc {
-  opacity: 0.95;
-  margin-top: 0.5rem;
-}
-.track-list {
-  margin: 0.5rem 0 1rem;
-  padding-left: 1.1rem;
-}
-.track-list li {
-  margin-bottom: 0.3rem;
-}
-
-.progress {
-  height: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  top: 12px;
+  left: 12px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
   border-radius: 999px;
-}
-.progress-bar-gold {
-  background: var(--khctl-gold);
-}
-.progress-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
 }
 
-/* ===== LEVELS TIMELINE ===== */
+.academy-tracks .track-desc {
+  margin-bottom: 0.75rem;
+  opacity: 0.95;
+}
+
+.academy-tracks .track-list {
+  margin: 0 0 0.9rem 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+  list-style: disc;
+  opacity: 0.95;
+}
+
+/* Progress vàng đồng nhất với brand */
+.progress-bar-gold {
+  background: var(--kh-gold);
+}
+
+/* --------------------
+   LỘ TRÌNH CẤP BẬC
+-------------------- */
+.academy-levels.alt {
+  background: linear-gradient(
+    180deg,
+    var(--kh-bg) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  padding-top: clamp(2.2rem, 4vw, 3rem);
+}
+
 .levels-wrap {
   display: grid;
-  gap: 0.9rem;
-  max-width: 880px;
-  margin: 0 auto;
+  gap: 16px;
 }
+
+/* Mỗi bước trong lộ trình */
 .level-step {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 0.9rem;
-  align-items: start;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--khctl-soft);
-  border-radius: 1rem;
-  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--kh-soft-2);
+  border: 1px solid var(--kh-soft);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--elev-1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
+
+.level-step:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Badge số tròn vàng */
 .level-index {
-  display: grid;
-  place-items: center;
+  flex: 0 0 auto;
   width: 56px;
   height: 56px;
   border-radius: 999px;
-  background: var(--khctl-gold);
-  color: #1b142f;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
-}
-.level-name {
-  margin: 0;
-  font-weight: var(--fw-title);
-}
-.level-desc {
-  margin: 0.2rem 0 0;
-  opacity: 0.95;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
 }
 
-/* ===== RECOMMENDED COURSES ===== */
-.course-card {
-  /* kế thừa .card-3d */
+/* Thân nội dung */
+.level-body {
+  display: grid;
+  gap: 4px;
 }
-.course-card .course-media {
+
+.level-name {
+  font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.level-desc {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* --------------------
+   COURSES (GỢI Ý)
+-------------------- */
+.academy-courses .course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.academy-courses .course-media {
   position: relative;
-  background: #080612;
-  height: 160px;
   overflow: hidden;
+  border-bottom: 1px solid var(--kh-soft);
 }
-.course-card .course-img {
+
+.academy-courses .course-img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
 }
-.course-card .course-tag {
+
+.academy-courses .course-card:hover .course-img {
+  transform: scale(1.03);
+}
+
+.academy-courses .course-tag {
   position: absolute;
-  left: 0.6rem;
-  top: 0.6rem;
-  background: var(--khctl-gold);
-  color: #1b142f;
-  padding: 0.18rem 0.5rem;
-  border-radius: 0.5rem;
-  font-weight: var(--fw-title);
-  font-size: 0.72rem;
-}
-.course-name {
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-title);
-  margin-top: 0.5rem;
-}
-.course-desc {
-  opacity: 0.95;
+  top: 12px;
+  left: 12px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-/* ===== FAQ ===== */
+/* --------------------
+   FAQ
+-------------------- */
 .academy-faq .faq-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--khctl-soft);
-  border-radius: 1rem;
-  padding: 1rem;
-}
-.academy-faq .faq-item h4 {
-  margin: 0 0 0.4rem;
-  font-weight: var(--fw-title);
+  background: var(--kh-soft-2);
+  border: 1px solid var(--kh-soft);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--elev-1);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1199.98px) {
-  .track-card .track-media {
-    height: 170px;
+/* --------------------
+   RESPONSIVE
+-------------------- */
+@media (max-width: 992px) {
+  .level-index {
+    width: 52px;
+    height: 52px;
   }
 }
-@media (max-width: 991.98px) {
-  .track-card .track-media {
-    height: 160px;
-  }
-  .course-card .course-media {
-    height: 140px;
-  }
-}
-@media (max-width: 575.98px) {
+
+@media (max-width: 768px) {
   .academy-hero {
-    padding: 2.2rem 0;
-  }
-  .levels-wrap {
-    gap: 0.75rem;
+    padding-top: 2rem;
   }
   .level-step {
-    grid-template-columns: 48px 1fr;
+    padding: 14px 16px;
   }
   .level-index {
     width: 48px;
     height: 48px;
+  }
+  .level-name {
+    font-size: 1.05rem;
   }
 }

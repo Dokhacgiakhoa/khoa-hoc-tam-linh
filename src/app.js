@@ -14,6 +14,9 @@ const HocVienHuyenHoc = lazy(() =>
 );
 const LienHe = lazy(() => import("./pages/lien-he/lien-he"));
 const TaiKhoan = lazy(() => import("./pages/tai-khoan/tai-khoan"));
+const TarotMienPhi = lazy(() =>
+  import("./pages/dich-vu-mien-phi/tarot-mien-phi")
+);
 
 export default function App() {
   return (
@@ -33,6 +36,7 @@ export default function App() {
             <Route path="/hoc-vien-huyen-hoc" element={<HocVienHuyenHoc />} />
             <Route path="/lien-he" element={<LienHe />} />
             <Route path="/tai-khoan" element={<TaiKhoan />} />
+            <Route path="/dich-vu/tarot-mien-phi" element={<TarotMienPhi />} />
           </Routes>
         </Suspense>
       </main>

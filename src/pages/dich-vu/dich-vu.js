@@ -107,7 +107,7 @@ function DichVu() {
               </ul>
               <div className="d-flex gap-2 flex-wrap">
                 {/* Nếu sau này có route riêng cho tarot free thì đổi Link tới route đó */}
-                <a href="#tarot" className="btn btn-gold">
+                <a href="/dich-vu/tarot-mien-phi" className="btn btn-gold">
                   Bốc 1 lá miễn phí
                 </a>
                 <Link to="/tai-khoan" className="btn btn-outline-gold">

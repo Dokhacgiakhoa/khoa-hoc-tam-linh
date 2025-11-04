@@ -15,6 +15,18 @@
   font-family: "Be Vietnam Pro", "Inter", "Open Sans", sans-serif;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 10, 30, 0.8),
+    rgba(15, 10, 30, 0.9)
+  );
+  z-index: -1;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

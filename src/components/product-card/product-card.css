@@ -1,98 +1,207 @@
-/* Chỉ bổ sung nhẹ, tôn trọng chuẩn index.css. Scope theo .product-card */
+/* =========================================================
+   💎 PRODUCT CARD – DỰ ÁN KHOA HỌC TÂM LINH
+   ========================================================= */
 
-/* ----- KHUNG CHUNG ----- */
+/* CARD CƠ BẢN */
 .product-card {
-  /* thừa hưởng card-3d từ index.css */
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--kh-soft);
-}
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--elev-2);
-  border-color: rgba(255, 215, 0, 0.25);
-}
-.product-card:focus-within {
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25), var(--elev-2);
-  border-color: rgba(255, 215, 0, 0.45);
+  border-radius: var(--radius);
+  box-shadow: var(--elev-1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* ----- MEDIA ----- */
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elev-2);
+}
+
+/* ẢNH SẢN PHẨM */
 .product-card .product-media {
   position: relative;
-}
-
-.product-card .product-img {
-  /* .img-square từ index.css đã đặt aspect-ratio: 1/1 + object-fit: cover */
-  display: block;
-  border-radius: 0; /* ảnh top phẳng để liền mạch với card */
+  overflow: hidden;
   border-bottom: 1px solid var(--kh-soft);
 }
 
-/* Badge làm nổi bật nhưng gọn gàng */
+.product-card .product-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.03);
+}
+
+/* BADGE “Made for You” */
 .product-card .badge-made {
   position: absolute;
   top: 12px;
   left: 12px;
-  padding: 6px 10px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
   border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  background: rgba(255, 215, 0, 0.95);
-  color: #1b142f;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  user-select: none;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
 }
 
-/* ----- BODY ----- */
+/* PHẦN NỘI DUNG */
+.product-card .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 1.4rem 1.5rem;
+  text-align: left; /* ✅ luôn căn trái nội dung */
+}
+
+/* =========================================================
+   🎠 TÊN SẢN PHẨM – MARQUEE THẬT + CĂN TRÁI VỚI GIÁ
+   ========================================================= */
 .product-card .product-name {
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  --marquee-distance: 0px; /* set bằng JS */
+  --marquee-duration: 8s; /* set bằng JS */
+
+  font-size: clamp(1rem, 1.1vw, 1.05rem);
   font-weight: var(--fw-title);
   line-height: 1.35;
   margin: 0 0 0.35rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* tối đa 2 dòng */
-  -webkit-box-orient: vertical;
+
+  /* Viewport cố định */
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+
+  /* ❌ không padding ở khung để thẳng hàng với giá */
+  padding: 0;
+
+  /* Fade 2 mép để mượt khi chạy */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
+  );
+
+  text-align: left; /* ✅ tránh kế thừa căn giữa */
 }
 
-.product-card .product-meta {
-  gap: 10px;
-  margin-top: 2px;
+/* Băng chữ bên trong – chính nó di chuyển */
+.product-card .product-name .product-name-inner {
+  display: inline-block;
+  min-width: 100%; /* ✅ điểm bắt đầu luôn trùng mép trái viewport */
+  padding-inline: 12px; /* đệm bên trong để khi chạy không dính viền */
+  padding-right: 20px; /* đệm cuối hành trình */
+  transform: translateX(0); /* trạng thái đầu ở trái tuyệt đối */
+  will-change: transform;
 }
 
-/* Giá nổi bật, danh mục nhẹ tay */
-.product-card .product-price {
-  font-weight: 800;
-  font-size: clamp(1rem, 1.1vw, 1.05rem);
-  color: #fff;
-}
-.product-card .product-cat {
-  font-size: 0.9rem;
-  color: var(--kh-muted, #c7c7d1);
-  opacity: 0.9;
+/* Hover THẺ: nếu bị tràn thì chạy chữ (bỏ ellipsis để thấy phần khuất) */
+.product-card:hover .product-name.can-scroll {
+  text-overflow: clip;
 }
 
-/* Bố cục nút: luôn dính đáy card nhờ margin-top:auto (đã có ở index.css) */
-.product-card .card-actions .btn {
-  width: 100%;
+.product-card:hover .product-name.can-scroll .product-name-inner {
+  animation: marquee var(--marquee-duration) linear infinite;
 }
 
-/* Hover nhỏ cho nút viền vàng để cảm giác sống động hơn */
-.product-card .btn-outline-gold:hover {
-  transform: translateY(-1px);
-}
-
-/* ----- RESPONSIVE ----- */
-@media (max-width: 576px) {
-  .product-card .product-name {
-    -webkit-line-clamp: 2;
+/* Chạy đúng khoảng tràn (JS set --marquee-distance) */
+@keyframes marquee {
+  0%,
+  10% {
+    transform: translateX(0);
   }
-  .product-card .badge-made {
-    top: 10px;
-    left: 10px;
-    font-size: 0.74rem;
-    padding: 5px 9px;
+  90%,
+  100% {
+    transform: translateX(calc(var(--marquee-distance) * -1));
+  }
+}
+
+/* Giảm chuyển động nếu người dùng chọn reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .product-card:hover .product-name.can-scroll .product-name-inner {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   💰 GIÁ & DANH MỤC
+   ========================================================= */
+.product-card .product-meta {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 0.3rem;
+  text-align: left; /* ✅ đồng bộ căn trái */
+}
+
+.product-card .product-price {
+  font-weight: 700;
+  color: var(--kh-text);
+}
+
+.product-card .product-cat {
+  color: var(--kh-muted);
+  font-weight: 500;
+}
+
+/* =========================================================
+   🛒 BUTTONS
+   ========================================================= */
+.product-card .card-actions {
+  margin-top: auto;
+}
+
+.product-card .btn {
+  width: 100%;
+  font-weight: 600;
+}
+
+.product-card .btn-gold {
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  border: 2px solid var(--kh-gold);
+}
+
+.product-card .btn-outline-gold {
+  background: transparent;
+  color: var(--kh-gold);
+  border: 2px solid var(--kh-gold);
+}
+
+.product-card .btn-gold:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.product-card .btn-outline-gold:hover {
+  background: var(--kh-gold);
+  color: #0f0a1e;
+}
+
+/* =========================================================
+   📱 RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .product-card .card-body {
+    padding: 1rem;
+  }
+  .product-card .product-name {
+    font-size: 0.95rem;
   }
 }

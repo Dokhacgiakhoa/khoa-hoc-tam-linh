@@ -1,110 +1,226 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import TarotData from "../../data/tarot-main";
 import "./tarot-free-1-card.css";
 
 const CHANCE_REVERSED = 0.25;
 
-export default function TarotFree1CardPage() {
-  const [card, setCard] = useState(null);
-  const [isReversed, setIsReversed] = useState(false);
-  const [isShuffling, setIsShuffling] = useState(false);
+// Ghép PUBLIC_URL + path an toàn
+const resolveSrc = (path) => {
+  const base = process.env.PUBLIC_URL || "";
+  if (!path) return base + "/images/tarot-cards/placeholder.webp";
+  return base + (path.startsWith("/") ? path : `/${path}`);
+};
 
-  const handleStartShuffle = () => setIsShuffling(true);
-  const handleStopShuffle = () => setIsShuffling(false);
-
-  const handleDrawCard = () => {
-    if (!TarotData || TarotData.length === 0) return;
-    const index = Math.floor(Math.random() * TarotData.length);
-    const picked = TarotData[index];
-    const reversed = Math.random() < CHANCE_REVERSED;
-    setCard(picked);
-    setIsReversed(reversed);
+/* ---------- Chuẩn hoá dữ liệu nghĩa lá ---------- */
+const toText = (v) => {
+  if (v == null) return "";
+  if (typeof v === "string") return v;
+  if (Array.isArray(v)) return v.join(", ");
+  if (typeof v === "object") return v.MoTa ?? v.text ?? v.value ?? "";
+  return String(v);
+};
+const toKeywords = (v) => {
+  if (Array.isArray(v)) return v.map(toText).filter(Boolean);
+  if (typeof v === "string")
+    return v
+      .split(/[,;|]/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+  if (typeof v === "object" && v)
+    return Object.values(v).map(toText).filter(Boolean);
+  return [];
+};
+const toTopics = (v) => {
+  const o = v && typeof v === "object" ? v : {};
+  return {
+    TinhDuyen: toText(o.TinhDuyen),
+    CongViec: toText(o.CongViec),
+    TaiChinh: toText(o.TaiChinh),
+    SucKhoe: toText(o.SucKhoe),
   };
+};
 
-  const getMeaning = () => {
+/* ---------- Component chính ---------- */
+export default function TarotFreeOneOfThree() {
+  // Mỗi phần tử: { card, reversed }
+  const [dealt, setDealt] = useState([]);
+  const [pickedIndex, setPickedIndex] = useState(null);
+
+  const hasDealt = dealt.length === 3;
+  const hasPicked = pickedIndex !== null;
+
+  // Tráo & phát 3 lá ngẫu nhiên (không trùng)
+  const shuffleAndDeal = useCallback(() => {
+    if (!Array.isArray(TarotData) || TarotData.length < 3) return;
+
+    const chosenIdx = new Set();
+    while (chosenIdx.size < 3) {
+      chosenIdx.add(Math.floor(Math.random() * TarotData.length));
+    }
+    const cards = [...chosenIdx].map((idx) => ({
+      card: TarotData[idx],
+      reversed: Math.random() < CHANCE_REVERSED,
+    }));
+
+    setDealt(cards);
+    setPickedIndex(null);
+  }, []);
+
+  // Lật 1 trong 3 lá – chỉ khi chưa chọn
+  const handlePick = useCallback(
+    (i) => {
+      if (!hasDealt || hasPicked) return;
+      setPickedIndex(i);
+    },
+    [hasDealt, hasPicked]
+  );
+
+  // Nghĩa lá đã chọn (chuẩn hoá)
+  const meaning = useMemo(() => {
+    if (!hasPicked) return null;
+    const { card, reversed } = dealt[pickedIndex] ?? {};
     if (!card) return null;
-    if (isReversed && card.NghiaNguoc) return card.NghiaNguoc;
-    if (card.NghiaXuong) return card.NghiaXuong;
-    return {
-      MoTa: card.YNghiaChung || "",
-      TuKhoa: card.TuKhoaChung || [],
-      ChuDe: card.ChuDe || {},
-    };
-  };
 
-  const meaning = getMeaning();
-  const baseUrl = process.env.PUBLIC_URL || ""; // ảnh đặt ở public/
+    const raw =
+      reversed && card.NghiaNguoc
+        ? card.NghiaNguoc
+        : card.NghiaXuong || {
+            MoTa: card.YNghiaChung,
+            TuKhoa: card.TuKhoaChung,
+            ChuDe: card.ChuDe,
+          };
+
+    return {
+      card,
+      reversed,
+      MoTa: toText(raw?.MoTa),
+      TuKhoa: toKeywords(raw?.TuKhoa),
+      ChuDe: toTopics(raw?.ChuDe),
+    };
+  }, [dealt, pickedIndex, hasPicked]);
+
+  // Ảnh mặt lưng từ public/
+  const backUrl =
+    (process.env.PUBLIC_URL || "") + "/images/tarot-cards/back.png";
 
   return (
-    <main className="tarot-free-wrapper container">
+    <main className="tarot-one-of-three container">
       <header className="tarot-header">
-        <h1 className="tarot-title">Trải bài Tarot 1 lá (miễn phí)</h1>
+        <h1 className="tarot-title">Tráo và rút bài (chọn 1 trong 3 lá)</h1>
         <p className="tarot-subtitle">
-          Giữ chuột vào bộ bài để xáo, thả ra rồi bấm “Rút bài”.
+          Bấm nút để phát 3 lá úp. Chọn 1 lá để lật.
         </p>
+
+        <button
+          type="button"
+          className="kh-cta tarot-action"
+          onClick={shuffleAndDeal}
+        >
+          Tráo và rút bài
+        </button>
       </header>
 
-      {/* Bộ bài */}
-      <div
-        className={`tarot-deck ${isShuffling ? "tarot-deck--shuffling" : ""}`}
-        onMouseDown={handleStartShuffle}
-        onMouseUp={handleStopShuffle}
-        onMouseLeave={handleStopShuffle}
-        aria-label="Bộ bài tarot để xáo và rút"
-      >
-        <div className="tarot-deck-card deck-1" />
-        <div className="tarot-deck-card deck-2" />
-        <div className="tarot-deck-card deck-3" />
-        <div className="tarot-deck-card deck-4" />
-        <div className="tarot-deck-card deck-5" />
-      </div>
+      {/* Vùng 3 lá */}
+      {hasDealt && (
+        <section className="tarot-board" aria-label="Ba lá bài">
+          {dealt.map(({ card, reversed }, i) => {
+            const isPicked = pickedIndex === i;
+            const isLocked = hasPicked && !isPicked;
 
-      <button className="kh-cta tarot-btn" onClick={handleDrawCard}>
-        Rút bài
-      </button>
+            return (
+              <div
+                key={i}
+                className={`flip-container ${isPicked ? "is-picked" : ""} ${
+                  isLocked ? "is-locked" : ""
+                }`}
+                onClick={() => handlePick(i)}
+                role="button"
+                tabIndex={0}
+                aria-disabled={isLocked}
+                title={
+                  isLocked
+                    ? "Đã khoá – bấm Tráo và rút bài để rút lại"
+                    : "Bấm để lật lá này"
+                }
+              >
+                <div className={`card-inner ${isPicked ? "is-flipped" : ""}`}>
+                  {/* mặt lưng – set inline từ public/ */}
+                  <div
+                    className="card-face card-back"
+                    style={{
+                      backgroundImage: `url("${backUrl}")`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                  {/* mặt trước */}
+                  <div className="card-face card-front">
+                    <img
+                      src={resolveSrc(card?.Anh)}
+                      alt={`${card?.Ten || "Tarot Card"}${
+                        reversed ? " (ngược)" : ""
+                      }`}
+                      className={`tarot-card-img ${
+                        reversed ? "is-reversed" : ""
+                      }`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      )}
 
-      {card && (
-        <section className="tarot-result">
-          <div className="tarot-result-card">
-            <img
-              src={`${baseUrl}${card.Anh}`}
-              alt={card.Ten}
-              className={`tarot-card-img ${isReversed ? "is-reversed" : ""}`}
-              loading="lazy"
-            />
-          </div>
+      {/* Kết quả & diễn giải */}
+      {meaning && (
+        <section className="tarot-meaning">
+          <h2 className="tarot-card-name">
+            {meaning.card.Ten} {meaning.reversed ? <em>(ngược)</em> : null}
+          </h2>
+          {meaning.card.Nhom && (
+            <p className="tarot-card-group">{meaning.card.Nhom}</p>
+          )}
 
-          <div className="tarot-result-content">
-            <h2 className="tarot-card-name">{card.Ten}</h2>
-            <p className="tarot-card-group">{card.Nhom}</p>
+          {meaning.MoTa && <p className="tarot-desc">{meaning.MoTa}</p>}
 
-            {meaning?.MoTa && <p className="tarot-desc">{meaning.MoTa}</p>}
+          {!!meaning.TuKhoa?.length && (
+            <ul className="tarot-keywords">
+              {meaning.TuKhoa.map((kw, idx) => (
+                <li key={idx}>{kw}</li>
+              ))}
+            </ul>
+          )}
 
-            {meaning?.TuKhoa?.length > 0 && (
-              <ul className="tarot-keywords">
-                {meaning.TuKhoa.map((kw) => (
-                  <li key={kw}>{kw}</li>
-                ))}
-              </ul>
-            )}
-
-            {meaning?.ChuDe && (
-              <div className="tarot-topics">
+          {(meaning.ChuDe.TinhDuyen ||
+            meaning.ChuDe.CongViec ||
+            meaning.ChuDe.TaiChinh ||
+            meaning.ChuDe.SucKhoe) && (
+            <div className="tarot-topics">
+              {meaning.ChuDe.TinhDuyen && (
                 <p>
                   <strong>Tình duyên:</strong> {meaning.ChuDe.TinhDuyen}
                 </p>
+              )}
+              {meaning.ChuDe.CongViec && (
                 <p>
                   <strong>Công việc:</strong> {meaning.ChuDe.CongViec}
                 </p>
+              )}
+              {meaning.ChuDe.TaiChinh && (
                 <p>
                   <strong>Tài chính:</strong> {meaning.ChuDe.TaiChinh}
                 </p>
+              )}
+              {meaning.ChuDe.SucKhoe && (
                 <p>
                   <strong>Sức khỏe:</strong> {meaning.ChuDe.SucKhoe}
                 </p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </section>
       )}
     </main>

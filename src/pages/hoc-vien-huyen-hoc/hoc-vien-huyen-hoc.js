@@ -19,7 +19,7 @@ const TRACKS = [
     name: "BỐC",
     desc: "Hệ thống bói toán & trực giác: Tarot, Bài Tây, Kinh Dịch thực hành, Lục Hào, Bói Quan Âm – Giải mộng.",
     progress: 80,
-    img: "/media/academy/boc.webp",
+    img: "/images/banners/boc-huyen-thuat.png",
     topics: [
       "Tarot học",
       "Bói bài Tây",
@@ -33,7 +33,7 @@ const TRACKS = [
     name: "SỐ",
     desc: "Tượng số học & dự đoán thời vận: 64 Quẻ Kinh Dịch, Kỳ Môn Độn Giáp, Bát Cực Linh Số, Thái Ất, Đại Lục Nhâm.",
     progress: 65,
-    img: "/media/academy/so.webp",
+    img: "/images/banners/so-huyen-thuat.png",
     topics: ["64 Quẻ", "Kỳ Môn", "Bát Cực", "Thái Ất", "Đại Lục Nhâm"],
   },
   {
@@ -41,7 +41,7 @@ const TRACKS = [
     name: "MỆNH",
     desc: "Mệnh lý & chu kỳ đời người: Tử Vi, Bát Tự/Tứ Trụ, Thần Số Học, Ngũ Hành – Can Chi – Cung Mệnh.",
     progress: 60,
-    img: "/media/academy/menh.webp",
+    img: "/images/banners/menh-huyen-thuat.png",
     topics: ["Tử Vi", "Bát Tự", "Thần Số", "Ngũ Hành – Can Chi"],
   },
   {
@@ -49,7 +49,7 @@ const TRACKS = [
     name: "TƯỚNG",
     desc: "Giải mã hình tướng & khí sắc: Nhân tướng, Thủ tướng/Chỉ tay, Hình tướng – Thần thái, Tướng tâm lý.",
     progress: 50,
-    img: "/media/academy/tuong.webp",
+    img: "/images/banners/tuong-huyen-thuat.png",
     topics: ["Nhân tướng", "Chỉ tay", "Thần thái", "Tướng tâm lý"],
   },
   {
@@ -57,36 +57,37 @@ const TRACKS = [
     name: "TRẠCH",
     desc: "Phong thủy – không gian & năng lượng: Bát trạch, Huyền không phi tinh, Bagua, Âm trạch/Dương trạch.",
     progress: 40,
-    img: "/media/academy/trach.webp",
+    img: "/images/banners/trach-huyen-thuat.png",
     topics: ["Bát Trạch", "Huyền Không", "Bagua", "Âm/Dương trạch"],
   },
 ];
 
+/** ✅ LỘ TRÌNH MỚI */
 const LEVELS = [
   {
-    code: "tan-hoc",
-    name: "Tân học",
-    desc: "Làm quen nền tảng – từ vựng – khái niệm cốt lõi.",
+    code: "nhap-mon-hoc-do",
+    name: "Nhập Môn Học Đồ",
+    desc: "Làm quen nền tảng – thuật ngữ – khái niệm cốt lõi Ngũ Huyền Thuật.",
   },
   {
-    code: "thuc-hanh",
-    name: "Thực hành",
-    desc: "Bài tập mẫu – case thực tế – tự luận ngắn.",
+    code: "so-cap-hoc-gia",
+    name: "Sơ Cấp Học Giả",
+    desc: "Thực hành cơ bản – bài mẫu – case thực tế – luận ngắn có hướng dẫn.",
   },
   {
-    code: "hanh-gia",
-    name: "Hành giả",
-    desc: "Dự án nhỏ – nhật ký nghiên cứu – phản biện.",
+    code: "trung-cap-luan-gia",
+    name: "Trung Cấp Luận Giả",
+    desc: "Dự án nhỏ – nhật ký nghiên cứu – phản biện & ứng dụng thực tế.",
   },
   {
-    code: "huong-dao",
-    name: "Hướng đạo",
-    desc: "Huấn luyện nhóm – hướng dẫn đề tài.",
+    code: "cao-cap-dao-su",
+    name: "Cao Cấp Đạo Sư",
+    desc: "Mentor – huấn luyện nhóm – hướng dẫn đề tài & lớp học.",
   },
   {
-    code: "bac-thay",
-    name: "Bậc Thầy Huyền Thuật",
-    desc: "Luận án – công bố – chuẩn bị chứng chỉ.",
+    code: "giao-su-huyen-hoc",
+    name: "Giáo Sư Huyền Học",
+    desc: "Luận án – công bố tri thức – đào tạo & giám định chứng chỉ.",
   },
 ];
 
@@ -122,7 +123,8 @@ function HocVienHuyenHoc() {
             <div className="col-lg-5">
               <img
                 src={
-                  process.env.PUBLIC_URL + "/media/academy/hero-academy.webp"
+                  process.env.PUBLIC_URL +
+                  "/images/banners/hoc-vien-huyen-hoc-banner.png"
                 }
                 alt="Học viện Huyền học"
                 className="img-fluid rounded-4 shadow-soft academy-hero-img"
@@ -138,7 +140,7 @@ function HocVienHuyenHoc() {
           <div className="section-head text-center">
             <h2 className="section-title">Ngũ Huyền Thuật</h2>
             <p className="section-desc">
-              Chọn một bộ môn để bắt đầu. Mỗi bộ môn có tài liệu, bài tập, và dự
+              Chọn một bộ môn để bắt đầu. Mỗi bộ môn có tài liệu, bài tập và dự
               án nhỏ tương ứng.
             </p>
           </div>
@@ -198,8 +200,9 @@ function HocVienHuyenHoc() {
           <div className="section-head text-center">
             <h2 className="section-title">Lộ trình cấp bậc</h2>
             <p className="section-desc">
-              Từ Tân học đến Bậc Thầy Huyền Thuật – tăng dần độ sâu kiến thức &
-              mức độ thực hành.
+              Tiến trình từ <strong>Nhập Môn Học Đồ</strong> đến{" "}
+              <strong>Giáo Sư Huyền Học</strong> – tăng dần chiều sâu kiến thức
+              & mức độ thực hành.
             </p>
           </div>
 
@@ -242,19 +245,19 @@ function HocVienHuyenHoc() {
                 id: "c1",
                 name: "Tarot căn bản 7 ngày",
                 tag: "BỐC",
-                img: "/media/academy/boc.webp",
+                img: "/images/banners/boc-huyen-thuat.png",
               },
               {
                 id: "c2",
                 name: "Ngũ Hành – Can Chi nền tảng",
                 tag: "MỆNH",
-                img: "/media/academy/menh.webp",
+                img: "/images/banners/menh-huyen-thuat.png",
               },
               {
                 id: "c3",
                 name: "Phong thủy Bát Trạch 101",
                 tag: "TRẠCH",
-                img: "/media/academy/trach.webp",
+                img: "/images/banners/trach-huyen-thuat.png",
               },
             ].map((c) => (
               <div className="col-12 col-md-6 col-xl-4" key={c.id}>
