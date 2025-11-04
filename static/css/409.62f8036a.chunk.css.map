@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/409.62f8036a.chunk.css","mappings":"AAAA,oBAEE,kBAAmB,CACnB,UAAW,CAFX,eAGF","sources":["pages/hoc-vien-huyen-hoc/hoc-vien-huyen-hoc.css"],"sourcesContent":[".hoc-vien-huyen-hoc {\r\n  min-height: 60vh;\r\n  background: #0f0a1e;\r\n  color: #fff;\r\n}\r\n"],"names":[],"sourceRoot":""}

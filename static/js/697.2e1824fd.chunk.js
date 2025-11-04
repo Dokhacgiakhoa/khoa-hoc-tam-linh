@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkkhoa_hoc_tam_linh=self.webpackChunkkhoa_hoc_tam_linh||[]).push([[697],{697:(n,e,a)=>{a.r(e),a.d(e,{default:()=>s});a(43);var h=a(579);function s(){return(0,h.jsx)("section",{className:"tai-khoan",children:(0,h.jsxs)("div",{className:"container py-5",children:[(0,h.jsx)("h1",{children:"T\xe0i kho\u1ea3n"}),(0,h.jsx)("p",{children:"Trang r\u1ed7ng \u0111\u1ec3 test route."})]})})}}}]);
-//# sourceMappingURL=697.2e1824fd.chunk.js.map

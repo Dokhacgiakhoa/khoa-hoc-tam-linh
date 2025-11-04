@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/697.5f965314.chunk.css","mappings":"AAAA,WAEE,kBAAmB,CACnB,UAAW,CAFX,eAGF","sources":["pages/tai-khoan/tai-khoan.css"],"sourcesContent":[".tai-khoan {\r\n  min-height: 60vh;\r\n  background: #0f0a1e;\r\n  color: #fff;\r\n}\r\n"],"names":[],"sourceRoot":""}

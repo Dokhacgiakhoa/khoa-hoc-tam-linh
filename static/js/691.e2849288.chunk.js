@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkkhoa_hoc_tam_linh=self.webpackChunkkhoa_hoc_tam_linh||[]).push([[691],{691:(n,a,e)=>{e.r(a),e.d(a,{default:()=>s});e(43);var h=e(579);function s(){return(0,h.jsx)("section",{className:"cua-hang",children:(0,h.jsxs)("div",{className:"container py-5",children:[(0,h.jsx)("h1",{children:"C\u1eeda h\xe0ng"}),(0,h.jsx)("p",{children:"Trang r\u1ed7ng \u0111\u1ec3 test route."})]})})}}}]);
-//# sourceMappingURL=691.e2849288.chunk.js.map
