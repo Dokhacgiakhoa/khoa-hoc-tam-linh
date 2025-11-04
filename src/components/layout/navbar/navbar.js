@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./navbar.css";
 
-/* 4 component mega – mỗi cái tự render .kh-mega của chính nó (và import mega-dropdown.css bên trong) */
 import MenuDichVuMega from "./menu-dich-vu-mega-dropdown";
 import MenuCuaHangMega from "./menu-cua-hang-mega-dropdown";
 import MenuHocVienMega from "./menu-hoc-vien-huyen-hoc-mega-dropdown";
@@ -13,8 +12,8 @@ function Arrow({ open }) {
   return (
     <svg
       className={`arrow ${open ? "open" : ""}`}
-      width="10"
-      height="10"
+      width="15"
+      height="15"
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
@@ -22,7 +21,7 @@ function Arrow({ open }) {
         d="M7 10l5 5 5-5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -32,27 +31,27 @@ function Arrow({ open }) {
 
 export default function Navbar() {
   const [openKey, setOpenKey] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
+  const wrapRef = useRef(null);
+  const location = useLocation();
 
   const isOpen = (k) => openKey === k;
   const toggle = (k) => setOpenKey((p) => (p === k ? null : k));
   const closeAll = () => setOpenKey(null);
 
-  // Click outside -> close
+  // 1) Click outside -> close
   useEffect(() => {
     const onOutside = (e) => {
       const nav = navRef.current;
       if (!nav) return;
-      // Nếu click không nằm trong navbar (bao gồm mega)
-      if (!nav.contains(e.target)) {
-        closeAll();
-      }
+      if (!nav.contains(e.target)) closeAll();
     };
     document.addEventListener("pointerdown", onOutside);
     return () => document.removeEventListener("pointerdown", onOutside);
   }, []);
 
-  // Press Esc -> close
+  // 2) Press Esc -> close
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") closeAll();
@@ -61,24 +60,59 @@ export default function Navbar() {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // Click vào link trong mega -> close (uỷ quyền click ở <nav>)
+  // 3) Click vào link trong mega -> close (ủy quyền click ở <nav>)
   const onNavClick = (e) => {
     const target = e.target;
     if (!(target instanceof Element)) return;
-    if (target.closest(".kh-mega-link")) {
-      closeAll();
-    }
+    if (target.closest(".kh-mega-link")) closeAll();
   };
 
+  // 4) Đóng mega khi đổi route
+  useEffect(() => {
+    closeAll();
+  }, [location.pathname]);
+
+  // 5) Ghim navbar + “đội” chiều cao để không đè nội dung
+  const measureAndSetHeight = () => {
+    const nav = navRef.current;
+    const wrap = wrapRef.current;
+    if (!nav || !wrap) return;
+    const h = nav.offsetHeight;
+    // đặt biến CSS và set min-height cho wrapper
+    document.documentElement.style.setProperty("--kh-nav-h", `${h}px`);
+    wrap.style.minHeight = `${h}px`;
+  };
+
+  useEffect(() => {
+    measureAndSetHeight();
+    const ro = new ResizeObserver(measureAndSetHeight);
+    if (navRef.current) ro.observe(navRef.current);
+    window.addEventListener("resize", measureAndSetHeight);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measureAndSetHeight);
+    };
+  }, []);
+
+  // 6) Đổ bóng khi cuộn
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="kh-nav-wrap">
-      <nav className="kh-nav" ref={navRef} onClick={onNavClick}>
-        <ul
-          className="kh-nav-list"
-          role="menubar"
-          aria-label="Khoa học Tâm linh"
-        >
-          {/* 1. Trang chủ (link) */}
+    <div className="kh-nav-wrap" ref={wrapRef}>
+      <nav
+        className={`kh-nav ${scrolled ? "is-scrolled" : ""}`}
+        ref={navRef}
+        onClick={onNavClick}
+        role="navigation"
+        aria-label="Khoa học Tâm linh"
+      >
+        <ul className="kh-nav-list" role="menubar">
+          {/* 1. Trang chủ */}
           <li className="kh-nav-item">
             <NavLink
               to="/"
@@ -90,7 +124,7 @@ export default function Navbar() {
             </NavLink>
           </li>
 
-          {/* 2. Giới thiệu (link) */}
+          {/* 2. Giới thiệu */}
           <li className="kh-nav-item">
             <NavLink
               to="/gioi-thieu"
@@ -102,7 +136,7 @@ export default function Navbar() {
             </NavLink>
           </li>
 
-          {/* 3. Dịch vụ (click mở mega) */}
+          {/* 3. Dịch vụ (mega) */}
           <li
             className={`kh-nav-item has-mega ${
               isOpen("dich-vu") ? "is-open" : ""
@@ -128,7 +162,7 @@ export default function Navbar() {
             <MenuDichVuMega show={isOpen("dich-vu")} />
           </li>
 
-          {/* 4. Cửa hàng (click mở mega) */}
+          {/* 4. Cửa hàng (mega) */}
           <li
             className={`kh-nav-item has-mega ${
               isOpen("cua-hang") ? "is-open" : ""
@@ -154,7 +188,7 @@ export default function Navbar() {
             <MenuCuaHangMega show={isOpen("cua-hang")} />
           </li>
 
-          {/* 5. Học viện (click mở mega) */}
+          {/* 5. Học viện (mega) */}
           <li
             className={`kh-nav-item has-mega ${
               isOpen("hoc-vien") ? "is-open" : ""
@@ -180,7 +214,7 @@ export default function Navbar() {
             <MenuHocVienMega show={isOpen("hoc-vien")} />
           </li>
 
-          {/* 6. Liên hệ (link) */}
+          {/* 6. Liên hệ */}
           <li className="kh-nav-item">
             <NavLink
               to="/lien-he"
@@ -192,7 +226,7 @@ export default function Navbar() {
             </NavLink>
           </li>
 
-          {/* 7. Tài khoản (click mở mega) */}
+          {/* 7. Tài khoản (mega) */}
           <li
             className={`kh-nav-item has-mega ${
               isOpen("tai-khoan") ? "is-open" : ""

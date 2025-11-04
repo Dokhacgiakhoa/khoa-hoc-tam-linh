@@ -1,5 +1,5 @@
 /* ===========================
-   Palette & tokens dùng chung
+   🎨 Tokens (tham chiếu từ index.css)
    =========================== */
 :root {
   --kh-bg: #0f0a1e; /* đen tím */
@@ -14,102 +14,137 @@
 }
 
 /* ===========================
-   Khung nav – căn giữa, không full width
+   📌 Fixed-top spacer (được JS đo chiều cao và set)
    =========================== */
 .kh-nav-wrap {
-  display: flex;
-  justify-content: center;
-  background: var(--kh-bg);
-  padding: 18px 0; /* breathing room như ảnh */
-}
-
-.kh-nav {
-  position: relative; /* để mega bám theo thanh nav */
-  background: var(--kh-bg);
-  border: 1px solid var(--kh-border);
-  border-radius: calc(var(--radius) + 6px);
-  box-shadow: var(--elev);
-  padding: 8px;
-  max-width: 1100px; /* dài vừa đủ chứa nội dung */
-}
-
-.kh-nav-list {
-  list-style: none;
-  display: flex;
-  gap: 10px; /* khoảng giữa các block */
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-/* Mục nav cơ bản */
-.kh-nav-item {
-}
-
-/* Các mục có mega: không dùng positioning tại <li> nữa */
-.kh-nav-item.has-mega {
-  position: static;
+  min-height: var(--kh-nav-h, 72px);
 }
 
 /* ===========================
-   Block item (nút/Link)
+   🧭 Thanh nav cố định – KHÔNG nền full-width
+   =========================== */
+.kh-nav {
+  position: fixed;
+  inset: 0 0 auto 0; /* top:0; left:0; right:0 */
+  z-index: 1040;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px; /* breathing room */
+  background: transparent; /* bỏ nền full-width */
+}
+
+/* ===========================
+   🧱 Capsule chứa menu (không full width)
+   - Có glow nhẹ; khi scroll tăng glow + viền vàng
+   =========================== */
+.kh-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly; /* căn đều các mục trong hàng */
+  align-items: center; /* căn giữa dọc */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 8px;
+
+  background: var(--kh-bg);
+  border: 1px solid var(--kh-border);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 20px rgba(255, 215, 0, 0.06); /* glow nền nhẹ */
+
+  max-width: 1000px; /* dài vừa đủ chứa nội dung */
+  width: 100%;
+}
+
+/* Khi cuộn: tăng glow + nhấn viền vàng */
+.kh-nav.is-scrolled .kh-nav-list {
+  border-color: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 215, 0, 0.22),
+    0 0 28px rgba(255, 215, 0, 0.18);
+}
+
+/* ===========================
+   Item & trạng thái có mega
+   =========================== */
+.kh-nav-item {
+}
+.kh-nav-item.has-mega {
+  position: static;
+} /* mega tự định vị */
+
+/* ===========================
+   🔳 Block menu (Link/Button)
    =========================== */
 .kh-block {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center; /* text + icon căn giữa */
+  gap: 8px;
+  height: 44px; /* đồng nhất chiều cao */
+  padding: 10px 18px;
   background: var(--kh-block);
   color: var(--kh-text);
-  padding: 10px 16px;
+  border: 1px solid var(--kh-border);
   border-radius: var(--radius);
   text-decoration: none;
-  border: 1px solid var(--kh-border);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+  font-weight: 600;
+  line-height: 1.1;
   user-select: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease,
+    border-color 0.2s ease;
 }
 
 .kh-block:hover,
 .kh-block:focus-visible {
   background: var(--kh-block-hover);
   color: var(--kh-gold);
+  border-color: rgba(255, 215, 0, 0.25);
   outline: none;
 }
 
 .kh-block:active {
   transform: translateY(1px);
 }
-
-/* Block dạng button (không link) để toggle mega */
 .kh-block-button {
   cursor: pointer;
-}
-
-/* Nhãn */
+} /* toggle mega */
 .kh-label {
-  font-weight: 600;
   letter-spacing: 0.2px;
 }
 
-/* ===========================
-   Tam giác chỉ thị
-   =========================== */
-.arrow {
-  transition: transform 0.2s ease, color 0.2s ease;
-  color: var(--kh-muted);
-  flex: 0 0 auto;
+/* Mục đang mở mega: nhấn màu */
+.kh-nav-item.has-mega.is-open > .kh-block {
+  color: var(--kh-gold);
+  background: #1b1531;
+  border-color: rgba(255, 215, 0, 0.28);
 }
 
-/* Khi mở mega: mũi quay sang trái + đổi màu */
+/* ===========================
+   ⏷ Tam giác chỉ thị
+   =========================== */
+.arrow {
+  flex: 0 0 auto;
+  color: var(--kh-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 .has-mega.is-open .arrow {
   transform: rotate(-90deg);
   color: var(--kh-gold);
 }
 
 /* ===========================
-   Responsive nhẹ cho nav
+   📱 Responsive
    =========================== */
-@media (max-width: 720px) {
+@media (max-width: 960px) {
+  .kh-block {
+    height: 42px;
+    padding: 9px 14px;
+  }
+}
+@media (max-width: 640px) {
   .kh-nav-list {
-    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px;
   }
 }

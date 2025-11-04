@@ -4,31 +4,33 @@ import "./trang-chu.css";
 
 /**
  * File: src/pages/trang-chu/trang-chu.js
- * Lưu ý asset: đặt file vào public/, ví dụ:
- * - /media/hero-bg-poster.webp
+ * Asset cần ở public/:
  * - /media/hero.mp4
- * - /media/ecosys-dich-vu.webp
- * - /media/ecosys-cua-hang.webp
- * - /media/ecosys-hoc-vien.webp
- * - /media/ecosys-tai-khoan.webp
- * - /media/service-tarot.webp
- * - /media/service-menh.webp
- * - /media/service-chuyen-gia.webp
- * - /media/product-*.webp (5 ảnh)
+ * - /images/banners/banner-trang-chu.png
+ * - /images/banners/trang-chu-*.png
+ * - /images/products/product-1.webp … product-5.webp
  */
 
 function Home() {
   return (
     <main id="trang-chu" className="khctl-page">
       {/* HERO */}
-      <section className="hero position-relative overflow-hidden">
+      <section
+        className="hero position-relative overflow-hidden"
+        aria-label="Hero"
+      >
         <video
           className="hero-video"
           autoPlay
           muted
           loop
           playsInline
-          poster={process.env.PUBLIC_URL + "/media/hero-bg-poster.webp"}
+          preload="auto"
+          disablePictureInPicture
+          aria-hidden="true"
+          poster={
+            process.env.PUBLIC_URL + "/images/banners/banner-trang-chu.png"
+          }
         >
           <source
             src={process.env.PUBLIC_URL + "/media/hero.mp4"}
@@ -36,19 +38,20 @@ function Home() {
           />
         </video>
 
+        {/* Lớp phủ tổng + nền riêng cho vùng chữ */}
         <div className="hero-overlay" />
+        <div className="hero-content-bg" />
 
         <div className="container position-relative hero-content">
           <div className="row align-items-center">
             <div className="col-lg-8">
               <h1 className="hero-title">
-                Khoa học Tâm Linh – Minh giải huyền học bằng dữ liệu & AI
+                Khoa học Tâm Linh – Minh giải huyền học bằng dữ liệu &amp; AI
               </h1>
               <p className="hero-sub">
-                Trải nghiệm Tarot & Mệnh lý có kiểm chứng, học theo Ngũ Huyền
-                Thuật. Không mê tín · 2FA an toàn.
+                Trải nghiệm Tarot &amp; Mệnh lý có kiểm chứng, học theo Ngũ
+                Huyền Thuật. Không mê tín · 2FA an toàn.
               </p>
-
               <div className="d-flex gap-3 flex-wrap mt-4">
                 <Link className="btn btn-gold" to="/dich-vu">
                   Trải nghiệm miễn phí
@@ -69,7 +72,7 @@ function Home() {
             <h2 className="section-title">Hệ sinh thái</h2>
             <p className="section-desc">
               Dịch vụ Tâm linh AI · Cửa hàng Năng lượng · Học viện Huyền học ·
-              Tài khoản & Ví Linh Tệ
+              Tài khoản &amp; Ví Linh Tệ
             </p>
           </div>
 
@@ -77,14 +80,19 @@ function Home() {
             <div className="col-12 col-md-6 col-xl-3">
               <div className="card-3d h-100">
                 <img
-                  src={process.env.PUBLIC_URL + "/media/ecosys-dich-vu.webp"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/images/banners/trang-chu-dich-vu.png"
+                  }
                   alt="Dịch vụ Tâm linh AI"
                   className="card-img-top"
+                  loading="lazy"
                 />
                 <div className="card-body">
                   <h3 className="card-title">Dịch vụ Tâm linh AI</h3>
                   <p className="card-text">
-                    Tarot & Bài Trà · Mệnh & Lá số · Đặt lịch chuyên gia.
+                    Tarot &amp; Bài Trà · Mệnh &amp; Lá số · Đặt lịch chuyên
+                    gia.
                   </p>
                   <Link to="/dich-vu" className="btn btn-sm btn-gold">
                     Xem dịch vụ
@@ -96,9 +104,13 @@ function Home() {
             <div className="col-12 col-md-6 col-xl-3">
               <div className="card-3d h-100">
                 <img
-                  src={process.env.PUBLIC_URL + "/media/ecosys-cua-hang.webp"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/images/banners/trang-chu-cua-hang.png"
+                  }
                   alt="Cửa hàng Năng lượng"
                   className="card-img-top"
+                  loading="lazy"
                 />
                 <div className="card-body">
                   <h3 className="card-title">Cửa hàng Năng lượng</h3>
@@ -115,9 +127,13 @@ function Home() {
             <div className="col-12 col-md-6 col-xl-3">
               <div className="card-3d h-100">
                 <img
-                  src={process.env.PUBLIC_URL + "/media/ecosys-hoc-vien.webp"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/images/banners/trang-chu-hoc-vien-huyen-hoc.png"
+                  }
                   alt="Học viện Huyền học"
                   className="card-img-top"
+                  loading="lazy"
                 />
                 <div className="card-body">
                   <h3 className="card-title">Học viện Huyền học</h3>
@@ -137,12 +153,16 @@ function Home() {
             <div className="col-12 col-md-6 col-xl-3">
               <div className="card-3d h-100">
                 <img
-                  src={process.env.PUBLIC_URL + "/media/ecosys-tai-khoan.webp"}
-                  alt="Tài khoản & Ví Linh Tệ"
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/images/banners/trang-chu-tai-khoan.png"
+                  }
+                  alt="Tài khoản &amp; Ví Linh Tệ"
                   className="card-img-top"
+                  loading="lazy"
                 />
                 <div className="card-body">
-                  <h3 className="card-title">Tài khoản & Ví Linh Tệ</h3>
+                  <h3 className="card-title">Tài khoản &amp; Ví Linh Tệ</h3>
                   <p className="card-text">
                     Nhiệm vụ · Hộp thư · Giỏ hàng · 2FA bảo mật.
                   </p>
@@ -163,12 +183,16 @@ function Home() {
             <div className="col-lg-6">
               <img
                 className="img-fluid rounded-4 shadow-soft"
-                src={process.env.PUBLIC_URL + "/media/service-tarot.webp"}
-                alt="Tarot & Bài Trà"
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/trang-chu-tarot-va-bai-tra.png"
+                }
+                alt="Tarot &amp; Bài Trà"
+                loading="lazy"
               />
             </div>
             <div className="col-lg-6">
-              <h3 className="feature-title">Tarot & Bài Trà</h3>
+              <h3 className="feature-title">Tarot &amp; Bài Trà</h3>
               <p className="feature-text">
                 Đọc AI · Lý giải có căn cứ. Bốc 1 lá miễn phí và nhận insight
                 trong 30 giây.
@@ -190,12 +214,16 @@ function Home() {
             <div className="col-lg-6">
               <img
                 className="img-fluid rounded-4 shadow-soft"
-                src={process.env.PUBLIC_URL + "/media/service-menh.webp"}
-                alt="Mệnh & Lá số"
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/trang-chu-menh-va-la-so.png"
+                }
+                alt="Mệnh &amp; Lá số"
+                loading="lazy"
               />
             </div>
             <div className="col-lg-6">
-              <h3 className="feature-title">Mệnh & Lá số</h3>
+              <h3 className="feature-title">Mệnh &amp; Lá số</h3>
               <p className="feature-text">
                 Lập bản đồ sao, Bát Tự, Tử Vi, Thần Số – hiển thị trực quan, dễ
                 hiểu.
@@ -220,8 +248,12 @@ function Home() {
             <div className="col-lg-6">
               <img
                 className="img-fluid rounded-4 shadow-soft"
-                src={process.env.PUBLIC_URL + "/media/service-chuyen-gia.webp"}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/trang-chu-dat-lich.png"
+                }
                 alt="Đặt lịch chuyên gia"
+                loading="lazy"
               />
             </div>
             <div className="col-lg-6">
@@ -256,9 +288,13 @@ function Home() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <article className="slide card-3d" role="listitem" key={i}>
                   <img
-                    src={process.env.PUBLIC_URL + `/media/product-${i}.webp`}
+                    src={
+                      process.env.PUBLIC_URL +
+                      `/images/products/product-${i}.webp`
+                    }
                     alt={`Sản phẩm ${i}`}
                     className="card-img-top"
+                    loading="lazy"
                   />
                   <div className="card-body">
                     <h3 className="card-title">Sản phẩm {i}</h3>
@@ -271,7 +307,7 @@ function Home() {
                         Thêm vào giỏ
                       </Link>
                       <Link
-                        to="/cua-hang"
+                        to={`/cua-hang/san-pham-${i}`}
                         className="btn btn-sm btn-outline-gold"
                       >
                         Xem chi tiết
@@ -339,7 +375,7 @@ function Home() {
       <section className="section section-partner alt">
         <div className="container">
           <div className="section-head">
-            <h2 className="section-title">Hợp tác & Đồng hành</h2>
+            <h2 className="section-title">Hợp tác &amp; Đồng hành</h2>
           </div>
 
           <div className="row g-4">
@@ -397,7 +433,6 @@ function Home() {
             </div>
             <div className="col-12 col-lg-7">
               <div className="map-embed rounded-4 overflow-hidden">
-                {/* Thay src bằng Google Map thật của Zurich 1 */}
                 <iframe
                   title="Google Map - Zurich 1"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0!2d105.9!3d21.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2sZurich%201!5e0!3m2!1svi!2svi!4v1699999999999"
