@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from "react";
+// src/components/danh-muc-san-pham/danh-muc-san-pham.js
+import React, { useCallback, useMemo, useState, useDeferredValue } from "react";
 import ProductCard from "../product-card/product-card";
 import {
   CATALOG,
@@ -15,19 +16,25 @@ export default function DanhMucSanPham() {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState("featured"); // featured | price-asc | price-desc | name-asc
 
-  // nguồn dữ liệu theo tab
+  // 1) Chuẩn hoá "Tất cả" chỉ tính 1 lần theo CATALOG
+  const allProducts = useMemo(() => getAllProducts(), [CATALOG]);
+
+  // 2) Nguồn theo tab
   const source = useMemo(() => {
-    if (cat === "all") return getAllProducts(); // chỉ 1 chỗ tính "Tất cả"
+    if (cat === "all") return allProducts;
     const found = CATALOG.find((c) => c.cat === cat);
     return found ? found.items : [];
-  }, [cat]);
+  }, [cat, allProducts]);
 
-  // filter + search + sort
+  // 3) Deferred search để gõ mượt
+  const qDeferred = useDeferredValue(q);
+
+  // 4) Filter + search + sort (memo hoá)
   const filtered = useMemo(() => {
     let arr = [...source];
 
-    if (q.trim()) {
-      const t = q.trim().toLowerCase();
+    if (qDeferred.trim()) {
+      const t = qDeferred.trim().toLowerCase();
       arr = arr.filter((p) => p.name.toLowerCase().includes(t));
     }
 
@@ -42,29 +49,64 @@ export default function DanhMucSanPham() {
         arr.sort((a, b) => a.name.localeCompare(b.name, "vi"));
         break;
       default:
-        break; // featured: giữ nguyên thứ tự trong data
+        // featured: giữ nguyên thứ tự trong data
+        break;
     }
     return arr;
-  }, [source, q, sort]);
+  }, [source, qDeferred, sort]);
+
+  // 5) Handlers ổn định (có lợi nếu tách Toolbar)
+  const handleCat = useCallback((c) => setCat(c), []);
+  const handleSort = useCallback((e) => setSort(e.target.value), []);
+  const handleSearch = useCallback((e) => setQ(e.target.value), []);
+
+  // 6) Label danh mục hiện tại
+  const currentCatLabel =
+    cat === "all" ? "Tất cả sản phẩm" : CATEGORY_LABEL[cat] || "Danh mục";
 
   return (
     <section className="section danh-muc-san-pham">
       <div className="container">
+        {/* HEADER + COUNTER */}
+        <div className="d-flex align-items-baseline justify-content-between mb-2">
+          <h2 className="section-title m-0">{currentCatLabel}</h2>
+          <div className="opacity-75 small">
+            {filtered.length.toLocaleString("vi-VN")} kết quả
+          </div>
+        </div>
+
         {/* TOOLBAR */}
         <div className="row g-3 align-items-center mb-3">
           <div className="col-12 col-xl-7">
-            <div className="cat-pills d-flex flex-wrap gap-2">
+            <div
+              className="cat-pills d-flex flex-wrap gap-2"
+              role="tablist"
+              aria-label="Danh mục sản phẩm"
+            >
               <button
+                type="button"
+                role="tab"
+                aria-selected={cat === "all"}
                 className={`pill ${cat === "all" ? "active" : ""}`}
-                onClick={() => setCat("all")}
+                onClick={() => handleCat("all")}
+                onKeyDown={(e) =>
+                  (e.key === "Enter" || e.key === " ") && handleCat("all")
+                }
               >
                 Tất cả
               </button>
+
               {COMMERCIAL_CATEGORIES.map((c) => (
                 <button
+                  type="button"
+                  role="tab"
+                  aria-selected={cat === c}
                   key={c}
                   className={`pill ${cat === c ? "active" : ""}`}
-                  onClick={() => setCat(c)}
+                  onClick={() => handleCat(c)}
+                  onKeyDown={(e) =>
+                    (e.key === "Enter" || e.key === " ") && handleCat(c)
+                  }
                 >
                   {CATEGORY_LABEL[c]}
                 </button>
@@ -77,7 +119,8 @@ export default function DanhMucSanPham() {
               className="form-control form-control-sm khctl-input"
               placeholder="Tìm kiếm sản phẩm…"
               value={q}
-              onChange={(e) => setQ(e.target.value)}
+              onChange={handleSearch}
+              aria-label="Tìm kiếm sản phẩm"
             />
           </div>
 
@@ -85,7 +128,8 @@ export default function DanhMucSanPham() {
             <select
               className="form-select form-select-sm khctl-input"
               value={sort}
-              onChange={(e) => setSort(e.target.value)}
+              onChange={handleSort}
+              aria-label="Sắp xếp sản phẩm"
             >
               <option value="featured">Nổi bật</option>
               <option value="price-asc">Giá ↑</option>
@@ -97,11 +141,23 @@ export default function DanhMucSanPham() {
 
         {/* GRID */}
         {filtered.length === 0 ? (
-          <p className="text-center opacity-75">
-            Không tìm thấy sản phẩm phù hợp.
-          </p>
+          <div className="empty-state text-center opacity-75 py-4">
+            <p className="mb-2">Không tìm thấy sản phẩm phù hợp.</p>
+            {(q || cat !== "all") && (
+              <button
+                className="btn btn-outline-gold"
+                onClick={() => {
+                  setQ("");
+                  setCat("all");
+                  setSort("featured");
+                }}
+              >
+                Xoá lọc & trở về tất cả
+              </button>
+            )}
+          </div>
         ) : (
-          <div className="row g-4">
+          <div className="row g-4 align-items-start">
             {filtered.map((p) => (
               <div className="col-6 col-md-4 col-xl-3" key={p.id}>
                 <ProductCard

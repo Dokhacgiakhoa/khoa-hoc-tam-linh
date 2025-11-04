@@ -1,52 +1,98 @@
-/* Chỉ bổ sung nhẹ cho layout thẻ sản phẩm, tuân thủ index.css */
+/* Chỉ bổ sung nhẹ, tôn trọng chuẩn index.css. Scope theo .product-card */
 
+/* ----- KHUNG CHUNG ----- */
 .product-card {
-  /* đã có .card-3d từ index.css, đây chỉ tinh chỉnh */
-  display: flex;
+  /* thừa hưởng card-3d từ index.css */
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  border: 1px solid var(--kh-soft);
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--elev-2);
+  border-color: rgba(255, 215, 0, 0.25);
+}
+.product-card:focus-within {
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25), var(--elev-2);
+  border-color: rgba(255, 215, 0, 0.45);
 }
 
-.product-media {
+/* ----- MEDIA ----- */
+.product-card .product-media {
   position: relative;
 }
 
-.product-img {
-  width: 100%;
+.product-card .product-img {
+  /* .img-square từ index.css đã đặt aspect-ratio: 1/1 + object-fit: cover */
   display: block;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  /* Tỉ lệ 1:1 dùng .img-square từ index.css */
-  object-fit: var(--media-fit, cover);
-  object-position: var(--media-pos, center);
+  border-radius: 0; /* ảnh top phẳng để liền mạch với card */
+  border-bottom: 1px solid var(--kh-soft);
 }
 
-.badge-made {
+/* Badge làm nổi bật nhưng gọn gàng */
+.product-card .badge-made {
   position: absolute;
   top: 12px;
   left: 12px;
-  font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 215, 0, 0.9);
-  color: #0f0a1e;
-  backdrop-filter: blur(4px);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(255, 215, 0, 0.95);
+  color: #1b142f;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  user-select: none;
 }
 
-.product-name {
-  font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: 8px;
+/* ----- BODY ----- */
+.product-card .product-name {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  font-weight: var(--fw-title);
+  line-height: 1.35;
+  margin: 0 0 0.35rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* tối đa 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.product-price {
-  font-weight: 600;
+.product-card .product-meta {
+  gap: 10px;
+  margin-top: 2px;
 }
 
-.product-cat {
-  font-size: 0.85rem;
-  opacity: 0.8;
+/* Giá nổi bật, danh mục nhẹ tay */
+.product-card .product-price {
+  font-weight: 800;
+  font-size: clamp(1rem, 1.1vw, 1.05rem);
+  color: #fff;
+}
+.product-card .product-cat {
+  font-size: 0.9rem;
+  color: var(--kh-muted, #c7c7d1);
+  opacity: 0.9;
 }
 
-/* Đảm bảo vùng nút luôn ở đáy thẻ */
-.card-actions {
-  margin-top: auto;
+/* Bố cục nút: luôn dính đáy card nhờ margin-top:auto (đã có ở index.css) */
+.product-card .card-actions .btn {
+  width: 100%;
+}
+
+/* Hover nhỏ cho nút viền vàng để cảm giác sống động hơn */
+.product-card .btn-outline-gold:hover {
+  transform: translateY(-1px);
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 576px) {
+  .product-card .product-name {
+    -webkit-line-clamp: 2;
+  }
+  .product-card .badge-made {
+    top: 10px;
+    left: 10px;
+    font-size: 0.74rem;
+    padding: 5px 9px;
+  }
 }
