@@ -21,14 +21,14 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Bài Tâm Linh
+              🔮 Bài Tâm Linh
             </NavLink>
             <NavLink
               to="/cua-hang/phu-kien-tam-linh"
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Phụ Kiện Tâm Linh
+              📿 Phụ Kiện Tâm Linh
             </NavLink>
             {/* ĐÃ TÁCH: Hương – Trầm (riêng) */}
             <NavLink
@@ -36,7 +36,7 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Hương – Trầm
+              🕯️ Hương – Trầm
             </NavLink>
             {/* ĐÃ TÁCH: Trà Đạo (riêng) */}
             <NavLink
@@ -44,7 +44,7 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Trà Đạo
+              🍵 Trà Đạo
             </NavLink>
           </nav>
         </div>
@@ -57,21 +57,28 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Bộ Sưu Tập &amp; Cao Cấp
+              💎 Sản Phẩm Cao Cấp
             </NavLink>
             <NavLink
               to="/cua-hang/set-qua-tang"
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Set Quà Tặng
+              🎁 Set Quà Tặng
             </NavLink>
             <NavLink
               to="/cua-hang/che-tac-rieng"
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              Chế Tác Riêng
+              🪄 Chế Tác Riêng
+            </NavLink>
+            <NavLink
+              to="/cua-hang/sim-phong-thuy"
+              className="kh-mega-link"
+              onClick={onNavigate}
+            >
+              📱 SIM Phong Thủy
             </NavLink>
           </nav>
         </div>

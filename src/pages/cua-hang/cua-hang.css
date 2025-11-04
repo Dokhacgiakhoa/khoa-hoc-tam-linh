@@ -1,136 +1,24 @@
-/* ===== HERO ===== */
+/* Hero */
 .shop-hero {
-  padding: clamp(3rem, 6vw, 5rem) 0;
-  background: radial-gradient(
-      900px 500px at 15% 15%,
-      rgba(255, 215, 0, 0.12),
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0) 70%
-    );
-}
-.shop-title {
-  font-size: var(--fs-hero);
-  font-weight: var(--fw-title);
-  line-height: 1.15;
-}
-.shop-sub {
-  opacity: 0.92;
-  max-width: 760px;
-  margin-top: 0.5rem;
-}
-.shop-hero-img {
-  border: 1px solid var(--khctl-soft);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  padding: 56px 0 24px;
 }
 
-/* ===== TOOLBAR ===== */
-.section {
-  padding: clamp(2.4rem, 4.4vw, 4.8rem) 0;
-}
-.shop-toolbar .cat-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
+/* Toolbar */
 .shop-toolbar .pill {
-  padding: 0.45rem 0.8rem;
+  padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid var(--khctl-soft);
-  background: rgba(255, 255, 255, 0.03);
-  color: inherit;
-  font-size: 0.92rem;
-  transition: transform 160ms ease, background 160ms ease, border 160ms ease;
+  border: 1px solid var(--kh-border, rgba(255, 255, 255, 0.15));
+  background: var(--kh-block, #17122b);
+  color: var(--kh-text, #fff);
+  cursor: pointer;
 }
+.shop-toolbar .pill.active,
 .shop-toolbar .pill:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.06);
-}
-.shop-toolbar .pill.active {
-  background: var(--khctl-gold);
-  color: #1b142f;
-  border-color: var(--khctl-gold);
+  background: var(--kh-gold);
+  color: #0f0a1e;
 }
 
-.khctl-input {
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--khctl-text);
-  border: 1px solid var(--khctl-soft);
-}
-.khctl-input::placeholder {
-  color: rgba(255, 255, 255, 0.65);
-}
-.khctl-input:focus {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--khctl-text);
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.12);
-}
-
-/* ===== GRID SẢN PHẨM ===== */
+/* Grid */
 .shop-grid .product-card {
-  /* .card-3d đã có style chung ở index.css; chỉ thêm tuỳ biến nếu cần */
-}
-.product-card .product-media {
-  position: relative;
-  background: #080612;
-  height: 180px;
-  overflow: hidden;
-}
-.product-card .product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.badge-made {
-  position: absolute;
-  left: 0.6rem;
-  top: 0.6rem;
-  background: var(--khctl-gold);
-  color: #1b142f;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  font-weight: var(--fw-title);
-  font-size: 0.75rem;
-}
-
-.product-name {
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-title);
-  margin-bottom: 0.35rem;
-}
-.product-price {
-  color: var(--khctl-gold);
-  font-weight: var(--fw-title);
-}
-.product-cat {
-  opacity: 0.8;
-  font-size: 0.85rem;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1199.98px) {
-  .product-card .product-media {
-    height: 170px;
-  }
-}
-@media (max-width: 991.98px) {
-  .product-card .product-media {
-    height: 160px;
-  }
-}
-@media (max-width: 575.98px) {
-  .shop-hero {
-    padding: 2.2rem 0;
-  }
-  .product-card .product-media {
-    height: 150px;
-  }
+  min-height: 100%;
 }

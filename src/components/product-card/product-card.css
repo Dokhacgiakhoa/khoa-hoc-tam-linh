@@ -1,0 +1,52 @@
+/* Chỉ bổ sung nhẹ cho layout thẻ sản phẩm, tuân thủ index.css */
+
+.product-card {
+  /* đã có .card-3d từ index.css, đây chỉ tinh chỉnh */
+  display: flex;
+}
+
+.product-media {
+  position: relative;
+}
+
+.product-img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  /* Tỉ lệ 1:1 dùng .img-square từ index.css */
+  object-fit: var(--media-fit, cover);
+  object-position: var(--media-pos, center);
+}
+
+.badge-made {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 215, 0, 0.9);
+  color: #0f0a1e;
+  backdrop-filter: blur(4px);
+}
+
+.product-name {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-weight: 600;
+}
+
+.product-cat {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Đảm bảo vùng nút luôn ở đáy thẻ */
+.card-actions {
+  margin-top: auto;
+}

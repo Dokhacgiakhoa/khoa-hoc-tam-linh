@@ -243,7 +243,7 @@ a:hover {
   transform: translateY(1px);
 }
 
-/* Nút vàng đặc */
+/* Nút vàng đặc (base) */
 .btn-gold {
   background: var(--kh-gold);
   border: 2px solid var(--kh-gold);
@@ -263,7 +263,7 @@ a:hover {
   box-shadow: 0 16px 34px rgba(255, 215, 0, 0.2);
 }
 
-/* Nút viền vàng */
+/* Nút viền vàng (base) */
 .btn-outline-gold {
   background: transparent;
   color: var(--kh-gold);
@@ -342,7 +342,7 @@ a:hover {
 /* ========================
    🧯 CHỐNG “CHỮ ĐÈ LÊN ẢNH”
    ======================== */
-/* 1) Dùng lớp này cho wrapper text để có nền mờ dưới chữ */
+/* 1) Nền mờ dưới chữ */
 .text-safety {
   backdrop-filter: blur(3px);
   background: linear-gradient(
@@ -356,7 +356,7 @@ a:hover {
   padding: 16px 18px;
 }
 
-/* 2) Hoặc phủ overlay trên media để đảm bảo độ tương phản */
+/* 2) Overlay trên media bảo đảm tương phản */
 .media-overlay {
   position: absolute;
   inset: 0;
@@ -368,10 +368,10 @@ a:hover {
   pointer-events: none;
 }
 
-/* 3) Utility tách layout: text và media không chồng (stack-then-flow) */
+/* 3) Tách layout text/media */
 .stack-out {
   position: relative;
-  z-index: 1; /* đảm bảo trên media */
+  z-index: 1;
 }
 .media-underlay {
   position: relative;
@@ -380,7 +380,6 @@ a:hover {
 
 /* ========================
    🎇 HIỆU ỨNG GLOW KHI SCROLL
-   (dành cho phần tử sẽ thêm class này bằng JS/IntersectionObserver)
    ======================== */
 .glow-on-scroll {
   box-shadow: 0 0 0 rgba(255, 215, 0, 0);
@@ -428,4 +427,86 @@ a:hover {
   video[autoplay] {
     animation: none !important;
   }
+}
+
+/* =========================================================
+   🔧 FIX XUNG ĐỘT BOOTSTRAP CHO BUTTON VÀNG (HOVER/LAYOUT)
+   – Đặt ở CUỐI FILE để override mềm, không dùng !important
+   ========================================================= */
+.btn.btn-gold,
+a.btn.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* cố định 1 dòng */
+  line-height: 1; /* tránh nhảy chữ */
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  border: 2px solid var(--kh-gold);
+  background: var(--kh-gold);
+  color: #1b142f;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+  transition: box-shadow 0.2s ease, filter 0.2s ease, transform 0.02s ease;
+  cursor: pointer;
+}
+
+.btn.btn-gold:hover,
+a.btn.btn-gold:hover {
+  background: var(--kh-gold);
+  color: #1b142f;
+  box-shadow: 0 16px 34px rgba(255, 215, 0, 0.2);
+  filter: brightness(1.02);
+}
+
+.btn.btn-gold:active,
+a.btn.btn-gold:active {
+  transform: translateY(1px);
+}
+
+.btn.btn-outline-gold,
+a.btn.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  line-height: 1;
+  padding: 0.52rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 2px solid var(--kh-gold);
+  background: transparent;
+  color: var(--kh-gold);
+  font-weight: 700;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.02s ease;
+  cursor: pointer;
+}
+
+.btn.btn-outline-gold:hover,
+a.btn.btn-outline-gold:hover {
+  background: var(--kh-gold);
+  color: #1b142f;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.18);
+}
+
+.btn.btn-outline-gold:active,
+a.btn.btn-outline-gold:active {
+  transform: translateY(1px);
+}
+
+/* Focus & Disabled states nhất quán */
+.btn.btn-gold:focus-visible,
+.btn.btn-outline-gold:focus-visible {
+  outline: 2px solid var(--kh-gold);
+  outline-offset: 2px;
+}
+
+.btn.btn-gold:disabled,
+.btn.btn-outline-gold:disabled,
+.btn.btn-gold.disabled,
+.btn.btn-outline-gold.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: none;
+  box-shadow: none;
+  transform: none;
 }

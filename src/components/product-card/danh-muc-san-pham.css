@@ -1,0 +1,125 @@
+/* =========================================================
+   🛍️ DANH MỤC SẢN PHẨM – CỬA HÀNG NĂNG LƯỢNG
+   ========================================================= */
+
+/* === Toolbar lọc === */
+.danh-muc-san-pham .cat-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.danh-muc-san-pham .pill {
+  background: transparent;
+  color: var(--kh-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.danh-muc-san-pham .pill:hover {
+  border-color: var(--kh-gold);
+  color: var(--kh-gold);
+}
+
+.danh-muc-san-pham .pill.active {
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 600;
+}
+
+/* === Input & Select === */
+.danh-muc-san-pham .khctl-input {
+  background: var(--kh-block);
+  border: 1px solid var(--kh-border);
+  color: var(--kh-text);
+  border-radius: 999px;
+  padding: 6px 12px;
+  transition: all 0.25s ease;
+}
+
+.danh-muc-san-pham .khctl-input:focus {
+  border-color: var(--kh-gold);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+  outline: none;
+}
+
+/* === Grid sản phẩm === */
+.danh-muc-san-pham .row.g-4 {
+  margin-top: 8px;
+}
+
+.danh-muc-san-pham .product-card {
+  background: var(--kh-block);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.danh-muc-san-pham .product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.15);
+}
+
+/* === Ảnh sản phẩm === */
+.danh-muc-san-pham .product-card .product-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* === Nội dung thẻ === */
+.danh-muc-san-pham .product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+}
+
+.danh-muc-san-pham .product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--kh-text);
+}
+
+.danh-muc-san-pham .product-price {
+  color: var(--kh-gold);
+  font-weight: 600;
+}
+
+.danh-muc-san-pham .product-cat {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* === Badge & Button === */
+.danh-muc-san-pham .badge-made {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .danh-muc-san-pham .pill {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .danh-muc-san-pham .product-card .card-body {
+    padding: 12px;
+  }
+}
