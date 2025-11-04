@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/khoa-hoc-tam-linh/static/css/main.30e75f8e.css",
-    "main.js": "/khoa-hoc-tam-linh/static/js/main.729605db.js",
-    "static/css/32.45b27cec.chunk.css": "/khoa-hoc-tam-linh/static/css/32.45b27cec.chunk.css",
-    "static/js/32.20805d44.chunk.js": "/khoa-hoc-tam-linh/static/js/32.20805d44.chunk.js",
+    "main.js": "/khoa-hoc-tam-linh/static/js/main.c927bad2.js",
+    "static/css/32.cf1fdfc5.chunk.css": "/khoa-hoc-tam-linh/static/css/32.cf1fdfc5.chunk.css",
+    "static/js/32.818b6e57.chunk.js": "/khoa-hoc-tam-linh/static/js/32.818b6e57.chunk.js",
     "static/css/603.a2a145a0.chunk.css": "/khoa-hoc-tam-linh/static/css/603.a2a145a0.chunk.css",
     "static/js/603.671ef7f0.chunk.js": "/khoa-hoc-tam-linh/static/js/603.671ef7f0.chunk.js",
     "static/css/634.038fedbe.chunk.css": "/khoa-hoc-tam-linh/static/css/634.038fedbe.chunk.css",
@@ -20,9 +20,9 @@
     "static/js/508.53d37424.chunk.js": "/khoa-hoc-tam-linh/static/js/508.53d37424.chunk.js",
     "index.html": "/khoa-hoc-tam-linh/index.html",
     "main.30e75f8e.css.map": "/khoa-hoc-tam-linh/static/css/main.30e75f8e.css.map",
-    "main.729605db.js.map": "/khoa-hoc-tam-linh/static/js/main.729605db.js.map",
-    "32.45b27cec.chunk.css.map": "/khoa-hoc-tam-linh/static/css/32.45b27cec.chunk.css.map",
-    "32.20805d44.chunk.js.map": "/khoa-hoc-tam-linh/static/js/32.20805d44.chunk.js.map",
+    "main.c927bad2.js.map": "/khoa-hoc-tam-linh/static/js/main.c927bad2.js.map",
+    "32.cf1fdfc5.chunk.css.map": "/khoa-hoc-tam-linh/static/css/32.cf1fdfc5.chunk.css.map",
+    "32.818b6e57.chunk.js.map": "/khoa-hoc-tam-linh/static/js/32.818b6e57.chunk.js.map",
     "603.a2a145a0.chunk.css.map": "/khoa-hoc-tam-linh/static/css/603.a2a145a0.chunk.css.map",
     "603.671ef7f0.chunk.js.map": "/khoa-hoc-tam-linh/static/js/603.671ef7f0.chunk.js.map",
     "634.038fedbe.chunk.css.map": "/khoa-hoc-tam-linh/static/css/634.038fedbe.chunk.css.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.30e75f8e.css",
-    "static/js/main.729605db.js"
+    "static/js/main.c927bad2.js"
   ]
 }
