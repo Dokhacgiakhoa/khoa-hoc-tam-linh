@@ -41,7 +41,7 @@ function DichVu() {
                 <img
                   src={
                     process.env.PUBLIC_URL +
-                    "/media/services/hero-services.webp"
+                    "/images/banners/dich-vu-tam-linh-ai.png"
                   }
                   alt="Dịch vụ Tâm linh AI"
                   className="img-fluid rounded-4 shadow-soft"
@@ -86,7 +86,10 @@ function DichVu() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <img
-                src={process.env.PUBLIC_URL + "/media/services/tarot.webp"}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/dich-vu-tarot-va-bai-tra.png"
+                }
                 alt="Tarot & Bài Trà"
                 className="img-fluid rounded-4 shadow-soft"
               />
@@ -122,7 +125,10 @@ function DichVu() {
           <div className="row align-items-center g-5 flex-lg-row-reverse">
             <div className="col-lg-6">
               <img
-                src={process.env.PUBLIC_URL + "/media/services/menh.webp"}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/dich-vu-menh-va-la-so.png"
+                }
                 alt="Mệnh & Lá số"
                 className="img-fluid rounded-4 shadow-soft"
               />
@@ -157,7 +163,10 @@ function DichVu() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <img
-                src={process.env.PUBLIC_URL + "/media/services/chuyen-gia.webp"}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/banners/dich-vu-dat-lich-chuyen-gia.png"
+                }
                 alt="Đặt lịch chuyên gia"
                 className="img-fluid rounded-4 shadow-soft"
               />

@@ -17,36 +17,63 @@ import "./gioi-thieu.css";
 
 function GioiThieu() {
   return (
-    <main id="gioi-thieu" className="khctl-page">
+    <main id="gioi-thieu" className="khctl-page" aria-labelledby="about-title">
       {/* === HERO === */}
-      <section className="about-hero">
+      <section className="about-hero" aria-label="Giới thiệu – Hero">
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
-              <h1 className="hero-title mb-2">Giới thiệu</h1>
+              <h1 className="hero-title mb-2" id="about-title">
+                Giới thiệu
+              </h1>
               <p className="about-sub">
                 Hệ sinh thái <strong>Khoa học Tâm Linh</strong> – kết hợp tri
                 thức huyền học và công nghệ AI để mang lại trải nghiệm{" "}
                 <em>khoa học, dễ tiếp cận, không mê tín</em>.
               </p>
               <div className="d-flex gap-2 mt-3">
-                <Link to="/dich-vu" className="btn btn-gold">
+                <Link
+                  to="/dich-vu"
+                  className="btn btn-gold"
+                  aria-label="Khám phá dịch vụ"
+                >
                   Khám phá dịch vụ
                 </Link>
-                <Link to="/lien-he" className="btn btn-outline-gold">
+                <Link
+                  to="/lien-he"
+                  className="btn btn-outline-gold"
+                  aria-label="Tham gia đồng hành"
+                >
                   Tham gia đồng hành
                 </Link>
               </div>
             </div>
+
             <div className="col-lg-5">
               <div className="about-hero-media card-3d">
-                <div className="card-media">
-                  <img
-                    src={
-                      process.env.PUBLIC_URL + "/images/hero-gioi-thieu.webp"
+                <div className="card-media ratio-16x9">
+                  <video
+                    className="about-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    disablePictureInPicture
+                    aria-hidden="true"
+                    poster={
+                      process.env.PUBLIC_URL +
+                      "/images/gioi-thieu-khoa-hoc-tam-linh.png"
                     }
-                    alt="Khoa học Tâm Linh – Hero"
-                  />
+                  >
+                    <source
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/media/gioi-thieu-khoa-hoc-tam-linh.mp4"
+                      }
+                      type="video/mp4"
+                    />
+                  </video>
                 </div>
                 <div className="card-body">
                   <div className="card-text opacity-90">
@@ -61,7 +88,7 @@ function GioiThieu() {
       </section>
 
       {/* === GIỚI THIỆU CHUNG === */}
-      <section className="section">
+      <section className="section" aria-label="Tổng quan hệ sinh thái">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Tổng quan hệ sinh thái</h2>
@@ -122,7 +149,7 @@ function GioiThieu() {
       </section>
 
       {/* === HỆ SINH THÁI === */}
-      <section className="section alt">
+      <section className="section alt" aria-label="Bốn trụ hệ sinh thái">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Hệ sinh thái</h2>
@@ -157,7 +184,11 @@ function GioiThieu() {
                     <h3 className="feature-title">{item.title}</h3>
                     <p className="card-text">{item.text}</p>
                     <div className="d-flex">
-                      <Link to={item.to} className="btn btn-gold">
+                      <Link
+                        to={item.to}
+                        className="btn btn-gold"
+                        aria-label={`Xem chi tiết ${item.title}`}
+                      >
                         Xem chi tiết
                       </Link>
                     </div>
@@ -170,7 +201,7 @@ function GioiThieu() {
       </section>
 
       {/* === 3 NHÓM ĐỐI TƯỢNG === */}
-      <section className="section">
+      <section className="section" aria-label="Ba nhóm đối tượng">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Ai nên tham gia?</h2>
@@ -191,7 +222,11 @@ function GioiThieu() {
                     <li>Kiểm duyệt viên cộng đồng</li>
                   </ul>
                   <div className="d-flex">
-                    <Link to="/lien-he" className="btn btn-outline-gold">
+                    <Link
+                      to="/lien-he"
+                      className="btn btn-outline-gold"
+                      aria-label="Ứng tuyển nhóm Đồng hành"
+                    >
                       Ứng tuyển
                     </Link>
                   </div>
@@ -210,7 +245,11 @@ function GioiThieu() {
                     <li>Liên kết sản phẩm – kênh phân phối</li>
                   </ul>
                   <div className="d-flex">
-                    <Link to="/lien-he" className="btn btn-outline-gold">
+                    <Link
+                      to="/lien-he"
+                      className="btn btn-outline-gold"
+                      aria-label="Kết nối nhóm Đầu tư"
+                    >
                       Kết nối ngay
                     </Link>
                   </div>
@@ -229,12 +268,17 @@ function GioiThieu() {
                     <li>Mua sắm sản phẩm năng lượng</li>
                   </ul>
                   <div className="d-flex gap-2">
-                    <Link to="/dich-vu" className="btn btn-gold">
+                    <Link
+                      to="/dich-vu"
+                      className="btn btn-gold"
+                      aria-label="Dùng thử dịch vụ"
+                    >
                       Dùng thử
                     </Link>
                     <Link
                       to="/hoc-vien-huyen-hoc"
                       className="btn btn-outline-gold"
+                      aria-label="Xem Học viện"
                     >
                       Xem Học viện
                     </Link>
@@ -247,26 +291,31 @@ function GioiThieu() {
       </section>
 
       {/* === ĐỘI NGŨ & CỐ VẤN === */}
-      <section className="section alt">
+      <section className="section alt" aria-label="Đội ngũ & Cố vấn">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Đội ngũ & Cố vấn</h2>
             <p className="section-desc">Một số gương mặt tiêu biểu.</p>
           </div>
 
-          <div className="row g-4">
+          <div className="row g-4 justify-content-center">
             <div className="col-md-6 col-xl-3">
               <div className="member card-3d h-100 text-center">
                 <div className="card-media">
                   <img
-                    src={process.env.PUBLIC_URL + "/images/team-khoa.webp"}
+                    className="img-portrait"
+                    src={
+                      process.env.PUBLIC_URL + "/images/do-khac-gia-khoa.png"
+                    }
                     alt="Đỗ Khắc Gia Khoa"
                   />
                 </div>
                 <div className="card-body">
-                  <h3 className="member-name">Đỗ Khắc Gia Khoa</h3>
+                  <h5 className="member-name">Đỗ Khắc Gia Khoa</h5>
                   <div className="member-role opacity-90">
-                    Founder – Dev & Chiến lược AI
+                    <span>──── 🌿 ────</span>
+                    <h5>Founder</h5>
+                    <p>Full-stack Dev &amp; Chiến lược AI</p>
                   </div>
                 </div>
               </div>
@@ -276,26 +325,97 @@ function GioiThieu() {
               <div className="member card-3d h-100 text-center">
                 <div className="card-media">
                   <img
-                    src={process.env.PUBLIC_URL + "/images/team-tuanh.webp"}
-                    alt="Đỗ Thị Tú Anh"
+                    className="img-portrait"
+                    src={
+                      process.env.PUBLIC_URL + "/images/nguyen-xuan-cuong.jpg"
+                    }
+                    alt="Nguyễn Xuân Cường"
                   />
                 </div>
                 <div className="card-body">
-                  <h3 className="member-name">Đỗ Thị Tú Anh</h3>
+                  <h5 className="member-name">Nguyễn Xuân Cường</h5>
                   <div className="member-role opacity-90">
-                    Cố vấn – Truyền thông & Kết nối
+                    <span>──── 🌿 ────</span>
+                    <h5>Cố vấn Công nghệ</h5>
+                    <p>Tư vấn &amp; Đánh giá</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container mt-4 justify-content-center text-center">
+            <span className="section-desc">
+              -------------------------------
+            </span>
+          </div>
+
+          <div className="row g-4 justify-content-center">
+            <div className="col-md-6 col-xl-3">
+              <div className="member card-3d h-100 text-center">
+                <div className="card-media">
+                  <img
+                    className="img-portrait"
+                    src={process.env.PUBLIC_URL + "/images/do-tu-anh.jpg"}
+                    alt="Đỗ Tú Anh"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="member-name">Đỗ Tú Anh</h5>
+                  <div className="member-role opacity-90">
+                    <span>──── 🌿 ────</span>
+                    <h5>Đối tác Chiến lược</h5>
+                    <p>Solo-Preneur &amp; Mentor</p>
                   </div>
                 </div>
               </div>
             </div>
 
+            <div className="col-md-6 col-xl-3">
+              <div className="member card-3d h-100 text-center">
+                <div className="card-media">
+                  <img
+                    className="img-portrait"
+                    src={process.env.PUBLIC_URL + "/images/le-chi-phuong.jpg"}
+                    alt="Lê Chí Phương"
+                  />
+                </div>
+                <div className="card-body">
+                  <h3 className="member-name">Lê Chí Phương</h3>
+                  <div className="member-role opacity-90">
+                    <span>──── 🌿 ────</span>
+                    <h5>Marketing Full-stack</h5>
+                    <p>Kinh doanh &amp; Vận hành</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-xl-3">
+              <div className="member card-3d h-100 text-center">
+                <div className="card-media">
+                  <img
+                    className="img-portrait"
+                    src={process.env.PUBLIC_URL + "/images/open-ai.png"}
+                    alt="Open AI"
+                  />
+                </div>
+                <div className="card-body">
+                  <h3 className="member-name">Open AI</h3>
+                  <div className="member-role opacity-90">
+                    <span>──── 🌿 ────</span>
+                    <h5>Culi lương 5 loét</h5>
+                    <p>Nhận order &amp; Trả kết quả</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Có thể bổ sung thêm advisor/mentor khác sau */}
           </div>
         </div>
       </section>
 
       {/* === HỢP TÁC & ĐỒNG HÀNH === */}
-      <section className="section">
+      <section className="section" aria-label="Quy trình hợp tác & đồng hành">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Hợp tác & Đồng hành</h2>
@@ -338,10 +458,18 @@ function GioiThieu() {
           </div>
 
           <div className="d-flex gap-2 justify-content-center mt-3">
-            <Link to="/lien-he" className="btn btn-gold">
+            <Link
+              to="/lien-he"
+              className="btn btn-gold"
+              aria-label="Đăng ký đối tác"
+            >
               Đăng ký đối tác
             </Link>
-            <Link to="/lien-he" className="btn btn-outline-gold">
+            <Link
+              to="/lien-he"
+              className="btn btn-outline-gold"
+              aria-label="Liên hệ nhanh"
+            >
               Liên hệ nhanh
             </Link>
           </div>
@@ -349,7 +477,7 @@ function GioiThieu() {
       </section>
 
       {/* === CHÍNH SÁCH & BẢO MẬT === */}
-      <section className="section alt">
+      <section className="section alt" aria-label="Chính sách & bảo mật">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Chính sách & Bảo mật</h2>
@@ -360,8 +488,8 @@ function GioiThieu() {
                 <div className="card-body">
                   <h3 className="feature-title">Nguyên tắc sử dụng</h3>
                   <ul className="kv-list">
-                    <li>Tôn trọng cộng đồng & bản quyền.</li>
-                    <li>Minh bạch thông tin dịch vụ & thanh toán.</li>
+                    <li>Tôn trọng cộng đồng &amp; bản quyền.</li>
+                    <li>Minh bạch thông tin dịch vụ &amp; thanh toán.</li>
                     <li>Bảo vệ dữ liệu cá nhân, 2FA khuyến nghị.</li>
                   </ul>
                 </div>
@@ -372,8 +500,8 @@ function GioiThieu() {
                 <div className="card-body">
                   <h3 className="feature-title">Tuyên bố bảo mật</h3>
                   <p className="card-text">
-                    Dữ liệu chỉ dùng cho mục đích trải nghiệm & cải thiện dịch
-                    vụ; tuân thủ pháp luật hiện hành và chính sách nội bộ.
+                    Dữ liệu chỉ dùng cho mục đích trải nghiệm &amp; cải thiện
+                    dịch vụ; tuân thủ pháp luật hiện hành và chính sách nội bộ.
                   </p>
                 </div>
               </div>
@@ -383,7 +511,10 @@ function GioiThieu() {
       </section>
 
       {/* === LIÊN HỆ NHANH + MAP === */}
-      <section className="section contact-quick">
+      <section
+        className="section contact-quick"
+        aria-label="Liên hệ nhanh & bản đồ"
+      >
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Liên hệ nhanh</h2>
@@ -413,10 +544,18 @@ function GioiThieu() {
                     </li>
                   </ul>
                   <div className="d-flex gap-2">
-                    <Link to="/lien-he" className="btn btn-gold">
+                    <Link
+                      to="/lien-he"
+                      className="btn btn-gold"
+                      aria-label="Gửi yêu cầu hỗ trợ"
+                    >
                       Gửi yêu cầu
                     </Link>
-                    <Link to="/tai-khoan" className="btn btn-outline-gold">
+                    <Link
+                      to="/tai-khoan"
+                      className="btn btn-outline-gold"
+                      aria-label="Đăng nhập tài khoản"
+                    >
                       Đăng nhập
                     </Link>
                   </div>
@@ -431,6 +570,7 @@ function GioiThieu() {
                     title="Google Map – Zurich 1, Vinhomes Ocean Park"
                     loading="lazy"
                     allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
                     src="https://www.google.com/maps?q=Zurich%201%2C%20Vinhomes%20Ocean%20Park%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i&output=embed"
                   />
                 </div>
