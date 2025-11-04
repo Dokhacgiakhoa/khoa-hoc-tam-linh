@@ -1,61 +1,58 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./mega-dropdown.css";
 
-export default function MenuTaiKhoanHeThongMegaDropdown() {
+export default function MenuTaiKhoanMega({ show }) {
+  const img = process.env.PUBLIC_URL + "/images/mega-preview.webp";
   return (
-    <>
-      <a
-        className="nav-link dropdown-toggle"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Tài khoản
-        <span className="badge rounded-pill notif-badge ms-1">0</span>
-      </a>
-      <div className="dropdown-menu mega-menu p-3">
-        <div className="row gx-4 gy-2">
-          <div className="col-12 col-lg-4">
-            <NavLink className="dropdown-item mega-link" to="/tai-khoan#ho-so">
-              🪪 Hồ sơ & Cấp độ
-            </NavLink>
-          </div>
-          <div className="col-12 col-lg-4">
-            <NavLink
-              className="dropdown-item mega-link"
-              to="/tai-khoan#tai-chinh"
-            >
-              💳 Tài chính
-            </NavLink>
-          </div>
-          <div className="col-12 col-lg-4">
-            <div className="d-flex flex-column gap-1">
-              <NavLink
-                className="dropdown-item mega-link d-flex align-items-center justify-content-between"
-                to="/tai-khoan#hop-thu"
-              >
-                ✉️ Hộp thư{" "}
-                <span className="badge rounded-pill sub-badge">0</span>
-              </NavLink>
-              <NavLink
-                className="dropdown-item mega-link d-flex align-items-center justify-content-between"
-                to="/cua-hang#gio-hang"
-              >
-                🛒 Giỏ hàng{" "}
-                <span className="badge rounded-pill sub-badge">0</span>
-              </NavLink>
-              <NavLink
-                className="dropdown-item mega-link d-flex align-items-center justify-content-between"
-                to="/tai-khoan#nhiem-vu"
-              >
-                🎯 Nhiệm vụ{" "}
-                <span className="badge rounded-pill sub-badge">0</span>
-              </NavLink>
-            </div>
-          </div>
+    <div
+      className={show ? "kh-mega show" : "kh-mega"}
+      role="region"
+      aria-label="Mega menu Tài khoản"
+    >
+      <div className="kh-mega-inner">
+        {/* Cột 1 */}
+        <div className="kh-col">
+          <NavLink to="/tai-khoan#ho-so" className="kh-mega-link">
+            Hồ sơ &amp; Cấp độ
+          </NavLink>
+          <NavLink to="/tai-khoan#vi-linh-te" className="kh-mega-link">
+            Ví Linh Tệ
+          </NavLink>
+          <NavLink to="/bao-mat-2fa" className="kh-mega-link">
+            Bảo mật 2FA
+          </NavLink>
+        </div>
+
+        {/* Cột 2 */}
+        <div className="kh-col">
+          <NavLink to="/tai-khoan#hop-thu" className="kh-mega-link">
+            Hộp thư
+          </NavLink>
+          <NavLink to="/tai-khoan#gio-hang" className="kh-mega-link">
+            Giỏ hàng (0)
+          </NavLink>
+          <NavLink to="/tai-khoan#nhiem-vu" className="kh-mega-link">
+            Nhiệm vụ &amp; Huy hiệu
+          </NavLink>
+        </div>
+
+        {/* Cột 3 – Ảnh */}
+        <div className="kh-col kh-col-image">
+          <img src={img} alt="Tài khoản – xem trước" loading="lazy" />
         </div>
       </div>
-    </>
+
+      {/* Footer mô tả + CTA */}
+      <div className="kh-mega-footer">
+        <p className="kh-mega-note">
+          Quản trị hồ sơ, ví <strong>Linh Tệ</strong>, thông báo và{" "}
+          <strong>2FA</strong> — tập trung trong một bảng điều khiển.
+        </p>
+        <NavLink to="/tai-khoan" className="kh-cta">
+          Vào trang Tài khoản
+        </NavLink>
+      </div>
+    </div>
   );
 }

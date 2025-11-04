@@ -1,5 +1,223 @@
-.hoc-vien-huyen-hoc {
-  min-height: 60vh;
-  background: #0f0a1e;
-  color: #fff;
+/* ===== HERO ===== */
+.academy-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: radial-gradient(
+      900px 500px at 15% 15%,
+      rgba(255, 215, 0, 0.12),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0) 70%
+    );
+}
+.academy-title {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-title);
+  line-height: 1.15;
+}
+.academy-sub {
+  opacity: 0.92;
+  max-width: 780px;
+  margin-top: 0.5rem;
+}
+.academy-hero-img {
+  border: 1px solid var(--khctl-soft);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: clamp(2.8rem, 5vw, 5rem) 0;
+}
+.section.alt {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-title);
+}
+.section-desc {
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+}
+
+/* ===== TRACK CARDS (Ngũ Huyền Thuật) ===== */
+.track-card {
+  /* kế thừa .card-3d từ global */
+}
+.track-card .track-media {
+  position: relative;
+  background: #080612;
+  height: 180px;
+  overflow: hidden;
+}
+.track-card .track-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.track-card .track-badge {
+  position: absolute;
+  left: 0.6rem;
+  top: 0.6rem;
+  background: var(--khctl-gold);
+  color: #1b142f;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--fw-title);
+  font-size: 0.75rem;
+}
+.track-desc {
+  opacity: 0.95;
+  margin-top: 0.5rem;
+}
+.track-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.1rem;
+}
+.track-list li {
+  margin-bottom: 0.3rem;
+}
+
+.progress {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+.progress-bar-gold {
+  background: var(--khctl-gold);
+}
+.progress-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ===== LEVELS TIMELINE ===== */
+.levels-wrap {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.level-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--khctl-soft);
+  border-radius: 1rem;
+  padding: 0.9rem;
+}
+.level-index {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--khctl-gold);
+  color: #1b142f;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+}
+.level-name {
+  margin: 0;
+  font-weight: var(--fw-title);
+}
+.level-desc {
+  margin: 0.2rem 0 0;
+  opacity: 0.95;
+}
+
+/* ===== RECOMMENDED COURSES ===== */
+.course-card {
+  /* kế thừa .card-3d */
+}
+.course-card .course-media {
+  position: relative;
+  background: #080612;
+  height: 160px;
+  overflow: hidden;
+}
+.course-card .course-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.course-card .course-tag {
+  position: absolute;
+  left: 0.6rem;
+  top: 0.6rem;
+  background: var(--khctl-gold);
+  color: #1b142f;
+  padding: 0.18rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--fw-title);
+  font-size: 0.72rem;
+}
+.course-name {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  margin-top: 0.5rem;
+}
+.course-desc {
+  opacity: 0.95;
+}
+
+/* ===== FAQ ===== */
+.academy-faq .faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--khctl-soft);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.academy-faq .faq-item h4 {
+  margin: 0 0 0.4rem;
+  font-weight: var(--fw-title);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1199.98px) {
+  .track-card .track-media {
+    height: 170px;
+  }
+}
+@media (max-width: 991.98px) {
+  .track-card .track-media {
+    height: 160px;
+  }
+  .course-card .course-media {
+    height: 140px;
+  }
+}
+@media (max-width: 575.98px) {
+  .academy-hero {
+    padding: 2.2rem 0;
+  }
+  .levels-wrap {
+    gap: 0.75rem;
+  }
+  .level-step {
+    grid-template-columns: 48px 1fr;
+  }
+  .level-index {
+    width: 48px;
+    height: 48px;
+  }
 }

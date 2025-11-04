@@ -1,0 +1,144 @@
+/* ===========================
+   Mega dropdown – khung & animation
+   =========================== */
+
+/* Vỏ mega: ẩn mặc định, bám theo .kh-nav (đã relative) */
+.kh-mega {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 10px);
+  transform: translate(-50%, -6px);
+  width: min(1100px, calc(100vw - 40px));
+  background: var(--kh-bg);
+  border: 1px solid var(--kh-border);
+  border-radius: var(--radius);
+  box-shadow: var(--elev);
+  overflow: hidden;
+
+  /* animation đóng/mở */
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+  z-index: 60;
+}
+
+.kh-mega.show {
+  max-height: 560px; /* đủ chứa 3 cột + footer */
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* ===========================
+   Bố cục 3 cột
+   =========================== */
+.kh-mega-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr; /* cột 3 rộng hơn để chứa ảnh */
+  gap: 24px;
+  padding: 22px 22px 10px;
+}
+
+.kh-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cột ảnh có nền nhấn nhẹ */
+.kh-col-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    1200px 200px at 50% 0%,
+    rgba(255, 215, 0, 0.06),
+    transparent
+  );
+  border: 1px dashed var(--kh-border);
+  border-radius: 12px;
+  padding: 8px;
+}
+.kh-col-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ===========================
+   Link trong mega
+   =========================== */
+.kh-mega-link {
+  color: var(--kh-text);
+  text-decoration: none;
+  background: #140f28;
+  border: 1px solid var(--kh-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+}
+.kh-mega-link:hover,
+.kh-mega-link:focus-visible {
+  background: var(--kh-block-hover);
+  color: var(--kh-gold);
+  outline: none;
+}
+.kh-mega-link:active {
+  transform: translateY(1px);
+}
+
+/* ===========================
+   Footer mega: mô tả + CTA
+   =========================== */
+.kh-mega-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px 18px;
+  border-top: 1px solid var(--kh-border);
+}
+.kh-mega-note {
+  margin: 0;
+  color: var(--kh-muted);
+  line-height: 1.5;
+}
+
+/* Nút CTA tròn */
+.kh-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0f0a1e;
+  background: var(--kh-gold);
+  font-weight: 600;
+  transition: transform 0.08s ease, filter 0.2s ease;
+}
+.kh-cta:hover {
+  filter: brightness(1.05);
+}
+.kh-cta:active {
+  transform: translateY(1px);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 1024px) {
+  .kh-mega-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .kh-col-image {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 720px) {
+  .kh-mega {
+    width: calc(100vw - 20px);
+  }
+}

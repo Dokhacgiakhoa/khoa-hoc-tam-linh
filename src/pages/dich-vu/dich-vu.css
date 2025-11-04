@@ -1,5 +1,157 @@
-.dich-vu {
-  min-height: 60vh;
-  background: #0f0a1e;
-  color: #fff;
+/* ======= HERO ======= */
+.dv-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: radial-gradient(
+      900px 500px at 15% 15%,
+      rgba(255, 215, 0, 0.12),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0) 70%
+    );
+}
+
+.dv-title {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-title);
+  line-height: 1.15;
+}
+
+.dv-sub {
+  opacity: 0.92;
+  max-width: 720px;
+  margin-top: 0.75rem;
+}
+
+.dv-hero-media {
+  border: 1px solid var(--khctl-soft);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* ======= QUICK LINKS ======= */
+.section-quick .pill {
+  display: inline-block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--khctl-soft);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, border 160ms ease;
+  text-align: center;
+}
+.section-quick .pill:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ======= SECTION WRAPPER ======= */
+.section {
+  padding: clamp(3rem, 5vw, 5rem) 0;
+  position: relative;
+}
+.section.alt {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-title);
+}
+.section-desc {
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+}
+
+/* ======= FEATURE BLOCKS ======= */
+.section-feature .feature-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  margin-bottom: 0.5rem;
+}
+.section-feature .feature-text {
+  opacity: 0.92;
+  margin-bottom: 0.6rem;
+}
+.section-feature .kv-list {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  opacity: 0.95;
+}
+.section-feature .kv-list li {
+  margin-bottom: 0.35rem;
+}
+.section-feature img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* ======= PACKAGES ======= */
+.section-packages .dv-plan {
+  /* .card-3d kế thừa từ global; chỉ tinh chỉnh thêm nếu cần */
+}
+.dv-plan .card-body {
+  padding: 1.25rem;
+}
+.dv-plan .plan-name {
+  font-weight: var(--fw-title);
+  margin-bottom: 0.25rem;
+}
+.dv-plan .plan-price {
+  font-size: 1.2rem;
+  font-weight: var(--fw-title);
+  color: var(--khctl-gold);
+  margin-bottom: 0.5rem;
+}
+.dv-plan .plan-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.1rem;
+}
+.dv-plan .plan-list li {
+  margin-bottom: 0.35rem;
+}
+
+.dv-plan.featured {
+  position: relative;
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 18px 40px rgba(255, 215, 0, 0.12),
+    0 10px 24px rgba(0, 0, 0, 0.32);
+}
+.dv-plan .plan-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.75rem;
+  background: var(--khctl-gold);
+  color: #1b142f;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--fw-title);
+}
+
+/* ======= MEDIA ======= */
+@media (max-width: 991.98px) {
+  .dv-hero {
+    padding-top: 2.25rem;
+  }
 }

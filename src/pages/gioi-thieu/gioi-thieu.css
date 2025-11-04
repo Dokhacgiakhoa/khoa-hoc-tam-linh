@@ -1,5 +1,114 @@
-.gioi-thieu {
-  min-height: 60vh;
-  background: #0f0a1e;
-  color: #fff;
+/* === HERO === */
+.about-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: radial-gradient(
+      950px 520px at 15% 15%,
+      rgba(255, 215, 0, 0.12),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0) 70%
+    );
+}
+.about-sub {
+  opacity: 0.92;
+  max-width: 780px;
+}
+.about-hero-media {
+  overflow: hidden;
+}
+.about-hero-media .card-media img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* === SECTION WRAPPER === */
+.section {
+  padding: clamp(2.6rem, 4.6vw, 5rem) 0;
+}
+.section.alt {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-title);
+}
+.section-desc {
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+}
+
+/* === LIST UTIL === */
+.kv-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+.kv-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* === MEMBER / TEAM === */
+.member .member-name {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  margin: 0.25rem 0;
+}
+.member .member-role {
+  font-size: 0.95rem;
+}
+
+/* === STEPS === */
+.step .step-index {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--khctl-gold);
+  color: #1b142f;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+  margin-bottom: 0.35rem;
+}
+
+/* === CONTACT + MAP === */
+.contact-list {
+  margin: 0 0 1rem;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+.map-wrap {
+  overflow: hidden;
+}
+.map-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 575.98px) {
+  .about-hero {
+    padding: 2.2rem 0;
+  }
 }

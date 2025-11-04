@@ -1,20 +1,244 @@
-/* Reset rất nhẹ + base */
+/* =========================================================
+   🌙 CẤU HÌNH CHUNG TOÀN DỰ ÁN – KHOA HỌC TÂM LINH
+   ========================================================= */
+
+/* =========================================================
+   🅰️ FONT & CÀI ĐẶT CHUNG – Áp dụng toàn site
+   ========================================================= */
+
+/* Import font tối ưu cho tiếng Việt (Be Vietnam Pro hỗ trợ tốt các dấu) */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap");
+
+/* Reset cơ bản và font mặc định cho toàn website */
 * {
-  box-sizing: border-box;
-}
-html,
-body,
-#root {
-  height: 100%;
   margin: 0;
   padding: 0;
-}
-img {
-  max-width: 100%;
-  display: block;
-}
-a {
-  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Be Vietnam Pro", "Inter", "Open Sans", sans-serif;
 }
 
-/* Không đặt style đặc thù trang/comp ở đây để tránh ảnh hưởng chéo */
+/* Font mặc định cho body */
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  background: var(--khctl-bg);
+  color: var(--khctl-text);
+  overflow-x: hidden;
+}
+
+/* Typography scale toàn cục */
+:root {
+  /* 🎨 Font size tự động co giãn (responsive typography) */
+  --fs-hero: clamp(1.8rem, 3vw, 2.4rem); /* Tiêu đề lớn: Hero/Banner */
+  --fs-h1: clamp(1.4rem, 2.3vw, 1.9rem); /* Tiêu đề section chính */
+  --fs-h2: clamp(1.1rem, 1.8vw, 1.35rem); /* Tiêu đề phụ / card */
+  --fs-body: 1rem; /* Chữ thân bài */
+  --fs-small: 0.9rem; /* Chữ nhỏ / caption */
+  --fw-title: 800; /* Độ đậm tiêu đề */
+
+  /* 🎨 Màu thương hiệu */
+  --khctl-bg: #0f0a1e; /* Nền đen tím */
+  --khctl-text: #ffffff; /* Chữ trắng */
+  --khctl-gold: #ffd700; /* Vàng gold */
+  --khctl-soft: rgba(255, 255, 255, 0.08);
+  --khctl-soft-2: rgba(255, 255, 255, 0.04);
+}
+
+/* Cải thiện hiển thị font trên Windows & macOS */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading mặc định (h1–h6) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: var(--fw-title);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Đoạn văn & text chung */
+p,
+li,
+span,
+a,
+label,
+input,
+button {
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   🔗 LIÊN KẾT & SCROLLBAR
+   ========================================================= */
+
+a {
+  color: var(--khctl-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #fff4a1;
+}
+
+/* Thanh cuộn tối giản */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--khctl-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--khctl-soft);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--khctl-gold);
+}
+
+/* =========================================================
+   🎴 CARD – CẤU TRÚC CHUNG TOÀN SITE
+   ========================================================= */
+
+.card-3d {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--khctl-soft);
+  border-radius: 1.1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+
+  /* Bố cục dạng cột để căn top–bottom */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-3d:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+/* Ảnh/media nằm ở trên cùng của thẻ */
+.card-3d > .card-media {
+  flex: 0 0 auto;
+}
+.card-3d > .card-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--khctl-soft);
+}
+
+/* Nội dung chính của card */
+.card-3d > .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+/* Tiêu đề & đoạn mô tả */
+.card-3d .card-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  line-height: 1.3;
+  margin: 0 0 0.25rem;
+}
+.card-3d .card-text {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Footer dính đáy */
+.card-3d .card-body > .d-flex:last-child,
+.card-3d .card-body > .btn:last-child {
+  margin-top: auto;
+}
+
+/* Nếu có progress trước nút -> kéo cả cụm xuống đáy */
+.card-3d .card-body > .progress:has(+ .d-flex:last-child) {
+  margin-top: auto;
+}
+
+/* Utility: ép phần tử xuống đáy khi cần */
+.push-bottom {
+  margin-top: auto !important;
+}
+
+/* =========================================================
+   ✴ BUTTON CƠ BẢN (DÙNG CHUNG)
+   ========================================================= */
+
+.btn-gold {
+  background: var(--khctl-gold);
+  border: none;
+  color: #1b142f;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+  transition: all 0.2s ease;
+}
+.btn-gold:hover {
+  color: #1b142f;
+  box-shadow: 0 16px 34px rgba(255, 215, 0, 0.2);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--khctl-gold);
+  border: 2px solid var(--khctl-gold);
+  font-weight: 700;
+  padding: 0.52rem 0.9rem;
+  border-radius: 0.9rem;
+  transition: all 0.2s ease;
+}
+.btn-outline-gold:hover {
+  background: var(--khctl-gold);
+  color: #1b142f;
+}
+
+/* =========================================================
+   📐 SECTION CHUNG (LANDING PAGE)
+   ========================================================= */
+
+.section {
+  padding: clamp(2.4rem, 4.4vw, 4.8rem) 0;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-title);
+}
+.section-desc {
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+}
+
+/* =========================================================
+   💻 RESPONSIVE CHUNG
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+}
