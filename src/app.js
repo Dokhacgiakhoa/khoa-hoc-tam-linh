@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/navbar/navbar";
 import Footer from "./components/layout/footer/footer";
+import ScrollToTop from "./components/scroll-to-top";
 
 const TrangChu = lazy(() => import("./pages/trang-chu/trang-chu"));
 const GioiThieu = lazy(() => import("./pages/gioi-thieu/gioi-thieu"));
@@ -28,6 +29,7 @@ export default function App() {
             <div className="app-loading text-center py-5">Đang tải…</div>
           }
         >
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<TrangChu />} />
             <Route path="/gioi-thieu" element={<GioiThieu />} />

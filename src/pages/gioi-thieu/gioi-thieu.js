@@ -55,11 +55,12 @@ function GioiThieu() {
                   <video
                     className="about-video"
                     autoPlay
-                    muted
+                    controls
                     loop
                     playsInline
                     preload="auto"
                     disablePictureInPicture
+                    controlsList="nodownload"
                     aria-hidden="true"
                     poster={
                       process.env.PUBLIC_URL +

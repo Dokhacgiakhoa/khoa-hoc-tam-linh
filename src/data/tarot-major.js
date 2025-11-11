@@ -248,11 +248,11 @@ const TAROT_MAJOR = [
     Meta: "Lá bài của ý chí và chiến thắng bản thân.",
   },
   {
-    ID: "8-strength",
+    ID: "8-the-strength",
     SoThuTu: 8,
     Ten: "Strength",
     Nhom: "Major",
-    Anh: "/images/tarot-cards/major/8-strength.png",
+    Anh: "/images/tarot-cards/major/8-the-strength.png",
     YNghiaChung: {
       MoTa: "Sức mạnh nội tâm, lòng can đảm và sự kiên nhẫn. Chế ngự bản năng bằng tình yêu thương.",
       TuKhoa: ["can đảm", "kiên nhẫn", "nội lực", "thấu hiểu"],
