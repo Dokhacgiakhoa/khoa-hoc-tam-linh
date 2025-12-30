@@ -1,0 +1,615 @@
+/* =========================================================
+   🌙 CẤU HÌNH CHUNG TOÀN DỰ ÁN – KHOA HỌC TÂM LINH (INDEX.CSS)
+   ========================================================= */
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================
+   🅰️ FONT & RESET CƠ BẢN
+   ======================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Nunito Sans", "Inter", "Open Sans", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 10, 30, 0.4),
+    rgba(15, 10, 30, 0.6)
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  background: transparent;
+  color: var(--kh-text);
+  overflow-x: hidden;
+  padding-inline: 20px; /* Increased from 12px for better breathing room on small screens */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-inline: 0; /* Reset for desktop as containers handle it */
+  }
+}
+
+/* ========================
+   🎛️ TOKENS & TYPOGRAPHY
+   ======================== */
+/* Chuẩn hoá biến thương hiệu: dùng --kh-* là chính.
+   Giữ alias --khctl-* để tương thích ngược. */
+.text-gold {
+  color: var(--kh-gold) !important;
+}
+
+:root {
+  /* Brand colors (chính) */
+  --kh-bg: #0f0a1e; /* đen tím */
+  --kh-text: #ffffff; /* trắng */
+  --kh-gold: #ffd700; /* vàng gold */
+  --kh-soft: rgba(255, 255, 255, 0.08);
+  --kh-soft-2: rgba(255, 255, 255, 0.04);
+
+  /* Alias (tương thích code cũ) */
+  --khctl-bg: var(--kh-bg);
+  --khctl-text: var(--kh-text);
+  --khctl-gold: var(--kh-gold);
+  --khctl-soft: var(--kh-soft);
+  --khctl-soft-2: var(--kh-soft-2);
+
+  /* Font size scale */
+  --fs-hero: clamp(1.8rem, 3vw, 2.4rem);
+  --fs-h1: clamp(1.4rem, 2.3vw, 1.9rem);
+  --fs-h2: clamp(1.1rem, 1.8vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+  --fw-title: 800;
+
+  /* Elevations & radius */
+  --elev-1: 0 10px 24px rgba(0, 0, 0, 0.25);
+  --elev-2: 0 18px 36px rgba(0, 0, 0, 0.35);
+  --radius: 1.1rem;
+
+  /* Khung container rộng (tuỳ màn hình lớn) */
+  --container-max: 90%; /* Updated to 90% for consistent 5% margins */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-title);
+  line-height: 1.25;
+  margin: 0;
+}
+
+p,
+li,
+span,
+a,
+label,
+input,
+button {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Utility container trung tính (không phụ thuộc Bootstrap) */
+.container-w {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 992px) {
+  .container-w {
+    padding-inline: 36px; /* Increased from 24px for premium desktop spacing */
+  }
+}
+
+/* Override/Normalize Bootstrap Container to match .container-w */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: var(--container-max) !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+}
+
+/* ========================
+   🔗 LINK, FOCUS & SCROLLBAR
+   ======================== */
+a {
+  color: var(--kh-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #fff4a1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--kh-gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--kh-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--kh-soft);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kh-gold);
+}
+
+/* ========================
+   📦 CARD – DÙNG CHUNG
+   ======================== */
+.card-3d {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--kh-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--elev-1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-3d:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elev-2);
+}
+
+/* Phần media đầu card */
+.card-3d > .card-media {
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+/* Ảnh mặc định trong card là 16:9,
+   không áp cho ảnh đã có .img-* */
+.card-3d
+  > .card-media
+  img:not(.img-portrait):not(.img-square):not(.img-landscape) {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--kh-soft);
+}
+
+/* Nội dung card */
+.card-3d > .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+.card-3d .card-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  line-height: 1.3;
+  margin: 0 0 0.25rem;
+}
+.card-3d .card-text {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Footer dính đáy nếu là nút cuối */
+.card-3d .card-body > .d-flex:last-child,
+.card-3d .card-body > .btn:last-child {
+  margin-top: auto;
+}
+
+/* ========================
+   🖼️ ẢNH – UTILITY CLASSES
+   ======================== */
+.img-portrait,
+.img-landscape,
+.img-square {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.img-portrait {
+  aspect-ratio: 2 / 3;
+  object-position: center top;
+}
+.img-landscape {
+  aspect-ratio: 16 / 9;
+  object-position: center;
+}
+.img-square {
+  aspect-ratio: 1 / 1;
+  object-position: center;
+}
+
+/* ========================
+   ✴ CTA & BUTTON CHUNG
+   ======================== */
+/* Quy chuẩn CTA toàn site (ghi nhớ) */
+.kh-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px; /* 1 dòng, cố định */
+  padding: 10px 24px;
+  white-space: nowrap; /* không xuống dòng */
+  border-radius: 999px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  text-decoration: none;
+  border: 2px solid var(--kh-gold);
+  transition: all 0.25s ease;
+}
+.kh-cta:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.45);
+}
+.kh-cta:active {
+  transform: translateY(1px);
+}
+
+/* Nút vàng đặc (base) */
+.btn-gold {
+  background: var(--kh-gold);
+  border: 2px solid var(--kh-gold);
+  color: #1b142f;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* giữ 1 dòng */
+}
+.btn-gold:hover {
+  color: #1b142f;
+  box-shadow: 0 16px 34px rgba(255, 215, 0, 0.2);
+}
+
+/* Nút viền vàng (base) */
+.btn-outline-gold {
+  background: transparent;
+  color: var(--kh-gold);
+  border: 2px solid var(--kh-gold);
+  font-weight: 700;
+  padding: 0.52rem 0.9rem;
+  border-radius: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* giữ 1 dòng */
+}
+.btn-outline-gold:hover {
+  background: var(--kh-gold);
+  color: #1b142f;
+}
+
+/* ========================
+   📐 SECTION CHUẨN LANDING
+   ======================== */
+.section {
+  padding: clamp(1.8rem, 3.5vw, 3.5rem) 0;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.section-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-title);
+}
+.section-desc {
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+}
+
+/* ========================
+   🎞️ MEDIA TIỆN ÍCH
+   ======================== */
+.video {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Khung 16:9 wrapper fallback */
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+@supports not (aspect-ratio: 16 / 9) {
+  .ratio-16x9::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+}
+.about-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ========================
+   🧯 CHỐNG “CHỮ ĐÈ LÊN ẢNH”
+   ======================== */
+/* 1) Nền mờ dưới chữ */
+.text-safety {
+  backdrop-filter: blur(3px);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 10, 30, 0.55),
+    rgba(15, 10, 30, 0.75)
+  );
+  border: 1px solid var(--kh-soft);
+  box-shadow: var(--elev-1);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+/* 2) Overlay trên media bảo đảm tương phản */
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 10, 30, 0.25),
+    rgba(15, 10, 30, 0.6)
+  );
+  pointer-events: none;
+}
+
+/* 3) Tách layout text/media */
+.stack-out {
+  position: relative;
+  z-index: 1;
+}
+.media-underlay {
+  position: relative;
+  z-index: 0;
+}
+
+/* ========================
+   🎇 HIỆU ỨNG GLOW KHI SCROLL
+   ======================== */
+.glow-on-scroll {
+  box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+  transition: box-shadow 0.3s ease;
+}
+.glow-on-scroll.is-glowing {
+  box-shadow: 0 0 22px rgba(255, 215, 0, 0.25);
+}
+
+/* ========================
+   ♿ TRỢ NĂNG NHANH
+   ======================== */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================
+   💻 RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+  .text-safety {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  /* Feature section improvements */
+  .feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Course icon sizing */
+  .course-icon {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tôn trọng reduced-motion của người dùng */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  video[autoplay] {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   🔧 FIX XUNG ĐỘT BOOTSTRAP CHO BUTTON VÀNG (HOVER/LAYOUT)
+   – Đặt ở CUỐI FILE để override mềm, không dùng !important
+   ========================================================= */
+.btn.btn-gold,
+a.btn.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* cố định 1 dòng */
+  line-height: 1; /* tránh nhảy chữ */
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  border: 2px solid var(--kh-gold);
+  background: var(--kh-gold);
+  color: #1b142f;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0.12);
+  transition: box-shadow 0.2s ease, filter 0.2s ease, transform 0.02s ease;
+  cursor: pointer;
+}
+
+.btn.btn-gold:hover,
+a.btn.btn-gold:hover {
+  background: var(--kh-gold);
+  color: #1b142f;
+  box-shadow: 0 16px 34px rgba(255, 215, 0, 0.2);
+  filter: brightness(1.02);
+}
+
+.btn.btn-gold:active,
+a.btn.btn-gold:active {
+  transform: translateY(1px);
+}
+
+.btn.btn-outline-gold,
+a.btn.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  line-height: 1;
+  padding: 0.52rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 2px solid var(--kh-gold);
+  background: transparent;
+  color: var(--kh-gold);
+  font-weight: 700;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.02s ease;
+  cursor: pointer;
+}
+
+.btn.btn-outline-gold:hover,
+a.btn.btn-outline-gold:hover {
+  background: var(--kh-gold);
+  color: #1b142f;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.18);
+}
+
+.btn.btn-outline-gold:active,
+a.btn.btn-outline-gold:active {
+  transform: translateY(1px);
+}
+
+/* Focus & Disabled states nhất quán */
+.btn.btn-gold:focus-visible,
+.btn.btn-outline-gold:focus-visible {
+  outline: 2px solid var(--kh-gold);
+  outline-offset: 2px;
+}
+
+.btn.btn-gold:disabled,
+.btn.btn-outline-gold:disabled,
+.btn.btn-gold.disabled,
+.btn.btn-outline-gold.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: none;
+  box-shadow: none;
+  transform: none;
+}

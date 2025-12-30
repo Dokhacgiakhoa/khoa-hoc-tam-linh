@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# 🔮 KHOA HỌC TÂM LINH (SPIRITUAL SCIENCE)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hệ thống ứng dụng web toàn diện về huyền học, Tarot, và Thần số học. Được xây dựng trên nền tảng Full-stack hiện đại để mang lại trải nghiệm tâm linh số hóa an toàn và thẩm mỹ.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌟 Tính Năng Chính
 
-### `npm start`
+- 🎴 **Tarot Digital**: Rút bài 78 lá với hiệu ứng xáo bài 3D chuyên nghiệp.
+- 👤 **Hồ sơ Huyền học**: Quản lý thông tin cá nhân, giờ sinh, cung mệnh.
+- 💰 **Ví Linh Tệ**: Hệ thống thanh toán nội bộ cho các dịch vụ cao cấp.
+- 🛡️ **Bảo mật 2FA**: Xác thực 2 lớp qua Google Authenticator.
+- 🔐 **QR Login**: Đăng nhập nhanh không cần mật khẩu.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Cấu Trúc Dự Án
 
-### `npm test`
+- `/back-end`: Laravel 12.x API Server.
+- `/front-end`: React 18.x Application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Cài Đặt Nhanh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd back-end
+composer install
+php artisan migrate:fresh --seed
+php artisan serve
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Frontend
 
-### `npm run eject`
+```bash
+cd front-end
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Tài Liệu Hướng Dẫn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **[AGENT.md](./AGENT.md)**: Chỉ thị và quy tắc cho AI phát triển dự án.
+- **[CONTEXT.md](./CONTEXT.md)**: Tài liệu kỹ thuật chi tiết, cấu hình chuẩn và fix bugs.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Tác giả**: Đỗ Khắc Gia Khoa
+_Dự án tâm huyết dành cho cộng đồng yêu thích huyền học và công nghệ._

@@ -1,0 +1,27 @@
+:root {
+  --kh-bg: #0f0a1e; /* đen tím */
+  --kh-text: #ffffff; /* trắng */
+  --kh-gold: #ffd700; /* vàng gold */
+}
+
+.app-root {
+  background: transparent;
+  color: var(--kh-text);
+  position: relative;
+}
+
+.app-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.app-loading {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

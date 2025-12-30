@@ -1,0 +1,30 @@
+[
+    {
+        "id": "s-free",
+        "name": "Dùng thử",
+        "price": 0,
+        "description": "Tarot 1 lá miễn phí, Xem giới thiệu Lá số, Chưa lưu lịch sử",
+        "category": "trial"
+    },
+    {
+        "id": "s-std",
+        "name": "Tiêu chuẩn",
+        "price": 199000,
+        "description": "Trải bài 3–5 lá, Lưu lịch sử 30 ngày, Ưu tiên hỗ trợ email",
+        "category": "standard"
+    },
+    {
+        "id": "s-plus",
+        "name": "Chuyên sâu",
+        "price": 499000,
+        "description": "Trải bài 10 lá / Lá số nâng cao, Lưu lịch sử 90 ngày, Gợi ý hành động từ AI",
+        "category": "premium"
+    },
+    {
+        "id": "s-part",
+        "name": "Đối tác",
+        "price": 0,
+        "description": "Workshop Tarot/Mệnh lý, Tùy chỉnh báo cáo, Hóa đơn & hợp đồng",
+        "category": "custom"
+    }
+]

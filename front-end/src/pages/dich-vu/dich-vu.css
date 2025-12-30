@@ -1,0 +1,108 @@
+.dv-hero {
+  padding: clamp(3rem, 6vw, 6rem) 0 3rem;
+  background: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 215, 0, 0.1),
+    transparent 50%
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 30%, var(--khctl-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group-pill {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--khctl-soft);
+  color: var(--khctl-text);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.group-pill:hover {
+  border-color: var(--khctl-gold);
+  color: #fff;
+}
+
+.group-pill.active {
+  color: #1b142f;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.group-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--khctl-gold);
+  border-radius: 999px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.dv-nav-groups {
+  position: relative;
+  display: inline-flex !important;
+}
+
+.dv-group-detail {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+}
+
+.dv-group-detail.show {
+  display: block;
+  animation: slideUpFade 0.6s ease forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(27, 20, 47, 0.5), transparent);
+  border-radius: 1rem;
+}
+
+.shadow-gold {
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 2rem;
+}
+
+@media (max-width: 768px) {
+  .dv-nav-groups {
+    gap: 0.5rem;
+  }
+  .group-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}

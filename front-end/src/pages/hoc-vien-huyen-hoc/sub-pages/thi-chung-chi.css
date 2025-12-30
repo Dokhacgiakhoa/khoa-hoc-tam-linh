@@ -1,0 +1,81 @@
+.cert-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+  background: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 215, 0, 0.1),
+    transparent 50%
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 30%, var(--kh-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filter-pill {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--kh-soft);
+  color: var(--kh-text);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filter-pill:hover {
+  border-color: var(--kh-gold);
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.filter-pill.active {
+  background: var(--kh-gold);
+  color: #1b142f;
+  border-color: var(--kh-gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.exam-card {
+  transition: all 0.3s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.exam-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--kh-gold);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .filter-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

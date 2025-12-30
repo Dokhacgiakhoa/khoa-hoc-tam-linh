@@ -1,0 +1,3355 @@
+[
+    {
+        "ID": "0-the-fool",
+        "SoThuTu": 0,
+        "Ten": "Chàng Khờ (The Fool)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/0-the-fool.png",
+        "YNghiaChung": "Khởi đầu, tự do, tiềm năng vô hạn. Lá bài khuyến khích bạn bước ra khỏi vùng an toàn và tin vào hành trình riêng của mình.",
+        "NghiaXuoi": {
+            "MoTa": "Giai đoạn mở ra cơ hội mới. Dám mạo hiểm, dấn thân và học hỏi điều chưa biết.",
+            "TuKhoa": [
+                "bắt đầu",
+                "mạo hiểm",
+                "niềm tin",
+                "hành trình mới",
+                "trải nghiệm"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu chuẩn bị, bốc đồng hoặc sợ bước đi. Có thể lặp lại sai lầm cũ vì thiếu kế hoạch.",
+            "TuKhoa": [
+                "thiếu suy nghĩ",
+                "rủi ro",
+                "trì hoãn",
+                "bốc đồng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình yêu mới hoặc trải nghiệm mới, nhưng cần tỉnh táo và đừng mù quáng.",
+            "CongViec": "Cơ hội mới trong sự nghiệp – hãy chuẩn bị kỹ và sẵn sàng hành động.",
+            "TaiChinh": "Không nên đầu tư vội. Hãy học hỏi trước khi dùng tiền.",
+            "SucKhoe": "Năng lượng dồi dào, nhưng nên giữ nhịp độ ổn định."
+        }
+    },
+    {
+        "ID": "1-the-magician",
+        "SoThuTu": 1,
+        "Ten": "Pháp Sư (The Magician)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/1-the-magician.png",
+        "YNghiaChung": "Ý chí, khả năng biểu hiện và biến ý tưởng thành hiện thực. Mọi nguồn lực bạn cần đều đã sẵn sàng.",
+        "NghiaXuoi": {
+            "MoTa": "Hãy bắt đầu. Bạn có đủ năng lực, sự tự tin và công cụ để đạt mục tiêu.",
+            "TuKhoa": [
+                "chủ động",
+                "hành động",
+                "tập trung",
+                "làm chủ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu tập trung, sử dụng năng lượng sai cách, hoặc thao túng tình huống.",
+            "TuKhoa": [
+                "ảo tưởng",
+                "xao nhãng",
+                "thiếu định hướng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Thu hút tự nhiên. Hãy chân thật, đừng điều khiển cảm xúc.",
+            "CongViec": "Thời điểm thuận lợi để khởi nghiệp hoặc mở rộng dự án.",
+            "TaiChinh": "Tạo ra cơ hội mới bằng kỹ năng cá nhân.",
+            "SucKhoe": "Cần duy trì cân bằng năng lượng."
+        }
+    },
+    {
+        "ID": "2-the-high-priestess",
+        "SoThuTu": 2,
+        "Ten": "Nữ Đại Tư Tế (The High Priestess)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/2-the-high-priestess.png",
+        "YNghiaChung": "Trực giác, tri thức tiềm ẩn, sự im lặng và trí tuệ nội tâm. Biểu tượng cho điều ẩn giấu.",
+        "NghiaXuoi": {
+            "MoTa": "Tin vào cảm nhận. Câu trả lời bạn tìm đang ở bên trong, không phải bên ngoài.",
+            "TuKhoa": [
+                "trực giác",
+                "bình tĩnh",
+                "thấu hiểu",
+                "tinh tế"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bỏ qua linh cảm, nghe theo người khác quá nhiều hoặc bị che giấu sự thật.",
+            "TuKhoa": [
+                "rối loạn",
+                "thiếu kết nối",
+                "bị lừa dối"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Người kia sâu sắc nhưng khó đoán. Cần lắng nghe cảm xúc.",
+            "CongViec": "Giữ bí mật dự án, tránh tiết lộ sớm.",
+            "TaiChinh": "Nên quan sát và chờ thời điểm thích hợp.",
+            "SucKhoe": "Chăm sóc tâm lý, tránh stress tinh thần."
+        }
+    },
+    {
+        "ID": "3-the-empress",
+        "SoThuTu": 3,
+        "Ten": "Nữ Hoàng (The Empress)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/3-the-empress.png",
+        "YNghiaChung": "Phồn thịnh, sáng tạo, nuôi dưỡng và tình yêu vô điều kiện. Biểu trưng cho năng lượng nữ tính.",
+        "NghiaXuoi": {
+            "MoTa": "Tình yêu, công việc và cuộc sống đều có sự phát triển tự nhiên, thuận lợi.",
+            "TuKhoa": [
+                "thành công",
+                "phát triển",
+                "sáng tạo",
+                "được yêu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cho đi quá nhiều hoặc quên chăm sóc bản thân. Năng lượng trì trệ.",
+            "TuKhoa": [
+                "mất cân bằng",
+                "phụ thuộc",
+                "mệt mỏi"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Mối quan hệ ấm áp, sâu sắc và bền vững.",
+            "CongViec": "Ý tưởng sáng tạo được đón nhận.",
+            "TaiChinh": "Thu nhập ổn định, tài chính mở rộng.",
+            "SucKhoe": "Cần ngủ đủ và ăn uống lành mạnh."
+        }
+    },
+    {
+        "ID": "4-the-emperor",
+        "SoThuTu": 4,
+        "Ten": "Hoàng Đế (The Emperor)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/4-the-emperor.png",
+        "YNghiaChung": "Kỷ luật, quyền lực, kiểm soát và ổn định. Đại diện cho trật tự và nền tảng vững chắc.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang làm chủ cuộc sống hoặc công việc. Ra quyết định bằng lý trí, không cảm xúc.",
+            "TuKhoa": [
+                "lãnh đạo",
+                "kiểm soát",
+                "ổn định"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cứng nhắc, bảo thủ, hoặc kiểm soát quá mức khiến người khác xa lánh.",
+            "TuKhoa": [
+                "bảo thủ",
+                "độc đoán",
+                "thiếu linh hoạt"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Đối phương mạnh mẽ nhưng cần được tôn trọng.",
+            "CongViec": "Phù hợp vai trò lãnh đạo, điều hành.",
+            "TaiChinh": "Ổn định nhưng chậm phát triển nếu quá an toàn.",
+            "SucKhoe": "Cẩn thận stress do áp lực công việc."
+        }
+    },
+    {
+        "ID": "5-the-hierophant",
+        "SoThuTu": 5,
+        "Ten": "Tư Tế (The Hierophant)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/5-the-hierophant.png",
+        "YNghiaChung": "Truyền thống, học hỏi, hệ thống giá trị, thầy dạy hoặc niềm tin tôn giáo.",
+        "NghiaXuoi": {
+            "MoTa": "Đi theo con đường đã được kiểm chứng. Lắng nghe người cố vấn hoặc mentor.",
+            "TuKhoa": [
+                "tuân thủ",
+                "học hỏi",
+                "truyền thống"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cứng nhắc hoặc nổi loạn vô lý. Cần tìm sự cân bằng giữa tự do và quy tắc.",
+            "TuKhoa": [
+                "bảo thủ",
+                "nổi loạn",
+                "lệ thuộc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Mối quan hệ nghiêm túc hoặc cưới hỏi.",
+            "CongViec": "Có thể học hoặc làm việc với mentor.",
+            "TaiChinh": "Tài chính ổn, nên đầu tư an toàn.",
+            "SucKhoe": "Cần tư vấn chuyên gia."
+        }
+    },
+    {
+        "ID": "6-the-lovers",
+        "SoThuTu": 6,
+        "Ten": "Tình Nhân (The Lovers)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/6-the-lovers.png",
+        "YNghiaChung": "Sự lựa chọn, tình yêu, sự hài hòa và cam kết. Lá bài của kết nối tâm hồn.",
+        "NghiaXuoi": {
+            "MoTa": "Mối quan hệ hòa hợp hoặc quyết định quan trọng trong chuyện tình cảm.",
+            "TuKhoa": [
+                "đồng điệu",
+                "gắn bó",
+                "cảm xúc chân thật"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Mâu thuẫn, thiếu kết nối hoặc lựa chọn sai khiến bạn bối rối.",
+            "TuKhoa": [
+                "chia cách",
+                "bất đồng",
+                "do dự"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình yêu sâu sắc, nhưng cần rõ ràng cảm xúc.",
+            "CongViec": "Hợp tác, đồng đội, chọn hướng đi phù hợp.",
+            "TaiChinh": "Cân bằng giữa nhu cầu và giá trị.",
+            "SucKhoe": "Giữ tâm lý cân bằng."
+        }
+    },
+    {
+        "ID": "7-the-chariot",
+        "SoThuTu": 7,
+        "Ten": "Cỗ Xe Chiến Thắng (The Chariot)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/7-the-chariot.png",
+        "YNghiaChung": "Chiến thắng, ý chí, định hướng rõ ràng và khả năng kiểm soát cảm xúc.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn có khả năng vượt qua trở ngại nếu tập trung và kỷ luật bản thân.",
+            "TuKhoa": [
+                "quyết tâm",
+                "chiến thắng",
+                "làm chủ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Mất phương hướng, cố gắng quá mức hoặc để cảm xúc chi phối lý trí.",
+            "TuKhoa": [
+                "xung đột",
+                "stress",
+                "thiếu kiểm soát"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ cần đồng hành và cùng tiến.",
+            "CongViec": "Tiến triển nhanh, có thể được thăng tiến.",
+            "TaiChinh": "Kiểm soát chi tiêu tốt sẽ đạt kết quả.",
+            "SucKhoe": "Cần cân bằng giữa nghỉ ngơi và nỗ lực."
+        }
+    },
+    {
+        "ID": "8-the-strength",
+        "SoThuTu": 8,
+        "Ten": "Sức Mạnh (Strength)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/8-the-strength.png",
+        "YNghiaChung": "Sức mạnh nội tâm, lòng can đảm và sự kiên nhẫn. Chế ngự bản năng bằng tình yêu thương.",
+        "NghiaXuoi": {
+            "MoTa": "Sức mạnh không đến từ bạo lực mà từ lòng trắc ẩn và bình tĩnh.",
+            "TuKhoa": [
+                "kiểm soát",
+                "bình tâm",
+                "chịu đựng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu tự tin, bốc đồng, dễ nóng giận hoặc buông bỏ quá sớm.",
+            "TuKhoa": [
+                "thiếu kiên nhẫn",
+                "tự ti",
+                "mất cân bằng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình yêu cần sự kiên nhẫn và tôn trọng.",
+            "CongViec": "Kiểm soát cảm xúc, giữ vững mục tiêu.",
+            "TaiChinh": "Ổn định nhưng cần duy trì kỷ luật.",
+            "SucKhoe": "Tập trung rèn luyện thể chất lẫn tinh thần."
+        }
+    },
+    {
+        "ID": "9-the-hermit",
+        "SoThuTu": 9,
+        "Ten": "Ẩn Sĩ (The Hermit)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/9-the-hermit.png",
+        "YNghiaChung": "Tự chiêm nghiệm, cô tịch, soi sáng con đường nội tâm. Biểu tượng của trí tuệ sâu sắc.",
+        "NghiaXuoi": {
+            "MoTa": "Rút lui tạm thời để tìm lại định hướng. Hãy nghe chính mình.",
+            "TuKhoa": [
+                "suy ngẫm",
+                "tự khám phá",
+                "tìm kiếm"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cô lập, quá xa cách hoặc sợ chia sẻ cảm xúc thật.",
+            "TuKhoa": [
+                "cô đơn",
+                "tránh né",
+                "mất định hướng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần thời gian riêng, tránh vội vàng.",
+            "CongViec": "Thích hợp nghiên cứu, làm việc độc lập.",
+            "TaiChinh": "Giữ tài chính riêng tư, chi tiêu hợp lý.",
+            "SucKhoe": "Cần nghỉ ngơi, tránh suy nghĩ quá nhiều."
+        }
+    },
+    {
+        "ID": "10-wheel-of-fortune",
+        "SoThuTu": 10,
+        "Ten": "Bánh Xe Số Phận (Wheel of Fortune)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/10-wheel-of-fortune.png",
+        "YNghiaChung": "Chu kỳ, định mệnh, cơ hội và thay đổi bất ngờ. Bánh xe cuộc đời đang xoay.",
+        "NghiaXuoi": {
+            "MoTa": "May mắn đến, nhưng cần nắm bắt đúng lúc. Thời vận đang lên.",
+            "TuKhoa": [
+                "may mắn",
+                "cơ hội",
+                "thành công"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Vòng lặp tiêu cực, bỏ lỡ cơ hội, hoặc không học được bài học quá khứ.",
+            "TuKhoa": [
+                "trì trệ",
+                "xui rủi",
+                "lặp lại sai lầm"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Duyên đến bất ngờ. Có thể gặp lại người cũ.",
+            "CongViec": "Thời vận tốt để đổi hướng.",
+            "TaiChinh": "Cơ hội bất ngờ, nên nắm lấy.",
+            "SucKhoe": "Biến động, cần lắng nghe cơ thể."
+        }
+    },
+    {
+        "ID": "11-justice",
+        "SoThuTu": 11,
+        "Ten": "Công Lý (Justice)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/11-justice.png",
+        "YNghiaChung": "Cân bằng, nhân quả, sự thật và trách nhiệm. Mọi việc đang\/ sẽ được xử lý công bằng.",
+        "NghiaXuoi": {
+            "MoTa": "Ra quyết định dựa trên lý trí và sự thật. Nếu bạn làm đúng, kết quả sẽ ủng hộ bạn.",
+            "TuKhoa": [
+                "minh bạch",
+                "xử lý ổn thỏa",
+                "luật lệ",
+                "cân bằng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu công bằng, thông tin chưa đủ, hoặc bạn đang né tránh chịu trách nhiệm.",
+            "TuKhoa": [
+                "thiên vị",
+                "oan ức",
+                "bóp méo sự thật"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần rõ ràng, trung thực, tránh mập mờ.",
+            "CongViec": "Hợp đồng, pháp lý, thi cử sẽ được xử công bằng.",
+            "TaiChinh": "Cân đối thu – chi, tránh tiêu theo cảm xúc.",
+            "SucKhoe": "Cân bằng cơ thể: ngủ – ăn – vận động."
+        }
+    },
+    {
+        "ID": "12-the-hanged-man",
+        "SoThuTu": 12,
+        "Ten": "Người Treo (The Hanged Man)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/12-the-hanged-man.png",
+        "YNghiaChung": "Tạm dừng, nhìn theo góc độ khác, chấp nhận hy sinh để đổi lại sự sáng rõ.",
+        "NghiaXuoi": {
+            "MoTa": "Đây không phải lúc đẩy nhanh. Hãy dừng lại để nhìn vấn đề theo hướng khác.",
+            "TuKhoa": [
+                "kiên nhẫn",
+                "quan sát",
+                "đảo góc nhìn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Mắc kẹt vì không chịu thay đổi, cố nắm giữ thứ đã cần buông.",
+            "TuKhoa": [
+                "trì trệ",
+                "bế tắc",
+                "từ chối thay đổi"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nếu im lặng đang xảy ra, đó là để hai bên hiểu mình hơn.",
+            "CongViec": "Hoãn – không phải bỏ. Chờ điều kiện tốt hơn.",
+            "TaiChinh": "Chưa nên chi lớn. Xem lại mục tiêu.",
+            "SucKhoe": "Nên nghỉ ngơi, thiền, giảm tải."
+        }
+    },
+    {
+        "ID": "13-death",
+        "SoThuTu": 13,
+        "Ten": "Cái Chết (Death)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/13-the-death.png",
+        "YNghiaChung": "Kết thúc một chu kỳ để mở sang chu kỳ mới. Chuyển hóa – không phải diệt vong.",
+        "NghiaXuoi": {
+            "MoTa": "Một giai đoạn cũ đã xong nhiệm vụ. Hãy để nó đi để cái mới được sinh ra.",
+            "TuKhoa": [
+                "chuyển mình",
+                "đổi hướng",
+                "cắt đứt"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bám víu quá khứ, sợ thay đổi khiến bạn mệt mỏi và trì trệ.",
+            "TuKhoa": [
+                "trì hoãn",
+                "níu kéo",
+                "không chịu buông"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ cũ có thể kết thúc để nhường chỗ cho điều tốt hơn.",
+            "CongViec": "Đổi việc, đổi dự án, tái cấu trúc team.",
+            "TaiChinh": "Xoá khoản lỗ, đóng dự án cũ, làm sạch tài chính.",
+            "SucKhoe": "Thay thói quen xấu bằng thói quen mới."
+        }
+    },
+    {
+        "ID": "14-temperance",
+        "SoThuTu": 14,
+        "Ten": "Tiết Chế (Temperance)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/14-temperance.png",
+        "YNghiaChung": "Hài hòa, tiết chế, trung dung, chữa lành. Không vội, không thái quá.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang điều chỉnh cuộc sống rất tốt. Sự kết hợp\/ cộng tác đang diễn ra hài hòa.",
+            "TuKhoa": [
+                "hòa hợp",
+                "điều phối",
+                "trung dung"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Lệch nhịp, làm quá, hoặc cố trộn những thứ không hợp lại với nhau.",
+            "TuKhoa": [
+                "quá đà",
+                "mất cân bằng",
+                "xung khắc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Giải hòa được, miễn hai người cùng hạ cái tôi.",
+            "CongViec": "Phù hợp làm cầu nối, PM, điều phối.",
+            "TaiChinh": "Chi tiêu vừa phải, đừng ham quá.",
+            "SucKhoe": "Chế độ điều độ sẽ giúp hồi phục nhanh."
+        }
+    },
+    {
+        "ID": "15-the-devil",
+        "SoThuTu": 15,
+        "Ten": "Ác Quỷ (The Devil)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/15-the-devil.png",
+        "YNghiaChung": "Ràng buộc, nghiện, dục vọng, mô thức lặp. Tự trói mình vào cái không cần thiết.",
+        "NghiaXuoi": {
+            "MoTa": "Một mối liên kết mạnh nhưng không lành. Bạn cần nhìn thẳng vào sự lệ thuộc.",
+            "TuKhoa": [
+                "cám dỗ",
+                "phụ thuộc",
+                "ham muốn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nhận ra sự độc hại và muốn thoát ra. Bắt đầu cắt bỏ thói quen xấu.",
+            "TuKhoa": [
+                "giải thoát",
+                "tỉnh ra",
+                "cắt đứt"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Đam mê lớn nhưng có kiểm soát\/ ghen tuông\/ chiếm hữu.",
+            "CongViec": "Coi chừng làm vì tiền mà quên giá trị.",
+            "TaiChinh": "Tránh vay nặng lãi\/ mua sắm cảm xúc.",
+            "SucKhoe": "Bỏ thói quen xấu (thuốc lá, thức khuya, stress)."
+        }
+    },
+    {
+        "ID": "16-the-tower",
+        "SoThuTu": 16,
+        "Ten": "Tòa Tháp (The Tower)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/16-the-tower.png",
+        "YNghiaChung": "Biến cố bất ngờ, sụp đổ cấu trúc cũ, sự thật bị phơi bày. Nhưng đó là cái phải đổ.",
+        "NghiaXuoi": {
+            "MoTa": "Việc tưởng chắc chắn bỗng đổ sập. Nhưng nhờ vậy bạn biết cái gì là thật.",
+            "TuKhoa": [
+                "thức tỉnh",
+                "lật bài",
+                "đổi hướng gấp"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cố giữ thứ đã hỏng. Khi đổ sẽ đau hơn. Hoặc biến cố đã xảy ra và bạn đang dọn dẹp.",
+            "TuKhoa": [
+                "chậm sụp đổ",
+                "chối bỏ hiện thực"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cãi vã lớn, lộ sự thật, chia tay – nhưng để chữa lành.",
+            "CongViec": "Dự án fail, công ty đổi cơ cấu, phải xoay nhanh.",
+            "TaiChinh": "Tránh đầu tư cảm tính. Giữ tiền mặt.",
+            "SucKhoe": "Cơ thể cảnh báo – phải chỉnh lối sống."
+        }
+    },
+    {
+        "ID": "17-the-star",
+        "SoThuTu": 17,
+        "Ten": "Ngôi Sao (The Star)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/17-the-star.png",
+        "YNghiaChung": "Hy vọng, niềm tin, chữa lành và cảm hứng. Sau bão tố là bầu trời trong.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang đi đúng hướng. Cứ giữ nhịp nhẹ nhàng, niềm tin sẽ dẫn lối.",
+            "TuKhoa": [
+                "lạc quan",
+                "tín hiệu tốt",
+                "bình an"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nản lòng, đánh mất niềm tin, hoặc tự so sánh khiến mình tụt mood.",
+            "TuKhoa": [
+                "mất hy vọng",
+                "tự ti",
+                "tắt cảm hứng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ có thể hồi phục. Hãy chân thành.",
+            "CongViec": "Ý tưởng sáng, có người nhìn thấy bạn.",
+            "TaiChinh": "Chưa bùng nổ nhưng an toàn và đi lên.",
+            "SucKhoe": "Thời gian chữa lành rất hợp."
+        }
+    },
+    {
+        "ID": "18-the-moon",
+        "SoThuTu": 18,
+        "Ten": "Mặt Trăng (The Moon)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/18-the-moon.png",
+        "YNghiaChung": "Vô thức, ảo ảnh, lo lắng, cảm xúc dao động. Không phải mọi thứ đang thấy đều là thật.",
+        "NghiaXuoi": {
+            "MoTa": "Hãy lắng nghe cảm xúc và giấc mơ. Có điều gì đó đang ẩn dưới bề mặt.",
+            "TuKhoa": [
+                "trực giác",
+                "tinh tế",
+                "đọc tiềm thức"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Hoang mang quá mức, tự dọa mình, hoặc bị ai đó làm nhiễu thông tin.",
+            "TuKhoa": [
+                "lo âu",
+                "ảo tưởng",
+                "nhầm lẫn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ khó đoán. Đừng vội kết luận.",
+            "CongViec": "Thông tin chưa rõ – chờ thêm.",
+            "TaiChinh": "Tránh đầu tư mơ hồ\/ đa cấp.",
+            "SucKhoe": "Ngủ ngon, giải tỏa tâm lý là ưu tiên."
+        }
+    },
+    {
+        "ID": "19-the-sun",
+        "SoThuTu": 19,
+        "Ten": "Mặt Trời (The Sun)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/19-the-sun.png",
+        "YNghiaChung": "Thành công, rõ ràng, vui vẻ, năng lượng tích cực. Một trong những lá đẹp nhất.",
+        "NghiaXuoi": {
+            "MoTa": "Mọi thứ đi đúng hướng. Cơ hội, danh tiếng, niềm vui và sự ủng hộ đến cùng lúc.",
+            "TuKhoa": [
+                "thắng lợi",
+                "rực rỡ",
+                "tỏa sáng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Vẫn tốt nhưng chậm hơn; hoặc bạn đang quá kỳ vọng\/ quá lạc quan.",
+            "TuKhoa": [
+                "chậm kết quả",
+                "ảo tưởng lạc quan"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình yêu tích cực, dễ được chú ý.",
+            "CongViec": "Thăng tiến, được công nhận.",
+            "TaiChinh": "Thu nhập vào đều, có lộc.",
+            "SucKhoe": "Hồi phục nhanh."
+        }
+    },
+    {
+        "ID": "20-judgement",
+        "SoThuTu": 20,
+        "Ten": "Phán Xét (Judgement)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/20-judgement.png",
+        "YNghiaChung": "Tỉnh thức, gọi tên sự thật, được ‘thức dậy’ để làm đúng sứ mệnh.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã hiểu bài học cũ và sẵn sàng bước lên level mới. Hãy nghe ‘tiếng gọi’.",
+            "TuKhoa": [
+                "bước ngoặt",
+                "thức tỉnh",
+                "đổi đời"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Chần chừ trước lời kêu gọi, sợ thay đổi hoặc tự phán xét quá nặng.",
+            "TuKhoa": [
+                "tự phê bình",
+                "trì hoãn",
+                "sợ bị nhìn nhận"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nói rõ lòng mình. Có thể nối lại với người cũ.",
+            "CongViec": "Được gọi\/ mời\/ cất nhắc. Đừng bỏ lỡ.",
+            "TaiChinh": "Quyết toán, xử lý nợ cũ.",
+            "SucKhoe": "Thay đổi lối sống toàn diện."
+        }
+    },
+    {
+        "ID": "21-the-world",
+        "SoThuTu": 21,
+        "Ten": "Thế Giới (The World)",
+        "Nhom": "Ẩn Chính",
+        "Anh": "\/images\/tarot-cards\/major\/21-the-world.png",
+        "YNghiaChung": "Hoàn thành, trọn vẹn, khép lại hành trình và sẵn sàng sang chương mới ở level cao hơn.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã đi hết một vòng và làm tốt. Đây là lúc tổng kết, ăn mừng và chuẩn bị vòng mới.",
+            "TuKhoa": [
+                "thành tựu",
+                "trọn vẹn",
+                "chu kỳ hoàn tất"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Còn một mảnh ghép chưa hoàn thành. Đừng vội kết luận, cần làm nốt để thật trọn.",
+            "TuKhoa": [
+                "chưa xong",
+                "thiếu bước cuối",
+                "hoãn thành tựu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ lên tầm mới, hoặc chốt luôn (cưới\/ sống chung).",
+            "CongViec": "Hoàn thành dự án, có thể public\/ release.",
+            "TaiChinh": "Tài chính ổn, có thể mở rộng quốc tế.",
+            "SucKhoe": "Cân bằng tổng thể."
+        }
+    },
+    {
+        "ID": "ace-of-wands",
+        "SoThuTu": 1,
+        "Ten": "Át Gậy (Ace Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/ace-of-wands.png",
+        "YNghiaChung": "Khởi đầu đầy cảm hứng, ý tưởng bùng nổ, năng lượng sáng tạo mạnh. Lá gậy Át luôn là tín hiệu: hãy bắt tay làm đi.",
+        "NghiaXuoi": {
+            "MoTa": "Thời điểm vàng để bắt đầu dự án, kênh content, dịch vụ hoặc sản phẩm mới. Năng lượng đang ở mức cao.",
+            "TuKhoa": [
+                "bắt đầu",
+                "tự tin",
+                "hứng khởi",
+                "khởi nghiệp",
+                "bật lửa"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Ý tưởng có nhưng không triển khai, hoặc bị tắt cảm hứng do môi trường\/ người khác.",
+            "TuKhoa": [
+                "trì hoãn",
+                "tắt lửa",
+                "thiếu động lực"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Sparks mới, tình cảm mới, nhưng còn chưa ổn định.",
+            "CongViec": "Ý tưởng tốt – triển khai sớm để giữ lợi thế. Rất hợp làm sản phẩm sáng tạo.",
+            "TaiChinh": "Có cơ hội tạo thu nhập mới từ đam mê.",
+            "SucKhoe": "Thể lực tốt, nên tận dụng để tập luyện."
+        }
+    },
+    {
+        "ID": "2-of-wands",
+        "SoThuTu": 2,
+        "Ten": "2 Gậy (2 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/2-of-wands.png",
+        "YNghiaChung": "Lên kế hoạch, nhìn xa, chọn hướng đi. Bạn đã ra khỏi giai đoạn ‘chỉ nghĩ’, giờ phải ‘chọn 1 hướng’.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn biết mình muốn gì và đang cân nhắc bước đi tiếp theo. Thời điểm tốt để vẽ roadmap.",
+            "TuKhoa": [
+                "lập kế hoạch",
+                "định hướng",
+                "tính toán trước"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Sợ bước ra khỏi vùng an toàn. Cứ đứng quan sát mà không dám làm.",
+            "TuKhoa": [
+                "chần chừ",
+                "ngại thay đổi",
+                "thiếu quyết đoán"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cân nhắc tương lai chung, có thể là yêu xa hoặc chuyển chỗ.",
+            "CongViec": "Nên chọn 1 mảng để làm sâu, đừng ôm nhiều.",
+            "TaiChinh": "Tính toán đầu tư dài hạn.",
+            "SucKhoe": "Nên có kế hoạch tập luyện rõ ràng."
+        }
+    },
+    {
+        "ID": "3-of-wands",
+        "SoThuTu": 3,
+        "Ten": "3 Gậy (3 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/3-of-wands.png",
+        "YNghiaChung": "Mở rộng, bắt đầu nhìn thấy kết quả đầu tiên, làm việc với tầm nhìn rộng hơn (hợp tác, ra thị trường, đi xa).",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã đi đúng hướng. Hãy kiên trì và đón nhận cơ hội đến từ bên ngoài.",
+            "TuKhoa": [
+                "tăng trưởng",
+                "đúng hướng",
+                "xuất khẩu",
+                "đi xa"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Kế hoạch không đi xa được vì thiếu chuẩn bị hoặc thiếu partner.",
+            "TuKhoa": [
+                "kẹt tầm nhìn",
+                "thiếu nguồn lực",
+                "trì hoãn mở rộng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Yêu xa\/ yêu người nước ngoài\/ quan hệ đang mở rộng.",
+            "CongViec": "Mở brand, mở chi nhánh, làm dự án quốc tế.",
+            "TaiChinh": "Doanh thu có thể đến từ thị trường khác.",
+            "SucKhoe": "Đi lại, vận động nhiều sẽ tốt."
+        }
+    },
+    {
+        "ID": "4-of-wands",
+        "SoThuTu": 4,
+        "Ten": "4 Gậy (4 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/4-of-wands.png",
+        "YNghiaChung": "Ăn mừng, ổn định tạm thời, milestone đẹp (khai trương, cưới, ra mắt sản phẩm).",
+        "NghiaXuoi": {
+            "MoTa": "Thành quả bước đầu rất tốt. Hãy ăn mừng, tri ân team\/ khách\/ người đồng hành.",
+            "TuKhoa": [
+                "ăn mừng",
+                "tận hưởng",
+                "tạm nghỉ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Chưa tận hưởng được vì bận lo lắng việc khác. Hoặc gia đình phản đối.",
+            "TuKhoa": [
+                "thiếu vui",
+                "lệch nhịp",
+                "gia đình chưa ủng hộ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Không khí vui, có thể tính chuyện xa.",
+            "CongViec": "Ký được hợp đồng, ra được bản v1, open beta.",
+            "TaiChinh": "Có lộc nho nhỏ.",
+            "SucKhoe": "Tâm trạng tốt giúp hồi phục."
+        }
+    },
+    {
+        "ID": "5-of-wands",
+        "SoThuTu": 5,
+        "Ten": "5 Gậy (5 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/5-of-wands.png",
+        "YNghiaChung": "Cạnh tranh, xung đột nhỏ, mỗi người một ý. Không phải đánh nhau, mà là chưa đồng bộ.",
+        "NghiaXuoi": {
+            "MoTa": "Đang có va chạm. Nếu điều phối tốt sẽ thành sức bật. Rất giống giai đoạn team IT mỗi người 1 task.",
+            "TuKhoa": [
+                "tranh luận",
+                "thi đấu",
+                "rèn kỹ năng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Xung đột không đáng mà kéo dài. Có thể bạn đang né tránh đối thoại.",
+            "TuKhoa": [
+                "căng thẳng",
+                "bất hợp tác",
+                "trì trệ vì cãi nhau"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cãi vã vụn vặt. Giảm cái tôi là xong.",
+            "CongViec": "Cần trưởng nhóm đứng ra chốt.",
+            "TaiChinh": "Hạn chế mua sắm vì sĩ diện.",
+            "SucKhoe": "Stress nhẹ, nên vận động."
+        }
+    },
+    {
+        "ID": "6-of-wands",
+        "SoThuTu": 6,
+        "Ten": "6 Gậy (6 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/6-of-wands.png",
+        "YNghiaChung": "Chiến thắng, được ghi nhận, được mọi người công nhận năng lực.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn làm tốt và xứng đáng được spotlight. Cứ nhận đi, để tạo đà cho bước kế tiếp.",
+            "TuKhoa": [
+                "vinh danh",
+                "thành công",
+                "tự hào"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Sợ spotlight hoặc thành công chưa bền vững. Hoặc thắng nhưng trong lòng không vui.",
+            "TuKhoa": [
+                "tự ti",
+                "ảo tưởng thắng lợi",
+                "cần khiêm tốn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Được theo đuổi, được chú ý.",
+            "CongViec": "Được khen, được đề xuất, được giao dự án.",
+            "TaiChinh": "Có thưởng\/ bonus.",
+            "SucKhoe": "Tinh thần tốt."
+        }
+    },
+    {
+        "ID": "7-of-wands",
+        "SoThuTu": 7,
+        "Ten": "7 Gậy (7 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/7-of-wands.png",
+        "YNghiaChung": "Giữ lập trường, bảo vệ quan điểm, cạnh tranh lên level cao hơn.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang đi đúng nhưng sẽ bị chất vấn. Cứ giữ vững, miễn là lý do rõ ràng.",
+            "TuKhoa": [
+                "bảo vệ chính kiến",
+                "kiên định",
+                "không lùi bước"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Mệt vì phải chống đỡ liên tục. Có thể bạn cần xin thêm nguồn lực.",
+            "TuKhoa": [
+                "kiệt sức",
+                "bị áp đảo",
+                "phòng thủ yếu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần bảo vệ tình cảm trước tác động ngoài.",
+            "CongViec": "Trình bày rõ để thuyết phục team\/ khách.",
+            "TaiChinh": "Đừng để người khác ép chi.",
+            "SucKhoe": "Ngủ nghỉ kém vì căng thẳng."
+        }
+    },
+    {
+        "ID": "8-of-wands",
+        "SoThuTu": 8,
+        "Ten": "8 Gậy (8 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/8-of-wands.png",
+        "YNghiaChung": "Tốc độ, tin tức đến nhanh, mọi việc diễn tiến liên tục. Lá này đúng kiểu ‘bắn 8 mũi tên đi 1 lượt’.",
+        "NghiaXuoi": {
+            "MoTa": "Cơ hội tới dồn dập. Phải phản hồi nhanh. Hợp giai đoạn marketing\/ chạy chiến dịch.",
+            "TuKhoa": [
+                "tăng tốc",
+                "diễn tiến nhanh",
+                "phản hồi gấp"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Kẹt lịch, delay, tin đến muộn. Hoặc bạn đi quá nhanh nên người khác không theo kịp.",
+            "TuKhoa": [
+                "trì hoãn",
+                "kẹt tiến độ",
+                "quá tải"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nhắn tin dồn dập, làm quen online.",
+            "CongViec": "Job dồn, nhiều task cùng lúc.",
+            "TaiChinh": "Tiền vào – ra nhanh.",
+            "SucKhoe": "Cần nghỉ giữa giờ để không tụt sức."
+        }
+    },
+    {
+        "ID": "9-of-wands",
+        "SoThuTu": 9,
+        "Ten": "9 Gậy (9 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/9-of-wands.png",
+        "YNghiaChung": "Kiên trì tới chặng cuối, mệt nhưng chưa thua. Cần giữ vững để về đích.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã đi được 80-90%. Đừng bỏ cuộc chỉ vì mệt. Tối ưu lại sức là qua.",
+            "TuKhoa": [
+                "bền bỉ",
+                "sắp về đích",
+                "kháng cự cuối"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Kiệt sức, quá phòng thủ, hoặc cứ nghĩ người khác tấn công mình.",
+            "TuKhoa": [
+                "mệt mỏi",
+                "đa nghi",
+                "muốn bỏ cuộc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Ngại mở lòng vì tổn thương cũ.",
+            "CongViec": "Đang dở sprint cuối – cố thêm.",
+            "TaiChinh": "Giữ tiền cho giai đoạn kết.",
+            "SucKhoe": "Nghỉ ngắn, tránh quá tải."
+        }
+    },
+    {
+        "ID": "10-of-wands",
+        "SoThuTu": 10,
+        "Ten": "10 Gậy (10 Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/10-of-wands.png",
+        "YNghiaChung": "Gánh nặng, ôm quá nhiều việc, tự mình vác hết. Kết thúc chu kỳ bằng mồ hôi.",
+        "NghiaXuoi": {
+            "MoTa": "Việc nhiều thật nhưng bạn làm được. Chỉ cần phân bổ lại là xong.",
+            "TuKhoa": [
+                "trách nhiệm",
+                "hoàn thành",
+                "chịu đựng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Làm việc sai cách, không biết nhờ, dẫn tới kiệt sức. Hoặc đang làm thay việc người khác.",
+            "TuKhoa": [
+                "kiệt sức",
+                "làm quá sức",
+                "cần buông bớt"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Gánh quá nhiều cho mối quan hệ.",
+            "CongViec": "Chia task, giao bớt cho team.",
+            "TaiChinh": "Chi nhiều vì quá nhiều mục tiêu.",
+            "SucKhoe": "Cảnh báo quá tải."
+        }
+    },
+    {
+        "ID": "page-of-wands",
+        "SoThuTu": 11,
+        "Ten": "Nhóc Gậy (Page Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/page-of-wands.png",
+        "YNghiaChung": "Tin tức mới, cơ hội mới, cảm hứng mới – thường tới từ người trẻ hoặc một kênh mới.",
+        "NghiaXuoi": {
+            "MoTa": "Cứ thử đi. Đừng đợi hoàn hảo. Đây là vibe ‘làm video TikTok đầu tiên’.",
+            "TuKhoa": [
+                "thử",
+                "pilot",
+                "POC",
+                "trải nghiệm mới"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu follow-up, hứng lên rồi bỏ. Hoặc quá rụt rè không dám post.",
+            "TuKhoa": [
+                "thiếu tự tin",
+                "bỏ dở",
+                "làm nửa vời"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Kết nối mới, ‘say nắng’ nhanh.",
+            "CongViec": "Thử kênh mới, làm concept mới.",
+            "TaiChinh": "Nguồn thu nhỏ mới.",
+            "SucKhoe": "Bắt đầu tập luyện kiểu mới."
+        }
+    },
+    {
+        "ID": "knight-of-wands",
+        "SoThuTu": 12,
+        "Ten": "Hiệp Sĩ Gậy (Knight Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/knight-of-wands.png",
+        "YNghiaChung": "Hành động nhanh, dám làm, dám xông pha. Năng lượng nam tính hướng tới mục tiêu.",
+        "NghiaXuoi": {
+            "MoTa": "Rất hợp giai đoạn cần ‘quẩy’. Chỉ cần để ý đừng đốt quá nhiều tài nguyên.",
+            "TuKhoa": [
+                "bùng nổ",
+                "chạy chiến dịch",
+                "tiến công"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Làm nhanh quá hóa ẩu. Hoặc nóng tính, chưa suy nghĩ đã nói\/ làm.",
+            "TuKhoa": [
+                "bốc đồng",
+                "thiếu kiên nhẫn",
+                "chuyển hướng liên tục"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình yêu cháy nhanh, hợp tình huống.",
+            "CongViec": "Launch chiến dịch ngắn, marketing, event.",
+            "TaiChinh": "Thu – chi nhanh.",
+            "SucKhoe": "Nên tập thể thao mạnh để xả năng lượng."
+        }
+    },
+    {
+        "ID": "queen-of-wands",
+        "SoThuTu": 13,
+        "Ten": "Hoàng Hậu Gậy (Queen Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/queen-of-wands.png",
+        "YNghiaChung": "Tự tin, quyến rũ, làm chủ sức hút, vừa sáng tạo vừa biết dẫn dắt người khác.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn tạo được vibe mạnh – người khác muốn theo. Rất hợp làm thương hiệu cá nhân.",
+            "TuKhoa": [
+                "influence",
+                "charming",
+                "tỏa sáng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Ghen tị, kiểm soát, hoặc dùng sức hút sai cách.",
+            "TuKhoa": [
+                "ghen tuông",
+                "thao túng",
+                "tự ái"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Rực rỡ, chủ động, hấp dẫn.",
+            "CongViec": "Làm KOL, content, creative lead rất hợp.",
+            "TaiChinh": "Thu nhập tốt từ thương hiệu.",
+            "SucKhoe": "Nên duy trì vẻ ngoài."
+        }
+    },
+    {
+        "ID": "king-of-wands",
+        "SoThuTu": 14,
+        "Ten": "Đức Vua Gậy (King Of Wands)",
+        "Nhom": "Bộ Gậy",
+        "Anh": "\/images\/tarot-cards\/wands\/king-of-wands.png",
+        "YNghiaChung": "Tầm nhìn lớn, lãnh đạo theo cảm hứng, dám làm việc khó và kéo người khác đi cùng.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn ở vị trí dẫn dắt rồi – giờ là lúc truyền lửa cho người khác, không phải tự mình làm hết.",
+            "TuKhoa": [
+                "truyền cảm hứng",
+                "dẫn dắt",
+                "xây hệ thống"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cố chấp, độc đoán, hoặc quá tập trung vào mục tiêu nên quên cảm xúc team.",
+            "TuKhoa": [
+                "độc đoán",
+                "ngang",
+                "tôi là nhất"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Người này cuốn hút nhưng bận rộn.",
+            "CongViec": "Làm founder, lead dự án, PM, head of product.",
+            "TaiChinh": "Tài chính đến từ dự án do mình dẫn.",
+            "SucKhoe": "Giữ sức dài hạn để không ‘cháy’."
+        }
+    },
+    {
+        "ID": "ace-of-swords",
+        "SoThuTu": 1,
+        "Ten": "Át Kiếm (Ace Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/ace-of-swords.png",
+        "YNghiaChung": "Sự thật được soi sáng, ý tưởng sắc bén, nhìn rõ vấn đề. Lá Át của trí tuệ và giao tiếp.",
+        "NghiaXuoi": {
+            "MoTa": "Nói thẳng, nghĩ rõ, quyết định dứt khoát. Hợp ký kết, viết, học hành.",
+            "TuKhoa": [
+                "quyết định",
+                "rõ ràng",
+                "lý trí",
+                "chính xác"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thông tin mơ hồ, hiểu sai, hoặc nói sai lúc. Có thể quá cứng nhắc.",
+            "TuKhoa": [
+                "hiểu lầm",
+                "mơ hồ",
+                "tranh cãi vô ích"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần nói thẳng để rõ ràng, tránh mập mờ.",
+            "CongViec": "Ý tưởng mới, chiến lược mới.",
+            "TaiChinh": "Quyết định dựa trên lý trí sẽ thắng.",
+            "SucKhoe": "Chú ý căng thẳng đầu – não."
+        }
+    },
+    {
+        "ID": "2-of-swords",
+        "SoThuTu": 2,
+        "Ten": "2 Kiếm (2 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/2-of-swords.png",
+        "YNghiaChung": "Lưỡng lự, chặn cảm xúc, chưa muốn nhìn sự thật. Đang ‘tắt’ 1 kênh để đỡ đau đầu.",
+        "NghiaXuoi": {
+            "MoTa": "Tạm thời dừng để suy nghĩ thêm. Cần thêm thông tin trước khi ra quyết định.",
+            "TuKhoa": [
+                "tạm dừng",
+                "suy xét",
+                "giữ cân bằng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Trì hoãn quá lâu thành bế tắc. Hoặc đang cố tình không nhìn vấn đề.",
+            "TuKhoa": [
+                "bế tắc",
+                "né tránh",
+                "không muốn nghe"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Im lặng, đọc mãi không ra ý người kia.",
+            "CongViec": "Chưa nên ký\/ chốt. Chờ thêm dữ liệu.",
+            "TaiChinh": "Giữ tiền, đừng vội.",
+            "SucKhoe": "Căng thẳng đầu óc do suy nghĩ nhiều."
+        }
+    },
+    {
+        "ID": "3-of-swords",
+        "SoThuTu": 3,
+        "Ten": "3 Kiếm (3 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/3-of-swords.png",
+        "YNghiaChung": "Tổn thương, thất vọng, lời nói làm đau. Nhưng đồng thời là sự thật được nói ra.",
+        "NghiaXuoi": {
+            "MoTa": "Chấp nhận vết thương để lớn lên. Hợp cảnh ‘biết rồi nhưng vẫn đau’.",
+            "TuKhoa": [
+                "giải tỏa",
+                "nói ra",
+                "đối diện nỗi đau"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cố đè nén cảm xúc, không chịu chữa lành nên đau kéo dài.",
+            "TuKhoa": [
+                "kéo dài nỗi buồn",
+                "không chịu buông"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Chia tay, hiểu lầm, lời nói làm đau.",
+            "CongViec": "Feedback thẳng, có thể hơi gắt.",
+            "TaiChinh": "Chi phí phát sinh gây khó chịu.",
+            "SucKhoe": "Stress cảm xúc ảnh hưởng tim\/ huyết áp."
+        }
+    },
+    {
+        "ID": "4-of-swords",
+        "SoThuTu": 4,
+        "Ten": "4 Kiếm (4 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/4-of-swords.png",
+        "YNghiaChung": "Nghỉ ngơi, phục hồi tinh thần, tạm tránh xa drama để đầu óc trong lại.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn cần nghỉ thật, không phải nghỉ kiểu vẫn ôm điện thoại. Tách ra để đầu óc khỏe.",
+            "TuKhoa": [
+                "nghỉ ngơi",
+                "tập trung nội tâm",
+                "giữ năng lượng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nghỉ mãi không ra hành động, hoặc cơ thể đã cảnh báo mà vẫn chạy.",
+            "TuKhoa": [
+                "trì trệ",
+                "mệt mỏi dai dẳng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tạm ngắt để suy nghĩ tiếp.",
+            "CongViec": "Nghỉ phép, tạm đóng task.",
+            "TaiChinh": "Giữ nguyên trạng.",
+            "SucKhoe": "Ngủ đủ, hạn chế suy nghĩ."
+        }
+    },
+    {
+        "ID": "5-of-swords",
+        "SoThuTu": 5,
+        "Ten": "5 Kiếm (5 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/5-of-swords.png",
+        "YNghiaChung": "Xung đột thắng – thua, nói để hơn chứ không phải để hiểu. Thắng nhưng không vui.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn có thể thắng cuộc tranh luận, nhưng xem lại cái giá phải trả.",
+            "TuKhoa": [
+                "đối đầu",
+                "cứng rắn",
+                "cắt quan hệ xấu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Muốn làm hòa sau xung đột, hoặc nhận ra mình đã quá tay.",
+            "TuKhoa": [
+                "hòa giải",
+                "xử lý hậu quả",
+                "nhượng bộ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cãi nhau vì cái tôi.",
+            "CongViec": "Mâu thuẫn nội bộ, nên có người đứng giữa.",
+            "TaiChinh": "Đừng tiêu vì sĩ diện.",
+            "SucKhoe": "Căng đầu vì cãi vã."
+        }
+    },
+    {
+        "ID": "6-of-swords",
+        "SoThuTu": 6,
+        "Ten": "6 Kiếm (6 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/6-of-swords.png",
+        "YNghiaChung": "Rời khỏi vùng căng thẳng, chuyển sang nơi bình yên hơn. Đi để lành.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang làm đúng khi rút khỏi môi trường độc hại. Chuyển chỗ, chuyển job, chuyển tâm thế.",
+            "TuKhoa": [
+                "đi xa",
+                "bình ổn",
+                "rút dần"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Muốn rời đi nhưng bị níu kéo, hoặc chưa giải quyết gốc rễ nên đi đâu cũng gặp.",
+            "TuKhoa": [
+                "kẹt",
+                "chưa xong",
+                "chạy trốn tạm"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tạm xa để đỡ căng.",
+            "CongViec": "Chuyển team, chuyển công ty.",
+            "TaiChinh": "Chi cho việc di chuyển\/ đổi chỗ ở.",
+            "SucKhoe": "Đi du lịch hoặc nghỉ ngắn sẽ tốt."
+        }
+    },
+    {
+        "ID": "7-of-swords",
+        "SoThuTu": 7,
+        "Ten": "7 Kiếm (7 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/7-of-swords.png",
+        "YNghiaChung": "Ẩn giấu, làm một mình, chiến lược kín, đôi khi là lén lút. Không phải cái gì cũng nói ra.",
+        "NghiaXuoi": {
+            "MoTa": "Làm kín sẽ hiệu quả hơn. Hợp các dự án R&D, build sản phẩm trước khi công bố.",
+            "TuKhoa": [
+                "kín tiếng",
+                "chiến lược",
+                "đi đường vòng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bị lộ, bị phát hiện, hoặc day dứt vì làm điều mờ ám.",
+            "TuKhoa": [
+                "lộ bí mật",
+                "thú nhận",
+                "thiếu rõ ràng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Có chuyện chưa nói. Cần minh bạch.",
+            "CongViec": "Làm bản thử, đừng công khai sớm.",
+            "TaiChinh": "Giữ kín kế hoạch tiền bạc.",
+            "SucKhoe": "Lo lắng âm thầm."
+        }
+    },
+    {
+        "ID": "8-of-swords",
+        "SoThuTu": 8,
+        "Ten": "8 Kiếm (8 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/8-of-swords.png",
+        "YNghiaChung": "Tự trói mình bằng suy nghĩ, cảm giác bị kẹt nhưng thực ra vẫn có lối.",
+        "NghiaXuoi": {
+            "MoTa": "Vấn đề là trong đầu, không phải hoàn cảnh. Đổi góc nhìn là thoát.",
+            "TuKhoa": [
+                "tháo gỡ tư duy",
+                "tự giải phóng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bắt đầu nhận ra mình bị kẹt và muốn thoát, hoặc dám nhờ người giúp.",
+            "TuKhoa": [
+                "tỉnh ra",
+                "thoát kẹt",
+                "cởi trói"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Sợ yêu lại, sợ tổn thương.",
+            "CongViec": "Tưởng không làm được nhưng thực ra được.",
+            "TaiChinh": "Nỗi sợ tiền hơn là thiếu tiền.",
+            "SucKhoe": "Áp lực tâm lý."
+        }
+    },
+    {
+        "ID": "9-of-swords",
+        "SoThuTu": 9,
+        "Ten": "9 Kiếm (9 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/9-of-swords.png",
+        "YNghiaChung": "Lo lắng, mất ngủ, overthinking. Nhiều cái chỉ là tưởng tượng xấu nhất.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đang suy nghĩ quá nhiều. Cần nói ra\/ tham vấn\/ chia sẻ để không tự dọa mình.",
+            "TuKhoa": [
+                "giải tỏa",
+                "nói chuyện",
+                "đối diện nỗi sợ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Đã qua đỉnh lo âu. Bắt đầu nhẹ lại, hoặc nhìn thấy giải pháp.",
+            "TuKhoa": [
+                "giảm lo",
+                "healing",
+                "buông dần"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Lo mất người kia nên tự làm mình mệt.",
+            "CongViec": "Deadline, trách nhiệm khiến bạn căng.",
+            "TaiChinh": "Lo vỡ nợ, lo hụt, dù chưa chắc đã vậy.",
+            "SucKhoe": "Ngủ đi là khỏe một nửa."
+        }
+    },
+    {
+        "ID": "10-of-swords",
+        "SoThuTu": 10,
+        "Ten": "10 Kiếm (10 Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/10-of-swords.png",
+        "YNghiaChung": "Kết thúc đau, vỡ mộng, nhận ra sự thật khó chấp nhận. Nhưng cũng là điểm không thể tệ hơn.",
+        "NghiaXuoi": {
+            "MoTa": "Chấp nhận buông cái đã hỏng. Từ đây chỉ có đi lên.",
+            "TuKhoa": [
+                "đóng lại",
+                "chấm dứt",
+                "reset"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Đang hồi phục sau cú sốc. Vẫn đau nhưng học được rất nhiều.",
+            "TuKhoa": [
+                "hồi phục",
+                "tỉnh ngộ",
+                "đứng dậy"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Chia tay thật, không phải dỗi.",
+            "CongViec": "Dự án fail, cần rút kinh nghiệm.",
+            "TaiChinh": "Tổn thất – ghi lại để không lặp lại.",
+            "SucKhoe": "Cần nghỉ hoàn toàn."
+        }
+    },
+    {
+        "ID": "page-of-swords",
+        "SoThuTu": 11,
+        "Ten": "Nhóc Kiếm (Page Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/page-of-swords.png",
+        "YNghiaChung": "Tò mò, học hỏi, quan sát, muốn biết thêm. Năng lượng của người trẻ thích tìm hiểu.",
+        "NghiaXuoi": {
+            "MoTa": "Thời điểm tốt để học, đọc, nghiên cứu, làm content phân tích\/ review.",
+            "TuKhoa": [
+                "tìm hiểu",
+                "hỏi thêm",
+                "học nhanh"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Hỏi quá nhiều mà không làm, hóng drama, hoặc nói chưa chín.",
+            "TuKhoa": [
+                "hóng",
+                "xoi mói",
+                "nói vội"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Đang tìm hiểu nhau, còn quan sát.",
+            "CongViec": "Nghiên cứu, phân tích, thu thập thông tin.",
+            "TaiChinh": "Học về tài chính trước khi đầu tư.",
+            "SucKhoe": "Tìm hiểu kỹ bệnh lý."
+        }
+    },
+    {
+        "ID": "knight-of-swords",
+        "SoThuTu": 12,
+        "Ten": "Hiệp Sĩ Kiếm (Knight Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/knight-of-swords.png",
+        "YNghiaChung": "Hành động nhanh bằng lý trí, xông lên để nói sự thật. Đôi khi hơi cộc.",
+        "NghiaXuoi": {
+            "MoTa": "Cần hành động ngay, nói rõ, chốt deal nhanh. Phù hợp xử lý khủng hoảng.",
+            "TuKhoa": [
+                "nhanh",
+                "quyết",
+                "dứt điểm"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nóng nảy, cãi để thắng, hoặc làm trước nghĩ sau.",
+            "TuKhoa": [
+                "bốc đồng",
+                "lời nói sắc quá",
+                "gây tổn thương"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nói chuyện hơi gắt, dễ hiểu lầm.",
+            "CongViec": "Xử lý gọn gàng, dứt khoát.",
+            "TaiChinh": "Quyết nhanh nhưng vẫn phải có dữ liệu.",
+            "SucKhoe": "Giảm cà phê\/ chất kích thích."
+        }
+    },
+    {
+        "ID": "queen-of-swords",
+        "SoThuTu": 13,
+        "Ten": "Hoàng Hậu Kiếm (Queen Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/queen-of-swords.png",
+        "YNghiaChung": "Thông minh, tỉnh, quan sát tốt, không dễ bị thao túng. Nữ năng lượng lý trí.",
+        "NghiaXuoi": {
+            "MoTa": "Đặt ranh giới, nói chuyện thẳng thắn, làm việc rõ ràng. Hợp vai trò advisor.",
+            "TuKhoa": [
+                "logic",
+                "lãnh đạo trí tuệ",
+                "cố vấn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Lạnh quá, phán xét quá, hoặc nói làm người khác tổn thương.",
+            "TuKhoa": [
+                "lạnh lùng",
+                "chỉ trích",
+                "khó gần"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần người xứng tầm trí tuệ.",
+            "CongViec": "Làm BA, PM, cố vấn rất hợp.",
+            "TaiChinh": "Quản lý tiền thông minh.",
+            "SucKhoe": "Theo dõi chỉ số rõ ràng."
+        }
+    },
+    {
+        "ID": "king-of-swords",
+        "SoThuTu": 14,
+        "Ten": "Đức Vua Kiếm (King Of Swords)",
+        "Nhom": "Bộ Kiếm",
+        "Anh": "\/images\/tarot-cards\/swords\/king-of-swords.png",
+        "YNghiaChung": "Quyền lực trí tuệ, lãnh đạo bằng luật và sự thật. Ra quyết định công bằng.",
+        "NghiaXuoi": {
+            "MoTa": "Hợp vai trò thẩm định, ra quyết định, dạy người khác. Hãy dùng lý trí để dẫn dắt.",
+            "TuKhoa": [
+                "chỉ huy",
+                "quyết sách",
+                "đạo đức nghề"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Độc đoán, khô khan, lạm dụng quyền lực, dùng lời nói để áp người khác.",
+            "TuKhoa": [
+                "độc tài",
+                "khó chịu",
+                "nghiêm quá"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Khá lạnh, yêu bằng lý trí.",
+            "CongViec": "Lead, mentor, giám khảo, luật, bảo mật.",
+            "TaiChinh": "Tài chính ổn nhờ kỷ luật.",
+            "SucKhoe": "Theo dõi sức khỏe định kỳ."
+        }
+    },
+    {
+        "ID": "ace-of-cups",
+        "SoThuTu": 1,
+        "Ten": "Át Cốc (Ace Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/ace-of-cups.png",
+        "YNghiaChung": "Cảm xúc mới, tình yêu mới, kết nối mới, trái tim mở. Lá Át của tình cảm.",
+        "NghiaXuoi": {
+            "MoTa": "Thời điểm đẹp để yêu, làm hòa, kết nối lại, hoặc làm nội dung thiên về cảm xúc.",
+            "TuKhoa": [
+                "bắt đầu tình cảm",
+                "lành",
+                "cho đi",
+                "tươi mới"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cảm xúc bị chặn, yêu nhưng chưa dám thể hiện, hoặc tổn thương cũ chưa hết.",
+            "TuKhoa": [
+                "đóng lòng",
+                "chưa sẵn sàng",
+                "tự vệ cảm xúc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Có người mới\/ cảm xúc mới\/ rung động mới.",
+            "CongViec": "Làm sản phẩm\/ chiến dịch chạm cảm xúc.",
+            "TaiChinh": "Tiền đến từ quan hệ, từ sự thiện chí.",
+            "SucKhoe": "Cải thiện khi tâm trạng vui."
+        }
+    },
+    {
+        "ID": "2-of-cups",
+        "SoThuTu": 2,
+        "Ten": "2 Cốc (2 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/2-of-cups.png",
+        "YNghiaChung": "Kết nối 2 chiều, hợp tác hài hòa, đôi lứa, mối quan hệ đối xứng.",
+        "NghiaXuoi": {
+            "MoTa": "Quan hệ này đáng để đầu tư. Hai bên tôn trọng và nhìn nhau ngang hàng.",
+            "TuKhoa": [
+                "yêu đôi",
+                "hòa hợp",
+                "mutual",
+                "bắt tay"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "1 bên cho nhiều hơn, hiểu lầm nhỏ, hoặc chưa đồng đều về cảm xúc.",
+            "TuKhoa": [
+                "lệch pha",
+                "hiểu lầm",
+                "mâu thuẫn nhẹ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cặp đôi, người yêu, bắt đầu mối quan hệ đẹp.",
+            "CongViec": "Hợp tác win–win.",
+            "TaiChinh": "Tiền đến từ hợp tác, đối tác.",
+            "SucKhoe": "Nên có người đồng hành."
+        }
+    },
+    {
+        "ID": "3-of-cups",
+        "SoThuTu": 3,
+        "Ten": "3 Cốc (3 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/3-of-cups.png",
+        "YNghiaChung": "Ăn mừng, vui vẻ cùng bạn bè, cộng đồng ấm áp, người ủng hộ bạn.",
+        "NghiaXuoi": {
+            "MoTa": "Thời điểm nên kết nối cộng đồng, làm event, mở group, tụ tập.",
+            "TuKhoa": [
+                "vui vẻ",
+                "celebrate",
+                "lan tỏa"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nói nhiều hơn làm, tham vui quá, hoặc có người thứ 3 chen vào.",
+            "TuKhoa": [
+                "quá đà",
+                "người thứ ba",
+                "xao nhãng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình cảm vui vẻ, hay đi chơi, nhưng chưa chắc cam kết.",
+            "CongViec": "Làm cộng đồng, chăm member.",
+            "TaiChinh": "Thu từ event\/ hội nhóm.",
+            "SucKhoe": "Tâm trạng tốt thì khỏe."
+        }
+    },
+    {
+        "ID": "4-of-cups",
+        "SoThuTu": 4,
+        "Ten": "4 Cốc (4 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/4-of-cups.png",
+        "YNghiaChung": "Chán chường, không hứng thú, có cơ hội đưa tới nhưng bạn chưa muốn nhận.",
+        "NghiaXuoi": {
+            "MoTa": "Hãy kiểm tra lại cảm xúc, có thể bạn mệt nên thấy cái gì cũng không vui.",
+            "TuKhoa": [
+                "tạm dừng",
+                "nghỉ cảm xúc",
+                "xem lại nhu cầu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bắt đầu mở lòng lại, sẵn sàng nhận cơ hội mới.",
+            "TuKhoa": [
+                "thôi chán",
+                "tỉnh lại",
+                "sẵn sàng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Không có hứng yêu, đang so sánh người cũ.",
+            "CongViec": "Thiếu hứng làm, cần việc thú vị hơn.",
+            "TaiChinh": "Chi tiêu cầm chừng.",
+            "SucKhoe": "Cần nâng mood."
+        }
+    },
+    {
+        "ID": "5-of-cups",
+        "SoThuTu": 5,
+        "Ten": "5 Cốc (5 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/5-of-cups.png",
+        "YNghiaChung": "Tiếc nuối, nhìn vào cái đã mất mà quên cái vẫn còn. Nỗi buồn cảm xúc.",
+        "NghiaXuoi": {
+            "MoTa": "Thừa nhận nỗi buồn để đi tiếp. Đừng chỉ nhìn 3 cốc đổ, còn 2 cốc sau lưng.",
+            "TuKhoa": [
+                "chữa lành",
+                "chấp nhận",
+                "đứng dậy"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bỏ qua quá khứ, tha thứ cho mình\/ người khác.",
+            "TuKhoa": [
+                "tha thứ",
+                "buông",
+                "hướng về phía trước"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Buồn vì chuyện cũ, chưa quên người cũ.",
+            "CongViec": "Hối hận vì 1 quyết định.",
+            "TaiChinh": "Mất khoản tiền nhỏ, nhưng không phải hết.",
+            "SucKhoe": "Tâm trạng ảnh hưởng cơ thể."
+        }
+    },
+    {
+        "ID": "6-of-cups",
+        "SoThuTu": 6,
+        "Ten": "6 Cốc (6 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/6-of-cups.png",
+        "YNghiaChung": "Hoài niệm, ký ức đẹp, người cũ quay lại, năng lượng trẻ thơ, gia đình.",
+        "NghiaXuoi": {
+            "MoTa": "Nhìn lại để chữa lành, gặp lại người cũ, hoặc làm dự án kết nối thế hệ.",
+            "TuKhoa": [
+                "ôn lại",
+                "kết nối lại",
+                "ấm áp"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Mắc kẹt trong quá khứ, so sánh hiện tại với hồi xưa.",
+            "TuKhoa": [
+                "kẹt ký ức",
+                "so sánh",
+                "hoài cổ quá"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Người cũ liên hệ\/ gặp lại.",
+            "CongViec": "Dự án liên quan trẻ em\/ giáo dục\/ ký ức thương hiệu.",
+            "TaiChinh": "Tiền từ gia đình hỗ trợ.",
+            "SucKhoe": "Làm thứ mình thích hồi nhỏ sẽ tốt."
+        }
+    },
+    {
+        "ID": "7-of-cups",
+        "SoThuTu": 7,
+        "Ten": "7 Cốc (7 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/7-of-cups.png",
+        "YNghiaChung": "Nhiều lựa chọn, tưởng tượng, mộng mơ, nhưng cũng dễ ảo tưởng.",
+        "NghiaXuoi": {
+            "MoTa": "Cho phép mình mơ, nhưng phải chọn 1 hướng để làm thật.",
+            "TuKhoa": [
+                "vision",
+                "brainstorm",
+                "chọn lọc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thoát khỏi ảo tưởng, nhìn rõ điều gì thực sự phù hợp.",
+            "TuKhoa": [
+                "tỉnh mộng",
+                "thực tế",
+                "loại bớt"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nhiều ‘crush’, hoặc đặt kỳ vọng hơi phim.",
+            "CongViec": "Nhiều ý tưởng content\/ sản phẩm.",
+            "TaiChinh": "Đừng đầu tư lan man.",
+            "SucKhoe": "Thiền để bớt tán."
+        }
+    },
+    {
+        "ID": "8-of-cups",
+        "SoThuTu": 8,
+        "Ten": "8 Cốc (8 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/8-of-cups.png",
+        "YNghiaChung": "Rời đi dù vẫn còn tình cảm, vì biết ở lại sẽ không lớn thêm. Đi tìm điều sâu hơn.",
+        "NghiaXuoi": {
+            "MoTa": "Quyết định rời khỏi những gì không còn nuôi dưỡng cảm xúc. Mạnh mẽ và tỉnh.",
+            "TuKhoa": [
+                "buông",
+                "tìm cái tốt hơn",
+                "ra đi trong yên bình"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Rời đi nửa vời, đi rồi quay lại, hoặc sợ bước ra khỏi vùng cũ.",
+            "TuKhoa": [
+                "lưỡng lự",
+                "quay lại",
+                "sợ thay đổi"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Chia tay trong văn minh.",
+            "CongViec": "Đổi môi trường, đổi team.",
+            "TaiChinh": "Dứt 1 khoản lỗ để làm lại.",
+            "SucKhoe": "Đi xa\/ retreat sẽ tốt."
+        }
+    },
+    {
+        "ID": "9-of-cups",
+        "SoThuTu": 9,
+        "Ten": "9 Cốc (9 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/9-of-cups.png",
+        "YNghiaChung": "Hài lòng, tận hưởng, ước muốn được đáp lại. Lá ‘điều ước’ của bộ Cốc.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn xứng đáng tận hưởng thành quả. Có thể được tỏ tình\/ khen\/ nhận quà.",
+            "TuKhoa": [
+                "thỏa mãn",
+                "hạnh phúc",
+                "đủ đầy"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Tận hưởng quá hóa lười, hoặc vui bề ngoài chứ chưa chạm sâu.",
+            "TuKhoa": [
+                "quá đà",
+                "hưởng thụ",
+                "thiếu ý nghĩa"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Mối quan hệ vui, thoải mái, không áp lực.",
+            "CongViec": "Được khen, được khách hài lòng.",
+            "TaiChinh": "Có tiền để tự thưởng.",
+            "SucKhoe": "Ăn uống vui vẻ nhưng đừng quá."
+        }
+    },
+    {
+        "ID": "10-of-cups",
+        "SoThuTu": 10,
+        "Ten": "10 Cốc (10 Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/10-of-cups.png",
+        "YNghiaChung": "Hạnh phúc gia đình, viên mãn cảm xúc, mọi người hòa hợp. Kết thúc đẹp của bộ Cốc.",
+        "NghiaXuoi": {
+            "MoTa": "Đạt trạng thái cân bằng giữa tình cảm – gia đình – cuộc sống. Năng lượng rất lành.",
+            "TuKhoa": [
+                "hạnh phúc",
+                "ấm áp",
+                "sum vầy"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bên ngoài trông ổn nhưng bên trong chưa hẳn. Cần nói chuyện chân thành.",
+            "TuKhoa": [
+                "giả ổn",
+                "thiếu kết nối",
+                "kỳ vọng gia đình"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Gia đình, kết hôn, sống chung.",
+            "CongViec": "Team hòa hợp, văn hóa tốt.",
+            "TaiChinh": "Chi tiêu cho gia đình.",
+            "SucKhoe": "Tinh thần tốt hỗ trợ thể chất."
+        }
+    },
+    {
+        "ID": "page-of-cups",
+        "SoThuTu": 11,
+        "Ten": "Nhóc Cốc (Page Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/page-of-cups.png",
+        "YNghiaChung": "Thông điệp tình cảm dễ thương, lời mời, lời khen, năng lượng trẻ con đáng yêu.",
+        "NghiaXuoi": {
+            "MoTa": "Cứ thể hiện cảm xúc. Làm content\/ art\/ music rất hợp. Năng lượng thơ.",
+            "TuKhoa": [
+                "bày tỏ",
+                "sáng tạo",
+                "thử nghiệm cảm xúc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nhạy cảm quá, dễ tự ái, hoặc mơ mộng mà không hành động.",
+            "TuKhoa": [
+                "mít ướt",
+                "tự ái",
+                "thiếu thực tế"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tỏ tình, thả thính.",
+            "CongViec": "Dự án nghệ thuật, thiết kế, viết.",
+            "TaiChinh": "Thu nhập nhỏ từ đam mê.",
+            "SucKhoe": "Chăm phần cảm xúc sẽ khỏe hơn."
+        }
+    },
+    {
+        "ID": "knight-of-cups",
+        "SoThuTu": 12,
+        "Ten": "Hiệp Sĩ Cốc (Knight Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/knight-of-cups.png",
+        "YNghiaChung": "Người mang đến lời mời, sự lãng mạn, muốn chinh phục bằng cảm xúc.",
+        "NghiaXuoi": {
+            "MoTa": "Cứ đi theo điều khiến trái tim rung. Rất hợp làm việc đẹp, nghệ thuật, tư vấn.",
+            "TuKhoa": [
+                "theo đuổi ước mơ",
+                "lịch thiệp",
+                "chạm cảm xúc"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Lý tưởng hóa quá, yêu hình ảnh hơn là con người thật.",
+            "TuKhoa": [
+                "ảo tưởng tình yêu",
+                "thiếu ổn định",
+                "đổi mood"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Có người theo đuổi, rất ga-lăng.",
+            "CongViec": "Pitch, trình bày, làm dự án đẹp.",
+            "TaiChinh": "Kiếm từ dịch vụ mềm, tư vấn.",
+            "SucKhoe": "Giữ cảm xúc ổn định."
+        }
+    },
+    {
+        "ID": "queen-of-cups",
+        "SoThuTu": 13,
+        "Ten": "Hoàng Hậu Cốc (Queen Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/queen-of-cups.png",
+        "YNghiaChung": "Trực giác mạnh, biết lắng nghe, giàu tình thương, chữa lành cảm xúc người khác.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đủ sâu để nâng đỡ người khác. Hợp làm healer, tư vấn tâm lý, mentor cảm xúc.",
+            "TuKhoa": [
+                "yêu thương",
+                "lắng nghe",
+                "nâng đỡ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Quá nhạy cảm, dễ bị trôi theo cảm xúc người khác.",
+            "TuKhoa": [
+                "cuốn theo",
+                "quá mơ",
+                "mood swing"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Ấm áp, chung thủy, yêu bằng trực giác.",
+            "CongViec": "Làm trong ngành chăm sóc\/ tư vấn\/ nghệ thuật.",
+            "TaiChinh": "Thu nhập từ chăm sóc – dịch vụ mềm.",
+            "SucKhoe": "Thiền, yoga, nước."
+        }
+    },
+    {
+        "ID": "king-of-cups",
+        "SoThuTu": 14,
+        "Ten": "Đức Vua Cốc (King Of Cups)",
+        "Nhom": "Bộ Cốc",
+        "Anh": "\/images\/tarot-cards\/cups\/king-of-cups.png",
+        "YNghiaChung": "Làm chủ cảm xúc, bình tĩnh, khôn ngoan, biết dung hòa. Năng lượng trưởng thành của cảm xúc.",
+        "NghiaXuoi": {
+            "MoTa": "Dẫn dắt người khác bằng sự bao dung. Rất hợp vai trò cố vấn\/ thầy\/ người trị liệu.",
+            "TuKhoa": [
+                "điều tiết cảm xúc",
+                "chín chắn",
+                "đáng tin"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Giấu cảm xúc, kiềm nén quá, hoặc dùng cảm xúc để điều khiển người khác.",
+            "TuKhoa": [
+                "kiềm nén",
+                "thao túng cảm xúc",
+                "giả điềm tĩnh"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Người đàn ông tình cảm nhưng kín.",
+            "CongViec": "Lãnh đạo đội ngũ dịch vụ\/ chăm sóc khách hàng.",
+            "TaiChinh": "Ổn định, chi tiêu dựa trên giá trị.",
+            "SucKhoe": "Giữ tâm bình an."
+        }
+    },
+    {
+        "ID": "ace-of-pentacles",
+        "SoThuTu": 1,
+        "Ten": "Át Tiền (Ace Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/ace-of-pentacles.png",
+        "YNghiaChung": "Cơ hội vật chất mới: tiền, việc làm, khách hàng, tài nguyên, đất đai. Hạt giống rất thực tế.",
+        "NghiaXuoi": {
+            "MoTa": "Nên nắm lấy. Cơ hội này nhìn hơi nhỏ nhưng trồng lên sẽ bền.",
+            "TuKhoa": [
+                "nền tảng",
+                "bước khởi đầu chắc",
+                "đầu tư lâu dài"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Bỏ lỡ cơ hội tiền\/ job, hoặc chưa đủ nguồn lực để nhận.",
+            "TuKhoa": [
+                "lỡ thời cơ",
+                "chưa sẵn sàng",
+                "đầu tư sai"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Quan hệ thực tế, muốn xây tổ ấm.",
+            "CongViec": "Job mới\/ khách mới.",
+            "TaiChinh": "Có khoản tiền\/ quà\/ vốn nhỏ.",
+            "SucKhoe": "Bắt đầu thói quen lành."
+        }
+    },
+    {
+        "ID": "2-of-pentacles",
+        "SoThuTu": 2,
+        "Ten": "2 Tiền (2 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/2-of-pentacles.png",
+        "YNghiaChung": "Xoay xở 2 việc cùng lúc, cân bằng nguồn lực, juggling. Đủ nhưng không dư.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn vẫn xoay được. Cần ưu tiên và tối ưu quy trình.",
+            "TuKhoa": [
+                "quản lý tốt",
+                "linh hoạt",
+                "giữ nhịp"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Quá tải, làm quá nhiều, tài chính lên xuống thất thường.",
+            "TuKhoa": [
+                "quá sức",
+                "lộn xộn",
+                "chi nhiều hơn thu"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Vừa yêu vừa lo việc khác nên hơi phân tâm.",
+            "CongViec": "Đang làm 2 job\/ 2 dự án.",
+            "TaiChinh": "Thu – chi cần rõ lại.",
+            "SucKhoe": "Nghỉ ngắn để tránh kiệt sức."
+        }
+    },
+    {
+        "ID": "3-of-pentacles",
+        "SoThuTu": 3,
+        "Ten": "3 Tiền (3 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/3-of-pentacles.png",
+        "YNghiaChung": "Làm việc nhóm, mỗi người một chuyên môn, xây nền móng bền vững.",
+        "NghiaXuoi": {
+            "MoTa": "Hợp tác là tốt nhất. Công nhận của người khác đến từ chất lượng làm thật.",
+            "TuKhoa": [
+                "cộng tác",
+                "được đánh giá cao",
+                "lộ trình nghề"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Làm việc nhóm chưa ăn ý, hoặc không tôn trọng chuyên môn nhau.",
+            "TuKhoa": [
+                "thiếu phối hợp",
+                "thiếu kế hoạch"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cùng xây, cùng tiến.",
+            "CongViec": "Dự án với team, trình độ tăng.",
+            "TaiChinh": "Thu từ dự án hợp tác.",
+            "SucKhoe": "Nghe lời chuyên gia."
+        }
+    },
+    {
+        "ID": "4-of-pentacles",
+        "SoThuTu": 4,
+        "Ten": "4 Tiền (4 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/4-of-pentacles.png",
+        "YNghiaChung": "Giữ chặt, sợ mất, kiểm soát tài sản, không muốn chia sẻ.",
+        "NghiaXuoi": {
+            "MoTa": "Giữ để tích lũy là hợp, nhất là giai đoạn mới xây nền.",
+            "TuKhoa": [
+                "tiết kiệm",
+                "giữ của",
+                "an toàn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Giữ quá thành bí bách, hoặc đang ôm mô hình cũ.",
+            "TuKhoa": [
+                "keo kiệt",
+                "không dám đầu tư",
+                "kẹt nguồn lực"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Khó mở lòng.",
+            "CongViec": "Giữ job cũ, ít đổi mới.",
+            "TaiChinh": "Tiền vào két, ít ra.",
+            "SucKhoe": "Cứng nhắc → căng cơ."
+        }
+    },
+    {
+        "ID": "5-of-pentacles",
+        "SoThuTu": 5,
+        "Ten": "5 Tiền (5 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/5-of-pentacles.png",
+        "YNghiaChung": "Thiếu thốn tạm thời, cảm giác bị bỏ rơi, lo về tiền, nhưng luôn có chỗ để xin giúp.",
+        "NghiaXuoi": {
+            "MoTa": "Giai đoạn khó nhưng không phải mãi. Hãy xin hỗ trợ\/ tìm cộng đồng.",
+            "TuKhoa": [
+                "cầu viện",
+                "chia sẻ khó khăn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thoát dần khó khăn, có nguồn hỗ trợ đến.",
+            "TuKhoa": [
+                "hồi phục",
+                "được giúp",
+                "trở lại quỹ đạo"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cảm giác bị bỏ lại.",
+            "CongViec": "Thiếu nguồn lực, cần hỗ trợ.",
+            "TaiChinh": "Giai đoạn thắt lưng buộc bụng.",
+            "SucKhoe": "Chú ý sức đề kháng."
+        }
+    },
+    {
+        "ID": "6-of-pentacles",
+        "SoThuTu": 6,
+        "Ten": "6 Tiền (6 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/6-of-pentacles.png",
+        "YNghiaChung": "Cho – nhận cân bằng, từ thiện, hỗ trợ, chia sẻ nguồn lực.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn cho ai đó hoặc được ai đó cho. Năng lượng rất hài hòa.",
+            "TuKhoa": [
+                "trao đi",
+                "cân bằng dòng tiền"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Cho không đúng người, hoặc bị phụ thuộc vào người cho.",
+            "TuKhoa": [
+                "lệ thuộc",
+                "không công bằng",
+                "thiếu minh bạch"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Một bên chăm hơn bên kia.",
+            "CongViec": "Mentor – mentee, sếp – nhân sự.",
+            "TaiChinh": "Được tài trợ\/ được trả nợ.",
+            "SucKhoe": "Hỗ trợ y tế."
+        }
+    },
+    {
+        "ID": "7-of-pentacles",
+        "SoThuTu": 7,
+        "Ten": "7 Tiền (7 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/7-of-pentacles.png",
+        "YNghiaChung": "Chờ quả chín, đầu tư dài hạn, xem lại hiệu suất. Giai đoạn kiểm tra.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã gieo rồi, giờ là lúc tối ưu\/ đo lường chứ không phải đổi hạt.",
+            "TuKhoa": [
+                "kiểm tra tiến độ",
+                "kiên trì",
+                "bảo dưỡng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Nóng ruột, muốn kết quả nhanh nên tính bỏ giữa chừng.",
+            "TuKhoa": [
+                "thiếu kiên nhẫn",
+                "thay đổi liên tục"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình cảm tiến chậm.",
+            "CongViec": "Xem lại KPI\/ năng suất.",
+            "TaiChinh": "Tiền về chậm nhưng chắc.",
+            "SucKhoe": "Chế độ dài hạn."
+        }
+    },
+    {
+        "ID": "8-of-pentacles",
+        "SoThuTu": 8,
+        "Ten": "8 Tiền (8 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/8-of-pentacles.png",
+        "YNghiaChung": "Học nghề, mài skill, làm đi làm lại để giỏi. Lao động chăm chỉ.",
+        "NghiaXuoi": {
+            "MoTa": "Cứ làm đều tay là lên nghề. Rất hợp giai đoạn học lập trình\/ design\/ tarot luôn.",
+            "TuKhoa": [
+                "practice",
+                "kiên trì",
+                "làm đều"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Làm qua loa, thiếu tập trung, hoặc làm việc mình không thích.",
+            "TuKhoa": [
+                "chán nghề",
+                "thiếu động lực"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Cần chăm chút hơn.",
+            "CongViec": "Học nghề\/ nâng skill.",
+            "TaiChinh": "Tiền đến từ sự chăm chỉ.",
+            "SucKhoe": "Kỷ luật sẽ cho kết quả."
+        }
+    },
+    {
+        "ID": "9-of-pentacles",
+        "SoThuTu": 9,
+        "Ten": "9 Tiền (9 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/9-of-pentacles.png",
+        "YNghiaChung": "Độc lập tài chính, hưởng thành quả, sống thanh nhàn, tự hào về những gì đã xây.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn đã làm tốt. Tận hưởng đi, đừng cảm thấy tội lỗi khi tự thưởng.",
+            "TuKhoa": [
+                "tự hào",
+                "tự chủ",
+                "hưởng thụ xứng đáng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Hưởng trước khi đủ, hoặc sợ cô đơn dù vật chất ok.",
+            "TuKhoa": [
+                "tiêu sang quá",
+                "thiếu gắn kết"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Độc thân sang chảnh.",
+            "CongViec": "Được công nhận.",
+            "TaiChinh": "Tài chính tốt.",
+            "SucKhoe": "Chăm sóc bản thân nâng cấp."
+        }
+    },
+    {
+        "ID": "10-of-pentacles",
+        "SoThuTu": 10,
+        "Ten": "10 Tiền (10 Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/10-of-pentacles.png",
+        "YNghiaChung": "Tài sản gia đình, của để dành, bền vững nhiều thế hệ. Đỉnh của bộ Tiền.",
+        "NghiaXuoi": {
+            "MoTa": "Tích lũy và xây hệ thống tài chính bền. Hợp làm công ty gia đình\/ tài sản lâu dài.",
+            "TuKhoa": [
+                "an cư",
+                "lập nghiệp",
+                "tích lũy"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Xung đột tài sản gia đình hoặc tài chính thiếu linh hoạt.",
+            "TuKhoa": [
+                "mâu thuẫn gia tộc",
+                "chi phí lớn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Hôn nhân, gia đình, nhà cửa.",
+            "CongViec": "Doanh nghiệp gia đình\/ công ty bền.",
+            "TaiChinh": "Tiền lớn, tài sản.",
+            "SucKhoe": "Chăm theo hệ thống gia đình."
+        }
+    },
+    {
+        "ID": "page-of-pentacles",
+        "SoThuTu": 11,
+        "Ten": "Nhóc Tiền (Page Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/page-of-pentacles.png",
+        "YNghiaChung": "Người trẻ ham học, muốn kiếm tiền, thực tế, chăm chỉ.",
+        "NghiaXuoi": {
+            "MoTa": "Học cái gì làm ra tiền. Khởi đầu nhỏ nhưng đúng hướng.",
+            "TuKhoa": [
+                "học thực tế",
+                "bắt đầu dự án nhỏ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Thiếu kiên nhẫn học nền tảng, chỉ muốn nhảy cóc.",
+            "TuKhoa": [
+                "lười học",
+                "đốt cháy giai đoạn"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Tình cảm dễ thương, thực tế.",
+            "CongViec": "Thử việc\/ intern.",
+            "TaiChinh": "Khoản thu nhỏ nhưng đều.",
+            "SucKhoe": "Tập từ mức nhẹ."
+        }
+    },
+    {
+        "ID": "knight-of-pentacles",
+        "SoThuTu": 12,
+        "Ten": "Hiệp Sĩ Tiền (Knight Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/knight-of-pentacles.png",
+        "YNghiaChung": "Chăm chỉ, làm đều, tiến chậm mà chắc. Người rất có trách nhiệm.",
+        "NghiaXuoi": {
+            "MoTa": "Cứ thế này là tới đích. Đừng để người khác kéo bạn vào nhịp nhanh rồi vỡ.",
+            "TuKhoa": [
+                "bền bỉ",
+                "ổn định tiến độ"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Chậm quá thành trì trệ, hoặc quá lo an toàn.",
+            "TuKhoa": [
+                "bảo thủ",
+                "chậm chạp",
+                "ngại thay đổi"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Yêu ổn định, không màu mè.",
+            "CongViec": "Nhân sự rất đáng tin.",
+            "TaiChinh": "Thu đều.",
+            "SucKhoe": "Chế độ ổn định là tốt nhất."
+        }
+    },
+    {
+        "ID": "queen-of-pentacles",
+        "SoThuTu": 13,
+        "Ten": "Hoàng Hậu Tiền (Queen Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/queen-of-pentacles.png",
+        "YNghiaChung": "Chăm sóc, nuôi dưỡng, biết kiếm tiền và giữ tiền. Nữ năng lượng thực tế.",
+        "NghiaXuoi": {
+            "MoTa": "Bạn lo được cho mình và người khác. Hợp làm quản lý, làm mẹ, làm chủ shop.",
+            "TuKhoa": [
+                "bao bọc",
+                "tận tâm",
+                "thịnh vượng"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Lo lắng quá về tiền hoặc bỏ bê bản thân khi chăm người khác.",
+            "TuKhoa": [
+                "quá tải",
+                "lo toan",
+                "hy sinh quá mức"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Nữ tính, chăm lo gia đình.",
+            "CongViec": "Quản lý vận hành.",
+            "TaiChinh": "Tích lũy tốt.",
+            "SucKhoe": "Chăm ăn uống, ở sạch."
+        }
+    },
+    {
+        "ID": "king-of-pentacles",
+        "SoThuTu": 14,
+        "Ten": "Đức Vua Tiền (King Of Pentacles)",
+        "Nhom": "Bộ Tiền",
+        "Anh": "\/images\/tarot-cards\/pentacles\/king-of-pentacles.png",
+        "YNghiaChung": "Làm chủ vật chất, doanh nhân, giàu kinh nghiệm, đáng tin, quyền lực thực tế.",
+        "NghiaXuoi": {
+            "MoTa": "Ổn định ở level cao. Bạn có thể trở thành người chống lưng\/ mentor\/ nhà đầu tư.",
+            "TuKhoa": [
+                "thành công",
+                "đầu tư",
+                "trưởng thành"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "NghiaNguoc": {
+            "MoTa": "Quá vật chất, kiểm soát tiền, hoặc dùng tiền để kiểm soát người khác.",
+            "TuKhoa": [
+                "tham",
+                "cứng nhắc",
+                "gia trưởng tài chính"
+            ],
+            "ChuDe": {
+                "TinhDuyen": "",
+                "CongViec": "",
+                "TaiChinh": "",
+                "SucKhoe": ""
+            }
+        },
+        "TuKhoaChung": [],
+        "ChuDe": {
+            "TinhDuyen": "Người đàn ông vững, có của.",
+            "CongViec": "Lãnh đạo công ty, chủ dự án.",
+            "TaiChinh": "Rất tốt.",
+            "SucKhoe": "Kiểm tra sức khỏe định kỳ."
+        }
+    }
+]

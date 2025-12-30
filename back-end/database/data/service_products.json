@@ -1,0 +1,101 @@
+[
+    {
+        "id": "sv-tuvi",
+        "name": "Lập Lá Số Tử Vi Trọn Đời",
+        "price": 297000,
+        "cat": "menh",
+        "img": "/images/banners/menh-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Lập lá số Tử Vi chi tiết trọn đời, luận giải cung mệnh, thân, tài, quan..."
+    },
+    {
+        "id": "sv-battu",
+        "name": "Luận Giải Bát Tự - Tứ Trụ",
+        "price": 197000,
+        "cat": "menh",
+        "img": "/images/banners/menh-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Phân tích Bát Tự tìm dụng thần, hỷ thần, vận hạn chi tiết."
+    },
+    {
+        "id": "sv-bandosao",
+        "name": "Bản Đồ Sao Cá Nhân (Astrology)",
+        "price": 147000,
+        "cat": "menh",
+        "img": "/images/banners/menh-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Lập bản đồ sao chi tiết theo chiêm tinh học phương Tây."
+    },
+    {
+        "id": "sv-facescan",
+        "name": "AI Face Scan - Nhân Tướng Học",
+        "price": 97000,
+        "cat": "tuong",
+        "img": "/images/banners/tuong-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Quét khuôn mặt bằng AI, phân tích nhân tướng học và dự đoán vận mệnh."
+    },
+    {
+        "id": "sv-palmscan",
+        "name": "AI Palm Scan - Xem Chỉ Tay",
+        "price": 97000,
+        "cat": "tuong",
+        "img": "/images/banners/tuong-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Quét chỉ tay bằng AI, phân tích đường đời, tâm đạo, trí đạo."
+    },
+    {
+        "id": "sv-vantay",
+        "name": "Sinh Trắc Vân Tay",
+        "price": 0,
+        "cat": "tuong",
+        "img": "/images/banners/tuong-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Phân tích dấu vân tay khám phá tiềm năng não bộ."
+    },
+    {
+        "id": "sv-tarot",
+        "name": "Bói Bài Tarot",
+        "price": 0,
+        "cat": "boc",
+        "img": "/images/banners/boc-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Trải bài Tarot trả lời các vấn đề tình cảm, công việc, tài chính."
+    },
+    {
+        "id": "sv-kinhdich",
+        "name": "Gieo Quẻ Kinh Dịch",
+        "price": 47000,
+        "cat": "boc",
+        "img": "/images/banners/boc-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Gieo quẻ hỏi việc, định hướng quyết định dựa trên Kinh Dịch."
+    },
+    {
+        "id": "sv-laban",
+        "name": "La Bàn AR Phong Thủy",
+        "price": 147000,
+        "cat": "trach",
+        "img": "/images/banners/trach-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "La bàn phong thủy công nghệ AR, xác định hướng tốt xấu cho nhà ở."
+    },
+    {
+        "id": "sv-thansohoc",
+        "name": "Tra Cứu Thần Số Học",
+        "price": 299000,
+        "cat": "so",
+        "img": "/images/banners/so-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Khám phá bản đồ cuộc đời qua tên và ngày sinh."
+    },
+    {
+        "id": "sv-sim",
+        "name": "Chấm Điểm SIM Phong Thủy",
+        "price": 97000,
+        "cat": "so",
+        "img": "/images/banners/so-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Phân tích ý nghĩa số điện thoại, kích hoạt tài lộc."
+    }
+]

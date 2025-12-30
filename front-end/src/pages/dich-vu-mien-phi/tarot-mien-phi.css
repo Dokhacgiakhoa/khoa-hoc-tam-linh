@@ -1,0 +1,61 @@
+/* ================================
+   TAROT MIỄN PHÍ – PAGE SCOPE
+================================ */
+
+#tarot-mien-phi .page-title {
+  margin-bottom: 0.4rem;
+}
+#tarot-mien-phi .page-sub {
+  opacity: 0.9;
+  max-width: 680px;
+}
+
+.tarot-hero {
+  padding: clamp(2.2rem, 4vw, 3rem) 0 0;
+}
+.tarot-hero .hero-media {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--elev-1);
+}
+.tarot-hero .hero-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+/* How-to */
+.tarot-howto .howto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.tarot-howto .howto-index {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+.tarot-howto .howto-text {
+  margin: 0;
+}
+
+/* Wrapper cho component 1 lá */
+.tarot-card-wrap {
+  padding: 16px;
+}
+
+/* CTA alt nền nhẹ */
+.tarot-cta.alt {
+  background: var(--kh-soft-2);
+  border-top: 1px solid var(--kh-soft);
+  border-bottom: 1px solid var(--kh-soft);
+}

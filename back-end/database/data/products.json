@@ -1,0 +1,506 @@
+[
+    {
+        "id": "bt-01",
+        "name": "Tarot of the Soul",
+        "cat": "bai-tam-linh",
+        "price": 590000,
+        "img": "/images/products/tarot-of-the-soul.png"
+    },
+    {
+        "id": "bt-02",
+        "name": "Oracle of Light",
+        "cat": "bai-tam-linh",
+        "price": 620000,
+        "img": "/images/products/oracle-of-light.png"
+    },
+    {
+        "id": "bt-03",
+        "name": "Bài Kinh Dịch – 64 Quẻ",
+        "cat": "bai-tam-linh",
+        "price": 540000,
+        "img": "/images/products/bai-kinh-dich-64-que.png"
+    },
+    {
+        "id": "bt-04",
+        "name": "I Ching Insight Deck",
+        "cat": "bai-tam-linh",
+        "price": 660000,
+        "img": "/images/products/i-ching-insight-deck.png"
+    },
+    {
+        "id": "bt-05",
+        "name": "Bài Tây Rider Classic",
+        "cat": "bai-tam-linh",
+        "price": 180000,
+        "img": "/images/products/bai-tay-rider-classic.png"
+    },
+    {
+        "id": "bt-06",
+        "name": "Tarot học cơ bản (Sách + Mini deck)",
+        "cat": "bai-tam-linh",
+        "price": 420000,
+        "img": "/images/products/tarot-hoc-co-ban.png"
+    },
+    {
+        "id": "bt-07",
+        "name": "Oracle – Nature Spirits",
+        "cat": "bai-tam-linh",
+        "price": 590000,
+        "img": "/images/products/oracle-nature-spirits.png"
+    },
+    {
+        "id": "bt-08",
+        "name": "Tea Cards – Bài Trà Đạo",
+        "cat": "bai-tam-linh",
+        "price": 390000,
+        "img": "/images/products/tea-cards-bai-tra-dao.png"
+    },
+    {
+        "id": "bt-09",
+        "name": "Tarot – Moon & Stars",
+        "cat": "bai-tam-linh",
+        "price": 630000,
+        "img": "/images/products/tarot-moon-and-stars.png"
+    },
+    {
+        "id": "bt-10",
+        "name": "Lenormand – Petit Deck",
+        "cat": "bai-tam-linh",
+        "price": 350000,
+        "img": "/images/products/lenormand-petit-deck.png"
+    },
+    {
+        "id": "bt-11",
+        "name": "I Ching – Pocket Edition",
+        "cat": "bai-tam-linh",
+        "price": 320000,
+        "img": "/images/products/i-ching-pocket.png"
+    },
+    {
+        "id": "bt-12",
+        "name": "Bài Tây – Premium Foil",
+        "cat": "bai-tam-linh",
+        "price": 260000,
+        "img": "/images/products/bai-tay-premium-foil.png"
+    },
+    {
+        "id": "bs-01",
+        "name": "Vòng tay phong thủy – Kyanite",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1290000,
+        "img": "/images/products/vong-tay-phong-thuy-kyanite.png"
+    },
+    {
+        "id": "bs-02",
+        "name": "Đá phong thủy để bàn – Citrine",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1590000,
+        "img": "/images/products/da-citrine-de-ban.png"
+    },
+    {
+        "id": "bs-03",
+        "name": "Tranh phong thủy – Sơn Hải",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 2390000,
+        "img": "/images/products/tranh-son-hai.png"
+    },
+    {
+        "id": "bs-04",
+        "name": "Tháp đá – Obsidian Tower",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1780000,
+        "img": "/images/products/thap-obsidian.png"
+    },
+    {
+        "id": "bs-05",
+        "name": "Bể cá phong thủy – Nano 30",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 2850000,
+        "img": "/images/products/be-ca-nano30.png"
+    },
+    {
+        "id": "bs-06",
+        "name": "Linh vật Kỳ Lân – Bronze",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1990000,
+        "img": "/images/products/linh-vat-ky-lan.png"
+    },
+    {
+        "id": "bs-07",
+        "name": "Ấn phẩm nghệ thuật – Gold Leaf",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 2250000,
+        "img": "/images/products/an-pham-gold-leaf.png"
+    },
+    {
+        "id": "bs-08",
+        "name": "Crystal Sphere – 80mm",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1890000,
+        "img": "/images/products/crystal-sphere-80.png"
+    },
+    {
+        "id": "bs-09",
+        "name": "Set trưng bày – Mystic Desk",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 2590000,
+        "img": "/images/products/set-mystic-desk.png"
+    },
+    {
+        "id": "bs-10",
+        "name": "Vòng tay – Ruby Zoisite",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1390000,
+        "img": "/images/products/vong-ruby-zoisite.png"
+    },
+    {
+        "id": "bs-11",
+        "name": "Tượng Mèo Tài – Black Obsidian",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 1690000,
+        "img": "/images/products/meo-tai-obsidian.png"
+    },
+    {
+        "id": "bs-12",
+        "name": "Limited Set – Celestial Kit",
+        "cat": "bo-suu-tap-cao-cap",
+        "price": 3290000,
+        "img": "/images/products/limited-celestial-kit.png"
+    },
+    {
+        "id": "ht-01",
+        "name": "Thác khói trầm – Tháp Sen",
+        "cat": "huong-tram",
+        "price": 290000,
+        "img": "/images/products/thac-khoi-thap-sen.png"
+    },
+    {
+        "id": "ht-02",
+        "name": "Trầm hương nụ – Agarwood Cones",
+        "cat": "huong-tram",
+        "price": 220000,
+        "img": "/images/products/tram-huong-nu.png"
+    },
+    {
+        "id": "ht-03",
+        "name": "Hộp đốt trầm hương – Gốm Bát Tràng",
+        "cat": "huong-tram",
+        "price": 340000,
+        "img": "/images/products/hop-dot-tram-gom.png"
+    },
+    {
+        "id": "ht-04",
+        "name": "Nhũ trầm đốt thác khói",
+        "cat": "huong-tram",
+        "price": 260000,
+        "img": "/images/products/nhu-tram-thac-khoi.png"
+    },
+    {
+        "id": "ht-05",
+        "name": "Nến trầm – Oud Blend",
+        "cat": "huong-tram",
+        "price": 180000,
+        "img": "/images/products/nen-tram-oud.png"
+    },
+    {
+        "id": "ht-06",
+        "name": "Hương thảo mộc – Thiền Định",
+        "cat": "huong-tram",
+        "price": 150000,
+        "img": "/images/products/huong-thao-moc-thien.png"
+    },
+    {
+        "id": "ht-07",
+        "name": "Tinh dầu trầm – Pure Oud",
+        "cat": "huong-tram",
+        "price": 370000,
+        "img": "/images/products/tinh-dau-tram-pure.png"
+    },
+    {
+        "id": "ht-08",
+        "name": "Lư hương mini – Bronze",
+        "cat": "huong-tram",
+        "price": 210000,
+        "img": "/images/products/lu-huong-bronze.png"
+    },
+    {
+        "id": "ht-09",
+        "name": "Thác khói trầm – Núi Thiền",
+        "cat": "huong-tram",
+        "price": 330000,
+        "img": "/images/products/thac-khoi-nui-thien.png"
+    },
+    {
+        "id": "ht-10",
+        "name": "Trầm vụn – Đốt phòng thiền",
+        "cat": "huong-tram",
+        "price": 190000,
+        "img": "/images/products/tram-vun-phong-thien.png"
+    },
+    {
+        "id": "ht-11",
+        "name": "Bộ dụng cụ gắp trầm – Inox",
+        "cat": "huong-tram",
+        "price": 120000,
+        "img": "/images/products/bo-gap-tram-inox.png"
+    },
+    {
+        "id": "ht-12",
+        "name": "Combo thác khói + 50 nụ trầm",
+        "cat": "huong-tram",
+        "price": 450000,
+        "img": "/images/products/combo-thac-khoi-50-nu.png"
+    },
+    {
+        "id": "pk-01",
+        "name": "Khăn trải Tarot – Midnight",
+        "cat": "phu-kien-tam-linh",
+        "price": 180000,
+        "img": "/images/products/khan-trai-midnight.png"
+    },
+    {
+        "id": "pk-02",
+        "name": "Nến thơm Thiền – Sandalwood",
+        "cat": "phu-kien-tam-linh",
+        "price": 160000,
+        "img": "/images/products/nen-thom-sandalwood.png"
+    },
+    {
+        "id": "pk-03",
+        "name": "Đá thanh tẩy – Selenite Wand",
+        "cat": "phu-kien-tam-linh",
+        "price": 220000,
+        "img": "/images/products/da-selenite.png"
+    },
+    {
+        "id": "pk-04",
+        "name": "Tiểu cảnh trang trí – Moon Shrine",
+        "cat": "phu-kien-tam-linh",
+        "price": 390000,
+        "img": "/images/products/tieu-canh-moon-shrine.png"
+    },
+    {
+        "id": "pk-05",
+        "name": "Chuông Pháp Luân – Bronze 12cm",
+        "cat": "phu-kien-tam-linh",
+        "price": 450000,
+        "img": "/images/products/chuong-phap-luan.png"
+    },
+    {
+        "id": "pk-06",
+        "name": "Túi vải Tarot – Velvet Gold",
+        "cat": "phu-kien-tam-linh",
+        "price": 120000,
+        "img": "/images/products/tui-tarot-velvet.png"
+    },
+    {
+        "id": "pk-07",
+        "name": "Đế bài – Crystal Stand",
+        "cat": "phu-kien-tam-linh",
+        "price": 240000,
+        "img": "/images/products/de-bai-crystal.png"
+    },
+    {
+        "id": "pk-08",
+        "name": "Bộ charm biểu tượng – 12 cung",
+        "cat": "phu-kien-tam-linh",
+        "price": 210000,
+        "img": "/images/products/charm-12-cung.png"
+    },
+    {
+        "id": "pk-09",
+        "name": "Tinh dầu Thiền – Frankincense",
+        "cat": "phu-kien-tam-linh",
+        "price": 190000,
+        "img": "/images/products/tinh-dau-frankincense.png"
+    },
+    {
+        "id": "pk-10",
+        "name": "Giá đặt bài – Oak Wood",
+        "cat": "phu-kien-tam-linh",
+        "price": 170000,
+        "img": "/images/products/gia-dat-bai-oak.png"
+    },
+    {
+        "id": "pk-11",
+        "name": "Vòng tay Hắc Diopside",
+        "cat": "phu-kien-tam-linh",
+        "price": 360000,
+        "img": "/images/products/vong-hac-diopside.png"
+    },
+    {
+        "id": "pk-12",
+        "name": "Dây chuyền biểu tượng – Ankh",
+        "cat": "phu-kien-tam-linh",
+        "price": 330000,
+        "img": "/images/products/day-chuyen-ankh.png"
+    },
+    {
+        "id": "sq-01",
+        "name": "Bộ bàn trà phong thủy – Basic",
+        "cat": "set-qua-tang",
+        "price": 1290000,
+        "img": "/images/products/bo-ban-tra-basic.png"
+    },
+    {
+        "id": "sq-02",
+        "name": "Bộ bàn trải bài Tarot – Starter",
+        "cat": "set-qua-tang",
+        "price": 790000,
+        "img": "/images/products/bo-trai-bai-starter.png"
+    },
+    {
+        "id": "sq-03",
+        "name": "Bộ bể cá phong thủy – Nano",
+        "cat": "set-qua-tang",
+        "price": 2190000,
+        "img": "/images/products/bo-be-ca-nano.png"
+    },
+    {
+        "id": "sq-04",
+        "name": "Bộ cờ vây bằng ngọc đá – 13x13",
+        "cat": "set-qua-tang",
+        "price": 2590000,
+        "img": "/images/products/co-vay-ngoc-13x13.png"
+    },
+    {
+        "id": "sq-05",
+        "name": "Combo Thiền – Nến + Hương + Trà",
+        "cat": "set-qua-tang",
+        "price": 590000,
+        "img": "/images/products/combo-thien-nen-huong-tra.png"
+    },
+    {
+        "id": "sq-06",
+        "name": "Set sinh nhật – Calm & Joy",
+        "cat": "set-qua-tang",
+        "price": 690000,
+        "img": "/images/products/set-sinh-nhat-calm.png"
+    },
+    {
+        "id": "sq-07",
+        "name": "Giftset Doanh nghiệp – Prosperity",
+        "cat": "set-qua-tang",
+        "price": 1990000,
+        "img": "/images/products/giftset-prosperity.png"
+    },
+    {
+        "id": "sq-08",
+        "name": "Bộ Tarot Premium – Gold Edge",
+        "cat": "set-qua-tang",
+        "price": 980000,
+        "img": "/images/products/tarot-premium-gold.png"
+    },
+    {
+        "id": "sq-09",
+        "name": "Set Phụ kiện Tarot – Pro Tools",
+        "cat": "set-qua-tang",
+        "price": 860000,
+        "img": "/images/products/set-phu-kien-pro.png"
+    },
+    {
+        "id": "sq-10",
+        "name": "Combo Trầm – Thác khói + 50 nụ",
+        "cat": "set-qua-tang",
+        "price": 520000,
+        "img": "/images/products/combo-tram-50-nu.png"
+    },
+    {
+        "id": "sq-11",
+        "name": "Set Trà – San Tuyết + Ấm Tử Sa",
+        "cat": "set-qua-tang",
+        "price": 890000,
+        "img": "/images/products/set-tra-san-tuyet-tu-sa.png"
+    },
+    {
+        "id": "sq-12",
+        "name": "Set Năng lượng – Crystal Desk",
+        "cat": "set-qua-tang",
+        "price": 1490000,
+        "img": "/images/products/set-crystal-desk.png"
+    },
+    {
+        "id": "td-01",
+        "name": "Trà San Tuyết – Cao Bằng",
+        "cat": "tra-dao",
+        "price": 260000,
+        "img": "/images/products/tra-san-tuyet.png"
+    },
+    {
+        "id": "td-02",
+        "name": "Bàn trà gỗ – Walnut 80cm",
+        "cat": "tra-dao",
+        "price": 1890000,
+        "img": "/images/products/ban-tra-go-walnut.png"
+    },
+    {
+        "id": "td-03",
+        "name": "Bàn trà nhựa – Compact 70cm",
+        "cat": "tra-dao",
+        "price": 690000,
+        "img": "/images/products/ban-tra-nhua-compact.png"
+    },
+    {
+        "id": "td-04",
+        "name": "Bộ ấm trà – Tử Sa Basic",
+        "cat": "tra-dao",
+        "price": 520000,
+        "img": "/images/products/bo-am-tra-tu-sa.png"
+    },
+    {
+        "id": "td-05",
+        "name": "Hộp đựng trà – Cedar Box",
+        "cat": "tra-dao",
+        "price": 240000,
+        "img": "/images/products/hop-dung-tra-cedar.png"
+    },
+    {
+        "id": "td-06",
+        "name": "Trà Oolong – Thiền Vị",
+        "cat": "tra-dao",
+        "price": 230000,
+        "img": "/images/products/tra-oolong-thien-vi.png"
+    },
+    {
+        "id": "td-07",
+        "name": "Set chén trà – 6 món",
+        "cat": "tra-dao",
+        "price": 210000,
+        "img": "/images/products/set-chen-6-mon.png"
+    },
+    {
+        "id": "td-08",
+        "name": "Bình đun trà – Kettle 1.2L",
+        "cat": "tra-dao",
+        "price": 590000,
+        "img": "/images/products/kettle-12l.png"
+    },
+    {
+        "id": "td-09",
+        "name": "Khăn trà – Linen Grey",
+        "cat": "tra-dao",
+        "price": 120000,
+        "img": "/images/products/khan-tra-linen-grey.png"
+    },
+    {
+        "id": "td-10",
+        "name": "Trà Thiền – Calm Blend",
+        "cat": "tra-dao",
+        "price": 250000,
+        "img": "/images/products/tra-calm-blend.png"
+    },
+    {
+        "id": "td-11",
+        "name": "Bộ lọc trà – Inox Fine",
+        "cat": "tra-dao",
+        "price": 140000,
+        "img": "/images/products/bo-loc-tra-inox.png"
+    },
+    {
+        "id": "td-12",
+        "name": "Khay trà tre – 40cm",
+        "cat": "tra-dao",
+        "price": 310000,
+        "img": "/images/products/khay-tra-tre.png"
+    }
+]
