@@ -1,97 +1,97 @@
-# API Documentation
+# Tài liệu API
 
-## Authentication
+## Xác thực (Authentication)
 
-| Method | Endpoint                       | Description                    |
-| :----- | :----------------------------- | :----------------------------- |
-| POST   | `/api/register`                | Register a new user            |
-| POST   | `/api/login`                   | Login with email/password      |
-| POST   | `/api/logout`                  | Logout (requires auth token)   |
-| POST   | `/api/auth/check-availability` | Check if email/username exists |
-| GET    | `/api/user`                    | Get current user info          |
+| Phương thức | Endpoint                       | Mô tả                                        | Trạng thái       |
+| :---------- | :----------------------------- | :------------------------------------------- | :--------------- |
+| POST        | `/api/register`                | Đăng ký người dùng mới                       | ✅ Hoạt động     |
+| POST        | `/api/login`                   | Đăng nhập bằng email/mật khẩu                | ✅ Hoạt động     |
+| POST        | `/api/logout`                  | Đăng xuất (cần token xác thực)               | 🔐 Cần đăng nhập |
+| POST        | `/api/auth/check-availability` | Kiểm tra email/tên đăng nhập đã tồn tại chưa | ✅ Hoạt động     |
+| GET         | `/api/user`                    | Lấy thông tin người dùng hiện tại            | 🔐 Cần đăng nhập |
 
-### QR Login
+### Đăng nhập QR
 
-| Method | Endpoint                         | Description                                  |
-| :----- | :------------------------------- | :------------------------------------------- |
-| GET    | `/api/auth/qr/generate`          | Generate QR session ID                       |
-| GET    | `/api/auth/qr/check/{sessionId}` | Check status of QR session                   |
-| POST   | `/api/auth/qr/approve`           | Approve QR login from mobile (requires auth) |
+| Phương thức | Endpoint                         | Mô tả                                             | Trạng thái       |
+| :---------- | :------------------------------- | :------------------------------------------------ | :--------------- |
+| GET         | `/api/auth/qr/generate`          | Tạo mã session ID cho QR                          | ✅ Hoạt động     |
+| GET         | `/api/auth/qr/check/{sessionId}` | Kiểm tra trạng thái session QR                    | ✅ Hoạt động     |
+| POST        | `/api/auth/qr/approve`           | Chấp thuận đăng nhập QR từ mobile (cần đăng nhập) | 🔐 Cần đăng nhập |
 
-### Two-Factor Auth
+### Xác thực 2 bước (2FA)
 
-| Method | Endpoint           | Description                   |
-| :----- | :----------------- | :---------------------------- |
-| POST   | `/api/2fa/setup`   | Setup 2FA (Returns Secret/QR) |
-| POST   | `/api/2fa/confirm` | Confirm 2FA Setup with OTP    |
+| Phương thức | Endpoint           | Mô tả                            | Trạng thái       |
+| :---------- | :----------------- | :------------------------------- | :--------------- |
+| POST        | `/api/2fa/setup`   | Cài đặt 2FA (Trả về Secret/QR)   | 🔐 Cần đăng nhập |
+| POST        | `/api/2fa/confirm` | Xác nhận cài đặt 2FA bằng mã OTP | 🔐 Cần đăng nhập |
 
-## Products & Commerce
+## Sản phẩm & Thương mại
 
-| Method | Endpoint                             | Description                        |
-| :----- | :----------------------------------- | :--------------------------------- |
-| GET    | `/api/products`                      | List all products                  |
-| GET    | `/api/products/{id}`                 | Get product details                |
-| POST   | `/api/products/{id}/purchase`        | Purchase a product (Auth required) |
-| GET    | `/api/products/{id}/check-ownership` | Check if user owns product/service |
-| GET    | `/api/orders`                        | List user's order history          |
+| Phương thức | Endpoint                             | Mô tả                                               | Trạng thái       |
+| :---------- | :----------------------------------- | :-------------------------------------------------- | :--------------- |
+| GET         | `/api/products`                      | Danh sách tất cả sản phẩm                           | ✅ Hoạt động     |
+| GET         | `/api/products/{id}`                 | Lấy chi tiết sản phẩm                               | ✅ Hoạt động     |
+| POST        | `/api/products/{id}/purchase`        | Mua sản phẩm (Cần đăng nhập)                        | 🔐 Cần đăng nhập |
+| GET         | `/api/products/{id}/check-ownership` | Kiểm tra người dùng đã sở hữu sản phẩm/dịch vụ chưa | 🔐 Cần đăng nhập |
+| GET         | `/api/orders`                        | Danh sách lịch sử đơn hàng của người dùng           | 🔐 Cần đăng nhập |
 
-## Wallet
+## Ví (Wallet)
 
-| Method | Endpoint                   | Description                        |
-| :----- | :------------------------- | :--------------------------------- |
-| GET    | `/api/wallet`              | Get wallet balance                 |
-| POST   | `/api/wallet/deposit`      | Deposit funds (Create transaction) |
-| GET    | `/api/wallet/transactions` | List transaction history           |
+| Phương thức | Endpoint                   | Mô tả                    | Trạng thái       |
+| :---------- | :------------------------- | :----------------------- | :--------------- |
+| GET         | `/api/wallet`              | Xem số dư ví             | 🔐 Cần đăng nhập |
+| POST        | `/api/wallet/deposit`      | Nạp tiền (Tạo giao dịch) | 🔐 Cần đăng nhập |
+| GET         | `/api/wallet/transactions` | Xem lịch sử giao dịch    | 🔐 Cần đăng nhập |
 
-## Esoteric Services
+## Dịch vụ Huyền học
 
-| Method | Endpoint                    | Description                        |
-| :----- | :-------------------------- | :--------------------------------- |
-| GET    | `/api/services`             | List available services            |
-| POST   | `/api/services/{type}`      | Generic service handler            |
-| GET    | `/api/tarot`                | Tarot reading service              |
-| POST   | `/api/astrology/natal`      | Calculate Natal Chart (Bản Đồ Sao) |
-| POST   | `/api/tu-vi/lap-la-so`      | Create Tu Vi horoscope             |
-| POST   | `/api/numerology/calculate` | Calculate Numerology (Thần Số Học) |
+| Phương thức | Endpoint                    | Mô tả                         | Trạng thái       |
+| :---------- | :-------------------------- | :---------------------------- | :--------------- |
+| GET         | `/api/services`             | Danh sách các dịch vụ hiện có | ✅ Hoạt động     |
+| POST        | `/api/services/{type}`      | Xử lý dịch vụ chung           | 🔐 Cần đăng nhập |
+| GET         | `/api/tarot`                | Dịch vụ bói Tarot             | ✅ Hoạt động     |
+| POST        | `/api/astrology/natal`      | Tính toán Bản Đồ Sao          | ✅ Hoạt động     |
+| POST        | `/api/tu-vi/lap-la-so`      | Lập lá số Tử Vi               | ✅ Hoạt động     |
+| POST        | `/api/numerology/calculate` | Tính toán Thần Số Học         | ✅ Hoạt động     |
 
-## Academy (Học Viện)
+## Học Viện (Academy)
 
-| Method | Endpoint                             | Description                      |
-| :----- | :----------------------------------- | :------------------------------- |
-| GET    | `/api/academy/categories`            | List course categories           |
-| GET    | `/api/academy/category/{slug}`       | Get courses by category          |
-| GET    | `/api/academy/course/{slug}`         | Get course details               |
-| POST   | `/api/academy/courses/{id}/purchase` | Enroll/Buy course                |
-| POST   | `/api/academy/lessons/complete`      | Mark lesson as completed         |
-| GET    | `/api/academy/courses/{id}/progress` | Get progress for specific course |
-| GET    | `/api/academy/my-progress`           | Get overall learning progress    |
+| Phương thức | Endpoint                             | Mô tả                               | Trạng thái       |
+| :---------- | :----------------------------------- | :---------------------------------- | :--------------- |
+| GET         | `/api/academy/categories`            | Danh sách danh mục khóa học         | ✅ Hoạt động     |
+| GET         | `/api/academy/category/{slug}`       | Lấy khóa học theo danh mục          | ✅ Hoạt động     |
+| GET         | `/api/academy/course/{slug}`         | Lấy chi tiết khóa học               | ✅ Hoạt động     |
+| POST        | `/api/academy/courses/{id}/purchase` | Đăng ký/Mua khóa học                | 🔐 Cần đăng nhập |
+| POST        | `/api/academy/lessons/complete`      | Đánh dấu bài học đã hoàn thành      | 🔐 Cần đăng nhập |
+| GET         | `/api/academy/courses/{id}/progress` | Xem tiến độ học của khóa học cụ thể | 🔐 Cần đăng nhập |
+| GET         | `/api/academy/my-progress`           | Xem tổng quan tiến độ học tập       | 🔐 Cần đăng nhập |
 
-## User System
+## Hệ thống Người dùng
 
-| Method | Endpoint                          | Description                    |
-| :----- | :-------------------------------- | :----------------------------- |
-| POST   | `/api/user/avatar`                | Upload user avatar             |
-| PUT    | `/api/user/profile`               | Update user profile info       |
-| GET    | `/api/notifications`              | List notifications             |
-| GET    | `/api/notifications/unread-count` | Get unread notification count  |
-| POST   | `/api/notifications/{id}/read`    | Mark notification as read      |
-| POST   | `/api/notifications/read-all`     | Mark all notifications as read |
-| DELETE | `/api/notifications/{id}`         | Delete notification            |
-| GET    | `/api/tasks`                      | List daily tasks/quests        |
-| POST   | `/api/tasks/{id}/claim`           | Claim task reward              |
+| Phương thức | Endpoint                          | Mô tả                        | Trạng thái       |
+| :---------- | :-------------------------------- | :--------------------------- | :--------------- |
+| POST        | `/api/user/avatar`                | Tải lên ảnh đại diện         | 🔐 Cần đăng nhập |
+| PUT         | `/api/user/profile`               | Cập nhật thông tin hồ sơ     | 🔐 Cần đăng nhập |
+| GET         | `/api/notifications`              | Danh sách thông báo          | 🔐 Cần đăng nhập |
+| GET         | `/api/notifications/unread-count` | Đếm số thông báo chưa đọc    | 🔐 Cần đăng nhập |
+| POST        | `/api/notifications/{id}/read`    | Đánh dấu thông báo đã đọc    | 🔐 Cần đăng nhập |
+| POST        | `/api/notifications/read-all`     | Đánh dấu tất cả là đã đọc    | 🔐 Cần đăng nhập |
+| DELETE      | `/api/notifications/{id}`         | Xóa thông báo                | 🔐 Cần đăng nhập |
+| GET         | `/api/tasks`                      | Danh sách nhiệm vụ hàng ngày | 🔐 Cần đăng nhập |
+| POST        | `/api/tasks/{id}/claim`           | Nhận thưởng nhiệm vụ         | 🔐 Cần đăng nhập |
 
-## Admin
+## Quản trị (Admin)
 
-| Method | Endpoint                       | Description           |
-| :----- | :----------------------------- | :-------------------- |
-| GET    | `/api/admin/dashboard`         | Admin dashboard stats |
-| GET    | `/api/admin/wallet/statistics` | Wallet system stats   |
-| GET    | `/api/admin/users`             | List all users        |
-| PUT    | `/api/admin/users/{id}`        | Update user (Admin)   |
-| DELETE | `/api/admin/users/{id}`        | Delete user (Admin)   |
+| Phương thức | Endpoint                       | Mô tả                       | Trạng thái           |
+| :---------- | :----------------------------- | :-------------------------- | :------------------- |
+| GET         | `/api/admin/dashboard`         | Thống kê Dashboard Admin    | 🔐 Hoạt động (Admin) |
+| GET         | `/api/admin/wallet/statistics` | Thống kê hệ thống ví        | 🔐 Hoạt động (Admin) |
+| GET         | `/api/admin/users`             | Danh sách tất cả người dùng | 🔐 Hoạt động (Admin) |
+| PUT         | `/api/admin/users/{id}`        | Cập nhật người dùng (Admin) | 🔐 Hoạt động (Admin) |
+| DELETE      | `/api/admin/users/{id}`        | Xóa người dùng (Admin)      | 🔐 Hoạt động (Admin) |
 
-## System
+## Hệ thống
 
-| Method | Endpoint    | Description             |
-| :----- | :---------- | :---------------------- |
-| GET    | `/api/test` | Test backend connection |
+| Phương thức | Endpoint    | Mô tả                    | Trạng thái   |
+| :---------- | :---------- | :----------------------- | :----------- |
+| GET         | `/api/test` | Kiểm tra kết nối Backend | ✅ Hoạt động |
