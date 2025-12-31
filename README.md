@@ -2,7 +2,7 @@
 
 ## 1. Video Giới Thiệu
 
-(Chèn link video demo sản phẩm tại đây – Thời lượng 5-7 phút)
+https://www.youtube.com/watch?v=p2mQK-6XpcI
 
 ---
 
@@ -11,8 +11,8 @@
 ### 🧑‍💻 Thông tin cá nhân
 
 - **Họ tên**: Đỗ Khắc Gia Khoa
-- **Lớp**: (Điền tên lớp của bạn)
-- **Mã sinh viên**: (Điền mã sinh viên)
+- **Lớp**: Aptech T2508M
+- **Mã sinh viên**: FTH00042
 
 ### 🤔 Lý do lựa chọn đề tài
 
