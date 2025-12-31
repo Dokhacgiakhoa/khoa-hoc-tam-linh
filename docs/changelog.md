@@ -1,3 +1,3 @@
-## 2025-12-30 17:36:16 — Auto changelog
+## 2025-12-31 01:39:00 — Auto changelog
 
-* bc18c94 Merge branch 'main' of https://github.com/Dokhacgiakhoa/khoa-hoc-tam-linh (Đỗ Khắc Gia Khoa)
+* 01073a6 Fix UI glitches, Order permission logic, and update Documentation (Đỗ Khắc Gia Khoa)
