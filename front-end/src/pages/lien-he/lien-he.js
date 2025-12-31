@@ -134,11 +134,6 @@ export default function LienHe() {
       </div>
 
       {/* ===== COPYRIGHT ===== */}
-      <footer className="text-center text-white py-4 border-top border-light-subtle">
-        <small>
-          © 2025 Khoa học Tâm Linh – Thiết kế & phát triển bởi Đỗ Khắc Gia Khoa
-        </small>
-      </footer>
     </section>
   );
 }

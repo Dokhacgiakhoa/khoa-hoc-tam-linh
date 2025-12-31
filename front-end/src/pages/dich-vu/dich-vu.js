@@ -11,8 +11,16 @@ const GROUPS = [
     desc: "Thấu hiểu bản mệnh và chu kỳ đời người thông qua các hệ thống mệnh lý phương Đông.",
     img: "/images/banners/menh-huyen-thuat.png",
     links: [
-      { label: "Lập lá số Tử Vi", path: "/dich-vu/tu-vi", price: 297000 },
-      { label: "Luận giải Bát Tự", path: "/dich-vu/bat-tu", price: 197000 },
+      {
+        label: "Lập lá số Tử Vi",
+        path: "/dich-vu/tu-vi",
+        serviceId: "sv-tuvi",
+      },
+      {
+        label: "Luận giải Bát Tự",
+        path: "/dich-vu/bat-tu",
+        serviceId: "sv-battu",
+      },
     ],
   },
   {
@@ -22,9 +30,21 @@ const GROUPS = [
     desc: "Ứng dụng AI phân tích hình tướng, nhận diện khí sắc và dự đoán xu hướng tính cách.",
     img: "/images/banners/tuong-huyen-thuat.png",
     links: [
-      { label: "AI Face Scan", path: "/dich-vu/scan-face", price: 97000 },
-      { label: "Xem Chỉ Tay", path: "/dich-vu/scan-palm", price: 97000 },
-      { label: "Xem Vân Tay", path: "/dich-vu/xem-van-tay", price: 0 }, // Free
+      {
+        label: "AI Face Scan",
+        path: "/dich-vu/scan-face",
+        serviceId: "sv-facescan",
+      },
+      {
+        label: "Xem Chỉ Tay",
+        path: "/dich-vu/scan-palm",
+        serviceId: "sv-palmscan",
+      },
+      {
+        label: "Xem Vân Tay",
+        path: "/dich-vu/xem-van-tay",
+        serviceId: "sv-vantay",
+      },
     ],
   },
   {
@@ -34,8 +54,17 @@ const GROUPS = [
     desc: "Các công cụ dự đoán xác suất và kết nối trực giác giúp đưa ra quyết định nhanh chóng.",
     img: "/images/banners/boc-huyen-thuat.png",
     links: [
-      { label: "Bói Bài Tarot", path: "/dich-vu/tarot", price: 0 }, // Free
-      { label: "Gieo Quẻ Dịch", path: "/dich-vu/kinh-dich", price: 47000 },
+      { label: "Bói Bài Tarot", path: "/dich-vu/tarot", serviceId: "sv-tarot" },
+      {
+        label: "Gieo Quẻ Dịch",
+        path: "/dich-vu/kinh-dich",
+        serviceId: "sv-kinhdich",
+      },
+      {
+        label: "Xin Xâm Quan Thánh",
+        path: "/dich-vu/xin-xam",
+        serviceId: "sv-xin-xam",
+      },
     ],
   },
   {
@@ -45,8 +74,12 @@ const GROUPS = [
     desc: "Tối ưu hóa không gian sống và luân chuyển năng lượng theo phong thủy học.",
     img: "/images/banners/trach-huyen-thuat.png",
     links: [
-      { label: "La Bàn AR", path: "/dich-vu/la-ban", price: 147000 },
-      { label: "Thước Lỗ Ban", path: "/dich-vu/thuoc-lo-ban", price: 0 }, // Free
+      { label: "La Bàn AR", path: "/dich-vu/la-ban", serviceId: "sv-laban" },
+      {
+        label: "Thước Lỗ Ban",
+        path: "/dich-vu/thuoc-lo-ban",
+        serviceId: "sv-thuocloban",
+      },
     ],
   },
   {
@@ -56,11 +89,20 @@ const GROUPS = [
     desc: "Khám phá năng lượng của các con số ảnh hưởng đến cuộc sống và thời vận.",
     img: "/images/banners/so-huyen-thuat.png",
     links: [
-      { label: "Tra cứu Thần Số", path: "/dich-vu/than-so-hoc", price: 299000 }, // Paid
+      {
+        label: "Tra cứu Thần Số",
+        path: "/dich-vu/than-so-hoc",
+        serviceId: "sv-thansohoc",
+      },
       {
         label: "Chọn SIM Phong Thủy",
         path: "/dich-vu/cham-diem-sim",
-        price: 97000,
+        serviceId: "sv-sim",
+      },
+      {
+        label: "Lịch Vạn Niên",
+        path: "/dich-vu/lich-van-nien",
+        serviceId: "sv-lichvannien",
       },
     ],
   },
@@ -70,6 +112,23 @@ function DichVu() {
   const [activeGroup, setActiveGroup] = useState("menh");
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const navRef = React.useRef(null);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch prices from API (Services)
+    axios
+      .get("/api/services")
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => console.error("Error fetching service prices:", err));
+  }, []);
+
+  const getPrice = (serviceId) => {
+    const product = products.find((p) => p.service_id === serviceId);
+    return product ? Number(product.price) : null;
+  };
 
   React.useEffect(() => {
     const updateIndicator = () => {
@@ -101,7 +160,7 @@ function DichVu() {
     <main id="dich-vu" className="khctl-page">
       <section className="dv-hero">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-4">
             <h1 className="dv-title display-4 fw-bold mb-3">
               Hệ Sinh Thái Ngũ Huyền Thuật AI
             </h1>
@@ -112,7 +171,7 @@ function DichVu() {
             </p>
           </div>
 
-          <div className="d-flex justify-content-center mb-5">
+          <div className="d-flex justify-content-center mb-3">
             <div className="dv-nav-groups gap-2" ref={navRef}>
               <div className="group-indicator" style={indicatorStyle}></div>
               {GROUPS.map((g) => (
@@ -144,7 +203,7 @@ function DichVu() {
                 <div className="col-lg-6">
                   <div className="group-media position-relative">
                     <img
-                      src={g.img}
+                      src={(process.env.PUBLIC_URL || "") + g.img}
                       alt={g.title}
                       className="img-fluid rounded-4 shadow-gold"
                     />
@@ -155,36 +214,33 @@ function DichVu() {
                   <h2 className="text-gold h1 mb-1">{g.title}</h2>
                   <p className="h5 text-white-50 mb-3">{g.sub}</p>
                   <p className="lead opacity-75 mb-4">{g.desc}</p>
-                  <div className="d-flex gap-3 flex-wrap">
-                    {g.links.map((l, i) => (
-                      <div key={i} className="position-relative">
-                        <Link to={l.path} className="btn btn-gold px-4 py-2">
-                          {l.label}
-                        </Link>
-                        <span
-                          className="badge position-absolute top-0 start-100 translate-middle"
-                          style={{
-                            fontSize: "0.75rem",
-                            padding: "0.25rem 0.5rem",
-                            backgroundColor:
-                              l.price === 0 ? "#28a745" : "#d4af37",
-                            color: "#fff",
-                            fontWeight: "bold",
-                            borderRadius: "12px",
-                            border: "2px solid rgba(255, 255, 255, 0.3)",
-                          }}
+                  <div className="service-actions-grid mt-4">
+                    <div className="d-flex gap-3 flex-wrap mb-4">
+                      {g.links.map((l, i) => (
+                        <Link
+                          key={i}
+                          to={l.path}
+                          className="service-action-card"
                         >
-                          {l.price === 0
-                            ? "0 LT"
-                            : `${Math.floor(l.price / 1000)} LT`}
-                        </span>
-                      </div>
-                    ))}
-                    <Link
-                      to="/hoc-vien-huyen-hoc"
-                      className="btn btn-outline-gold px-4 py-2"
-                    >
-                      Tìm hiểu tại Học Viện
+                          <span className="service-card-label">{l.label}</span>
+                          <span
+                            className={`service-card-price ${
+                              getPrice(l.serviceId) === 0 ? "free" : ""
+                            }`}
+                          >
+                            {getPrice(l.serviceId) === 0
+                              ? "Free"
+                              : getPrice(l.serviceId) !== null
+                              ? `${Math.floor(getPrice(l.serviceId) / 1000)} 🔮`
+                              : "..."}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+
+                    <Link to="/hoc-vien-huyen-hoc" className="btn-academy-link">
+                      <span>Tìm hiểu chuyên sâu tại Học Viện</span>
+                      <i className="bi bi-arrow-right ms-2"></i>
                     </Link>
                   </div>
                 </div>

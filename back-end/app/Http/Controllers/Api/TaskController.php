@@ -26,7 +26,7 @@ class TaskController extends Controller
             ->get()
             ->groupBy('task_id');
 
-        $result = $tasks->map(function ($task) use ($completions) {
+        $result = $tasks->map(function ($task) use ($completions, $user) {
             $taskCompletions = $completions->get($task->id, collect());
             
             // Check if completed based on frequency
@@ -46,6 +46,67 @@ class TaskController extends Controller
                 }
             }
 
+            // Calculate Progress
+            $progress = 0;
+            $target = 1;
+
+            if ($task->title === 'Lan tỏa tâm linh') {
+                $target = 5; // 5 clicks
+                // Generate affiliate code if missing
+                if (!$user->affiliate_code) {
+                    $user->affiliate_code = \Illuminate\Support\Str::random(8);
+                    $user->save();
+                }
+
+                $clicks = DB::table('affiliate_clicks')
+                    ->where('user_id', $user->id)
+                    ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+                    ->count();
+                
+                $progress = $clicks;
+            } elseif ($task->title === 'Chuyên cần tuần') {
+                $target = 5;
+                // Find "Điểm danh hàng ngày" task logic
+                // Assuming "Điểm danh hàng ngày" is another task. 
+                // We count how many distinct days the user completed ANY daily task? 
+                // Or specifically "Điểm danh hàng ngày". Let's look up that task.
+                $dailyTask = Task::where('title', 'Điểm danh hàng ngày')->first();
+                if ($dailyTask) {
+                    $dailyCompletions = UserTaskCompletion::where('user_id', $user->id)
+                        ->where('task_id', $dailyTask->id)
+                        ->whereBetween('completed_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+                        ->get();
+                    
+                    // Count distinct days
+                    $progress = $dailyCompletions->map(function ($c) {
+                        return Carbon::parse($c->completed_at)->format('Y-m-d');
+                    })->unique()->count();
+                }
+            } elseif ($task->title === 'Điểm danh hàng ngày') {
+                // If not completed today, progress is 1 so they can click "Điểm danh"
+                $progress = 1; 
+                $target = 1;
+            } elseif ($task->title === 'Tương tác cộng đồng') {
+                // Always 1 so they can see button or something? 
+                // Better: if we don't have automatic tracking for comments yet, 
+                // let it be a manual "I did it" or a link.
+                $progress = $isCompleted ? 1 : 1; // For now let them click
+                $target = 1;
+            } elseif ($task->frequency === 'daily') {
+                $progress = $isCompleted ? 1 : 0;
+                $target = 1;
+            } else {
+                 // Default for others (Manual claim usually means target 1)
+                 $progress = $isCompleted ? 1 : 0;
+                 $target = 1;
+            }
+
+            // Define "Action URL" or instructions based on task
+            $actionUrl = null;
+            if ($task->title === 'Tương tác cộng đồng') {
+                $actionUrl = '/bai-viet'; // Link to blog/posts
+            }
+
             return [
                 'id' => $task->id,
                 'title' => $task->title,
@@ -53,7 +114,11 @@ class TaskController extends Controller
                 'reward_amount' => $task->reward_amount,
                 'frequency' => $task->frequency,
                 'is_completed' => $isCompleted,
-                'last_completed_at' => $lastCompletion ? $lastCompletion->completed_at : null
+                'last_completed_at' => $lastCompletion ? $lastCompletion->completed_at : null,
+                'progress' => $progress,
+                'target' => $target,
+                'action_url' => $actionUrl,
+                'affiliate_code' => ($task->title === 'Lan tỏa tâm linh') ? $user->affiliate_code : null
             ];
         });
 
@@ -89,6 +154,34 @@ class TaskController extends Controller
 
             if ($alreadyDone) {
                 return response()->json(['error' => 'Nhiệm vụ này đã được nhận thưởng trong chu kỳ này.'], 400);
+            }
+        }
+
+        // Validate Logic Conditions
+        if ($task->title === 'Chuyên cần tuần') {
+            $dailyTask = Task::where('title', 'Điểm danh hàng ngày')->first();
+            $progress = 0;
+            if ($dailyTask) {
+                 $dailyCompletions = UserTaskCompletion::where('user_id', $user->id)
+                    ->where('task_id', $dailyTask->id)
+                    ->whereBetween('completed_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+                    ->get();
+                $progress = $dailyCompletions->map(function ($c) {
+                    return Carbon::parse($c->completed_at)->format('Y-m-d');
+                })->unique()->count();
+            }
+
+            if ($progress < 5) {
+                return response()->json(['error' => "Bạn chưa đủ điều kiện. Tiến độ: $progress/5 ngày."], 400);
+            }
+        } elseif ($task->title === 'Lan tỏa tâm linh') {
+             $clicks = DB::table('affiliate_clicks')
+                ->where('user_id', $user->id)
+                ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+                ->count();
+            
+            if ($clicks < 5) {
+                 return response()->json(['error' => "Bạn chưa đủ điều kiện. Cần đạt 5 lượt truy cập từ link chia sẻ. Hiện tại: $clicks/5."], 400);
             }
         }
 

@@ -32,4 +32,12 @@ class Course extends Model
     {
         return $this->hasMany(Lesson::class, 'course_id');
     }
+
+    /**
+     * Get all order items for this course.
+     */
+    public function orderItems()
+    {
+        return $this->morphMany(OrderItem::class, 'buyable');
+    }
 }

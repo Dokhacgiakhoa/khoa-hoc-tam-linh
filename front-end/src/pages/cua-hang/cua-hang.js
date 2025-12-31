@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import DanhMucSanPham from "../../components/product-card/danh-muc-san-pham";
 import "./cua-hang.css";
 
 export default function CuaHang() {
+  const { category } = useParams();
+
   return (
     <main id="cua-hang" className="khctl-page">
       {/* HERO */}
@@ -40,14 +42,14 @@ export default function CuaHang() {
       </section>
 
       {/* CATALOG */}
-      <section id="catalog" className="section">
-        <DanhMucSanPham />
-        <div className="text-center mt-4">
+      <div id="catalog">
+        <DanhMucSanPham initialCategory={category} />
+        <div className="text-center pb-5">
           <Link to="/tai-khoan" className="btn btn-outline-gold">
             Đi tới giỏ hàng / Thanh toán
           </Link>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

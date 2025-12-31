@@ -27,6 +27,9 @@ Route::post('/auth/check-availability', [AuthController::class, 'checkAvailabili
 Route::get('/auth/qr/generate', [TwoFactorController::class, 'generateQr']);
 Route::get('/auth/qr/check/{sessionId}', [TwoFactorController::class, 'checkQr']);
 
+// Affiliate
+Route::get('/ref/{code}', [App\Http\Controllers\Api\AffiliateController::class, 'handle']);
+
 Route::get('/test', function () {
     return response()->json([
         'message' => 'Kết nối Backend thành công!',
@@ -58,6 +61,7 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // User Profile
     Route::get('/orders', [OrderController::class, 'index']);
+    Route::post('/checkout', [OrderController::class, 'checkout']);
     Route::post('/user/avatar', [UserController::class, 'uploadAvatar']);
     Route::put('/user/profile', [UserController::class, 'updateProfile']);
     
@@ -95,6 +99,13 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // Academy Purchase
     Route::post('/academy/courses/{id}/purchase', [AcademyController::class, 'purchaseCourse']);
+
+    // Certification Exams
+    Route::get('/exams', [App\Http\Controllers\ExamController::class, 'index']);
+    Route::get('/exams/history', [App\Http\Controllers\ExamController::class, 'history']);
+    Route::get('/exams/{id}', [App\Http\Controllers\ExamController::class, 'show']);
+    Route::get('/exams/{id}/take', [App\Http\Controllers\ExamController::class, 'take']);
+    Route::post('/exams/{id}/submit', [App\Http\Controllers\ExamController::class, 'submit']);
 });
 
 use App\Http\Controllers\AdminController;

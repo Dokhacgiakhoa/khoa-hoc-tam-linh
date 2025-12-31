@@ -12,11 +12,11 @@ class Product extends Model
         'product_id',
         'name',
         'price',
-        'category',
         'description',
         'image',
         'stock',
         'views',
+        'category_id',
     ];
 
     protected $casts = [
@@ -39,5 +39,18 @@ class Product extends Model
     public function getImgAttribute()
     {
         return $this->image;
+    }
+
+    /**
+     * Get all order items for this product.
+     */
+    public function orderItems()
+    {
+        return $this->morphMany(OrderItem::class, 'buyable');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(ProductCategory::class, 'category_id');
     }
 }

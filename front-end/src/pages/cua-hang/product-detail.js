@@ -49,7 +49,7 @@ export default function ProductDetail() {
       .get("/api/products")
       .then((res) => {
         const filtered = res.data
-          .filter((p) => p.id !== parseInt(id))
+          .filter((p) => p.product_id !== id)
           .slice(0, 4);
         setRelatedProducts(filtered);
       })
@@ -72,6 +72,7 @@ export default function ProductDetail() {
       } else {
         cartData.push({
           id: product.id,
+          type: "product", // Verify type for polymorphic order
           name: product.name,
           price: product.price,
           image_url: product.image_url || product.img,
@@ -266,7 +267,7 @@ export default function ProductDetail() {
             <div key={p.id} className="col-6 col-md-3">
               <div
                 className="related-item card-3d p-2 text-center cursor-pointer"
-                onClick={() => navigate(`/cua-hang/san-pham/${p.id}`)}
+                onClick={() => navigate(`/cua-hang/san-pham/${p.product_id}`)}
                 style={{ cursor: "pointer" }}
               >
                 <img

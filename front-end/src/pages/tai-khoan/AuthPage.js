@@ -62,15 +62,11 @@ export default function AuthPage({ onLoginSuccess }) {
     setValidationStates((prev) => ({ ...prev, [name]: "loading" }));
 
     try {
-      const resp = await fetch(
-        "http://localhost:8000/api/auth/check-availability",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ type: name, value }),
-        }
-      );
-      const data = await resp.json();
+      const resp = await axios.post("/api/auth/check-availability", {
+        type: name,
+        value,
+      });
+      const data = resp.data;
       setValidationStates((prev) => ({
         ...prev,
         [name]: data.available ? "valid" : "taken",
@@ -195,7 +191,7 @@ export default function AuthPage({ onLoginSuccess }) {
               }`}
               onClick={() => setTab("register")}
             >
-              > Đăng ký
+              Đăng ký
             </button>
           </div>
         </div>

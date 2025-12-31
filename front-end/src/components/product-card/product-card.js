@@ -59,6 +59,7 @@ export default function ProductCard({ product, categoryLabel, money }) {
       } else {
         cartData.push({
           id: product.id,
+          type: "product",
           name: product.name,
           price: product.price,
           img: product.image_url || product.img,
@@ -133,7 +134,7 @@ export default function ProductCard({ product, categoryLabel, money }) {
             Thêm giỏ
           </button>
           <Link
-            to={`/cua-hang/san-pham/${product.id}`}
+            to={`/cua-hang/san-pham/${product.product_id}`}
             className="btn btn-outline-gold flex-grow-1"
             style={{ fontSize: "0.9rem", padding: "8px 4px" }}
           >

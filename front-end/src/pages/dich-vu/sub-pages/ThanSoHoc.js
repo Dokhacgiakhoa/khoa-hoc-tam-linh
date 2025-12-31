@@ -26,14 +26,21 @@ export default function ThanSoHoc() {
   };
 
   return (
-    <ServiceGuard serviceId="sv-thansohoc">
+    <ServiceGuard
+      serviceId="sv-thansohoc"
+      config={{
+        title: "Thần Số Học Pytago",
+        desc: "Khám phá bản đồ cuộc đời qua Tên và Ngày sinh.",
+        icon: "🔢",
+      }}
+    >
       <div className="sub-page numerology-page">
         <section className="sub-hero">
           <div className="container">
             <h1 className="sub-title text-gradient">THẦN SỐ HỌC (TÍNH PHÍ)</h1>
             <p className="sub-desc">
-              Thấu hiểu bản thân thông qua ngôn ngữ của những con số. (Phí:
-              299.000 LT)
+              Thấu hiểu bản thân thông qua ngôn ngữ của những con số. (Phí: 299
+              🔮)
             </p>
           </div>
         </section>

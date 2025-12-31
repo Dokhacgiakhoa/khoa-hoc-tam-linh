@@ -1,5 +1,5 @@
 .dv-hero {
-  padding: clamp(3rem, 6vw, 6rem) 0 3rem;
+  padding: clamp(1.5rem, 3.5vw, 3.5rem) 0 1.5rem;
   background: radial-gradient(
     circle at 50% 10%,
     rgba(255, 215, 0, 0.1),
@@ -77,12 +77,25 @@
   }
 }
 
+.group-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.group-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .group-media::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(27, 20, 47, 0.5), transparent);
   border-radius: 1rem;
+  pointer-events: none;
 }
 
 .shadow-gold {
@@ -95,6 +108,81 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 215, 0, 0.1);
   border-radius: 2rem;
+}
+
+/* New Service Actions UI */
+.service-action-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  padding: 14px 22px;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 220px;
+  backdrop-filter: blur(10px);
+}
+
+.service-action-card:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--khctl-gold);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(212, 175, 55, 0.1);
+}
+
+.service-card-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.service-card-price {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--khctl-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.service-card-price.free {
+  background: rgba(40, 167, 69, 0.15);
+  color: #4ade80;
+  border-color: rgba(40, 167, 69, 0.25);
+}
+
+.btn-academy-link {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 215, 0, 0.6);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
+}
+
+.btn-academy-link:hover {
+  color: var(--khctl-gold);
+  border-bottom-color: var(--khctl-gold);
+  padding-left: 8px;
+}
+
+.btn-academy-link i {
+  transition: transform 0.3s ease;
+}
+
+.btn-academy-link:hover i {
+  transform: translateX(5px);
 }
 
 @media (max-width: 768px) {

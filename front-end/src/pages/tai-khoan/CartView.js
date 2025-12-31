@@ -3,9 +3,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAlert } from "../../contexts/AlertContext";
 
-export default function CartView({ user }) {
+export default function CartView({ user: initialUser }) {
   const { showSuccess, showError, showWarning, showConfirm, showInfo } =
     useAlert();
+  // Manage user state locally to allow updates/refreshes
+  const [user, setUser] = useState(initialUser);
+
+  // Sync prop changes to local state
+  useEffect(() => {
+    setUser(initialUser);
+  }, [initialUser]);
+
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -24,6 +32,18 @@ export default function CartView({ user }) {
     loadCart();
     // Listen for cart changes from other components
     window.addEventListener("cartChanged", loadCart);
+
+    // Fetch fresh user data to ensure balance is correct
+    if (localStorage.getItem("auth_token")) {
+      axios
+        .get("/api/user")
+        .then((res) => {
+          setUser(res.data);
+          localStorage.setItem("user", JSON.stringify(res.data)); // Update cache
+        })
+        .catch((err) => console.error("Failed to refresh user data", err));
+    }
+
     return () => window.removeEventListener("cartChanged", loadCart);
   }, []);
 
@@ -91,27 +111,34 @@ export default function CartView({ user }) {
       return;
     }
 
-    showConfirm(`Xác nhận thanh toán ${money(total)}?`, async () => {
+    showConfirm(`Xác nhận thanh toán ${money(total - discount)}?`, async () => {
       setLoading(true);
       try {
-        for (const item of cart) {
-          await axios.post(`/api/products/${item.id}/purchase`, {
+        await axios.post("/api/checkout", {
+          items: cart.map((item) => ({
+            id: item.id,
             quantity: item.quantity,
-            payment_method: "wallet",
-          });
-        }
+            type: item.type, // Send type (course/product) to backend
+          })),
+          coupon: coupon,
+        });
 
         showSuccess("Thanh toán thành công! Cảm ơn bạn đã ủng hộ.");
         localStorage.removeItem("kh_cart");
         setCart([]);
         setTotal(0);
+        setDiscount(0);
+        setCoupon("");
         window.dispatchEvent(new Event("cartChanged"));
         window.dispatchEvent(new Event("userChanged"));
       } catch (err) {
-        console.error(err);
+        console.error("Checkout Error:", err);
+        const serverMsg = err.response?.data?.message;
+        const serverError = err.response?.data?.error; // Sometimes Laravel returns 'error' key
         showError(
-          err.response?.data?.message ||
-            "Thanh toán thất bại. Vui lòng kiểm tra số dư."
+          serverMsg ||
+            serverError ||
+            "Thanh toán thất bại. Lỗi kết nối hoặc hệ thống."
         );
       } finally {
         setLoading(false);
@@ -335,6 +362,28 @@ export default function CartView({ user }) {
             {money(total - discount)}
           </span>
         </div>
+
+        {user && (
+          <div className="border-top border-secondary pt-3 mb-3">
+            <div className="d-flex justify-content-between align-items-center mb-2 small text-light">
+              <span>Số dư hiện tại:</span>
+              <span className="text-white fw-bold">{money(user.balance)}</span>
+            </div>
+            <div className="d-flex justify-content-between align-items-center small text-light">
+              <span>Sau thanh toán:</span>
+              <span
+                className={`fw-bold ${
+                  user.balance >= total - discount
+                    ? "text-success"
+                    : "text-danger"
+                }`}
+              >
+                {money(user.balance - (total - discount))}
+              </span>
+            </div>
+          </div>
+        )}
+
         <div className="text-end">
           <button
             className="btn btn-gold px-4 py-2 text-uppercase fw-bold ls-1"

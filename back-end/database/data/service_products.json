@@ -2,7 +2,7 @@
     {
         "id": "sv-tuvi",
         "name": "Lập Lá Số Tử Vi Trọn Đời",
-        "price": 297000,
+        "price": 495000,
         "cat": "menh",
         "img": "/images/banners/menh-huyen-thuat.png",
         "madeForYou": false,
@@ -11,7 +11,7 @@
     {
         "id": "sv-battu",
         "name": "Luận Giải Bát Tự - Tứ Trụ",
-        "price": 197000,
+        "price": 299000,
         "cat": "menh",
         "img": "/images/banners/menh-huyen-thuat.png",
         "madeForYou": false,
@@ -29,7 +29,7 @@
     {
         "id": "sv-facescan",
         "name": "AI Face Scan - Nhân Tướng Học",
-        "price": 97000,
+        "price": 199000,
         "cat": "tuong",
         "img": "/images/banners/tuong-huyen-thuat.png",
         "madeForYou": false,
@@ -38,7 +38,7 @@
     {
         "id": "sv-palmscan",
         "name": "AI Palm Scan - Xem Chỉ Tay",
-        "price": 97000,
+        "price": 199000,
         "cat": "tuong",
         "img": "/images/banners/tuong-huyen-thuat.png",
         "madeForYou": false,
@@ -65,7 +65,7 @@
     {
         "id": "sv-kinhdich",
         "name": "Gieo Quẻ Kinh Dịch",
-        "price": 47000,
+        "price": 149000,
         "cat": "boc",
         "img": "/images/banners/boc-huyen-thuat.png",
         "madeForYou": false,
@@ -74,7 +74,7 @@
     {
         "id": "sv-laban",
         "name": "La Bàn AR Phong Thủy",
-        "price": 147000,
+        "price": 199000,
         "cat": "trach",
         "img": "/images/banners/trach-huyen-thuat.png",
         "madeForYou": false,
@@ -92,10 +92,37 @@
     {
         "id": "sv-sim",
         "name": "Chấm Điểm SIM Phong Thủy",
-        "price": 97000,
+        "price": 149000,
         "cat": "so",
         "img": "/images/banners/so-huyen-thuat.png",
         "madeForYou": false,
         "description": "Phân tích ý nghĩa số điện thoại, kích hoạt tài lộc."
+    },
+    {
+        "id": "sv-thuocloban",
+        "name": "Thước Lỗ Ban Online",
+        "price": 0,
+        "cat": "trach",
+        "img": "/images/banners/trach-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Tra cứu kích thước phong thủy chuẩn cho nhà ở và âm phần."
+    },
+    {
+        "id": "sv-xin-xam",
+        "name": "Xin Xâm Quan Thánh",
+        "price": 0,
+        "cat": "boc",
+        "img": "/images/banners/boc-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Xin xăm, gieo quẻ cầu tài lộc, bình an."
+    },
+    {
+        "id": "sv-lichvannien",
+        "name": "Lịch Vạn Niên",
+        "price": 0,
+        "cat": "so",
+        "img": "/images/banners/so-huyen-thuat.png",
+        "madeForYou": false,
+        "description": "Tra cứu ngày tốt xấu, giờ hoàng đạo, lịch âm dương."
     }
 ]

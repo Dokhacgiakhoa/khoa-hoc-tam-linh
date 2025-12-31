@@ -9,6 +9,7 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Notification;
+use App\Models\OrderItem; // Added import
 
 
 class ProductController extends Controller
@@ -24,7 +25,7 @@ class ProductController extends Controller
                              ->limit($limit)
                              ->get();
         } else {
-            $products = $query->get();
+            $products = $query->with('category')->get();
         }
 
         return response()->json($products);
@@ -32,7 +33,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = Product::where('product_id', $id)->first();
+        $product = Product::with('category')->where('product_id', $id)->first();
         if (!$product) {
             return response()->json(['error' => 'Sản phẩm không tồn tại'], 404);
         }
@@ -45,7 +46,9 @@ class ProductController extends Controller
             'quantity' => 'required|integer|min:1'
         ]);
 
-        $product = Product::where('product_id', $id)->first();
+        $product = Product::where('db_id', $id)
+            ->orWhere('product_id', $id)
+            ->first();
         if (!$product) {
             return response()->json(['error' => 'Sản phẩm không tồn tại'], 404);
         }
@@ -75,17 +78,27 @@ class ProductController extends Controller
                 'user_id' => $user->id,
                 'order_id' => 'ORD-' . strtoupper(Str::random(10)),
                 'customer_name' => $user->name,
-                'items' => json_encode([
+                'items' => [
                     [
                         'id' => $product->product_id,
                         'name' => $product->name,
                         'quantity' => $request->quantity,
                         'price' => $product->price
                     ]
-                ]),
+                ],
                 'total' => $totalPrice,
                 'method' => 'wallet',
                 'status' => 'paid'
+            ]);
+
+            // Save to order_items
+            OrderItem::create([
+                'order_id' => $order->id,
+                'buyable_type' => get_class($product),
+                'buyable_id' => $product->db_id, // Use db_id (primary key)
+                'name' => $product->name,
+                'price' => $product->price,
+                'quantity' => $request->quantity
             ]);
 
             // Create transaction
@@ -121,7 +134,12 @@ class ProductController extends Controller
             ->get();
 
         foreach ($orders as $order) {
-            $items = json_decode($order->items, true);
+            $items = $order->items;
+            // Ensure it's an array (handle case where cast might return object or null)
+            if (is_string($items)) {
+                $items = json_decode($items, true);
+            }
+            
             if (is_array($items)) {
                 foreach ($items as $item) {
                     if (isset($item['id']) && (string)$item['id'] === (string)$id) {

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\CourseCategory;
 use App\Models\Course;
 use App\Models\Lesson;
+
+use App\Models\Order; // Added
+use App\Models\OrderItem; // Added
+use App\Models\Transaction; // Added
+use Illuminate\Support\Str; // Added
 use Illuminate\Support\Facades\DB;
 
 class AcademyController extends Controller
@@ -133,10 +138,27 @@ class AcademyController extends Controller
             ->pluck('course_id');
 
         $courses = Course::whereIn('id', $startedCourseIds)
+            ->with(['category'])
             ->withCount('lessons')
             ->get();
 
-        $progressData = $courses->map(function ($course) use ($user) {
+        // Also get all enrolled courses even if not started
+        $enrolledCourseIds = DB::table('course_enrollments')
+            ->where('user_id', $user->id)
+            ->where('status', 'active')
+            ->pluck('course_id');
+        
+        // Include free courses as they are effectively "enrolled" for everyone
+        $freeCourseIds = Course::where('price', 0)->pluck('id');
+        
+        $allRelevantCourseIds = $startedCourseIds->merge($enrolledCourseIds)->merge($freeCourseIds)->unique();
+        
+        $courses = Course::whereIn('id', $allRelevantCourseIds)
+            ->with(['category'])
+            ->withCount('lessons')
+            ->get();
+
+        $progressData = $courses->map(function ($course) use ($user, $enrolledCourseIds) {
             $completedCount = DB::table('lesson_completions')
                 ->where('user_id', $user->id)
                 ->join('lessons', 'lesson_completions.lesson_id', '=', 'lessons.id')
@@ -147,12 +169,16 @@ class AcademyController extends Controller
                 ? round(($completedCount / $course->lessons_count) * 100) 
                 : 0;
 
+            $isEnrolled = $course->price == 0 || $enrolledCourseIds->contains($course->id);
+
             return [
                 'course_id' => $course->id,
                 'slug' => $course->slug,
                 'title' => $course->title,
+                'category_slug' => $course->category->slug,
                 'progress_percent' => $percent,
-                'is_completed' => $percent == 100
+                'is_completed' => $percent == 100,
+                'is_enrolled' => $isEnrolled
             ];
         });
 
@@ -182,22 +208,50 @@ class AcademyController extends Controller
             return response()->json(['message' => 'You are already enrolled in this course'], 400);
         }
 
-        // Check wallet balance
-        $wallet = DB::table('wallets')->where('user_id', $user->id)->first();
-        if (!$wallet || $wallet->balance < $course->price) {
+        // Check user balance (standardized on users table)
+        if ($user->balance < $course->price) {
             return response()->json([
                 'message' => 'Insufficient balance',
                 'required' => $course->price,
-                'current' => $wallet->balance ?? 0
+                'current' => $user->balance
             ], 400);
         }
 
         DB::beginTransaction();
         try {
-            // Deduct from wallet
-            DB::table('wallets')
-                ->where('user_id', $user->id)
-                ->decrement('balance', $course->price);
+            // Deduct from balance
+            $user->balance -= $course->price;
+            $user->save();
+
+            // Create Order
+            $order = Order::create([
+                'user_id' => $user->id,
+                'order_id' => 'ORD-' . strtoupper(Str::random(10)),
+                'customer_name' => $user->name,
+                'items' => json_encode([
+                    [
+                        'id' => $course->id,
+                        'name' => $course->title,
+                        'title' => $course->title,
+                        'quantity' => 1,
+                        'price' => $course->price,
+                        'type' => 'course'
+                    ]
+                ]),
+                'total' => $course->price,
+                'method' => 'wallet',
+                'status' => 'paid'
+            ]);
+
+            // Save to order_items
+            OrderItem::create([
+                'order_id' => $order->id,
+                'buyable_type' => get_class($course),
+                'buyable_id' => $course->id,
+                'name' => $course->title,
+                'price' => $course->price,
+                'quantity' => 1
+            ]);
 
             // Create enrollment
             DB::table('course_enrollments')->insert([
@@ -211,13 +265,11 @@ class AcademyController extends Controller
             ]);
 
             // Create transaction record
-            DB::table('transactions')->insert([
+            Transaction::create([
                 'user_id' => $user->id,
                 'amount' => -$course->price,
                 'type' => 'course_purchase',
-                'description' => 'Mua khóa học: ' . $course->title,
-                'created_at' => now(),
-                'updated_at' => now()
+                'description' => 'Mua khóa học: ' . $course->title
             ]);
 
             DB::commit();
@@ -228,7 +280,8 @@ class AcademyController extends Controller
                     'course_id' => $course->id,
                     'course_title' => $course->title,
                     'paid_amount' => $course->price
-                ]
+                ],
+                'new_balance' => $user->balance
             ]);
         } catch (\Exception $e) {
             DB::rollBack();

@@ -12,6 +12,8 @@ class Order extends Model
         'customer_name',
         'items',
         'total',
+        'coupon_code',
+        'discount_amount',
         'method',
         'status',
     ];
@@ -20,4 +22,9 @@ class Order extends Model
         'items' => 'json',
         'total' => 'decimal:2',
     ];
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

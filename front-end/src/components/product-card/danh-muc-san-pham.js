@@ -6,6 +6,7 @@ import React, {
   useDeferredValue,
 } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../product-card/product-card";
 import "./danh-muc-san-pham.css";
 
@@ -61,13 +62,10 @@ const COMMERCIAL_CATEGORIES = [
   "set-qua-tang",
 ];
 
-import { useNavigate, useParams } from "react-router-dom";
-
-export default function DanhMucSanPham() {
-  const { category } = useParams();
+export default function DanhMucSanPham({ initialCategory }) {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [cat, setCat] = useState(category || "all");
+  const [cat, setCat] = useState(initialCategory || "all");
   const [q, setQ] = useState("");
   const [sort, setSort] = useState("featured"); // featured | price-asc | price-desc | name-asc
   const [page, setPage] = useState(1); // 1-based
@@ -87,18 +85,22 @@ export default function DanhMucSanPham() {
   }, []);
 
   useEffect(() => {
-    if (category) {
-      setCat(category);
+    if (initialCategory) {
+      setCat(initialCategory);
       setPage(1);
     } else {
       setCat("all");
     }
-  }, [category]);
+  }, [initialCategory]);
 
   // 2) Nguồn theo tab
   const source = useMemo(() => {
     if (cat === "all") return allProducts;
-    return allProducts.filter((p) => p.category === cat);
+    return allProducts.filter((p) => {
+      // Handle both relationship object (p.category.slug) and legacy string (p.category)
+      const pSlug = p.category?.slug || p.category || "";
+      return pSlug === cat;
+    });
   }, [cat, allProducts]);
 
   // 3) Deferred search để gõ mượt
@@ -255,15 +257,22 @@ export default function DanhMucSanPham() {
         ) : (
           <>
             <div className="row g-4 align-items-start">
-              {currentData.map((p) => (
-                <div className="col-6 col-md-4 col-xl-3" key={p.id}>
-                  <ProductCard
-                    product={p}
-                    categoryLabel={CATEGORY_LABEL[p.cat] || ""}
-                    money={money}
-                  />
-                </div>
-              ))}
+              {currentData.map((p) => {
+                // Determine category slug for label lookup or use name directly
+                const pSlug = p.category?.slug || p.category || p.cat;
+                const displayLabel =
+                  p.category?.name || CATEGORY_LABEL[pSlug] || "";
+
+                return (
+                  <div className="col-6 col-md-4 col-xl-3" key={p.id}>
+                    <ProductCard
+                      product={p}
+                      categoryLabel={displayLabel}
+                      money={money}
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             {/* PAGINATION */}

@@ -93,7 +93,10 @@ function HocVienHuyenHoc() {
             </div>
             <div className="col-lg-5 text-center">
               <img
-                src="/images/banners/hoc-vien-huyen-hoc-banner.png"
+                src={
+                  (process.env.PUBLIC_URL || "") +
+                  "/images/banners/hoc-vien-huyen-hoc-banner.png"
+                }
                 alt="Academy"
                 className="img-fluid rounded-circle shadow-gold animate-float"
                 style={{ maxWidth: "80%" }}
@@ -184,18 +187,21 @@ function HocVienHuyenHoc() {
               desc="Học cách an sao và hiểu về bản mệnh 12 cung."
               slug="tu-vi-nhap-mon"
               level="Cơ bản"
+              image="/images/courses/tu-vi.png"
             />
             <FeaturedCourse
               title="Tarot Chuyên Sâu"
               desc="Làm chủ 78 lá bài và phương pháp kết nối trực giác."
               slug="tarot-chuyen-sau"
               level="Trung cấp"
+              image="/images/courses/tarot.png"
             />
             <FeaturedCourse
               title="Thần Số Học Pytago"
               desc="Giải mã các con số ngày sinh và tên gọi."
               slug="than-so-hoc-pytago"
               level="Cơ bản"
+              image="/images/courses/than-so-hoc.png"
             />
           </div>
         </div>
@@ -204,19 +210,33 @@ function HocVienHuyenHoc() {
   );
 }
 
-function FeaturedCourse({ title, desc, slug, level }) {
+function FeaturedCourse({ title, desc, slug, level, image }) {
   return (
     <div className="col-lg-4">
-      <div className="card-3d p-4 h-100">
-        <span className="badge bg-gold text-dark mb-3 w-fit">{level}</span>
-        <h4 className="text-white mb-2">{title}</h4>
-        <p className="small opacity-75 mb-4">{desc}</p>
-        <Link
-          to={`/hoc-vien/khoa-hoc/${slug}`}
-          className="btn btn-sm btn-outline-gold"
-        >
-          Học ngay &rarr;
-        </Link>
+      <div className="card-3d h-100 overflow-hidden d-flex flex-column">
+        {image && (
+          <div
+            className="featured-media"
+            style={{ height: "160px", overflow: "hidden" }}
+          >
+            <img
+              src={(process.env.PUBLIC_URL || "") + image}
+              alt={title}
+              className="w-100 h-100 object-fit-cover transition-all hover-scale"
+            />
+          </div>
+        )}
+        <div className="p-4 d-flex flex-column flex-grow-1">
+          <span className="badge bg-gold text-dark mb-3 w-fit">{level}</span>
+          <h4 className="text-white mb-2">{title}</h4>
+          <p className="small opacity-75 mb-4 flex-grow-1">{desc}</p>
+          <Link
+            to={`/hoc-vien/khoa-hoc/${slug}`}
+            className="btn btn-sm btn-outline-gold"
+          >
+            Học ngay &rarr;
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -44,6 +44,9 @@ const AcademyCourse = lazy(() =>
 const ThiChungChi = lazy(() =>
   import("./pages/hoc-vien-huyen-hoc/sub-pages/ThiChungChi")
 );
+const ExamTakingPage = lazy(() =>
+  import("./pages/hoc-vien-huyen-hoc/sub-pages/ExamTakingPage")
+);
 
 // Admin Pages
 const AdminLayout = lazy(() => import("./pages/admin/admin-layout"));
@@ -114,6 +117,7 @@ export default function App() {
                 element={<AcademyCourse />}
               />
               <Route path="/hoc-vien/thi-chung-chi" element={<ThiChungChi />} />
+              <Route path="/hoc-vien/thi/:id" element={<ExamTakingPage />} />
               <Route path="/lien-he" element={<LienHe />} />
               <Route path="/tai-khoan" element={<TaiKhoan />} />
               <Route path="/tai-khoan/:activeTab" element={<TaiKhoan />} />

@@ -104,32 +104,47 @@ function Home() {
         className="hero position-relative overflow-hidden"
         aria-label="Hero"
       >
+        <div
+          className="hero-image-layer"
+          style={{
+            backgroundImage: `url(${
+              (process.env.PUBLIC_URL || "") + "/images/hero_mystic_ai_v2.png"
+            })`,
+            opacity: 0.35,
+          }}
+        />
         {/* Ẩn video local để hiện video nền toàn trang */}
         {/* <video
           className="hero-video"
           ...
         </video> */}
 
-        {/* Lớp phủ tổng + nền riêng cho vùng chữ */}
+        {/* Background Visuals handled via CSS background-image */}
         <div className="hero-overlay" />
-        <div className="hero-content-bg" />
 
-        <div className="container position-relative hero-content">
-          <div className="row align-items-center">
-            <div className="col-lg-8">
+        <div className="container position-relative hero-content py-5">
+          <div className="row align-items-center min-vh-75">
+            <div className="col-lg-10 col-xl-8">
               <h1 className="hero-title">
-                Khoa học Tâm Linh – Minh giải huyền học bằng dữ liệu &amp; AI
+                Khai Phá
+                <br />
+                Sức Mạnh Tâm Linh
+                <br />
+                <span className="text-gold-gradient">
+                  BẰNG TRÍ TUỆ NHÂN TẠO
+                </span>
               </h1>
               <p className="hero-sub">
-                Trải nghiệm Tarot &amp; Mệnh lý có kiểm chứng, học theo Ngũ
-                Huyền Thuật. Không mê tín · 2FA an toàn.
+                Kết hợp tinh hoa Huyền học nghìn năm với công nghệ Data Science
+                hiện đại. Tarot, Mệnh lý và Phong thủy được minh giải khoa học,
+                chính xác và bảo mật.
               </p>
-              <div className="d-flex gap-3 flex-wrap mt-4">
+              <div className="d-flex gap-4 flex-wrap hero-cta-wrapper">
                 <Link className="btn btn-gold" to="/dich-vu">
-                  Trải nghiệm miễn phí
+                  Bắt đầu ngay &nbsp; &rarr;
                 </Link>
-                <Link className="btn btn-outline-gold" to="/gioi-thieu">
-                  Khám phá hệ sinh thái
+                <Link className="btn btn-outline-gold" to="/hoc-vien">
+                  Học viện Huyền học
                 </Link>
               </div>
             </div>
@@ -477,7 +492,9 @@ function Home() {
                       </p>
                       <div className="d-flex justify-content-center mt-auto">
                         <Link
-                          to={`/cua-hang/san-pham/${item.id}`}
+                          to={`/cua-hang/san-pham/${
+                            item.product_id || item.id
+                          }`}
                           className="btn btn-sm btn-outline-gold px-4"
                         >
                           Xem chi tiết

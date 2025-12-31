@@ -10,14 +10,27 @@
 /* ========================
    🅰️ FONT & RESET CƠ BẢN
    ======================== */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Nunito Sans", "Inter", "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.btn-gold,
+.btn-outline-gold,
+.section-title {
+  font-family: "Nunito", sans-serif !important;
 }
 
 body::before {
@@ -60,6 +73,18 @@ body {
    Giữ alias --khctl-* để tương thích ngược. */
 .text-gold {
   color: var(--kh-gold) !important;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffd700 0%, #fff4a1 50%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  padding-top: 0.2em; /* Tạo không gian cho các dấu mũ, dấu sắc */
+  margin-top: -0.2em; /* Bù lại khoảng padding để không bị đẩy dòng quá xa */
+  overflow: visible;
 }
 
 :root {
@@ -114,6 +139,7 @@ input,
 button {
   font-weight: 400;
   letter-spacing: 0.02em;
+  color: #ffffff;
 }
 
 /* Utility container trung tính (không phụ thuộc Bootstrap) */

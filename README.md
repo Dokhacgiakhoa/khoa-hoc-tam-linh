@@ -1,87 +1,60 @@
-# Khoa Học Tâm Linh - Nền Tảng Huyền Học & Thương Mại Số
+# BÁO CÁO SẢN PHẨM: KHOA HỌC TÂM LINH
 
-Dự án là một hệ sinh thái kết hợp giữa kiến thức huyền học Phương Đông/Phương Tây (Tử Vi, Thần Số, Tarot...) và nền tảng thương mại điện tử hiện đại, mang đến trải nghiệm tâm linh số hóa độc đáo.
+## 1. Video Giới Thiệu
 
-## ✨ Điểm hay và thú vị của sản phẩm
-
-1.  **Sự kết hợp Độc đáo**:
-
-    - Kết hợp giữa **E-learning** (Học viện Live), **E-commerce** (Cửa hàng vật phẩm), và **Consulting** (Dịch vụ xem số/bói bài).
-    - Hệ thống tiền tệ riêng (**Linh Tệ 🔮**) tạo cảm giác "gamification" cho người dùng khi nạp tiền và chi tiêu.
-
-2.  **Trải nghiệm Người dùng (UX) hiện đại**:
-
-    - Giao diện Dark Mode huyền bí, sử dụng hiệu ứng Glassmorphism và Neon Gold sang trọng.
-    - Tương tác mượt mà: Mở khóa dịch vụ, Thêm vào giỏ hàng, Thanh toán ví điện tử tích hợp ngay trong ứng dụng.
-
-3.  **Hệ thống Bảo mật & Tiện ích**:
-    - **Đăng nhập QR Code**: Tính năng đăng nhập nhanh từ thiết bị di động (mô phỏng).
-    - **Bảo vệ Dịch vụ (ServiceGuard)**: Cơ chế khóa nội dung cao cấp, yêu cầu người dùng mở khóa để truy cập, giúp tối ưu hóa doanh thu.
+(Chèn link video demo sản phẩm tại đây – Thời lượng 5-7 phút)
 
 ---
 
-## 🛠 Những kiến thức công nghệ kỹ thuật học được
+## 2. Thông Tin Chi Tiết
 
-Trong quá trình xây dựng sản phẩm, đội ngũ đã nắm vững và áp dụng các công nghệ:
+### 🧑‍💻 Thông tin cá nhân
 
-1.  **Frontend (ReactJS)**:
+- **Họ tên**: Đỗ Khắc Gia Khoa
+- **Lớp**: (Điền tên lớp của bạn)
+- **Mã sinh viên**: (Điền mã sinh viên)
 
-    - Quản lý State phức tạp với Context API (Auth, Alert, Cart).
-    - Xử lý routing động và bảo vệ route (Protected Routes).
-    - Tích hợp thư viện đồ thị và animation để hiển thị dữ liệu huyền học trực quan.
+### 🤔 Lý do lựa chọn đề tài
 
-2.  **Backend (Laravel)**:
+Tôi luôn bị cuốn hút bởi sự huyền bí của văn hóa phương Đông (Tử Vi, Kinh Dịch) nhưng nhận thấy đa số các trang web hiện tại thường cũ kỹ, khó tiếp cận hoặc mang nặng tính mê tín dị đoan. Tôi muốn xây dựng một **nền tảng "Tâm Linh Số"** hiện đại, nơi tri thức cổ xưa được trình bày dưới ngôn ngữ của công nghệ (Data Visualization, AI), mang lại góc nhìn khoa học và trải nghiệm thẩm mỹ cao cho người trẻ.
 
-    - Xây dựng RESTful API chuẩn mực.
-    - Xử lý logic phức tạp: Tính toán giỏ hàng, xác thực quyền sở hữu (Ownership Check), và quản lý giao dịch ví.
-    - Tối ưu hóa Database với MySQL, xử lý các trường dữ liệu JSON cho đơn hàng linh hoạt.
+### ✨ Những điểm hay, thú vị của sản phẩm
 
-3.  **Tích hợp Hệ thống**:
-    - Cơ chế **Secure Auth (Sanctum)**: Token-based authentication.
-    - Kỹ thuật xử lý bất đồng bộ (Async/Await) giữa Frontend và Backend để đảm bảo UX không bị gián đoạn.
+- **Giao diện Mystic Luxury**: Thiết kế Dark Mode kết hợp màu Gold, hiệu ứng Glassmorphism tạo cảm giác sang trọng, bí ẩn nhưng không "sợ hãi".
+- **Hệ sinh thái toàn diện**: Không chỉ xem bói, người dùng còn có thể Học tập (Academy), Mua sắm (Store) và Quản lý tài sản số (Ví Linh Tệ).
+- **ServiceGuard**: Tính năng "dùng thử trước, trả tiền sau" – cho phép người dùng xem một phần nội dung và kích thích sự tò mò để mở khóa phần còn lại.
+- **Trải nghiệm tương tác**: Gieo quẻ 3D mô phỏng thực tế, lật bài Tarot mượt mà.
 
----
+### 📚 Kiến thức công nghệ kỹ thuật học được
 
-## ❤️ Điều tâm đắc nhất
+Trong quá trình phát triển, tôi đã làm chủ được:
 
-Điều khiến chúng tôi tâm đắc nhất là **sự liền mạch trong trải nghiệm người dùng ("Flow")**.
-Từ lúc người dùng đăng nhập -> Nạp tiền vào ví -> Mở khóa dịch vụ -> Sử dụng dịch vụ; mọi bước đều diễn ra tự nhiên, không có cảm giác bị ngắt quãng bởi các lỗi kỹ thuật hay giao diện khó hiểu. Việc xây dựng thành công cơ chế **"Dùng thử -> Mở khóa -> Sở hữu vĩnh viễn"** là một điểm sáng lớn của dự án.
+- **Frontend (ReactJS)**: Xử lý State phức tạp (Context API), Protected Routes, và các thư viện đồ họa.
+- **Backend (Laravel)**: Xây dựng RESTful API chuẩn mực, xử lý Polymorphic Relations (cho giỏ hàng đa năng), và xác thực bảo mật với Sanctum.
+- **Cấu trúc dữ liệu**: Thiết kế Database tối ưu để lưu trữ các cấu trúc JSON phức tạp (như dữ liệu đơn hàng hay kết quả luận giải).
+- **Quy trình DevOps**: Triển khai và quản lý môi trường development (CORS, Port management).
 
----
+### ❤️ Điều tâm đắc nhất
 
-## 🧩 Những khó khăn gặp phải
+Điều khiến tôi tự hào nhất là **sự liền mạch trong trải nghiệm (User Flow)**. Từ lúc người dùng tò mò bấm vào xem thử, đến lúc hệ thống yêu cầu đăng nhập, mua Linh Tệ và mở khóa dịch vụ – mọi thứ diễn ra tự nhiên như một trò chơi (Gamification). Nó biến việc "thanh toán" trở thành một phần của trải nghiệm khám phá thay vì rào cản.
 
-1.  **Đồng bộ dữ liệu Phức tạp**:
+### 🧩 Những khó khăn gặp phải
 
-    - Việc xử lý logic check quyền sở hữu (`checkOwnership`) gặp khó khăn do sự khác biệt kiểu dữ liệu (String ID vs Integer ID) trong Database.
-    - _Giải pháp_: Đã chuẩn hóa toàn bộ ID sang dạng String (`sv-thansohoc`) và viết script migration để sửa dữ liệu cũ.
+- **Vấn đề đồng bộ dữ liệu**: Khi tích hợp nhiều loại sản phẩm (Vật phẩm, Khóa học, Dịch vụ số) vào chung một Giỏ hàng, việc xử lý ID và Type rất dễ nhầm lẫn (đã phải sửa lại logic `checkOwnership` và DB seed nhiều lần).
+- **Xử lý logic 2 chiều**: Đảm bảo Frontend hiển thị đúng trạng thái "Đã mua" ngay khi Backend xử lý xong giao dịch mà không cần reload trang thủ công (cần real-time update).
 
-2.  **Xử lý Thanh toán & Giỏ hàng**:
+### 🚀 Kế hoạch phát triển trong tương lai
 
-    - Kết hợp giữa mua vật phẩm (số lượng nhiều) và mua dịch vụ (mở khóa 1 lần) trong cùng một giỏ hàng đòi hỏi logic xử lý riêng biệt.
-    - _Giải pháp_: Tùy biến Frontend để tự động ẩn selector số lượng đối với dịch vụ, và điều hướng thông minh.
-
-3.  **Deploy & Môi trường**:
-    - Xung đột cổng (Port conflict) khi chạy local.
-    - _Giải pháp_: Cấu hình linh hoạt port server và client để tránh xung đột.
+- **Tích hợp AI Bot**: Sử dụng Gemini/GPT API để tự động hóa việc luận giải chi tiết hơn cho từng cá nhân.
+- **Mobile App**: Phát triển phiên bản React Native để tận dụng Camera AI (xem tướng) và Gyroscope (lắc quẻ điện thoại).
+- **Mạng xã hội tâm linh**: Cho phép người dùng chia sẻ kết quả gieo quẻ và thảo luận cùng cộng đồng.
 
 ---
 
-## 🚀 Kế hoạch phát triển trong tương lai
+## 3. Chia Sẻ Cùng Cộng Đồng
 
-1.  **Mở rộng Hệ sinh thái Huyền học**:
-
-    - Tích hợp AI (ChatGPT/Gemini) để tự động luận giải lá số Tử Vi và Thần Số Học chi tiết hơn.
-    - Thêm tính năng "Phòng Chat Trực Tiếp" với chuyên gia (Booking service).
-
-2.  **Gamification Nâng cao**:
-
-    - Hệ thống Nhiệm vụ hàng ngày (Daily Quests) để người dùng kiếm Linh Tệ miễn phí.
-    - Bảng xếp hạng (Leaderboard) tu hành/học tập cho học viên.
-
-3.  **Mobile App**:
-    - Phát triển phiên bản React Native để mang trải nghiệm lên iOS và Android native.
+"Đừng ngại làm những đề tài nghe có vẻ 'lạ' hoặc 'khó'. Chính sự khác biệt đó sẽ giúp bạn học được nhiều kỹ thuật mới mà các dự án CRUD thông thường không có. Hãy coi sản phẩm như một đứa con tinh thần, chăm chút từng pixel giao diện và từng dòng thông báo lỗi – người dùng sẽ cảm nhận được tâm huyết của bạn."
 
 ---
 
-_Dự án được thực hiện với niềm đam mê công nghệ và văn hóa phương Đông._
+> _Tài liệu hướng dẫn cài đặt kỹ thuật chi tiết vui lòng xem tại file: [TECHNICAL_GUIDE.md](./TECHNICAL_GUIDE.md)_

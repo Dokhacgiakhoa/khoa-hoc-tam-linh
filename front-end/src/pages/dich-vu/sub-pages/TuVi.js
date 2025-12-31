@@ -50,7 +50,14 @@ export default function TuVi() {
   };
 
   return (
-    <ServiceGuard serviceId="sv-tuvi">
+    <ServiceGuard
+      serviceId="sv-tuvi"
+      config={{
+        title: "Tử Vi Đẩu Số",
+        desc: "Khám phá vận mệnh qua lá số tử vi dựa trên giờ sinh và ngày tháng năm sinh.",
+        icon: "🔮",
+      }}
+    >
       <div className="sub-page anime-fade-in">
         <div className="container py-5">
           <h1 className="text-center text-gold mb-4">Lập Lá Số Tử Vi</h1>

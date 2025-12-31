@@ -58,10 +58,10 @@ export default function PurchaseModal({
               <h5 className="text-gold mb-1">{product.name}</h5>
               <div className="text-white-50 small">
                 Đơn giá:{" "}
-                {Math.floor(product.price).toLocaleString("vi-VN", {
+                {Math.floor(product.price / 1000).toLocaleString("vi-VN", {
                   maximumFractionDigits: 0,
                 })}{" "}
-                Tệ
+                🔮
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function PurchaseModal({
 
           <div className="p-3 bg-dark bg-opacity-50 rounded mb-4">
             <div className="d-flex justify-content-between mb-2">
-              <span>Tổng cộng (Linh Tệ):</span>
+              <span>Tổng cộng:</span>
               <span className="fw-bold text-gold">
                 {Math.floor(totalPrice / 1000).toLocaleString("vi-VN", {
                   maximumFractionDigits: 0,
@@ -103,9 +103,7 @@ export default function PurchaseModal({
                 🔮
               </span>
             </div>
-            <div className="small text-white-50 text-end">
-              1 Linh Tệ = 1 VNĐ
-            </div>
+            <div className="small text-white-50 text-end">1 🔮 = 1.000 VNĐ</div>
           </div>
 
           {error && (

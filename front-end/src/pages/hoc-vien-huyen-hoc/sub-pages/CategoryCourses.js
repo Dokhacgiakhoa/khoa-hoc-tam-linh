@@ -53,7 +53,7 @@ export default function CategoryCourses() {
       name: course.title,
       price: Number(course.price),
       quantity: 1,
-      image_url: "/images/banners/hoc-vien-huyen-hoc-banner.png",
+      image_url: course.thumbnail || getCategoryImage(slug),
       slug: course.slug,
     });
 
@@ -98,7 +98,10 @@ export default function CategoryCourses() {
       trach: "/images/banners/trach-huyen-thuat.png",
       so: "/images/banners/so-huyen-thuat.png",
     };
-    return images[slug] || "/images/banners/hoc-vien-huyen-hoc-banner.png";
+    return (
+      (process.env.PUBLIC_URL || "") +
+      (images[slug] || "/images/banners/hoc-vien-huyen-hoc-banner.png")
+    );
   };
 
   if (loading)
@@ -141,7 +144,7 @@ export default function CategoryCourses() {
           <div className="subject-hero-overlay"></div>
         </div>
 
-        <div className="container position-relative z-1 py-5">
+        <div className="container position-relative z-1 py-2">
           <nav aria-label="breadcrumb" className="mb-4">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
@@ -192,8 +195,8 @@ export default function CategoryCourses() {
       </section>
 
       {/* Course List Section */}
-      <section className="container py-5">
-        <div className="d-flex justify-content-between align-items-end mb-5">
+      <section className="container py-2">
+        <div className="d-flex justify-content-between align-items-end mb-2">
           <div>
             <h2 className="section-title text-white mb-2">
               Chương Trình Đào Tạo
@@ -205,33 +208,49 @@ export default function CategoryCourses() {
           </div>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-2">
           {courses.length > 0 ? (
             courses.map((course) => (
               <div className="col-md-6 col-lg-4" key={course.id}>
                 <div className="card-3d h-100 overflow-hidden d-flex flex-column">
-                  <div className="card-body p-4 d-flex flex-column">
-                    <div className="d-flex justify-content-between align-items-start mb-3">
+                  <div
+                    className="course-media position-relative"
+                    style={{ height: "180px", overflow: "hidden" }}
+                  >
+                    <img
+                      src={
+                        (process.env.PUBLIC_URL || "") +
+                        (course.thumbnail || getCategoryImage(slug))
+                      }
+                      alt={course.title}
+                      className="w-100 h-100 object-fit-cover transition-all hover-scale"
+                    />
+                    <div className="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
                       <span
-                        className="badge py-2 px-4 rounded-pill fw-bold"
+                        className="badge py-2 px-3 rounded-pill fw-bold"
                         style={{
-                          fontSize: "1.1rem",
-                          letterSpacing: "0.5px",
+                          fontSize: "0.9rem",
                           backgroundColor:
-                            Number(course.price) === 0 ? "#28a745" : "#d4af37",
+                            Number(course.price) === 0
+                              ? "rgba(40, 167, 69, 0.9)"
+                              : "rgba(212, 175, 55, 0.9)",
                           color:
                             Number(course.price) === 0 ? "#fff" : "#1a1a1a",
-                          boxShadow: "0 4px 12px rgba(212, 175, 55, 0.4)",
-                          border: "2px solid rgba(255, 255, 255, 0.2)",
+                          backdropFilter: "blur(4px)",
                         }}
                       >
+                        {Number(course.price) === 0 ? "FREE" : "PREMIUM"}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="card-body p-4 d-flex flex-column">
+                    <div className="d-flex justify-content-between align-items-start mb-2">
+                      <span className="text-gold fw-bold">
                         {Number(course.price) === 0
-                          ? "🎁 Miễn phí"
-                          : `💰 ${Math.floor(
+                          ? "Miễn phí"
+                          : `${Math.floor(
                               Number(course.price) / 1000
-                            ).toLocaleString("vi-VN", {
-                              maximumFractionDigits: 0,
-                            })} Linh Tệ`}
+                            ).toLocaleString("vi-VN")} 🔮`}
                       </span>
                       <span
                         className="badge py-1 px-3"
@@ -301,7 +320,7 @@ export default function CategoryCourses() {
                           : "Bắt đầu học ngay"
                         : `Mua khóa học - ${Math.floor(
                             Number(course.price) / 1000
-                          ).toLocaleString("vi-VN")} Linh Tệ`}
+                          ).toLocaleString("vi-VN")} 🔮`}
                     </Link>
                   </div>
                 </div>
@@ -372,8 +391,8 @@ export default function CategoryCourses() {
                     <div className="d-flex align-items-center gap-3">
                       <img
                         src={
-                          modalData.course.image ||
-                          "/images/banners/hoc-vien-huyen-hoc-banner.png"
+                          (process.env.PUBLIC_URL || "") +
+                          (modalData.course.thumbnail || getCategoryImage(slug))
                         }
                         alt={modalData.course.title}
                         className="rounded"
@@ -391,7 +410,7 @@ export default function CategoryCourses() {
                           {Math.floor(
                             Number(modalData.course.price) / 1000
                           ).toLocaleString("vi-VN")}{" "}
-                          Linh Tệ
+                          🔮
                         </p>
                       </div>
                     </div>

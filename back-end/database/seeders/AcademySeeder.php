@@ -137,7 +137,8 @@ class AcademySeeder extends Seeder
                 'category_id' => $cats['menh'], 
                 'title' => 'Tử Vi Đẩu Số: Nhập Môn Học Đồ', 
                 'slug' => 'tu-vi-nhap-mon', 
-                'price' => 1497000,
+                'price' => 985000,
+                'thumbnail' => '/images/courses/tu-vi.png',
                 'summary' => 'Nền tảng về 12 cung bản mệnh, các chính tinh và phụ tinh cơ bản.',
                 'level' => 'Cơ bản',
                 'lessons' => [
@@ -150,7 +151,8 @@ class AcademySeeder extends Seeder
                 'category_id' => $cats['menh'], 
                 'title' => 'Bát Tự Hà Lạc Căn Bản', 
                 'slug' => 'bat-tu-can-ban', 
-                'price' => 497000,
+                'price' => 299000,
+                'thumbnail' => '/images/banners/menh-huyen-thuat.png',
                 'summary' => 'Giải mã vận mệnh qua Thiên Can và Địa Chi của giờ ngày tháng năm sinh.',
                 'level' => 'Cơ bản',
                 'lessons' => [
@@ -163,7 +165,8 @@ class AcademySeeder extends Seeder
                 'category_id' => $cats['tuong'], 
                 'title' => 'Nhân Tướng Học & AI Scanner', 
                 'slug' => 'nhan-tuong-hien-dai', 
-                'price' => 199,
+                'price' => 199000,
+                'thumbnail' => '/images/banners/tuong-huyen-thuat.png',
                 'summary' => 'Học cách nhận diện tính cách qua ngũ quan với sự hỗ trợ của AI.',
                 'level' => 'Cơ bản',
                 'lessons' => [
@@ -176,7 +179,8 @@ class AcademySeeder extends Seeder
                 'category_id' => $cats['boc'], 
                 'title' => 'Tarot: Hành Trình Chàng Khờ', 
                 'slug' => 'tarot-chuyen-sau', 
-                'price' => 987000,
+                'price' => 799000,
+                'thumbnail' => '/images/courses/tarot.png',
                 'summary' => 'Làm chủ 22 lá Ẩn chính và kết nối trực giác cá nhân.',
                 'level' => 'Trung cấp',
                 'lessons' => [] // Will be populated dynamically
@@ -186,6 +190,7 @@ class AcademySeeder extends Seeder
                 'title' => 'Kinh Dịch: Dự Đoán Cát Hung', 
                 'slug' => 'kinh-dich-du-doan', 
                 'price' => 0,
+                'thumbnail' => '/images/banners/boc-huyen-thuat.png',
                 'summary' => 'Tìm hiểu về 64 quẻ dịch và cách gieo quẻ bằng đồng xu.',
                 'level' => 'Cơ bản',
                 'lessons' => [
@@ -199,6 +204,7 @@ class AcademySeeder extends Seeder
                 'title' => 'Phong Thủy Bát Trạch Minh Cảnh', 
                 'slug' => 'phong-thuy-bat-trach', 
                 'price' => 0,
+                'thumbnail' => '/images/banners/trach-huyen-thuat.png',
                 'summary' => 'Xác định hướng nhà, cung mệnh và cách bố trí vật phẩm hóa giải.',
                 'level' => 'Cơ bản',
                 'lessons' => [
@@ -211,7 +217,8 @@ class AcademySeeder extends Seeder
                 'category_id' => $cats['so'], 
                 'title' => 'Thần Số Học: Con Số Chủ Đạo', 
                 'slug' => 'than-so-hoc-pytago', 
-                'price' => 150,
+                'price' => 299000,
+                'thumbnail' => '/images/courses/than-so-hoc.png',
                 'summary' => 'Khám phá năng lượng của tên gọi và ngày sinh theo hệ thống Pytago.',
                 'level' => 'Cơ bản',
                 'lessons' => [

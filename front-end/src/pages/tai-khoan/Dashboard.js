@@ -700,7 +700,7 @@ function WalletView() {
   const [wallet, setWallet] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedAmount, setSelectedAmount] = useState(100000);
+  const [selectedAmount, setSelectedAmount] = useState(100);
   const [showMomo, setShowMomo] = useState(false);
   const [pagination, setPagination] = useState({
     current_page: 1,
@@ -794,7 +794,7 @@ function WalletView() {
 
             <div className="mt-4 p-3 bg-dark bg-opacity-25 rounded text-gold small">
               <i className="bi bi-info-circle me-2"></i>
-              Tỷ giá quy đổi: 1.000 VNĐ = 1 Linh Tệ.
+              Tỷ giá quy đổi: 1.000 VNĐ = 1 🔮.
             </div>
           </div>
         </div>
@@ -828,7 +828,8 @@ function WalletView() {
                         Math.abs(Number(txn.amount)) / 1000
                       ).toLocaleString("vi-VN", {
                         maximumFractionDigits: 0,
-                      })}
+                      })}{" "}
+                      🔮
                     </div>
                   </div>
                 ))
@@ -868,61 +869,111 @@ function WalletView() {
             <div className="momo-header">
               <h4 className="mb-0">Nạp Linh Tệ (1 Tệ = 1.000 VNĐ)</h4>
             </div>
-            <div className="momo-content p-4 text-center">
-              <div className="row g-2 mb-4">
-                {depositAmounts.map((amt) => (
-                  <div className="col-4" key={amt}>
-                    <div
-                      className={`deposit-option p-2 border rounded cursor-pointer ${
-                        selectedAmount === amt
-                          ? "border-success"
-                          : "border-secondary"
-                      }`}
-                      onClick={() => setSelectedAmount(amt)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <div
-                        className={`fw-bold ${
-                          selectedAmount === amt ? "text-success" : ""
-                        }`}
-                      >
-                        {Math.floor(amt).toLocaleString("vi-VN", {
-                          maximumFractionDigits: 0,
-                        })}
+            <div className="momo-content p-4">
+              <div className="row g-4 align-items-center">
+                {/* Left side: Amount selection */}
+                <div className="col-md-7 text-start">
+                  <div className="row g-2 mb-4">
+                    {depositAmounts.map((amt) => (
+                      <div className="col-4" key={amt}>
+                        <div
+                          className={`deposit-option p-2 border rounded cursor-pointer ${
+                            selectedAmount === amt
+                              ? "border-success bg-success bg-opacity-10"
+                              : "border-secondary"
+                          }`}
+                          onClick={() => setSelectedAmount(amt)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <div
+                            className={`fw-bold ${
+                              selectedAmount === amt ? "text-success" : ""
+                            }`}
+                          >
+                            {Math.floor(amt).toLocaleString("vi-VN", {
+                              maximumFractionDigits: 0,
+                            })}
+                          </div>
+                          <div className="small text-muted">Linh Tệ</div>
+                        </div>
                       </div>
-                      <div className="small text-muted">Linh Tệ</div>
+                    ))}
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="form-label small text-dark text-uppercase fw-bold mb-2">
+                      Hoặc nhập số Linh Tệ muốn nạp:
+                    </label>
+                    <div className="input-group mb-3">
+                      <span className="input-group-text bg-secondary text-white border-secondary">
+                        🔮
+                      </span>
+                      <input
+                        type="number"
+                        className="form-control bg-light text-dark border-secondary text-center fw-bold"
+                        placeholder="Nhập số khác..."
+                        min="1"
+                        style={{ fontSize: "1.2rem", height: "50px" }}
+                        value={selectedAmount}
+                        onChange={(e) =>
+                          setSelectedAmount(Number(e.target.value) || 0)
+                        }
+                      />
+                      <span className="input-group-text bg-secondary text-white border-secondary">
+                        Linh Tệ
+                      </span>
                     </div>
                   </div>
-                ))}
+
+                  <div className="p-3 bg-light rounded-3 border">
+                    <div className="d-flex justify-content-between align-items-center">
+                      <span className="text-secondary small fw-bold">
+                        TỔNG THANH TOÁN:
+                      </span>
+                      <span className="h4 mb-0 fw-bold text-success">
+                        {Math.floor(selectedAmount * 1000).toLocaleString(
+                          "vi-VN",
+                          {
+                            maximumFractionDigits: 0,
+                          }
+                        )}{" "}
+                        VNĐ
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side: QR Code */}
+                <div className="col-md-5 text-center">
+                  <div className="bg-white p-3 rounded-4 shadow-sm border mb-3 d-inline-block">
+                    <img
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=QUET_MA_NAP_TIEN_${selectedAmount}`}
+                      alt="Momo QR"
+                      className="img-fluid"
+                      style={{ width: 200, height: 200 }}
+                    />
+                  </div>
+                  <div className="small text-muted fw-bold">
+                    <i className="bi bi-qr-code-scan me-2"></i>
+                    QUÉT MÃ ĐỂ THANH TOÁN
+                  </div>
+                </div>
               </div>
-              <p className="mb-4">
-                Tổng thanh toán:{" "}
-                <strong>
-                  {Math.floor(selectedAmount * 1000).toLocaleString("vi-VN", {
-                    maximumFractionDigits: 0,
-                  })}{" "}
-                  VNĐ
-                </strong>
-              </p>
-              <div className="qr-placeholder mb-3">
-                <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=QUET_MA_NAP_TIEN_${selectedAmount}`}
-                  alt="Momo QR"
-                  className="img-fluid"
-                />
+
+              <div className="mt-4 pt-3 border-top">
+                <button
+                  className="btn btn-gold w-100 py-3 mb-2 fw-bold"
+                  onClick={handleDeposit}
+                >
+                  TÔI ĐÃ CHUYỂN KHOẢN
+                </button>
+                <button
+                  className="btn btn-link text-white-50 w-100"
+                  onClick={() => setShowMomo(false)}
+                >
+                  Hủy bỏ
+                </button>
               </div>
-              <button
-                className="btn btn-gold w-100 py-2 mb-2"
-                onClick={handleDeposit}
-              >
-                TÔI ĐÃ CHUYỂN KHOẢN
-              </button>
-              <button
-                className="btn btn-link text-white-50"
-                onClick={() => setShowMomo(false)}
-              >
-                Hủy bỏ
-              </button>
             </div>
           </div>
         </div>
@@ -1166,6 +1217,7 @@ function InboxView({ onUpdate }) {
 }
 
 function TasksView({ onRewardClaimed }) {
+  const { showSuccess, showError } = useAlert();
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [frequency, setFrequency] = useState("daily"); // daily, weekly, monthly
@@ -1232,6 +1284,14 @@ function TasksView({ onRewardClaimed }) {
         </button>
       </div>
 
+      <div className="alert bg-dark bg-opacity-25 border-gold border-opacity-25 text-light mb-4 small animate-fade-in">
+        <i className="bi bi-info-circle-fill text-gold me-2"></i>
+        <strong>Hướng dẫn:</strong> Hoàn thành các yêu cầu trong mô tả, sau đó
+        nhấn nút
+        <span className="text-gold fw-bold mx-1">Nhận thưởng</span> để tích lũy
+        Linh Tệ. Nhiệm vụ hàng ngày sẽ làm mới vào 00:00 mỗi ngày.
+      </div>
+
       {loading ? (
         <div className="text-center py-5">
           <div className="spinner-border text-gold"></div>
@@ -1252,10 +1312,41 @@ function TasksView({ onRewardClaimed }) {
                     : "border-secondary bg-dark bg-opacity-20"
                 }`}
               >
-                <div>
+                <div className="flex-grow-1 me-3">
                   <h6 className="mb-1 text-gold">{task.title}</h6>
-                  <p className="small mb-0 opacity-75">{task.description}</p>
-                  <div className="mt-1">
+                  <p className="small mb-1 opacity-75">{task.description}</p>
+
+                  {/* Progress Bar for Progressive Tasks */}
+                  {task.target > 1 && (
+                    <div className="mt-2" style={{ maxWidth: "200px" }}>
+                      <div className="d-flex justify-content-between small text-white-50 mb-1">
+                        <span>Tiến độ</span>
+                        <span>
+                          {task.progress}/{task.target}
+                        </span>
+                      </div>
+                      <div
+                        className="progress"
+                        style={{
+                          height: "6px",
+                          backgroundColor: "rgba(255,255,255,0.1)",
+                        }}
+                      >
+                        <div
+                          className="progress-bar bg-gold"
+                          role="progressbar"
+                          style={{
+                            width: `${Math.min(
+                              (task.progress / task.target) * 100,
+                              100
+                            )}%`,
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mt-2 text-white-50 small">
                     <span className="badge bg-dark-glass text-gold border border-gold border-opacity-25 py-1 px-2">
                       Thưởng:{" "}
                       {Math.floor(task.reward_amount).toLocaleString("vi-VN", {
@@ -1263,20 +1354,70 @@ function TasksView({ onRewardClaimed }) {
                       })}{" "}
                       🔮
                     </span>
+
+                    {/* Show Affiliate Link if available */}
+                    {task.affiliate_code && (
+                      <div className="mt-2 p-2 bg-black bg-opacity-25 rounded border border-secondary d-flex justify-content-between align-items-center">
+                        <code className="text-gold opacity-75 small text-break me-2">
+                          {window.location.origin}/api/ref/{task.affiliate_code}
+                        </code>
+                        <button
+                          className="btn btn-xs btn-outline-secondary"
+                          onClick={() => {
+                            const link = `${window.location.origin}/api/ref/${task.affiliate_code}`;
+                            navigator.clipboard.writeText(link);
+                            showSuccess("Đã sao chép link liên kết!");
+                          }}
+                          title="Sao chép link"
+                        >
+                          <i className="bi bi-clipboard"></i>
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div>
+                <div style={{ minWidth: "120px", textAlign: "right" }}>
                   {task.is_completed ? (
                     <span className="text-success fw-bold">
-                      <i className="bi bi-check-circle-fill me-1"></i> Đã nhận
+                      <i className="bi bi-check-circle-fill me-1"></i> Đã hoàn
+                      thành
                     </span>
                   ) : (
-                    <button
-                      className="btn btn-gold btn-sm"
-                      onClick={() => claimReward(task.id)}
-                    >
-                      Nhận thưởng
-                    </button>
+                    <div className="d-flex flex-column gap-2 align-items-end">
+                      {task.action_url && (
+                        <a
+                          href={task.action_url}
+                          className="btn btn-xs btn-outline-info w-100"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Làm nhiệm vụ{" "}
+                          <i className="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                      )}
+                      <button
+                        className={`btn btn-sm w-100 ${
+                          task.progress < task.target
+                            ? "btn-secondary opacity-50"
+                            : "btn-gold shadow-sm"
+                        }`}
+                        onClick={() => claimReward(task.id)}
+                        disabled={task.progress < task.target}
+                      >
+                        {task.progress < task.target ? (
+                          <span>
+                            <i className="bi bi-lock me-1"></i> {task.progress}/
+                            {task.target}
+                          </span>
+                        ) : (
+                          <span>
+                            {task.title === "Điểm danh hàng ngày"
+                              ? "Điểm danh ngay"
+                              : "Nhận thưởng"}
+                          </span>
+                        )}
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -1369,7 +1510,7 @@ function OrdersView() {
                       {Math.floor(order.total).toLocaleString("vi-VN", {
                         maximumFractionDigits: 0,
                       })}{" "}
-                      💎
+                      🔮
                     </td>
                     <td>
                       <span

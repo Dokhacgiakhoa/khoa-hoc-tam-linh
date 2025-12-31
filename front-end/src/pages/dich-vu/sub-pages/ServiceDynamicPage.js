@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import ServiceGuard from "../../../components/common/ServiceGuard";
 import "./sub-pages.css";
 
 // Configuration for all 15 services (and duplicates/aliases)
@@ -29,6 +30,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text", // or 'json'
     icon: "🔮",
+    serviceId: "sv-tuvi",
   },
   "bat-tu": {
     title: "Bát Tự (Tứ Trụ)",
@@ -46,6 +48,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "📜",
+    serviceId: "sv-battu",
   },
   // --- TƯỚNG ---
   "scan-face": {
@@ -62,6 +65,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "image-analysis",
     icon: "👤",
+    serviceId: "sv-facescan",
   },
   "scan-palm": {
     title: "Scan Chỉ Tay",
@@ -84,6 +88,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "image-analysis",
     icon: "✋",
+    serviceId: "sv-palmscan",
   },
   "xem-van-tay": {
     title: "Xem Vân Tay",
@@ -105,6 +110,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "☝️",
+    serviceId: "sv-vantay",
   },
   // --- BỐC ---
   tarot: {
@@ -132,6 +138,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "card-draw",
     icon: "🃏",
+    serviceId: "sv-tarot",
   },
   "kinh-dich": {
     title: "Gieo Quẻ Dịch",
@@ -154,6 +161,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "☯️",
+    serviceId: "sv-kinhdich",
   },
   "xin-xam": {
     title: "Xin Xâm Quan Thánh",
@@ -170,6 +178,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "🎋",
+    serviceId: "sv-xin-xam",
   },
   // --- TRẠCH ---
   "la-ban": {
@@ -199,6 +208,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "🧭",
+    serviceId: "sv-laban",
   },
   "thuoc-lo-ban": {
     title: "Thước Lỗ Ban",
@@ -225,6 +235,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "📏",
+    serviceId: "sv-thuocloban",
   },
   "bat-trach": {
     title: "Tra Cứu Bát Trạch",
@@ -242,6 +253,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "🏠",
+    serviceId: "sv-battrach",
   },
   // --- SỐ ---
   "than-so-hoc": {
@@ -254,6 +266,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "🔢",
+    serviceId: "sv-thansohoc",
   },
   "cham-diem-sim": {
     title: "Chấm Điểm SIM Phong Thủy",
@@ -277,6 +290,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "📱",
+    serviceId: "sv-sim",
   },
   "lich-van-nien": {
     title: "Lịch Vạn Niên",
@@ -287,6 +301,7 @@ const SERVICES_CONFIG = {
     ],
     resultType: "text",
     icon: "📅",
+    serviceId: "sv-lichvannien",
   },
 };
 
@@ -537,118 +552,120 @@ export default function ServiceDynamicPage() {
   };
 
   return (
-    <div className="sub-page dynamic-service-page">
-      <section className="sub-hero">
-        <div className="container text-center">
-          <div className="display-1 mb-3">{config.icon}</div>
-          <h1 className="sub-title text-gradient">{config.title}</h1>
-          <p className="sub-desc mx-auto" style={{ maxWidth: "700px" }}>
-            {config.desc}
-          </p>
-        </div>
-      </section>
+    <ServiceGuard serviceId={config.serviceId} config={config}>
+      <div className="sub-page dynamic-service-page">
+        <section className="sub-hero">
+          <div className="container text-center">
+            <div className="display-1 mb-3">{config.icon}</div>
+            <h1 className="sub-title text-gradient">{config.title}</h1>
+            <p className="sub-desc mx-auto" style={{ maxWidth: "700px" }}>
+              {config.desc}
+            </p>
+          </div>
+        </section>
 
-      <section className="sub-content container">
-        <div className="row g-4 justify-content-center">
-          {/* INPUT FORM */}
-          <div className="col-lg-6">
-            <div className="glass-card p-4">
-              <h2 className="h4 text-gold mb-4">Nhập thông tin</h2>
-              <form onSubmit={handleSubmit}>
-                {config.inputs.map((input, idx) => (
-                  <div className="mb-3" key={idx}>
-                    <label className="form-label">{input.label}</label>
+        <section className="sub-content container">
+          <div className="row g-4 justify-content-center">
+            {/* INPUT FORM */}
+            <div className="col-lg-6">
+              <div className="glass-card p-4">
+                <h2 className="h4 text-gold mb-4">Nhập thông tin</h2>
+                <form onSubmit={handleSubmit}>
+                  {config.inputs.map((input, idx) => (
+                    <div className="mb-3" key={idx}>
+                      <label className="form-label">{input.label}</label>
 
-                    {input.type === "select" ? (
-                      <select
-                        className="form-select"
-                        name={input.name}
-                        required={input.required}
-                        onChange={handleChange}
-                      >
-                        <option value="">-- Chọn --</option>
-                        {input.options.map((opt) => (
-                          <option key={opt} value={opt}>
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
-                    ) : input.type === "textarea" ? (
-                      <textarea
-                        className="form-control"
-                        name={input.name}
-                        rows="3"
-                        required={input.required}
-                        onChange={handleChange}
-                      />
-                    ) : input.type === "file" ? (
-                      <input
-                        className="form-control"
-                        type="file"
-                        name={input.name}
-                        required={input.required}
-                        accept="image/*"
-                        onChange={handleChange}
-                      />
+                      {input.type === "select" ? (
+                        <select
+                          className="form-select"
+                          name={input.name}
+                          required={input.required}
+                          onChange={handleChange}
+                        >
+                          <option value="">-- Chọn --</option>
+                          {input.options.map((opt) => (
+                            <option key={opt} value={opt}>
+                              {opt}
+                            </option>
+                          ))}
+                        </select>
+                      ) : input.type === "textarea" ? (
+                        <textarea
+                          className="form-control"
+                          name={input.name}
+                          rows="3"
+                          required={input.required}
+                          onChange={handleChange}
+                        />
+                      ) : input.type === "file" ? (
+                        <input
+                          className="form-control"
+                          type="file"
+                          name={input.name}
+                          required={input.required}
+                          accept="image/*"
+                          onChange={handleChange}
+                        />
+                      ) : (
+                        <input
+                          className="form-control"
+                          type={input.type}
+                          name={input.name}
+                          required={input.required}
+                          onChange={handleChange}
+                        />
+                      )}
+                    </div>
+                  ))}
+
+                  <button
+                    type="submit"
+                    className="btn btn-gold w-100 py-3 fw-bold"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2"></span>
+                        Đang luận giải...
+                      </>
                     ) : (
-                      <input
-                        className="form-control"
-                        type={input.type}
-                        name={input.name}
-                        required={input.required}
-                        onChange={handleChange}
-                      />
+                      <>
+                        <i className="bi bi-stars me-2"></i>
+                        XEM KẾT QUẢ
+                      </>
                     )}
-                  </div>
-                ))}
+                  </button>
+                </form>
+              </div>
+            </div>
 
-                <button
-                  type="submit"
-                  className="btn btn-gold w-100 py-3 fw-bold"
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <>
-                      <span className="spinner-border spinner-border-sm me-2"></span>
-                      Đang luận giải...
-                    </>
-                  ) : (
-                    <>
-                      <i className="bi bi-stars me-2"></i>
-                      XEM KẾT QUẢ
-                    </>
-                  )}
-                </button>
-              </form>
+            {/* RESULT CARD */}
+            <div className="col-lg-12">
+              {result && (
+                <div className="glass-card p-5 mt-4 animate-fade-in border-gold">
+                  <div className="text-center mb-4">
+                    <h2 className="text-gold h3">Kết Quả Luận Giải</h2>
+                    <p className="opacity-75">
+                      {new Date().toLocaleDateString("vi-VN")}
+                    </p>
+                  </div>
+
+                  {renderResult()}
+
+                  <div className="text-center mt-5">
+                    <button
+                      className="btn btn-outline-gold"
+                      onClick={() => setResult(null)}
+                    >
+                      Thử lại lần nữa
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-
-          {/* RESULT CARD */}
-          <div className="col-lg-12">
-            {result && (
-              <div className="glass-card p-5 mt-4 animate-fade-in border-gold">
-                <div className="text-center mb-4">
-                  <h2 className="text-gold h3">Kết Quả Luận Giải</h2>
-                  <p className="opacity-75">
-                    {new Date().toLocaleDateString("vi-VN")}
-                  </p>
-                </div>
-
-                {renderResult()}
-
-                <div className="text-center mt-5">
-                  <button
-                    className="btn btn-outline-gold"
-                    onClick={() => setResult(null)}
-                  >
-                    Thử lại lần nữa
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </ServiceGuard>
   );
 }

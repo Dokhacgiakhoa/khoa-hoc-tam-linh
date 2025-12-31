@@ -118,6 +118,61 @@ export default function CourseDetail() {
       );
     }
 
+    // Check Enrollment
+    if (!course.is_enrolled && course.price > 0) {
+      return (
+        <div className="card-glass p-5 text-center">
+          <div className="mb-4">
+            <span className="display-1">🔒</span>
+          </div>
+          <h3 className="text-gold mb-3">Khóa học chưa được kích hoạt</h3>
+          <p className="lead mb-4">
+            Bạn cần đăng ký khóa học <strong>{course.title}</strong> để xem nội
+            dung này.
+          </p>
+          <div className="d-flex justify-content-center align-items-center gap-3">
+            <h4 className="mb-0 text-gold">
+              {course.price.toLocaleString()} 🔮
+            </h4>
+            <button
+              className="btn btn-gold px-4 fw-bold"
+              onClick={() => {
+                // Quick Purchase or Rediret to Cart
+                // For now, let's redirect to Cart or trigger purchase.
+                // Since we standardized on Cart, let's add to cart?
+                // Or direct buy? Use AcademyController purchase endpoint?
+                // Let's use direct purchase for convenience if balance sufficient, OR alert.
+                // Actually, simplified: Just alert 'Please buy from Academy Page' or use axios purchase.
+                const confirmBuy = window.confirm(
+                  `Bạn có muốn mở khóa ngay với giá ${course.price.toLocaleString()} Linh Tệ?`
+                );
+                if (confirmBuy) {
+                  const token = localStorage.getItem("auth_token");
+                  axios
+                    .post(
+                      `/api/academy/courses/${course.id}/purchase`,
+                      {},
+                      {
+                        headers: { Authorization: `Bearer ${token}` },
+                      }
+                    )
+                    .then(() => {
+                      alert("Đăng ký thành công!");
+                      window.location.reload();
+                    })
+                    .catch((err) => {
+                      alert(err.response?.data?.message || "Lỗi thanh toán");
+                    });
+                }
+              }}
+            >
+              Mở khóa ngay
+            </button>
+          </div>
+        </div>
+      );
+    }
+
     // Helper to invoke footer
     const renderFooter = () => {
       const isCompleted = completedLessons.has(activeLesson.id);
