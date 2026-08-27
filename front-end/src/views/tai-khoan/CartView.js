@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAlert } from "../../contexts/AlertContext";
+import AuthModal from "../../components/common/AuthModal";
 
 export default function CartView({ user: initialUser }) {
   const { showSuccess, showError, showWarning, showConfirm, showInfo } =
     useAlert();
   // Manage user state locally to allow updates/refreshes
   const [user, setUser] = useState(initialUser);
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   // Sync prop changes to local state
   useEffect(() => {
@@ -106,8 +108,9 @@ export default function CartView({ user: initialUser }) {
 
   const handleCheckout = async () => {
     if (cart.length === 0) return;
-    if (!user) {
-      showError("Vui lòng đăng nhập để thanh toán!");
+    const token = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
+    if (!token && !user) {
+      setShowAuthModal(true);
       return;
     }
 
@@ -386,21 +389,30 @@ export default function CartView({ user: initialUser }) {
 
         <div className="text-end">
           <button
-            className="btn btn-gold px-4 py-2 text-uppercase fw-bold ls-1"
-            onClick={
-              user
-                ? handleCheckout
-                : () => (window.location.href = "/tai-khoan")
-            }
+            className="btn btn-gold px-5 py-3 text-uppercase fw-bold ls-1 shadow"
+            onClick={handleCheckout}
             disabled={loading}
           >
             {loading ? (
               <span className="spinner-border spinner-border-sm me-2" />
             ) : null}
-            {user ? "Thanh toán ngay" : "Đăng nhập để thanh toán"}
+            {user || (typeof window !== "undefined" && localStorage.getItem("auth_token"))
+              ? "✨ TIẾN HÀNH THANH TOÁN"
+              : "🔑 ĐĂNG NHẬP & THANH TOÁN"}
           </button>
         </div>
       </div>
+
+      <AuthModal
+        show={showAuthModal}
+        title="Đăng Nhập Để Tiến Hành Thanh Toán"
+        onClose={() => setShowAuthModal(false)}
+        onSuccess={() => {
+          const storedUser = localStorage.getItem("user");
+          if (storedUser) setUser(JSON.parse(storedUser));
+          handleCheckout();
+        }}
+      />
     </div>
   );
 }

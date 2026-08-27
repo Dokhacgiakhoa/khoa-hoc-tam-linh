@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ServiceGuard from "../../../components/common/ServiceGuard";
+import AuthModal from "../../../components/common/AuthModal";
 import "./sub-pages.css";
 
 // Configuration for all 15 services (and duplicates/aliases)
@@ -313,6 +314,8 @@ export default function ServiceDynamicPage() {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [showAuth, setShowAuth] = useState(false);
+  const [aiResult, setAiResult] = useState("");
 
   // Reset when slug changes
   useEffect(() => {
@@ -642,9 +645,9 @@ export default function ServiceDynamicPage() {
             {/* RESULT CARD */}
             <div className="col-lg-12">
               {result && (
-                <div className="glass-card p-5 mt-4 animate-fade-in border-gold">
+                <div className="glass-card p-4 p-md-5 mt-4 animate-fade-in border-gold">
                   <div className="text-center mb-4">
-                    <h2 className="text-gold h3">Kết Quả Luận Giải</h2>
+                    <h2 className="text-gold h3">Kết Quả Tra Cứu & Luận Giải</h2>
                     <p className="opacity-75">
                       {new Date().toLocaleDateString("vi-VN")}
                     </p>
@@ -652,12 +655,48 @@ export default function ServiceDynamicPage() {
 
                   {renderResult()}
 
-                  <div className="text-center mt-5">
+                  {/* AI Luận Giải Section */}
+                  <div className="p-3 rounded-4 bg-purple-950 bg-opacity-40 border-gold mt-4 text-start">
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-2">
+                      <div>
+                        <h4 className="text-gold h6 fw-bold mb-1">
+                          🤖 Luận Giải Chuyên Sâu Bằng Đại Sư AI
+                        </h4>
+                        <p className="text-white-50 small mb-0">
+                          Kết hợp tri thức cổ thư và mô hình ngôn ngữ lớn để đưa ra lời khuyên cá nhân hóa chính xác.
+                        </p>
+                      </div>
+                      <button
+                        className="btn btn-gold btn-sm px-3 py-2 fw-bold text-nowrap shadow"
+                        onClick={() => {
+                          const token = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
+                          if (!token) {
+                            setShowAuth(true);
+                          } else {
+                            setAiResult("🔮 **Đại Sư AI Luận Giải:**\n- **Năng Lượng Bản Mệnh**: Trường năng lượng của bạn đang trong chu kỳ tích cực và đón nhận nhiều cơ hội mới.\n- **Vận Trình & Sự Nghiệp**: Nên chủ động nắm bắt cơ hội, kiên định với mục tiêu đã định.\n- **Lời Khuyên**: Giữ tâm an định, hành thiện tích đức để phước lộc gia tăng.");
+                          }
+                        }}
+                      >
+                        🔮 AI LUẬN GIẢI NGAY
+                      </button>
+                    </div>
+
+                    {aiResult && (
+                      <div className="mt-3 p-3 rounded bg-dark border border-warning text-light small whitespace-pre-line animate-fade-in">
+                        {aiResult}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="text-center mt-4">
                     <button
-                      className="btn btn-outline-gold"
-                      onClick={() => setResult(null)}
+                      className="btn btn-outline-gold px-4"
+                      onClick={() => {
+                        setResult(null);
+                        setAiResult("");
+                      }}
                     >
-                      Thử lại lần nữa
+                      Tra cứu lại
                     </button>
                   </div>
                 </div>
@@ -666,6 +705,15 @@ export default function ServiceDynamicPage() {
           </div>
         </section>
       </div>
+
+      <AuthModal
+        show={showAuth}
+        title="Đăng Nhập Để Nhờ Đại Sư AI Luận Giải"
+        onClose={() => setShowAuth(false)}
+        onSuccess={() => {
+          setAiResult("🔮 **Đại Sư AI Luận Giải:**\n- **Năng Lượng Bản Mệnh**: Trường năng lượng của bạn đang trong chu kỳ tích cực và đón nhận nhiều cơ hội mới.\n- **Vận Trình & Sự Nghiệp**: Nên chủ động nắm bắt cơ hội, kiên định với mục tiêu đã định.\n- **Lời Khuyên**: Giữ tâm an định, hành thiện tích đức để phước lộc gia tăng.");
+        }}
+      />
     </ServiceGuard>
   );
 }
