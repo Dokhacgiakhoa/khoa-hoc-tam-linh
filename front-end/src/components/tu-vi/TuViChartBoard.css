@@ -1,0 +1,219 @@
+/* TuViChartBoard.css: Bố cục bàn lá số Tử Vi 4x4 chuẩn mực */
+
+.tuvi-board-wrapper {
+  background: rgba(12, 6, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  color: #f3f0ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: auto;
+}
+
+.tuvi-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, minmax(170px, auto));
+  gap: 3px;
+  background: #5c4314;
+  border: 2px solid #d4af37;
+  min-width: 780px;
+  position: relative;
+}
+
+/* Ô Cung Địa Bàn */
+.tuvi-cell {
+  background: rgba(18, 9, 36, 0.95);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  font-size: 0.82rem;
+  line-height: 1.25;
+  transition: all 0.2s ease;
+}
+
+.tuvi-cell:hover {
+  background: rgba(35, 18, 68, 0.95);
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.tuvi-cell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-bottom: 3px;
+  margin-bottom: 4px;
+}
+
+.tuvi-cell-chi {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.tuvi-cell-name {
+  color: #60a5fa;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.tuvi-cell-name.is-menh {
+  color: #ec4899 !important;
+  text-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
+}
+
+.tuvi-cell-name.is-than {
+  color: #a855f7 !important;
+}
+
+.tuvi-cell-van {
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Chính tinh giữa ô */
+.tuvi-chinh-tinh-box {
+  text-align: center;
+  margin: 3px 0;
+}
+
+.tuvi-chinh-tinh-item {
+  font-weight: 900;
+  font-size: 0.92rem;
+  display: inline-block;
+  margin: 0 4px;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+.tuvi-chinh-tinh-item .dac-ham {
+  font-size: 0.75rem;
+  margin-left: 2px;
+  font-weight: 700;
+}
+
+/* 2 Cột Tinh Tú: Cát Tinh (trái) & Hung Tinh (phải) */
+.tuvi-stars-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  flex-grow: 1;
+  margin-top: 2px;
+}
+
+.tuvi-cat-tinh-col {
+  width: 50%;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.tuvi-hung-tinh-col {
+  width: 50%;
+  text-align: right;
+  font-size: 0.72rem;
+  color: #f87171;
+}
+
+.star-item {
+  margin-bottom: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chân ô */
+.tuvi-cell-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed rgba(212, 175, 55, 0.3);
+  padding-top: 3px;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.tuvi-cell-trang-sinh {
+  font-weight: 700;
+  color: #fde047;
+}
+
+/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa) */
+.tuvi-thien-ban-center {
+  grid-area: 2 / 2 / 4 / 4;
+  background: rgba(10, 4, 20, 0.98);
+  border: 1px solid #d4af37;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.thien-ban-header-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffd700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.thien-ban-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+.thien-ban-label {
+  color: #94a3b8;
+}
+
+.thien-ban-val {
+  color: #f3f0ff;
+  font-weight: 600;
+}
+
+.thien-ban-val.highlight {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.thien-ban-stamp {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  padding: 4px 8px;
+  font-weight: 900;
+  font-size: 0.78rem;
+  transform: rotate(-12deg);
+  border-radius: 4px;
+  opacity: 0.85;
+  pointer-events: none;
+  font-family: serif;
+}
+
+/* Thanh Triệt & Tuần */
+.tuvi-triet-tag, .tuvi-tuan-tag {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  border: 1px solid #ffd700;
+  font-weight: 900;
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 3px;
+  z-index: 5;
+  box-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
