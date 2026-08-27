@@ -1,3 +1,3 @@
-## 2025-12-31 01:54:06 — Auto changelog
+## 2026-08-27 06:32:49 — Auto changelog
 
-* 3287656 docs: finalize README with personal info and video link (Đỗ Khắc Gia Khoa)
+* 8de0f25 feat: upgrade DB schema, backend service layer, and UI/UX Mystic Luxury 2.0 (Đỗ Khắc Gia Khoa)
