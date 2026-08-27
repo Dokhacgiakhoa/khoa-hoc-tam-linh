@@ -1,3 +1,3 @@
-## 2026-08-27 09:09:57 — Auto changelog
+## 2026-08-27 09:17:49 — Auto changelog
 
-* 641e81d fix: resolve all menu broken links and add alias route for /hoc-vien-huyen-hoc (42/42 verified 200 OK) (Đỗ Khắc Gia Khoa)
+* 048580b fix: restore dynamic cosmic video background with proper z-index layering and overlay gradient (Đỗ Khắc Gia Khoa)
