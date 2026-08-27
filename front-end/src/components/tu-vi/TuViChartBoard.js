@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./TuViChartBoard.css";
 
 export default function TuViChartBoard({ chartData }) {
   const printRef = useRef(null);
+  const [theme, setTheme] = useState("dark"); // 'dark' | 'light'
 
   if (!chartData || !chartData.diaBan || !chartData.thienBan) {
     return null;
@@ -16,21 +17,38 @@ export default function TuViChartBoard({ chartData }) {
     window.print();
   };
 
+  // Hàm gán màu Ngũ Hành cho Chính Tinh
+  const getStarColorClass = (starName) => {
+    if (["LIÊM TRINH", "THÁI DƯƠNG"].includes(starName)) return "star-hoa";
+    if (["TỬ VI", "THIÊN PHỦ", "CỰ MÔN"].includes(starName)) return "star-tho";
+    if (["VŨ KHÚC", "THẤT SÁT", "THIÊN LƯƠNG"].includes(starName)) return "star-kim";
+    if (["THIÊN ĐỒNG", "PHÁ QUÂN", "THÁI ÂM"].includes(starName)) return "star-thuy";
+    if (["THAM LANG", "THIÊN CƠ"].includes(starName)) return "star-moc";
+    return "star-tho";
+  };
+
   return (
-    <div className="tuvi-board-wrapper animate-fade-in my-4">
-      {/* Header Công Cụ In / Lưu */}
-      <div className="d-flex justify-content-between align-items-center mb-3 px-2">
-        <span className="text-gold fw-bold small">
+    <div className={`tuvi-board-wrapper theme-${theme} animate-fade-in my-4`}>
+      {/* Header Công Cụ & Theme Switcher */}
+      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mb-3 px-2">
+        <span className="fw-bold small text-gold">
           📜 LÁ SỐ TỬ VI ĐẨU SỐ — THIÊN ĐỊA BÀN KHOA HỌC TÂM LINH
         </span>
-        <div className="d-flex gap-2">
-          <button className="btn btn-outline-gold btn-sm px-3 shadow" onClick={handlePrint}>
+        <div className="d-flex gap-2 align-items-center">
+          <button
+            className="btn btn-sm btn-outline-warning py-1 px-3 shadow"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            title="Đổi tông màu nền sáng / tối"
+          >
+            {theme === "dark" ? "☀️ Tông Giấy Dó Cổ Điển" : "🌙 Tông Nền Đen Huyền Bí"}
+          </button>
+          <button className="btn btn-gold btn-sm py-1 px-3 shadow" onClick={handlePrint}>
             🖨️ In / Tải Lá Số
           </button>
         </div>
       </div>
 
-      {/* Lưới 4x4 Bản Đồ Lá Số */}
+      {/* Lưới 4x4 Bản Đồ Lá Số Vuông 1:1 Chuẩn Xác */}
       <div className="tuvi-grid-container" ref={printRef}>
         {/* Render 12 Cung Địa Bàn */}
         {Object.entries(diaBan).map(([key, cung]) => {
@@ -61,7 +79,7 @@ export default function TuViChartBoard({ chartData }) {
                 {cung.chinhTinh.map((star, i) => (
                   <span
                     key={i}
-                    className={`tuvi-chinh-tinh-item ${star.color || "text-gold"}`}
+                    className={`tuvi-chinh-tinh-item ${getStarColorClass(star.name)}`}
                   >
                     {star.name}
                     <span className="dac-ham">({star.dacHam})</span>
@@ -97,10 +115,10 @@ export default function TuViChartBoard({ chartData }) {
           );
         })}
 
-        {/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa) */}
+        {/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa, hình vuông chuẩn) */}
         <div className="tuvi-thien-ban-center">
           <div>
-            <div className="thien-ban-header-title text-gold">
+            <div className="thien-ban-header-title">
               KHOA HỌC TÂM LINH
             </div>
             <div className="text-center text-gold-gradient fw-bold fs-5 mt-1">
@@ -157,7 +175,7 @@ export default function TuViChartBoard({ chartData }) {
             </div>
           </div>
 
-          <div className="text-center pt-2 border-top border-secondary border-opacity-30 small text-white-50">
+          <div className="text-center pt-2 border-top border-secondary border-opacity-30 small opacity-75">
             Năm xem: <strong className="text-gold">{thienBan.namXem} ({thienBan.namXemCanChi})</strong> — <strong className="text-light">{thienBan.tuoiHan} tuổi</strong>
           </div>
 

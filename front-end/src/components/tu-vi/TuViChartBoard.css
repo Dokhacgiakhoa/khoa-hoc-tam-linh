@@ -1,102 +1,240 @@
-/* TuViChartBoard.css: Bố cục bàn lá số Tử Vi 4x4 chuẩn mực */
+/* TuViChartBoard.css: Bố cục lá số Tử Vi vuông 1:1 chuẩn xác và độ tương phản cao */
 
 .tuvi-board-wrapper {
-  background: rgba(12, 6, 26, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 2px solid #d4af37;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.6);
-  color: #f3f0ff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  overflow-x: auto;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 980px;
+  transition: all 0.3s ease;
 }
 
+/* =========================================================
+   1. THEME TỐI (DARK COSMOS MODE - ĐỘ TƯƠNG PHẢN CAO)
+   ========================================================= */
+.tuvi-board-wrapper.theme-dark {
+  background: rgba(7, 3, 16, 0.95);
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25), inset 0 0 25px rgba(0, 0, 0, 0.8);
+  color: #f8fafc;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-grid-container {
+  background: #3b2a0c;
+  border: 2px solid #d4af37;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell {
+  background: #0b0518;
+  color: #f8fafc;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell:hover {
+  background: #150a2e;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-header {
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-chi {
+  color: #f59e0b;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-name {
+  color: #60a5fa;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-name.is-menh {
+  color: #f43f5e !important;
+  text-shadow: 0 0 8px rgba(244, 63, 94, 0.6);
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-name.is-than {
+  color: #c084fc !important;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cat-tinh-col {
+  color: #e2e8f0;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-hung-tinh-col {
+  color: #f87171;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-cell-footer {
+  border-top: 1px dashed rgba(212, 175, 55, 0.3);
+  color: #94a3b8;
+}
+
+.tuvi-board-wrapper.theme-dark .tuvi-thien-ban-center {
+  background: #06020e;
+  border: 1px solid #d4af37;
+  color: #f8fafc;
+}
+
+.tuvi-board-wrapper.theme-dark .thien-ban-header-title {
+  color: #ffd700;
+}
+
+.tuvi-board-wrapper.theme-dark .thien-ban-val.highlight {
+  color: #ffd700;
+}
+
+/* =========================================================
+   2. THEME SÁNG TRUYỀN THỐNG (PARCHMENT / GIẤY DÓ CỔ ĐIỂN)
+   ========================================================= */
+.tuvi-board-wrapper.theme-light {
+  background: #fdfbf7;
+  border: 2px solid #94a3b8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  color: #0f172a;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-grid-container {
+  background: #cbd5e1;
+  border: 2px solid #334155;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell:hover {
+  background: #f8fafc;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-chi {
+  color: #b45309;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-name {
+  color: #1d4ed8;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-name.is-menh {
+  color: #be123c !important;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-name.is-than {
+  color: #6b21a8 !important;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cat-tinh-col {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-hung-tinh-col {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-cell-footer {
+  border-top: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.tuvi-board-wrapper.theme-light .tuvi-thien-ban-center {
+  background: #fbf9f4;
+  border: 1px solid #64748b;
+  color: #0f172a;
+}
+
+.tuvi-board-wrapper.theme-light .thien-ban-header-title {
+  color: #0f172a;
+}
+
+.tuvi-board-wrapper.theme-light .thien-ban-val {
+  color: #0f172a;
+}
+
+.tuvi-board-wrapper.theme-light .thien-ban-val.highlight {
+  color: #b45309;
+}
+
+/* =========================================================
+   3. BỐ CỤC LƯỚI VUÔNG CHUẨN 1:1 (ASPECT-RATIO: 1/1)
+   ========================================================= */
 .tuvi-grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, minmax(170px, auto));
-  gap: 3px;
-  background: #5c4314;
-  border: 2px solid #d4af37;
-  min-width: 780px;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 880px;
+  margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* Ô Cung Địa Bàn */
+/* Ô Cung Địa Bàn (Mỗi ô là 1 hình vuông 1:1) */
 .tuvi-cell {
-  background: rgba(18, 9, 36, 0.95);
   padding: 6px 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   line-height: 1.25;
-  transition: all 0.2s ease;
-}
-
-.tuvi-cell:hover {
-  background: rgba(35, 18, 68, 0.95);
-  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
 }
 
 .tuvi-cell-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dashed rgba(212, 175, 55, 0.35);
-  padding-bottom: 3px;
-  margin-bottom: 4px;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
 }
 
 .tuvi-cell-chi {
-  color: #f59e0b;
-  font-weight: 700;
-  font-size: 0.82rem;
+  font-weight: 800;
+  font-size: 0.8rem;
 }
 
 .tuvi-cell-name {
-  color: #60a5fa;
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: 900;
+  font-size: 0.86rem;
   letter-spacing: 0.5px;
 }
 
-.tuvi-cell-name.is-menh {
-  color: #ec4899 !important;
-  text-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
-}
-
-.tuvi-cell-name.is-than {
-  color: #a855f7 !important;
-}
-
 .tuvi-cell-van {
-  color: #fbbf24;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Chính tinh giữa ô */
 .tuvi-chinh-tinh-box {
   text-align: center;
-  margin: 3px 0;
+  margin: 2px 0;
+  line-height: 1.2;
 }
 
 .tuvi-chinh-tinh-item {
   font-weight: 900;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   display: inline-block;
-  margin: 0 4px;
-  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+  margin: 0 3px;
 }
 
+.tuvi-chinh-tinh-item.star-hoa { color: #ef4444; }
+.tuvi-chinh-tinh-item.star-tho { color: #eab308; }
+.tuvi-chinh-tinh-item.star-kim { color: #f8fafc; }
+.tuvi-chinh-tinh-item.star-thuy { color: #38bdf8; }
+.tuvi-chinh-tinh-item.star-moc { color: #22c55e; }
+
 .tuvi-chinh-tinh-item .dac-ham {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   margin-left: 2px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* 2 Cột Tinh Tú: Cát Tinh (trái) & Hung Tinh (phải) */
@@ -105,20 +243,19 @@
   justify-content: space-between;
   gap: 4px;
   flex-grow: 1;
-  margin-top: 2px;
+  margin: 2px 0;
+  overflow: hidden;
 }
 
 .tuvi-cat-tinh-col {
   width: 50%;
-  font-size: 0.72rem;
-  color: #cbd5e1;
+  font-size: 0.7rem;
 }
 
 .tuvi-hung-tinh-col {
   width: 50%;
   text-align: right;
-  font-size: 0.72rem;
-  color: #f87171;
+  font-size: 0.7rem;
 }
 
 .star-item {
@@ -133,35 +270,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px dashed rgba(212, 175, 55, 0.3);
-  padding-top: 3px;
-  margin-top: 4px;
-  font-size: 0.72rem;
-  color: #94a3b8;
+  padding-top: 2px;
+  margin-top: 2px;
+  font-size: 0.7rem;
 }
 
 .tuvi-cell-trang-sinh {
-  font-weight: 700;
-  color: #fde047;
+  font-weight: 800;
+  color: #eab308;
 }
 
-/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa) */
+/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa, hình vuông chuẩn) */
 .tuvi-thien-ban-center {
   grid-area: 2 / 2 / 4 / 4;
-  background: rgba(10, 4, 20, 0.98);
-  border: 1px solid #d4af37;
-  padding: 16px 20px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.15);
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .thien-ban-header-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: 900;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -169,37 +302,31 @@
 .thien-ban-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px 12px;
-  font-size: 0.82rem;
-  margin-top: 6px;
+  gap: 4px 8px;
+  font-size: 0.78rem;
+  margin-top: 4px;
 }
 
 .thien-ban-label {
-  color: #94a3b8;
+  opacity: 0.8;
 }
 
 .thien-ban-val {
-  color: #f3f0ff;
-  font-weight: 600;
-}
-
-.thien-ban-val.highlight {
-  color: #ffd700;
   font-weight: 700;
 }
 
 .thien-ban-stamp {
   position: absolute;
-  right: 25px;
-  bottom: 25px;
+  right: 15px;
+  bottom: 15px;
   border: 2px solid #ef4444;
   color: #ef4444;
-  padding: 4px 8px;
+  padding: 3px 6px;
   font-weight: 900;
-  font-size: 0.78rem;
-  transform: rotate(-12deg);
+  font-size: 0.72rem;
+  transform: rotate(-10deg);
   border-radius: 4px;
-  opacity: 0.85;
+  opacity: 0.9;
   pointer-events: none;
   font-family: serif;
 }
@@ -211,9 +338,15 @@
   color: #fff;
   border: 1px solid #ffd700;
   font-weight: 900;
-  font-size: 0.7rem;
-  padding: 1px 6px;
+  font-size: 0.68rem;
+  padding: 1px 5px;
   border-radius: 3px;
   z-index: 5;
   box-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 650px) {
+  .tuvi-grid-container {
+    min-width: 600px;
+  }
 }
