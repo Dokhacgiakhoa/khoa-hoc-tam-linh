@@ -1,60 +1,103 @@
-# BÁO CÁO SẢN PHẨM: KHOA HỌC TÂM LINH
+# 🔮 KHOA HỌC TÂM LINH (ESOTERIC SCIENCE ECOSYSTEM)
 
-## 1. Video Giới Thiệu
-
-https://www.youtube.com/watch?v=p2mQK-6XpcI
+> **Nền tảng "Tâm Linh Số" kết hợp tri thức huyền học phương Đông với công nghệ phần mềm hiện đại (Data Science, 3D Interactive, Clean Architecture & AI-Ready).**
 
 ---
 
-## 2. Thông Tin Chi Tiết
+## 📺 1. Video Giới Thiệu & Trải Nghiệm Sản Phẩm
 
-### 🧑‍💻 Thông tin cá nhân
-
-- **Họ tên**: Đỗ Khắc Gia Khoa
-- **Lớp**: Aptech T2508M
-- **Mã sinh viên**: FTH00042
-
-### 🤔 Lý do lựa chọn đề tài
-
-Tôi luôn bị cuốn hút bởi sự huyền bí của văn hóa phương Đông (Tử Vi, Kinh Dịch) nhưng nhận thấy đa số các trang web hiện tại thường cũ kỹ, khó tiếp cận hoặc mang nặng tính mê tín dị đoan. Tôi muốn xây dựng một **nền tảng "Tâm Linh Số"** hiện đại, nơi tri thức cổ xưa được trình bày dưới ngôn ngữ của công nghệ (Data Visualization, AI), mang lại góc nhìn khoa học và trải nghiệm thẩm mỹ cao cho người trẻ.
-
-### ✨ Những điểm hay, thú vị của sản phẩm
-
-- **Giao diện Mystic Luxury**: Thiết kế Dark Mode kết hợp màu Gold, hiệu ứng Glassmorphism tạo cảm giác sang trọng, bí ẩn nhưng không "sợ hãi".
-- **Hệ sinh thái toàn diện**: Không chỉ xem bói, người dùng còn có thể Học tập (Academy), Mua sắm (Store) và Quản lý tài sản số (Ví Linh Tệ).
-- **ServiceGuard**: Tính năng "dùng thử trước, trả tiền sau" – cho phép người dùng xem một phần nội dung và kích thích sự tò mò để mở khóa phần còn lại.
-- **Trải nghiệm tương tác**: Gieo quẻ 3D mô phỏng thực tế, lật bài Tarot mượt mà.
-
-### 📚 Kiến thức công nghệ kỹ thuật học được
-
-Trong quá trình phát triển, tôi đã làm chủ được:
-
-- **Frontend (ReactJS)**: Xử lý State phức tạp (Context API), Protected Routes, và các thư viện đồ họa.
-- **Backend (Laravel)**: Xây dựng RESTful API chuẩn mực, xử lý Polymorphic Relations (cho giỏ hàng đa năng), và xác thực bảo mật với Sanctum.
-- **Cấu trúc dữ liệu**: Thiết kế Database tối ưu để lưu trữ các cấu trúc JSON phức tạp (như dữ liệu đơn hàng hay kết quả luận giải).
-- **Quy trình DevOps**: Triển khai và quản lý môi trường development (CORS, Port management).
-
-### ❤️ Điều tâm đắc nhất
-
-Điều khiến tôi tự hào nhất là **sự liền mạch trong trải nghiệm (User Flow)**. Từ lúc người dùng tò mò bấm vào xem thử, đến lúc hệ thống yêu cầu đăng nhập, mua Linh Tệ và mở khóa dịch vụ – mọi thứ diễn ra tự nhiên như một trò chơi (Gamification). Nó biến việc "thanh toán" trở thành một phần của trải nghiệm khám phá thay vì rào cản.
-
-### 🧩 Những khó khăn gặp phải
-
-- **Vấn đề đồng bộ dữ liệu**: Khi tích hợp nhiều loại sản phẩm (Vật phẩm, Khóa học, Dịch vụ số) vào chung một Giỏ hàng, việc xử lý ID và Type rất dễ nhầm lẫn (đã phải sửa lại logic `checkOwnership` và DB seed nhiều lần).
-- **Xử lý logic 2 chiều**: Đảm bảo Frontend hiển thị đúng trạng thái "Đã mua" ngay khi Backend xử lý xong giao dịch mà không cần reload trang thủ công (cần real-time update).
-
-### 🚀 Kế hoạch phát triển trong tương lai
-
-- **Tích hợp AI Bot**: Sử dụng Gemini/GPT API để tự động hóa việc luận giải chi tiết hơn cho từng cá nhân.
-- **Mobile App**: Phát triển phiên bản React Native để tận dụng Camera AI (xem tướng) và Gyroscope (lắc quẻ điện thoại).
-- **Mạng xã hội tâm linh**: Cho phép người dùng chia sẻ kết quả gieo quẻ và thảo luận cùng cộng đồng.
+🎬 **Link Video Demo:** [https://www.youtube.com/watch?v=p2mQK-6XpcI](https://www.youtube.com/watch?v=p2mQK-6XpcI)
 
 ---
 
-## 3. Chia Sẻ Cùng Cộng Đồng
+## 🌟 2. Điểm Nổi Bật Của Hệ Sinh Thái
 
-"Đừng ngại làm những đề tài nghe có vẻ 'lạ' hoặc 'khó'. Chính sự khác biệt đó sẽ giúp bạn học được nhiều kỹ thuật mới mà các dự án CRUD thông thường không có. Hãy coi sản phẩm như một đứa con tinh thần, chăm chút từng pixel giao diện và từng dòng thông báo lỗi – người dùng sẽ cảm nhận được tâm huyết của bạn."
+* 🎨 **Giao diện Mystic Luxury 2.0**: Thiết kế Dark Mode kết hợp sắc Vàng Hoàng Kim (`#ffd700`), hiệu ứng Glassmorphism tinh xảo, thẻ bài 3D và khung chờ tải Shimmer.
+* 📜 **Khoa Học Hóa Tri Thức Cổ Thư**:
+  * **Kinh Dịch Gieo Quẻ 3D**: Mô phỏng gieo 3 đồng xu 6 lần, kiến lập Quẻ Chủ, bắt Hào Động và sinh Quẻ Biến theo chuẩn 64 Quẻ Kinh Dịch.
+  * **Thần Số Học Pythagoras**: Trực quan hóa Ma trận ngày sinh 3x3 và Kim Tự Tháp 4 Đỉnh Cao cuộc đời.
+  * **Tử Vi & Bản Đồ Sao**: Lập lá số Bát Tự, Can Chi, 12 Cung vị và các vòng sao.
+  * **Trải Bài Tarot 3D**: Bộ 78 lá bài Major & Minor Arcana với hiệu ứng lật bài xoay chiều và phân tích đa khía cạnh (Tình duyên, Sự nghiệp, Tài chính, Sức khỏe).
+* 🎓 **Học Viện Huyền Học & Khảo Thí Trắc Nghiệm**: Lộ trình học từ cơ bản đến chuyên sâu, hệ thống thi online có bấm giờ và cấp Chứng Chỉ Số (Certificate).
+* 🛍️ **Thương Mại Đa Năng (Polymorphic Commerce)**: Giỏ hàng thông minh hỗ trợ mua cùng lúc Vật phẩm phong thủy vật lý, Khóa học và Dịch vụ số.
+* 💳 **Sổ Cái Ví Linh Tệ (Financial Ledger)**: Hệ thống tiền tệ nội bộ được bảo vệ bởi Pessimistic Locking và ACID Transactions, chống race condition / double spending.
+* 🛡️ **Bảo Mật & Định Danh Toàn Diện**: Xác thực 2 lớp (2FA Google Authenticator), Đăng nhập QR Code, Tiếp thị liên kết (Affiliate) và Hệ thống Nhiệm vụ nhận thưởng (Gamification).
 
 ---
 
-> _Tài liệu hướng dẫn cài đặt kỹ thuật chi tiết vui lòng xem tại file: [TECHNICAL_GUIDE.md](./TECHNICAL_GUIDE.md)_
+## 🏛️ 3. Kiến Trúc Kỹ Thuật (System Architecture)
+
+```
+khoa-hoc-tam-linh/
+├── back-end/               # Laravel 12.x RESTful API Clean Architecture
+│   ├── app/
+│   │   ├── Http/Controllers/  # Controllers (ApiResponse Trait)
+│   │   ├── Models/            # Eloquent ORM (Polymorphic Relations)
+│   │   ├── Services/          # Service Layer (WalletService, EsotericService)
+│   │   └── Traits/            # ApiResponse Trait chuẩn hóa JSON
+│   ├── database/
+│   │   ├── migrations/        # 15+ Migrations (Composite Indexes, Constraints)
+│   │   └── seeders/           # Seeders nạp tri thức Kinh Dịch, Tarot, Khóa học
+│   └── routes/api.php         # API Endpoints
+├── front-end/              # React 18.x Mystic Luxury UI/UX
+│   ├── src/
+│   │   ├── components/        # Reusable UI (Navbar, SkeletonLoader, ServiceGuard...)
+│   │   ├── contexts/          # Context API (Auth, Alert, Cart)
+│   │   ├── data/              # 78 Lá bài Tarot & Tri thức huyền học
+│   │   ├── pages/             # Trang chủ, Dịch vụ, Học viện, Cửa hàng, Tài khoản
+│   │   └── services/          # Centralized Axios Client (Auto Bearer Token & 401 Catch)
+└── database/                  # Tài liệu chi tiết 15 bảng cơ sở dữ liệu
+```
+
+---
+
+## 🚀 4. Hướng Dẫn Cài Đặt & Khởi Chạy (Quick Start)
+
+### 📋 Yêu cầu môi trường
+* **Node.js**: v16+ & **npm**
+* **PHP**: v8.1+ & **Composer**
+* **MySQL**: v8.0+ (qua XAMPP hoặc MySQL Service)
+
+### 🔹 Bước 1: Khởi động Backend (Laravel)
+```bash
+cd back-end
+composer install
+cp .env.example .env
+
+# Tạo Key và Migrate cơ sở dữ liệu
+php artisan key:generate
+php artisan migrate --seed
+
+# Khởi chạy Backend server tại cổng 8001
+php artisan serve --port=8001
+```
+
+### 🔹 Bước 2: Khởi động Frontend (React)
+```bash
+cd front-end
+npm install
+npm start
+```
+🌐 **Truy cập ứng dụng tại:** [http://localhost:3000/khoa-hoc-tam-linh](http://localhost:3000/khoa-hoc-tam-linh)
+
+---
+
+## 🔐 5. Tài Khoản Trải Nghiệm Mẫu
+
+| Vai trò | Email | Tên đăng nhập | Mật khẩu | Số dư Linh Tệ |
+| :--- | :--- | :--- | :--- | :--- |
+| **Quản trị viên (Admin)** | `admin@dokhacgiakhoa.vn` | `giakhoa` | `password` | **1,000,000 🔮** |
+| **Học viên mẫu (User)** | `hocvien@fpt.edu.vn` | `hocvien` | `password` | **500 🔮** |
+
+---
+
+## 🧑‍💻 6. Thông Tin Tác Giả & Bản Quyền
+
+* **Tác giả / Full-stack Developer**: **Đỗ Khắc Gia Khoa**
+* **Đơn vị đào tạo**: FPT Aptech
+* **Email liên hệ**: [contact@dokhacgiakhoa.vn](mailto:contact@dokhacgiakhoa.vn)
+* **GitHub Repository**: [https://github.com/Dokhacgiakhoa/khoa-hoc-tam-linh](https://github.com/Dokhacgiakhoa/khoa-hoc-tam-linh)
+
+---
+
+_Dự án được xây dựng với mục tiêu "Số hóa tâm linh - Nâng tầm trí tuệ bằng khoa học và công nghệ"._
