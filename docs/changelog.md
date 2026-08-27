@@ -1,3 +1,3 @@
-## 2026-08-27 06:42:04 — Auto changelog
+## 2026-08-27 06:53:26 — Auto changelog
 
-* b209dbc docs: add detailed Tech Stack section to README.md (Đỗ Khắc Gia Khoa)
+* d895d73 feat: complete Next.js 14 App Router migration with .gitignore cleanup (Đỗ Khắc Gia Khoa)
