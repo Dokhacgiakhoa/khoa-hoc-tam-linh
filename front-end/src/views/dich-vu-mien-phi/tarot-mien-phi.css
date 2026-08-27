@@ -1,0 +1,91 @@
+/* ================================
+   TAROT MIỄN PHÍ – PAGE SCOPE
+================================ */
+
+#tarot-mien-phi {
+  padding-top: calc(var(--kh-nav-h, 75px) + 1.5rem);
+}
+
+#tarot-mien-phi .page-title {
+  margin-bottom: 0.4rem;
+  color: var(--kh-gold);
+}
+
+#tarot-mien-phi .page-sub {
+  opacity: 0.9;
+  max-width: 680px;
+}
+
+.tarot-hero {
+  padding: 1.5rem 0 2rem;
+}
+
+.tarot-hero .hero-media {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.tarot-hero .hero-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+/* How-to */
+.tarot-howto {
+  scroll-margin-top: 100px;
+}
+
+.tarot-howto .howto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(26, 11, 46, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+}
+
+.tarot-howto .howto-index {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 999px;
+  background: var(--kh-gold);
+  color: #0f0a1e;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.tarot-howto .howto-text {
+  margin: 0;
+}
+
+/* Target anchor smooth scroll */
+#trai-bai {
+  scroll-margin-top: 100px;
+}
+
+/* Wrapper cho component 1 lá */
+.tarot-card-wrap {
+  padding: 1.5rem;
+  background: rgba(22, 10, 39, 0.7);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1rem;
+}
+
+/* CTA alt nền nhẹ */
+.tarot-cta.alt {
+  background: rgba(255, 215, 0, 0.03);
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  padding: 3rem 0;
+}

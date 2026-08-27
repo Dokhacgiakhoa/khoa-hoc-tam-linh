@@ -15,12 +15,12 @@
 ### 🎨 Frontend (Client-Side)
 | Phân loại | Công nghệ | Mục đích sử dụng |
 | :--- | :--- | :--- |
-| **Core Framework** | `React 18.x` | Xây dựng Single Page Application (SPA) hiệu năng cao, render giao diện mượt mà. |
-| **Routing** | `React Router DOM v6` | Điều hướng không tải lại trang, hỗ trợ Lazy Loading & Nested Admin Routes. |
+| **Core Framework** | `Next.js 14.x` (App Router) | SSR/SSG tối ưu SEO Google vượt trội, Streaming UI cho AI, tải trang tức thì. |
+| **Routing** | `Next.js File-based Routing` | Cấu trúc `src/app/` tự động phân tách bundle và code-splitting tối ưu. |
 | **Design System** | `Mystic Luxury 2.0` | Ngôn ngữ thiết kế Dark Gold Glassmorphism, hiệu ứng Shimmer Shading, 3D Card Parallax. |
 | **CSS & Utilities** | `Tailwind CSS` + `Bootstrap 5` | Kết hợp linh hoạt giữa Tailwind utility-first và hệ thống Grid Bootstrap responsive. |
 | **State Management** | `Context API` + Custom Events | Quản lý trạng thái toàn cục (`Auth`, `Alert`, `Cart`) và đồng bộ thời gian thực qua `userChanged`. |
-| **Network Client** | `Axios Interceptors` | Centralized API client tự động inject Bearer Token và bắt lỗi 401 hết hạn phiên. |
+| **Network Client** | `Axios Interceptors` + Rewrites | Centralized API client kết hợp Next.js API Proxy chuyển tiếp sang Laravel Backend. |
 | **Icons & Media** | `React Icons` + Video Background | Icon vector sắc nét kết hợp background video mờ ảo tăng trải nghiệm huyền bí. |
 
 ### ⚙️ Backend (Server-Side)

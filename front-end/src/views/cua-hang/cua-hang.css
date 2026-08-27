@@ -1,0 +1,24 @@
+/* Hero */
+.shop-hero {
+  padding: 56px 0 24px;
+}
+
+/* Toolbar */
+.shop-toolbar .pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--kh-border, rgba(255, 255, 255, 0.15));
+  background: var(--kh-block, #17122b);
+  color: var(--kh-text, #fff);
+  cursor: pointer;
+}
+.shop-toolbar .pill.active,
+.shop-toolbar .pill:hover {
+  background: var(--kh-gold);
+  color: #0f0a1e;
+}
+
+/* Grid */
+.shop-grid .product-card {
+  min-height: 100%;
+}

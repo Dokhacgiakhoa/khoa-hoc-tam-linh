@@ -1,0 +1,207 @@
+/* ===========================
+   GIỚI THIỆU – CSS TỐI THIỂU (SCOPED)
+   =========================== */
+
+/* HERO (chỉ thêm nền nhẹ + padding riêng nếu muốn khác section mặc định) */
+.khctl-page .about-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 215, 0, 0.1),
+    transparent 50%
+  );
+}
+
+.khctl-page .about-sub {
+  opacity: 0.92;
+  max-width: 780px;
+}
+
+/* HERO media */
+.khctl-page .about-hero-media {
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.khctl-page .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.khctl-page .hover-up:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--kh-gold);
+  box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15);
+}
+
+/* Timeline Styles */
+.about-timeline {
+  position: relative;
+}
+
+.timeline-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--kh-gold),
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.timeline-year {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: #1b142f;
+  border: 2px solid var(--kh-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--kh-gold);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+.timeline-content {
+  width: 90%;
+  padding: 1.5rem 2rem;
+  margin: 0 30px;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 768px) {
+  .timeline-wrap::before {
+    left: 20px;
+  }
+  .timeline-item {
+    justify-content: flex-start;
+    padding-left: 50px;
+    padding-right: 0;
+  }
+  .timeline-item:nth-child(even) {
+    padding-left: 50px;
+  }
+  .timeline-year {
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+/* SECTION skin “alt” – hỗ trợ cả 2 cách viết từ JS */
+.khctl-page .section.alt,
+.khctl-page .section-alt {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* LIST gọn cho khối mô tả */
+.khctl-page .kv-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+.khctl-page .kv-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* MEMBER (chỉ style text; ảnh dùng .img-portrait từ index.css) */
+.khctl-page .member .member-name {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-title);
+  margin: 0.25rem 0;
+}
+.khctl-page .member .member-role {
+  font-size: 0.95rem;
+}
+
+/* STEPS (số tròn) */
+.khctl-page .step .step-index {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--kh-gold);
+  color: #1b142f;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(255, 215, 0, 0, 0.12);
+  margin-bottom: 0.35rem;
+}
+
+/* CONTACT + MAP */
+.khctl-page .contact-list {
+  margin: 0 0 1rem;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+.khctl-page .map-wrap {
+  overflow: hidden;
+}
+.khctl-page .map-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+.khctl-page .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 575.98px) {
+  .khctl-page .about-hero {
+    padding: 2.2rem 0;
+  }
+  .khctl-page .about-hero-media .card-media > img,
+  .khctl-page .about-hero-media .card-media > video {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  }
+}
