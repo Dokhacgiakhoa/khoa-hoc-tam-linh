@@ -1,3 +1,3 @@
-## 2026-08-27 09:17:49 — Auto changelog
+## 2026-08-27 11:19:40 — Auto changelog
 
-* 048580b fix: restore dynamic cosmic video background with proper z-index layering and overlay gradient (Đỗ Khắc Gia Khoa)
+* 35cb930 feat: open free guest access for all esoteric tools (Tu Vi, Bat Tu, Than So, Tarot) and require login only for AI Master Reading & Cart Checkout (Đỗ Khắc Gia Khoa)
