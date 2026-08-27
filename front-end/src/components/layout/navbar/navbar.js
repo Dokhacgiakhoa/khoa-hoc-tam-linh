@@ -432,7 +432,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/hoc-vien-huyen-hoc" onClick={closeMobileMenu}>
+              <NavLink to="/hoc-vien" onClick={closeMobileMenu}>
                 Học viện
               </NavLink>
             </li>

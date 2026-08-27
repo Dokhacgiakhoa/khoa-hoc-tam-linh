@@ -82,11 +82,11 @@ export default function MenuHocVienMega({ show, onNavigate }) {
           lực.
         </p>
         <NavLink
-          to="hoc-vien-huyen-hoc"
+          to="/hoc-vien"
           className="kh-cta"
           onClick={onNavigate}
         >
-          Vào Học viện
+          Tất cả khóa học
         </NavLink>
       </div>
     </div>
