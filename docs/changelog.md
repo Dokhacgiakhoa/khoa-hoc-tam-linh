@@ -1,3 +1,3 @@
-## 2026-08-27 06:40:23 — Auto changelog
+## 2026-08-27 06:42:04 — Auto changelog
 
-* 86000b7 docs: update comprehensive README.md with architecture, features and quick start (Đỗ Khắc Gia Khoa)
+* b209dbc docs: add detailed Tech Stack section to README.md (Đỗ Khắc Gia Khoa)
