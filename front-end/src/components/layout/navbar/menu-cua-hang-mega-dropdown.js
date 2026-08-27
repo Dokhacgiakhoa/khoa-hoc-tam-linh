@@ -30,7 +30,6 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
             >
               📿 Phụ Kiện Tâm Linh
             </NavLink>
-            {/* ĐÃ TÁCH: Hương – Trầm (riêng) */}
             <NavLink
               to="/cua-hang/huong-tram"
               className="kh-mega-link"
@@ -38,7 +37,6 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
             >
               🕯️ Hương – Trầm
             </NavLink>
-            {/* ĐÃ TÁCH: Trà Đạo (riêng) */}
             <NavLink
               to="/cua-hang/tra-dao"
               className="kh-mega-link"
@@ -53,11 +51,18 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
         <div className="kh-col">
           <nav className="kh-col-list">
             <NavLink
+              to="/cua-hang/do-tho-cung"
+              className="kh-mega-link text-gold"
+              onClick={onNavigate}
+            >
+              🪔 Đồ Thờ Cúng
+            </NavLink>
+            <NavLink
               to="/cua-hang/bo-suu-tap-cao-cap"
               className="kh-mega-link"
               onClick={onNavigate}
             >
-              🔮 Sản Phẩm Cao Cấp
+              💎 Sản Phẩm Cao Cấp
             </NavLink>
             <NavLink
               to="/cua-hang/set-qua-tang"
@@ -66,37 +71,23 @@ export default function MenuCuaHangMega({ show, onNavigate }) {
             >
               🎁 Set Quà Tặng
             </NavLink>
-            <NavLink
-              to="/cua-hang/che-tac-rieng"
-              className="kh-mega-link"
-              onClick={onNavigate}
-            >
-              🪄 Chế Tác Riêng
-            </NavLink>
-            <NavLink
-              to="/cua-hang/sim-phong-thuy"
-              className="kh-mega-link"
-              onClick={onNavigate}
-            >
-              📱 SIM Phong Thủy
-            </NavLink>
           </nav>
         </div>
 
-        {/* Cột 3 – Ảnh */}
-        <div className="kh-col kh-col-image">
-          <img src={img} alt="Cửa hàng – xem trước" loading="lazy" />
+        {/* Cột 3 – Media */}
+        <div className="kh-col kh-col-media">
+          <div className="kh-media-card">
+            <img src={img} alt="Cửa hàng Năng lượng" loading="lazy" />
+          </div>
         </div>
       </div>
 
-      {/* Footer mô tả + CTA */}
       <div className="kh-mega-footer">
         <p className="kh-mega-note">
-          Sản phẩm chọn lọc theo năng lượng &amp; bản mệnh. Hỗ trợ cá nhân hoá
-          <em> “Made for You ✴️”</em> và thanh toán linh hoạt.
+          Vật phẩm phong thủy, trà thiền, đồ thờ cúng và ấn phẩm hộ mệnh chế tác độc bản.
         </p>
         <NavLink to="/cua-hang" className="kh-cta" onClick={onNavigate}>
-          Xem sản phẩm nổi bật
+          Tất cả sản phẩm
         </NavLink>
       </div>
     </div>

@@ -4,6 +4,7 @@ export const CATEGORY_LABEL = {
   "phu-kien-tam-linh": "Phụ Kiện Tâm Linh",
   "huong-tram": "Hương & Trầm",
   "tra-dao": "Trà Đạo & Thiền Trà",
+  "do-tho-cung": "Đồ Thờ Cúng",
   "bo-suu-tap-cao-cap": "Bộ Sưu Tập & Cao Cấp",
   "set-qua-tang": "Set Quà Tặng",
 };
@@ -13,6 +14,7 @@ export const COMMERCIAL_CATEGORIES = [
   "phu-kien-tam-linh",
   "huong-tram",
   "tra-dao",
+  "do-tho-cung",
   "bo-suu-tap-cao-cap",
   "set-qua-tang",
 ];
@@ -231,9 +233,74 @@ export const SHOP_PRODUCTS = [
     views: 1280,
   },
 
-  // 5. Bộ Sưu Tập & Cao Cấp
+  // 5. ĐỒ THỜ CÚNG & LINH PHẨM [NEW]
   {
     id: 21,
+    name: "Chuông Pháp Luân Tây Tạng Khắc Nổi Mạ Đồng",
+    price: 790000,
+    category: "do-tho-cung",
+    img: "/images/products/chuong-phap-luan.png",
+    description: "Chuông đồng thanh âm ngân vang thuần khiết, xua tan năng lượng trược khí và tụ tài lộc.",
+    rating: 5,
+    views: 3200,
+    is_featured: true,
+  },
+  {
+    id: 22,
+    name: "Hộp Đốt Trầm Gốm Men Cổ Truyền",
+    price: 420000,
+    category: "do-tho-cung",
+    img: "/images/products/hop-dot-tram-gom.png",
+    description: "Hộp đốt trầm gốm sứ hoa văn cổ kính trang nghiêm cho bàn thờ tổ tiên và ban thờ Phật.",
+    rating: 4.9,
+    views: 2150,
+  },
+  {
+    id: 23,
+    name: "Tượng Linh Vật Kỳ Lân Đồng Phong Thủy",
+    price: 1350000,
+    category: "do-tho-cung",
+    img: "/images/products/linh-vat-ky-lan.png",
+    description: "Kỳ Lân phong thủy trấn trạch hộ gia, chiêu phúc nạp tài và hóa giải sát khí.",
+    rating: 5,
+    views: 2890,
+    is_featured: true,
+  },
+  {
+    id: 24,
+    name: "Mèo Thần Tài Đá Obsidian Đen Hộ Mệnh",
+    price: 680000,
+    category: "do-tho-cung",
+    img: "/images/products/meo-tai-obsidian.png",
+    description: "Chế tác từ đá Obsidian tự nhiên nguyên khối đặt tại bàn thu ngân hoặc phòng khách.",
+    rating: 4.9,
+    views: 1740,
+  },
+  {
+    id: 25,
+    name: "Tranh Thờ Sơn Hải Trấn Trạch Thủy Mặc",
+    price: 1650000,
+    category: "do-tho-cung",
+    img: "/images/products/tranh-son-hai.png",
+    description: "Bức họa Sơn Hải trấn trạch tụ khí, mang lại sinh khí dồi dào và thịnh vượng bền lâu.",
+    rating: 5,
+    views: 2410,
+    is_featured: true,
+  },
+  {
+    id: 26,
+    name: "Thác Khói Tháp Sen Đồng Nghệ Thuật",
+    price: 580000,
+    category: "do-tho-cung",
+    img: "/images/products/thac-khoi-thap-sen.png",
+    description: "Tòa tháp hoa sen bằng đồng nguyên chất, khói trầm lan tỏa thanh tịnh nơi thờ tự.",
+    rating: 5,
+    views: 1980,
+  },
+
+  // 6. Bộ Sưu Tập & Cao Cấp
+  {
+    id: 27,
     name: "Ấn Phẩm Phong Thủy Gold Leaf Edition",
     price: 1890000,
     category: "bo-suu-tap-cao-cap",
@@ -244,7 +311,7 @@ export const SHOP_PRODUCTS = [
     is_featured: true,
   },
   {
-    id: 22,
+    id: 28,
     name: "Set Bàn Trà & Trầm Hương Celestial Kit",
     price: 2450000,
     category: "bo-suu-tap-cao-cap",
@@ -255,9 +322,9 @@ export const SHOP_PRODUCTS = [
     is_featured: true,
   },
 
-  // 6. Set Quà Tặng
+  // 7. Set Quà Tặng
   {
-    id: 23,
+    id: 29,
     name: "Giftset Thịnh Vượng & Tài Lộc",
     price: 850000,
     category: "set-qua-tang",
@@ -267,7 +334,7 @@ export const SHOP_PRODUCTS = [
     views: 2150,
   },
   {
-    id: 24,
+    id: 30,
     name: "Combo Thiền Nến - Hương Trà",
     price: 550000,
     category: "set-qua-tang",

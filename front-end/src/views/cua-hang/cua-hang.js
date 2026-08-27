@@ -19,7 +19,7 @@ export default function CuaHang() {
             <div className="col-lg-7">
               <h1 className="shop-title text-gold">Cửa hàng Năng lượng</h1>
               <p className="shop-sub text-light opacity-90">
-                Bài Tâm linh · Phụ kiện · Hương & Trầm · Trà Đạo · Bộ sưu tập &
+                Bài Tâm linh · Phụ kiện · Hương & Trầm · Trà Đạo · Đồ Thờ Cúng · Bộ sưu tập &
                 Cao cấp · Set quà tặng
               </p>
               <div className="d-flex gap-3 flex-wrap mt-3">
