@@ -1,3 +1,3 @@
-## 2026-08-27 06:32:49 — Auto changelog
+## 2026-08-27 06:40:23 — Auto changelog
 
-* 8de0f25 feat: upgrade DB schema, backend service layer, and UI/UX Mystic Luxury 2.0 (Đỗ Khắc Gia Khoa)
+* 86000b7 docs: update comprehensive README.md with architecture, features and quick start (Đỗ Khắc Gia Khoa)
