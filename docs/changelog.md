@@ -1,3 +1,3 @@
-## 2026-08-27 08:06:34 — Auto changelog
+## 2026-08-27 08:13:06 — Auto changelog
 
-* 3e2fce7 feat: complete sitemap routing for all 15 esoteric services, shop categories, academy and account tabs (Đỗ Khắc Gia Khoa)
+* e72666f fix: resolve missing images, broken banner paths, and populate rich product catalog with 24 items in Shop (Đỗ Khắc Gia Khoa)
