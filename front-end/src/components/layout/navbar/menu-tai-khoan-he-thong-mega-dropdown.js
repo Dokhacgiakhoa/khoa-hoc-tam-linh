@@ -12,7 +12,7 @@ export default function MenuTaiKhoanMega({
   const { showConfirm } = useAlert();
   const navigate = useNavigate();
 
-  const img = process.env.PUBLIC_URL + "/images/banners/banner-tai-khoan.png";
+  const img = "/images/banners/banner-tai-khoan.png";
 
   return (
     <div

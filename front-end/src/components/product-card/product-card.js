@@ -1,27 +1,27 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useAlert } from "../../contexts/AlertContext";
 import "./product-card.css";
 
-// Ghép PUBLIC_URL + path an toàn
+// Ghép path an toàn
 const resolveSrc = (path) => {
-  const base = process.env.PUBLIC_URL || "";
-  const rel = path?.startsWith("/") ? path : `/${path || ""}`;
-  return `${base}${rel}`;
+  if (!path) return "/images/products/product-1.png";
+  if (path.startsWith("http")) return path;
+  return path.startsWith("/") ? path : `/${path}`;
 };
 
 // Fallback khi ảnh lỗi
 const onImgError = (e) => {
   e.currentTarget.onerror = null;
-  e.currentTarget.src = resolveSrc("/media/placeholder-square.png");
+  e.currentTarget.src = "/images/products/product-1.png";
 };
 
 export default function ProductCard({ product, categoryLabel, money }) {
   const { showSuccess, showError } = useAlert();
-  const imgSrc = resolveSrc(product.img);
-  // const navigate = useNavigate(); // Removed as per instruction to use custom modals
+  const imgSrc = resolveSrc(product.img || product.image || product.image_url);
 
-  // ✅ Kiểm tra overflow + thiết lập biến CSS cho marquee
   const nameRef = useRef(null);
   const [canScroll, setCanScroll] = useState(false);
 
@@ -45,11 +45,6 @@ export default function ProductCard({ product, categoryLabel, money }) {
   }, [product?.name]);
 
   const handleAddToCart = () => {
-    if (!localStorage.getItem("auth_token")) {
-      showError("Vui lòng đăng nhập để mua hàng!");
-      return;
-    }
-
     try {
       const cartData = JSON.parse(localStorage.getItem("kh_cart") || "[]");
       const existing = cartData.find((item) => item.id === product.id);
@@ -59,89 +54,77 @@ export default function ProductCard({ product, categoryLabel, money }) {
       } else {
         cartData.push({
           id: product.id,
-          type: "product",
           name: product.name,
           price: product.price,
-          img: product.image_url || product.img,
+          img: imgSrc,
           quantity: 1,
         });
       }
 
       localStorage.setItem("kh_cart", JSON.stringify(cartData));
-
-      // Thông báo cho các component khác (Navbar, Dashboard)
       window.dispatchEvent(new Event("cartChanged"));
-
-      showSuccess(`Đã thêm ${product.name} vào giỏ hàng!`);
+      if (showSuccess) showSuccess(`Đã thêm "${product.name}" vào giỏ hàng!`);
+      else alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
     } catch (e) {
-      console.error("Lỗi thêm giỏ hàng:", e);
+      console.error("Lỗi khi thêm giỏ hàng:", e);
     }
   };
 
+  const formattedPrice =
+    typeof money === "function"
+      ? money(product.price)
+      : product.price
+      ? product.price.toLocaleString("vi-VN") + " 🔮"
+      : "Liên hệ";
+
   return (
-    <article
-      className="card-3d product-card h-100 d-flex flex-column"
-      aria-label={product.name}
-    >
-      <div className="product-media position-relative">
+    <div className="product-card card-3d h-100 d-flex flex-column">
+      <Link href={`/cua-hang/san-pham/${product.id}`} className="product-card-media position-relative d-block overflow-hidden rounded-top">
         <img
           src={imgSrc}
-          alt={product.name}
-          className="product-img img-square"
-          loading="lazy"
-          decoding="async"
+          alt={product.name || "Sản phẩm"}
+          className="product-card-img w-100"
+          style={{ aspectRatio: "1/1", objectFit: "cover" }}
           onError={onImgError}
+          loading="lazy"
         />
-        {product.madeForYou && (
-          <span className="badge-made">Chế tác riêng ✴️</span>
-        )}
-      </div>
-
-      <div className="card-body d-flex flex-column">
-        {/* Viewport + băng chữ bên trong */}
-        <h3
-          ref={nameRef}
-          className={`product-name text-white ${canScroll ? "can-scroll" : ""}`}
-          title={product.name}
-        >
-          <span className="product-name-inner">{product.name}</span>
-        </h3>
-
-        <p
-          className="product-desc text-white small mb-2 line-clamp-2"
-          style={{ minHeight: "40px", fontSize: "0.85rem", opacity: 0.75 }}
-        >
-          {product.short_description ||
-            product.description ||
-            "Mô tả đang cập nhật..."}
-        </p>
-
-        <div className="product-meta d-flex align-items-center justify-content-between mt-auto">
-          <span className="product-cat text-white-50 small">
+        {categoryLabel && (
+          <span className="product-card-badge position-absolute top-0 start-0 m-2 badge bg-dark bg-opacity-75 text-gold border-gold">
             {categoryLabel}
           </span>
-          <span className="product-price text-gold fw-bold fs-5">
-            {money(product.price)}
-          </span>
-        </div>
+        )}
+      </Link>
 
-        <div className="card-actions d-flex gap-2 mt-3">
+      <div className="product-card-body p-3 d-flex flex-column flex-grow-1">
+        <Link href={`/cua-hang/san-pham/${product.id}`} className="text-decoration-none">
+          <h4
+            ref={nameRef}
+            className={`product-card-name text-light fw-bold mb-1 fs-6 ${canScroll ? "marquee-text" : ""}`}
+            title={product.name}
+          >
+            {product.name}
+          </h4>
+        </Link>
+
+        {product.description && (
+          <p className="product-card-desc text-white-50 small line-clamp-2 mb-3" style={{ fontSize: "0.85rem", height: "2.5rem", overflow: "hidden" }}>
+            {product.description}
+          </p>
+        )}
+
+        <div className="mt-auto d-flex align-items-center justify-content-between pt-2 border-top border-white border-opacity-10">
+          <span className="product-card-price text-gold fw-bold fs-6">
+            {formattedPrice}
+          </span>
           <button
-            className="btn btn-gold flex-grow-1"
+            type="button"
+            className="btn btn-gold btn-sm px-3 shadow"
             onClick={handleAddToCart}
-            style={{ fontSize: "0.9rem", padding: "8px 4px" }}
           >
-            Thêm giỏ
+            + Mua
           </button>
-          <Link
-            to={`/cua-hang/san-pham/${product.product_id}`}
-            className="btn btn-outline-gold flex-grow-1"
-            style={{ fontSize: "0.9rem", padding: "8px 4px" }}
-          >
-            Chi tiết
-          </Link>
         </div>
       </div>
-    </article>
+    </div>
   );
 }

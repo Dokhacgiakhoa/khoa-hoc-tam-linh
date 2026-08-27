@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./mega-dropdown.css";
 
 export default function MenuHocVienMega({ show, onNavigate }) {
-  const img =
-    process.env.PUBLIC_URL + "/images/banners/banner-hoc-vien-huyen-hoc.png";
+  const img = "/images/banners/banner-hoc-vien-huyen-hoc.png";
 
   return (
     <div

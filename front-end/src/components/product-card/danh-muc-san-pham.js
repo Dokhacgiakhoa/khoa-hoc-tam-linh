@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   useCallback,
   useEffect,
@@ -5,9 +7,9 @@ import React, {
   useState,
   useDeferredValue,
 } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
 import ProductCard from "../product-card/product-card";
+import { SHOP_PRODUCTS, CATEGORY_LABEL, COMMERCIAL_CATEGORIES } from "../../data/shopData";
 import "./danh-muc-san-pham.css";
 
 const money = (v) =>
@@ -22,15 +24,11 @@ function buildPageList(current, total, delta = 1) {
   if (total <= 1) return [1];
   const pages = new Set([1, total]);
 
-  // trang hiện tại và lân cận
   for (let i = current - delta; i <= current + delta; i++) {
     if (i >= 1 && i <= total) pages.add(i);
   }
 
-  // chuyển sang mảng và sắp xếp
   const sorted = Array.from(pages).sort((a, b) => a - b);
-
-  // chèn '…'
   const out = [];
   for (let i = 0; i < sorted.length; i++) {
     out.push(sorted[i]);
@@ -43,28 +41,10 @@ function buildPageList(current, total, delta = 1) {
   return out;
 }
 
-// Nhãn danh mục (giống Frontend nhưng để render)
-const CATEGORY_LABEL = {
-  "bai-tam-linh": "Bài Tâm Linh",
-  "phu-kien-tam-linh": "Phụ Kiện Tâm Linh",
-  "huong-tram": "Hương & Trầm",
-  "tra-dao": "Trà Đạo & Thiền Trà",
-  "bo-suu-tap-cao-cap": "Bộ Sưu Tập & Cao Cấp",
-  "set-qua-tang": "Set Quà Tặng",
-};
-
-const COMMERCIAL_CATEGORIES = [
-  "bai-tam-linh",
-  "phu-kien-tam-linh",
-  "huong-tram",
-  "tra-dao",
-  "bo-suu-tap-cao-cap",
-  "set-qua-tang",
-];
-
 export default function DanhMucSanPham({ initialCategory }) {
-  const [allProducts, setAllProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Khởi tạo mặc định bằng 24 sản phẩm cao cấp có sẵn
+  const [allProducts, setAllProducts] = useState(SHOP_PRODUCTS);
+  const [loading, setLoading] = useState(false);
   const [cat, setCat] = useState(initialCategory || "all");
   const [q, setQ] = useState("");
   const [sort, setSort] = useState("featured"); // featured | price-asc | price-desc | name-asc
@@ -72,15 +52,26 @@ export default function DanhMucSanPham({ initialCategory }) {
   const PER_PAGE = 8;
 
   useEffect(() => {
-    axios
+    api
       .get("/api/products")
       .then((res) => {
-        setAllProducts(res.data);
-        setLoading(false);
+        const data = res.data?.data || res.data;
+        if (Array.isArray(data) && data.length > 0) {
+          const mapped = data.map((p) => ({
+            id: p.id || p.db_id,
+            name: p.name,
+            price: p.price,
+            category: p.category?.slug || p.category || "bai-tam-linh",
+            img: p.image || p.image_url || "/images/products/product-1.png",
+            description: p.description,
+            rating: p.rating || 5,
+            views: p.views || 100,
+          }));
+          setAllProducts(mapped);
+        }
       })
       .catch((err) => {
-        console.error("Lỗi khi lấy sản phẩm:", err);
-        setLoading(false);
+        console.warn("Using offline shop data fallback:", err);
       });
   }, []);
 
@@ -97,7 +88,6 @@ export default function DanhMucSanPham({ initialCategory }) {
   const source = useMemo(() => {
     if (cat === "all") return allProducts;
     return allProducts.filter((p) => {
-      // Handle both relationship object (p.category.slug) and legacy string (p.category)
       const pSlug = p.category?.slug || p.category || "";
       return pSlug === cat;
     });
@@ -138,196 +128,136 @@ export default function DanhMucSanPham({ initialCategory }) {
   }, [cat, qDeferred, sort]);
 
   // 6) Phân trang
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-  const currentPage = Math.min(page, pageCount);
-  const offset = (currentPage - 1) * PER_PAGE;
-  const currentData = filtered.slice(offset, offset + PER_PAGE);
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+  const currentPage = Math.min(page, totalPages);
+
+  const pageItems = useMemo(() => {
+    const start = (currentPage - 1) * PER_PAGE;
+    return filtered.slice(start, start + PER_PAGE);
+  }, [filtered, currentPage, PER_PAGE]);
 
   const pageList = useMemo(
-    () => buildPageList(currentPage, pageCount, 1),
-    [currentPage, pageCount]
+    () => buildPageList(currentPage, totalPages, 1),
+    [currentPage, totalPages]
   );
 
-  // 7) Handlers
-  const handleCat = useCallback((c) => setCat(c), []);
-  const handleSort = useCallback((e) => setSort(e.target.value), []);
-  const handleSearch = useCallback((e) => setQ(e.target.value), []);
-  const gotoPage = useCallback((p) => setPage(p), []);
-
-  const currentCatLabel =
-    cat === "all" ? "Tất cả sản phẩm" : CATEGORY_LABEL[cat] || "Danh mục";
+  const goToPage = useCallback(
+    (p) => {
+      if (p < 1 || p > totalPages || p === currentPage) return;
+      setPage(p);
+    },
+    [totalPages, currentPage]
+  );
 
   return (
-    <section className="section danh-muc-san-pham">
-      <div className="container">
-        {/* HEADER + COUNTER */}
-        <div className="d-flex align-items-baseline justify-content-between mb-2">
-          <h2 className="section-title m-0">{currentCatLabel}</h2>
-          {filtered.length.toLocaleString("vi-VN", {
-            maximumFractionDigits: 0,
-          })}{" "}
-          kết quả
+    <section className="section shop-catalog container py-4" id="catalog-section">
+      <div className="section-head mb-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+        <div>
+          <h2 className="section-title text-gold mb-1">
+            {cat === "all" ? "Tất cả sản phẩm" : CATEGORY_LABEL[cat] || "Danh mục sản phẩm"}
+          </h2>
+          <span className="badge bg-purple-900 text-gold border-gold">
+            {total} sản phẩm sẵn có
+          </span>
         </div>
 
-        {/* TOOLBAR */}
-        <div className="row g-3 align-items-center mb-3">
-          <div className="col-12 col-xl-7">
-            <div
-              className="cat-pills d-flex flex-wrap gap-2"
-              role="tablist"
-              aria-label="Danh mục sản phẩm"
-            >
-              <button
-                type="button"
-                role="tab"
-                aria-selected={cat === "all"}
-                className={`pill ${cat === "all" ? "active" : ""}`}
-                onClick={() => handleCat("all")}
-                onKeyDown={(e) =>
-                  (e.key === "Enter" || e.key === " ") && handleCat("all")
-                }
-              >
-                Tất cả
-              </button>
-              {COMMERCIAL_CATEGORIES.map((c) => (
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={cat === c}
-                  key={c}
-                  className={`pill ${cat === c ? "active" : ""}`}
-                  onClick={() => handleCat(c)}
-                  onKeyDown={(e) =>
-                    (e.key === "Enter" || e.key === " ") && handleCat(c)
-                  }
-                >
-                  {CATEGORY_LABEL[c]}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="col-12 col-md-5 col-xl-3">
-            <input
-              className="form-control form-control-sm khctl-input"
-              placeholder="Tìm kiếm sản phẩm…"
-              value={q}
-              onChange={handleSearch}
-              aria-label="Tìm kiếm sản phẩm"
-            />
-          </div>
-
-          <div className="col-12 col-md-7 col-xl-2">
-            <select
-              className="form-select form-select-sm khctl-input"
-              value={sort}
-              onChange={handleSort}
-              aria-label="Sắp xếp sản phẩm"
-            >
-              <option value="featured">Nổi bật</option>
-              <option value="price-asc">Giá ↑</option>
-              <option value="price-desc">Giá ↓</option>
-              <option value="name-asc">Tên A→Z</option>
-            </select>
-          </div>
+        {/* Controls: Search + Sort */}
+        <div className="d-flex gap-2 flex-wrap align-items-center">
+          <input
+            type="search"
+            className="form-control bg-dark text-light border-gold border-opacity-40"
+            style={{ width: "240px" }}
+            placeholder="Tìm kiếm sản phẩm..."
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          />
+          <select
+            className="form-select bg-dark text-light border-gold border-opacity-40"
+            style={{ width: "160px" }}
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+          >
+            <option value="featured">✨ Nổi bật</option>
+            <option value="price-asc">💵 Giá tăng dần</option>
+            <option value="price-desc">💎 Giá giảm dần</option>
+            <option value="name-asc">🔤 Tên A-Z</option>
+          </select>
         </div>
-
-        {/* GRID */}
-        {loading ? (
-          <div className="text-center py-5">
-            <div className="spinner-border text-gold" role="status"></div>
-            <p className="mt-2 opacity-75">Đang tải sản phẩm…</p>
-          </div>
-        ) : currentData.length === 0 ? (
-          <div className="empty-state text-center opacity-75 py-4">
-            <p className="mb-2">Không tìm thấy sản phẩm phù hợp.</p>
-            {(q || cat !== "all") && (
-              <button
-                className="btn btn-outline-gold"
-                onClick={() => {
-                  setQ("");
-                  setCat("all");
-                  setSort("featured");
-                }}
-              >
-                Xoá lọc & trở về tất cả
-              </button>
-            )}
-          </div>
-        ) : (
-          <>
-            <div className="row g-4 align-items-start">
-              {currentData.map((p) => {
-                // Determine category slug for label lookup or use name directly
-                const pSlug = p.category?.slug || p.category || p.cat;
-                const displayLabel =
-                  p.category?.name || CATEGORY_LABEL[pSlug] || "";
-
-                return (
-                  <div className="col-6 col-md-4 col-xl-3" key={p.id}>
-                    <ProductCard
-                      product={p}
-                      categoryLabel={displayLabel}
-                      money={money}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* PAGINATION */}
-            {pageCount > 1 && (
-              <nav
-                className="pagination-g mt-4"
-                role="navigation"
-                aria-label="Phân trang sản phẩm"
-              >
-                <button
-                  className="page-btn prev"
-                  onClick={() => gotoPage(Math.max(1, currentPage - 1))}
-                  disabled={currentPage === 1}
-                  aria-label="Trang trước"
-                >
-                  ‹
-                </button>
-
-                {pageList.map((item, idx) =>
-                  item === "ellipsis" ? (
-                    <span
-                      className="page-ellipsis"
-                      key={`e-${idx}`}
-                      aria-hidden="true"
-                    >
-                      …
-                    </span>
-                  ) : (
-                    <button
-                      key={item}
-                      className={`page-btn ${
-                        item === currentPage ? "active" : ""
-                      }`}
-                      onClick={() => gotoPage(item)}
-                      aria-current={item === currentPage ? "page" : undefined}
-                      aria-label={`Trang ${item}`}
-                    >
-                      {item}
-                    </button>
-                  )
-                )}
-
-                <button
-                  className="page-btn next"
-                  onClick={() => gotoPage(Math.min(pageCount, currentPage + 1))}
-                  disabled={currentPage === pageCount}
-                  aria-label="Trang sau"
-                >
-                  ›
-                </button>
-              </nav>
-            )}
-          </>
-        )}
       </div>
+
+      {/* Tabs Danh Mục */}
+      <div className="d-flex gap-2 flex-wrap mb-4">
+        <button
+          className={`btn ${cat === "all" ? "btn-gold" : "btn-outline-gold"} btn-sm rounded-pill px-3`}
+          onClick={() => setCat("all")}
+        >
+          Tất cả
+        </button>
+        {COMMERCIAL_CATEGORIES.map((cKey) => (
+          <button
+            key={cKey}
+            className={`btn ${cat === cKey ? "btn-gold" : "btn-outline-gold"} btn-sm rounded-pill px-3`}
+            onClick={() => setCat(cKey)}
+          >
+            {CATEGORY_LABEL[cKey] || cKey}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid Sản Phẩm */}
+      {pageItems.length > 0 ? (
+        <div className="row g-4">
+          {pageItems.map((prod) => (
+            <div key={prod.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+              <ProductCard
+                product={prod}
+                categoryLabel={CATEGORY_LABEL[prod.category] || "Phụ kiện"}
+                money={money}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-5 glass-card rounded-4">
+          <p className="text-white-50 fs-5 mb-0">Không tìm thấy sản phẩm phù hợp.</p>
+        </div>
+      )}
+
+      {/* Phân Trang */}
+      {totalPages > 1 && (
+        <div className="d-flex justify-content-center align-items-center gap-2 mt-5">
+          <button
+            className="btn btn-outline-gold btn-sm px-3"
+            disabled={currentPage <= 1}
+            onClick={() => goToPage(currentPage - 1)}
+          >
+            &larr; Trước
+          </button>
+          {pageList.map((p, idx) =>
+            p === "ellipsis" ? (
+              <span key={`el-${idx}`} className="text-white-50 px-2">
+                ...
+              </span>
+            ) : (
+              <button
+                key={p}
+                className={`btn btn-sm ${p === currentPage ? "btn-gold" : "btn-outline-gold"}`}
+                onClick={() => goToPage(p)}
+              >
+                {p}
+              </button>
+            )
+          )}
+          <button
+            className="btn btn-outline-gold btn-sm px-3"
+            disabled={currentPage >= totalPages}
+            onClick={() => goToPage(currentPage + 1)}
+          >
+            Sau &rarr;
+          </button>
+        </div>
+      )}
     </section>
   );
 }
