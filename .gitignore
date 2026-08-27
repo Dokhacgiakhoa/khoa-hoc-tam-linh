@@ -1,6 +1,11 @@
 node_modules/
 .next/
 build/
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
 .env
 *.log
 .DS_Store
