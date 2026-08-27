@@ -1,3 +1,3 @@
-## 2026-08-27 11:25:46 — Auto changelog
+## 2026-08-27 11:33:34 — Auto changelog
 
-* e676dbf feat: redesign Tu Vi chart board with authentic 4x4 Thien Dia Ban grid layout based on Vietnamese Ly So standards (Đỗ Khắc Gia Khoa)
+* df23ea6 chore: brand Tu Vi chart with 'KHOA HOC TAM LINH' logo and stamp (Đỗ Khắc Gia Khoa)
