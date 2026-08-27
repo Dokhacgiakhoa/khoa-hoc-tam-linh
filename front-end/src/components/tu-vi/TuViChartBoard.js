@@ -21,7 +21,7 @@ export default function TuViChartBoard({ chartData }) {
       {/* Header Công Cụ In / Lưu */}
       <div className="d-flex justify-content-between align-items-center mb-3 px-2">
         <span className="text-gold fw-bold small">
-          📜 LÁ SỐ TỬ VI ĐẨU SỐ — THIÊN ĐỊA BÀN VIỆT NAM
+          📜 LÁ SỐ TỬ VI ĐẨU SỐ — THIÊN ĐỊA BÀN KHOA HỌC TÂM LINH
         </span>
         <div className="d-flex gap-2">
           <button className="btn btn-outline-gold btn-sm px-3 shadow" onClick={handlePrint}>
@@ -100,8 +100,8 @@ export default function TuViChartBoard({ chartData }) {
         {/* THIÊN BÀN TRUNG TÂM (Grid 2x2 ở giữa) */}
         <div className="tuvi-thien-ban-center">
           <div>
-            <div className="thien-ban-header-title">
-              LÝ SỐ HỘI QUÁN
+            <div className="thien-ban-header-title text-gold">
+              KHOA HỌC TÂM LINH
             </div>
             <div className="text-center text-gold-gradient fw-bold fs-5 mt-1">
               {thienBan.name}
@@ -163,7 +163,7 @@ export default function TuViChartBoard({ chartData }) {
 
           {/* Dấu Mộc Đỏ Ấn Triện */}
           <div className="thien-ban-stamp">
-            LÝ SỐ VIỆT NAM
+            KHOA HỌC TÂM LINH
           </div>
         </div>
 
