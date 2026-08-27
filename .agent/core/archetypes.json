@@ -1,0 +1,40 @@
+{
+  "web-nextjs-standard": {
+    "description": "Next.js App Router Enterprise Structure",
+    "structure": [
+      "app/(auth)",
+      "app/(dashboard)",
+      "app/api",
+      "components/ui",
+      "components/shared",
+      "lib/utils",
+      "hooks",
+      "services",
+      "types"
+    ]
+  },
+  "backend-nodejs-express": {
+    "description": "Restful API with Clean Architecture",
+    "structure": [
+      "src/controllers",
+      "src/services",
+      "src/models",
+      "src/routes",
+      "src/middlewares",
+      "src/config",
+      "src/utils"
+    ]
+  },
+  "mobile-react-native": {
+    "description": "Cross-platform Mobile App Structure",
+    "structure": [
+      "src/screens",
+      "src/components",
+      "src/navigation",
+      "src/store",
+      "src/services",
+      "src/theme",
+      "src/assets"
+    ]
+  }
+}

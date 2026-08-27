@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useEffect, useState, useRef } from "react";
 import "./app.css";
-import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import api from "./services/api";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AlertProvider } from "./contexts/AlertContext";
 
 import Navbar from "./components/layout/navbar/navbar";
@@ -56,7 +56,7 @@ const OrderManager = lazy(() => import("./pages/admin/order-manager"));
 
 export default function App() {
   const videoRef = useRef(null);
-  const [apiMessage, setApiMessage] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -64,15 +64,7 @@ export default function App() {
     }
   }, []);
 
-  useEffect(() => {
-    // Test API Connection
-    axios.get("/api/test").then((response) => {
-      console.log("API Connected:", response.data);
-      setApiMessage(response.data.message);
-    });
-  }, []);
-
-  const isAdminPage = window.location.pathname.startsWith("/admin");
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <AlertProvider>
@@ -94,7 +86,10 @@ export default function App() {
         <main className="app-main flex-grow-1">
           <Suspense
             fallback={
-              <div className="app-loading text-center py-5">Đang tải…</div>
+              <div className="mystic-page-loader d-flex flex-column align-items-center justify-content-center min-vh-50 py-5">
+                <div className="mystic-spinner mb-3" />
+                <span className="text-gold letter-spacing-1 small">ĐANG KHỞI TẠO KHÔNG GIAN HUYỀN BÍ…</span>
+              </div>
             }
           >
             <ScrollToTop />

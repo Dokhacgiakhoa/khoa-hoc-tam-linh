@@ -1,0 +1,17 @@
+{
+  "name": "khoa-hoc-tam-linh",
+  "version": "1.0.0",
+  "description": "AI Agent project powered by Google Antigravity",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"No dev server configured\"",
+    "build": "echo \"No build script\""
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "google-antigravity"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../services/api";
+import TarotData from "../../data/tarot-main";
 import "./tarot-free-1-card.css";
 
 const CHANCE_REVERSED = 0.25;
@@ -11,15 +12,15 @@ const resolveSrc = (path) => {
   return base + (path.startsWith("/") ? path : `/${path}`);
 };
 
-/** Chuẩn hóa dữ liệu từ DB sang format Frontend cũ mong đợi */
+/** Chuẩn hóa dữ liệu từ DB sang format Frontend */
 const normalizeFromDB = (c) => ({
-  Ten: c.name,
-  Anh: c.image,
-  Nhom: c.group,
-  YNghiaChung: c.meaning_general,
-  NghiaXuoi: c.meaning_upright,
-  NghiaNguoc: c.meaning_reversed,
-  ChuDe: c.topics,
+  Ten: c.name || c.Ten,
+  Anh: c.image || c.Anh,
+  Nhom: c.group || c.Nhom,
+  YNghiaChung: c.meaning_general || c.YNghiaChung,
+  NghiaXuoi: c.meaning_upright || c.NghiaXuoi,
+  NghiaNguoc: c.meaning_reversed || c.NghiaNguoc,
+  ChuDe: c.topics || c.ChuDe,
 });
 
 /* ---------- Chuẩn hoá dữ liệu nghĩa lá ---------- */
@@ -30,6 +31,7 @@ const toText = (v) => {
   if (typeof v === "object") return v.MoTa ?? v.text ?? v.value ?? "";
   return String(v);
 };
+
 const toKeywords = (v) => {
   if (Array.isArray(v)) return v.map(toText).filter(Boolean);
   if (typeof v === "string")
@@ -41,6 +43,7 @@ const toKeywords = (v) => {
     return Object.values(v).map(toText).filter(Boolean);
   return [];
 };
+
 const toTopics = (v) => {
   const o = v && typeof v === "object" ? v : {};
   return {
@@ -52,23 +55,24 @@ const toTopics = (v) => {
 };
 
 export default function TarotFreeOneOfThree() {
-  const [tarotData, setTarotData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  // Mỗi phần tử: { card, reversed }
+  // Khởi tạo mặc định với bộ bài có sẵn (78 lá) để không bao giờ bị rỗng
+  const [tarotData, setTarotData] = useState(TarotData && TarotData.length > 0 ? TarotData : []);
+  const [loading, setLoading] = useState(false);
   const [dealt, setDealt] = useState([]);
   const [pickedIndex, setPickedIndex] = useState(null);
 
   useEffect(() => {
-    axios
+    api
       .get("/api/tarot")
       .then((res) => {
-        const normalized = res.data.map(normalizeFromDB);
-        setTarotData(normalized);
-        setLoading(false);
+        const data = res.data?.data || res.data;
+        if (Array.isArray(data) && data.length > 0) {
+          const normalized = data.map(normalizeFromDB);
+          setTarotData(normalized);
+        }
       })
       .catch((err) => {
-        console.error("Lỗi khi lấy dữ liệu Tarot:", err);
-        setLoading(false);
+        console.warn("API Tarot không phản hồi, sử dụng bộ bài offline fallback:", err);
       });
   }, []);
 
@@ -77,20 +81,28 @@ export default function TarotFreeOneOfThree() {
 
   // Tráo & phát 3 lá ngẫu nhiên (không trùng)
   const shuffleAndDeal = useCallback(() => {
-    if (!tarotData || tarotData.length < 3) return;
+    const dataSource = tarotData && tarotData.length >= 3 ? tarotData : TarotData;
+    if (!dataSource || dataSource.length < 3) return;
 
     const chosenIdx = new Set();
     while (chosenIdx.size < 3) {
-      chosenIdx.add(Math.floor(Math.random() * tarotData.length));
+      chosenIdx.add(Math.floor(Math.random() * dataSource.length));
     }
     const cards = [...chosenIdx].map((idx) => ({
-      card: tarotData[idx],
+      card: dataSource[idx],
       reversed: Math.random() < CHANCE_REVERSED,
     }));
 
     setDealt(cards);
     setPickedIndex(null);
   }, [tarotData]);
+
+  // Tự động chia 3 lá bài khi vào trang nếu chưa chia
+  useEffect(() => {
+    if (dealt.length === 0) {
+      shuffleAndDeal();
+    }
+  }, [shuffleAndDeal, dealt.length]);
 
   // Lật 1 trong 3 lá – chỉ khi chưa chọn
   const handlePick = useCallback(
@@ -110,7 +122,7 @@ export default function TarotFreeOneOfThree() {
     const raw =
       reversed && card.NghiaNguoc
         ? card.NghiaNguoc
-        : card.NghiaXuong || {
+        : card.NghiaXuoi || {
             MoTa: card.YNghiaChung,
             TuKhoa: card.TuKhoaChung,
             ChuDe: card.ChuDe,
@@ -119,9 +131,9 @@ export default function TarotFreeOneOfThree() {
     return {
       card,
       reversed,
-      MoTa: toText(raw?.MoTa),
-      TuKhoa: toKeywords(raw?.TuKhoa),
-      ChuDe: toTopics(raw?.ChuDe),
+      MoTa: toText(raw?.MoTa) || toText(card.YNghiaChung),
+      TuKhoa: toKeywords(raw?.TuKhoa) || toKeywords(card.TuKhoaChung),
+      ChuDe: toTopics(raw?.ChuDe || card.ChuDe),
     };
   }, [dealt, pickedIndex, hasPicked]);
 
@@ -131,31 +143,25 @@ export default function TarotFreeOneOfThree() {
 
   return (
     <main className="tarot-one-of-three container">
-      <header className="tarot-header">
-        <h1 className="tarot-title">Tráo và rút bài (chọn 1 trong 3 lá)</h1>
-        <p className="tarot-subtitle">
-          Bấm nút để phát 3 lá úp. Chọn 1 lá để lật.
+      <header className="tarot-header mb-4">
+        <h2 className="tarot-title text-gold mb-2">Tráo và rút bài (chọn 1 trong 3 lá)</h2>
+        <p className="tarot-subtitle text-light opacity-80 mb-3">
+          Tập trung vào câu hỏi của bạn, bấm nút để xáo bài, sau đó nhấp vào 1 trong 3 lá úp để lật mở thông điệp.
         </p>
 
         <button
           type="button"
-          className="kh-cta tarot-action"
+          className="btn btn-gold btn-lg px-4 shadow fw-bold tarot-action"
           onClick={shuffleAndDeal}
           disabled={loading}
         >
-          {loading ? "Đang tải dữ liệu..." : "Tráo và rút bài"}
+          {loading ? "Đang tải dữ liệu..." : "🔀 Tráo và rút lại bài"}
         </button>
       </header>
 
-      {loading && (
-        <div className="text-center py-5">
-          <div className="spinner-border text-gold" role="status"></div>
-        </div>
-      )}
-
       {/* Vùng 3 lá */}
       {hasDealt && (
-        <section className="tarot-board" aria-label="Ba lá bài">
+        <section className="tarot-board my-4" aria-label="Ba lá bài">
           {dealt.map(({ card, reversed }, i) => {
             const isPicked = pickedIndex === i;
             const isLocked = hasPicked && !isPicked;
@@ -173,11 +179,11 @@ export default function TarotFreeOneOfThree() {
                 title={
                   isLocked
                     ? "Đã khoá – bấm Tráo và rút bài để rút lại"
-                    : "Bấm để lật lá này"
+                    : "Bấm để lật mở lá bài này"
                 }
               >
                 <div className={`card-inner ${isPicked ? "is-flipped" : ""}`}>
-                  {/* mặt lưng – set inline từ public/ */}
+                  {/* Mặt lưng */}
                   <div
                     className="card-face card-back"
                     style={{
@@ -186,7 +192,7 @@ export default function TarotFreeOneOfThree() {
                       backgroundPosition: "center",
                     }}
                   />
-                  {/* mặt trước */}
+                  {/* Mặt trước */}
                   <div className="card-face card-front">
                     <img
                       src={resolveSrc(card?.Anh)}
@@ -197,7 +203,6 @@ export default function TarotFreeOneOfThree() {
                         reversed ? "is-reversed" : ""
                       }`}
                       loading="lazy"
-                      decoding="async"
                     />
                   </div>
                 </div>
@@ -209,48 +214,73 @@ export default function TarotFreeOneOfThree() {
 
       {/* Kết quả & diễn giải */}
       {meaning && (
-        <section className="tarot-meaning">
-          <h2 className="tarot-card-name">
-            {meaning.card.Ten} {meaning.reversed ? <em>(ngược)</em> : null}
-          </h2>
-          {meaning.card.Nhom && (
-            <p className="tarot-card-group">{meaning.card.Nhom}</p>
+        <section className="tarot-meaning glass-card p-4 p-md-5 mt-4 text-start animate-fade-in border-gold">
+          <div className="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <h3 className="tarot-card-name text-gold mb-0">
+              {meaning.card.Ten} {meaning.reversed ? <span className="badge bg-danger ms-2">Chiều Ngược (Reversed)</span> : <span className="badge bg-success ms-2">Chiều Xuôi (Upright)</span>}
+            </h3>
+            {meaning.card.Nhom && (
+              <span className="badge bg-purple-900 border-gold text-gold">
+                Nhóm: {meaning.card.Nhom}
+              </span>
+            )}
+          </div>
+
+          {meaning.MoTa && (
+            <div className="p-3 bg-dark bg-opacity-50 rounded mb-3">
+              <p className="tarot-desc text-light mb-0">{meaning.MoTa}</p>
+            </div>
           )}
 
-          {meaning.MoTa && <p className="tarot-desc">{meaning.MoTa}</p>}
-
           {!!meaning.TuKhoa?.length && (
-            <ul className="tarot-keywords">
-              {meaning.TuKhoa.map((kw, idx) => (
-                <li key={idx}>{kw}</li>
-              ))}
-            </ul>
+            <div className="mb-3">
+              <div className="small text-white-50 mb-1">Từ khóa chính:</div>
+              <ul className="tarot-keywords">
+                {meaning.TuKhoa.map((kw, idx) => (
+                  <li key={idx} className="badge bg-gold bg-opacity-10 text-gold border-gold border-opacity-30 me-2 mb-2 p-2">
+                    ✨ {kw}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
 
           {(meaning.ChuDe.TinhDuyen ||
             meaning.ChuDe.CongViec ||
             meaning.ChuDe.TaiChinh ||
             meaning.ChuDe.SucKhoe) && (
-            <div className="tarot-topics">
+            <div className="tarot-topics row g-3 mt-2">
               {meaning.ChuDe.TinhDuyen && (
-                <p>
-                  <strong>Tình duyên:</strong> {meaning.ChuDe.TinhDuyen}
-                </p>
+                <div className="col-md-6">
+                  <div className="p-3 rounded glass-card h-100">
+                    <h5 className="text-danger small mb-1">❤️ Tình Duyên</h5>
+                    <p className="text-light small mb-0">{meaning.ChuDe.TinhDuyen}</p>
+                  </div>
+                </div>
               )}
               {meaning.ChuDe.CongViec && (
-                <p>
-                  <strong>Công việc:</strong> {meaning.ChuDe.CongViec}
-                </p>
+                <div className="col-md-6">
+                  <div className="p-3 rounded glass-card h-100">
+                    <h5 className="text-primary small mb-1">💼 Công Việc & Sự Nghiệp</h5>
+                    <p className="text-light small mb-0">{meaning.ChuDe.CongViec}</p>
+                  </div>
+                </div>
               )}
               {meaning.ChuDe.TaiChinh && (
-                <p>
-                  <strong>Tài chính:</strong> {meaning.ChuDe.TaiChinh}
-                </p>
+                <div className="col-md-6">
+                  <div className="p-3 rounded glass-card h-100">
+                    <h5 className="text-warning small mb-1">💰 Tài Chính & Tiền Bạc</h5>
+                    <p className="text-light small mb-0">{meaning.ChuDe.TaiChinh}</p>
+                  </div>
+                </div>
               )}
               {meaning.ChuDe.SucKhoe && (
-                <p>
-                  <strong>Sức khỏe:</strong> {meaning.ChuDe.SucKhoe}
-                </p>
+                <div className="col-md-6">
+                  <div className="p-3 rounded glass-card h-100">
+                    <h5 className="text-success small mb-1">🌿 Sức Khỏe & Tinh Thần</h5>
+                    <p className="text-light small mb-0">{meaning.ChuDe.SucKhoe}</p>
+                  </div>
+                </div>
               )}
             </div>
           )}

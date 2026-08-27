@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import axios from "axios";
+import api from "../../../services/api";
 import "./navbar.css";
 import "./navbar-mobile.css";
 
@@ -84,12 +84,11 @@ export default function Navbar() {
     const fetchNotifications = () => {
       const token = localStorage.getItem("auth_token");
       if (token) {
-        axios
-          .get("/api/notifications/unread-count", {
-            headers: { Authorization: `Bearer ${token}` },
-          })
+        api
+          .get("/api/notifications/unread-count")
           .then((res) => {
-            setNotificationCount(res.data.unread_count);
+            const count = res.data?.unread_count ?? res.data?.data?.unread_count ?? 0;
+            setNotificationCount(count);
           })
           .catch(() => {
             setNotificationCount(0);

@@ -4,82 +4,87 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use App\Models\Notification;
-
+use App\Services\WalletService;
+use App\Traits\ApiResponse;
+use Exception;
 
 class WalletController extends Controller
 {
+    use ApiResponse;
+
+    protected $walletService;
+
+    public function __construct(WalletService $walletService)
+    {
+        $this->walletService = $walletService;
+    }
+
+    /**
+     * Lấy thông tin ví và số dư
+     */
     public function getWallet(Request $request)
     {
         $user = $request->user();
-        return response()->json([
-            'balance' => $user->balance,
+        return $this->successResponse([
+            'balance' => (float)$user->balance,
+            'frozen_balance' => (float)($user->frozen_balance ?? 0),
             'formatted' => number_format($user->balance) . ' Linh Tệ',
             'user' => [
                 'id' => $user->id,
+                'uuid' => $user->uuid,
                 'name' => $user->name,
-                'username' => $user->username
+                'username' => $user->username,
+                'spiritual_level' => $user->spiritual_level ?? 'Tân Học',
             ]
-        ]);
+        ], 'Lấy thông tin ví thành công.');
     }
 
+    /**
+     * Nạp tiền vào ví
+     */
     public function deposit(Request $request)
     {
         $request->validate([
-            'amount' => 'required|numeric|min:1000|max:100000000'
+            'amount' => 'required|numeric|min:1000|max:100000000',
+            'payment_method' => 'nullable|string'
         ]);
 
-        $user = $request->user();
-        $amount = $request->amount;
+        try {
+            $user = $request->user();
+            $amount = (float)$request->amount;
+            $paymentMethod = $request->input('payment_method', 'manual');
 
-        $user->balance += $amount;
-        $user->save();
+            $result = $this->walletService->deposit($user, $amount, $paymentMethod, 'Nạp tiền vào ví Linh Tệ');
 
-        $transaction = Transaction::create([
-            'user_id' => $user->id,
-            'type' => 'deposit',
-            'amount' => $amount,
-            'description' => 'Nạp tiền vào ví'
-        ]);
-
-        Notification::create([
-            'user_id' => $user->id,
-            'title' => 'Nạp tiền thành công',
-            'message' => 'Bạn đã nạp thành công ' . number_format($amount) . ' vào ví Linh Tệ.',
-            'type' => 'success',
-            'data' => ['transaction_id' => $transaction->id]
-        ]);
-
-        return response()->json([
-            'message' => 'Nạp tiền thành công!',
-            'transaction' => $transaction,
-            'new_balance' => $user->balance
-        ]);
+            return $this->successResponse($result, 'Nạp Linh Tệ thành công!');
+        } catch (Exception $e) {
+            return $this->errorResponse($e->getMessage(), 400);
+        }
     }
 
-
+    /**
+     * Lịch sử giao dịch ví
+     */
     public function getTransactions(Request $request)
     {
         $user = $request->user();
         
         $query = Transaction::where('user_id', $user->id);
 
-        if ($request->has('type')) {
+        if ($request->filled('type')) {
             $query->where('type', $request->type);
         }
 
-        if ($request->has('from_date')) {
+        if ($request->filled('from_date')) {
             $query->whereDate('created_at', '>=', $request->from_date);
         }
-        if ($request->has('to_date')) {
+        if ($request->filled('to_date')) {
             $query->whereDate('created_at', '<=', $request->to_date);
         }
 
         $transactions = $query->orderBy('created_at', 'desc')
             ->paginate($request->per_page ?? 20);
 
-        return response()->json($transactions);
+        return $this->paginatedResponse($transactions, 'Lấy lịch sử giao dịch thành công.');
     }
 }

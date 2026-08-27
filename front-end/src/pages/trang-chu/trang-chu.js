@@ -6,6 +6,9 @@ import "./trang-chu.css";
  * File: src/pages/trang-chu/trang-chu.js
  */
 
+import api from "../../services/api";
+import SkeletonLoader from "../../components/common/skeleton/SkeletonLoader";
+
 // Fallback data in case API fails
 const FALLBACK_PRODUCTS = [
   {
@@ -45,11 +48,12 @@ function Home() {
   const [products, setProducts] = useState(FALLBACK_PRODUCTS);
   const [productsLoading, setProductsLoading] = useState(true);
 
-  // Fetch featured products from API
+  // Fetch featured products from API via centralized client
   useEffect(() => {
-    fetch("http://localhost:8000/api/products?featured=true&limit=10")
-      .then((res) => res.json())
-      .then((data) => {
+    api
+      .get("/api/products?featured=true&limit=10")
+      .then((res) => {
+        const data = res.data?.data || res.data;
         if (data && data.length > 0) {
           const mappedProducts = data.map((p) => ({
             id: p.id || p.db_id,
@@ -63,7 +67,7 @@ function Home() {
         }
       })
       .catch((err) => {
-        console.error("Failed to fetch products:", err);
+        console.warn("Using fallback products data:", err);
       })
       .finally(() => setProductsLoading(false));
   }, []);
@@ -401,45 +405,50 @@ function Home() {
             </p>
           </div>
 
-          <div className="turntable-container position-relative">
-            {/* Nút điều hướng */}
-            <button
-              className="nav-btn prev"
-              onClick={handlePrev}
-              aria-label="Previous"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+          {productsLoading ? (
+            <div className="py-4">
+              <SkeletonLoader type="card" count={3} />
+            </div>
+          ) : (
+            <div className="turntable-container position-relative">
+              {/* Nút điều hướng */}
+              <button
+                className="nav-btn prev"
+                onClick={handlePrev}
+                aria-label="Previous"
               >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
-            <button
-              className="nav-btn next"
-              onClick={handleNext}
-              aria-label="Next"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                className="nav-btn next"
+                onClick={handleNext}
+                aria-label="Next"
               >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
 
-            <div className="turntable-slider">
-              {products.map((item, idx) => {
-                const positionClass = getPositionClass(idx);
-                return (
+              <div className="turntable-slider">
+                {products.map((item, idx) => {
+                  const positionClass = getPositionClass(idx);
+                  return (
                   <article
                     className={`slide card-3d ${positionClass}`}
                     key={item.id || idx}
@@ -506,6 +515,7 @@ function Home() {
               })}
             </div>
           </div>
+          )}
         </div>
       </section>
 

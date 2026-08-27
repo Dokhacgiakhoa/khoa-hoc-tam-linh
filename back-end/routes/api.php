@@ -44,10 +44,12 @@ Route::get('/services', [ServiceController::class, 'index']);
 Route::post('/services/{type}', [ServiceController::class, 'handle']); // Generic Service Handler
 Route::get('/admin/users', [UserController::class, 'adminIndex']);
 
-// Astrology & Horoscope
+// Astrology & Horoscope & Esoteric
 Route::post('/astrology/natal', [EsotericController::class, 'getNatalData']);
 Route::post('/tu-vi/lap-la-so', [EsotericController::class, 'lapLaSo']);
 Route::post('/numerology/calculate', [EsotericController::class, 'calculateNumerology']);
+Route::post('/iching/cast', [EsotericController::class, 'castIChing']);
+Route::get('/iching/hexagrams', [EsotericController::class, 'getHexagrams']);
 
 // Học viện (Academy)
 Route::get('/academy/categories', [AcademyController::class, 'getCategories']);

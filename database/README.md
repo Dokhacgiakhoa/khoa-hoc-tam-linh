@@ -74,33 +74,43 @@ Thông tin database được chia thành các file riêng theo chức năng:
    - Payment system
    - Nạp rút Linh Tệ
 
-8. **[system-tables.md](./system-tables.md)** - Bảng hệ thống
-   - Knowledge Base
-   - Cache
-   - Sessions
-   - Personal Access Tokens
+8. **[iching.md](./iching.md)** - Kinh Dịch
+   - 64 Quẻ Kinh Dịch (Bát Quái, Lời Thoán, Lời Tượng, 6 Hào)
+   - Giải thuật gieo quẻ nhị phân
+
+9. **[ai-sessions.md](./ai-sessions.md)** - Phiên Luận Giải AI
+   - AI Reading Sessions
+   - Context memory & ServiceGuard
+
+10. **[system-tables.md](./system-tables.md)** - Bảng hệ thống
+    - Knowledge Base
+    - Cache
+    - Sessions
+    - Personal Access Tokens
 
 ---
 
 ## 🗄️ Database Schema Overview
 
-### Tables (13 tables)
+### Tables (15 tables)
 
-| #   | Table                  | Records | Description       |
-| --- | ---------------------- | ------- | ----------------- |
-| 1   | users                  | 3       | Người dùng        |
-| 2   | products               | 72      | Sản phẩm          |
-| 3   | tarot_cards            | 78      | Bài Tarot         |
-| 4   | course_categories      | 5       | Danh mục khóa học |
-| 5   | courses                | 5       | Khóa học          |
-| 6   | lessons                | 15      | Bài học           |
-| 7   | services               | -       | Dịch vụ           |
-| 8   | orders                 | -       | Đơn hàng          |
-| 9   | transactions           | -       | Giao dịch         |
-| 10  | knowledge_base         | -       | Cơ sở tri thức    |
-| 11  | cache                  | -       | Cache             |
-| 12  | sessions               | -       | Sessions          |
-| 13  | personal_access_tokens | -       | API tokens        |
+| #   | Table                  | Records | Description                 |
+| --- | ---------------------- | ------- | --------------------------- |
+| 1   | users                  | 3       | Người dùng & Lá số gốc      |
+| 2   | products               | 72      | Sản phẩm phong thủy         |
+| 3   | tarot_cards            | 78      | Bài Tarot & Ý nghĩa         |
+| 4   | iching_hexagrams       | 64      | 64 Quẻ Kinh Dịch            |
+| 5   | ai_reading_sessions    | -       | Phiên AI Luận giải          |
+| 6   | course_categories      | 5       | Danh mục khóa học           |
+| 7   | courses                | 5       | Khóa học                    |
+| 8   | lessons                | 15      | Bài học                     |
+| 9   | services               | -       | Dịch vụ tâm linh            |
+| 10  | orders                 | -       | Đơn hàng đa năng            |
+| 11  | order_items            | -       | Chi tiết đơn hàng đa hình   |
+| 12  | transactions           | -       | Sổ cái giao dịch Ví Linh Tệ |
+| 13  | knowledge_base         | -       | Cơ sở tri thức huyền học    |
+| 14  | cache                  | -       | Cache hệ thống              |
+| 15  | personal_access_tokens | -       | API Sanctum tokens          |
 
 ---
 

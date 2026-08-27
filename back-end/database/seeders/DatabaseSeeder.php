@@ -20,10 +20,15 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             TarotSeeder::class,
+            IChingHexagramSeeder::class,
+            ProductCategorySeeder::class,
             ProductsSeeder::class,
+            ServiceCategorySeeder::class,
             ServicesSeeder::class,
             KnowledgeBaseSeeder::class,
             AcademySeeder::class,
+            ExamSeeder::class,
+            TaskSeeder::class,
         ]);
     }
 }

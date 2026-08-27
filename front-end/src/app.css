@@ -1,13 +1,22 @@
 :root {
-  --kh-bg: #0f0a1e; /* đen tím */
-  --kh-text: #ffffff; /* trắng */
-  --kh-gold: #ffd700; /* vàng gold */
+  --kh-bg: #0b0518; /* Đen tím sâu thẳm */
+  --kh-card-bg: rgba(22, 10, 39, 0.7);
+  --kh-text: #f3f0ff;
+  --kh-text-muted: #a39bb8;
+  --kh-gold: #ffd700;
+  --kh-gold-light: #fff099;
+  --kh-gold-dark: #b8960c;
+  --kh-gold-glow: 0 0 15px rgba(255, 215, 0, 0.4);
+  --kh-purple-glow: 0 0 20px rgba(147, 51, 234, 0.35);
+  --kh-glass-border: 1px solid rgba(212, 175, 55, 0.2);
+  --kh-glass-blur: blur(14px);
 }
 
 .app-root {
-  background: transparent;
+  background: var(--kh-bg);
   color: var(--kh-text);
   position: relative;
+  min-height: 100vh;
 }
 
 .app-bg-video {
@@ -19,9 +28,65 @@
   object-fit: cover;
   z-index: -2;
   pointer-events: none;
+  opacity: 0.45;
 }
 
-.app-loading {
-  font-weight: 600;
-  letter-spacing: 0.2px;
+/* Mystic Luxury Helpers */
+.text-gold {
+  color: var(--kh-gold) !important;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff099 0%, #ffd700 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-purple-glow {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1.5px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2.5px;
+}
+
+.glass-card {
+  background: var(--kh-card-bg);
+  backdrop-filter: var(--kh-glass-blur);
+  -webkit-backdrop-filter: var(--kh-glass-blur);
+  border: var(--kh-glass-border);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 215, 0, 0.45);
+  box-shadow: 0 12px 40px 0 rgba(147, 51, 234, 0.25), var(--kh-gold-glow);
+  transform: translateY(-4px);
+}
+
+/* Mystic Spinner */
+.mystic-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 215, 0, 0.15);
+  border-top-color: var(--kh-gold);
+  border-right-color: #a855f7;
+  animation: mysticSpin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  box-shadow: var(--kh-gold-glow);
+}
+
+@keyframes mysticSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
