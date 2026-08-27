@@ -1,6 +1,6 @@
 # 🔮 KHOA HỌC TÂM LINH (ESOTERIC SCIENCE ECOSYSTEM)
 
-> **Nền tảng "Tâm Linh Số" kết hợp tri thức huyền học phương Đông với công nghệ phần mềm hiện đại (Data Science, 3D Interactive, Clean Architecture & AI-Ready).**
+> **Nền tảng "Tâm Linh Số" kết hợp tri thức huyền học phương Đông với công nghệ phần mềm hiện đại (Data Science, 3D Interactive, .NET 10 Clean Architecture, Python AI Engine & Managed PostgreSQL Cloud).**
 
 ---
 
@@ -10,127 +10,103 @@
 
 ---
 
-## 🛠️ 2. Công Nghệ Sử Dụng (Tech Stack)
+## 🛠️ 2. Công Nghệ Sử Dụng (Modern Polyglot Tech Stack)
 
 ### 🎨 Frontend (Client-Side)
 | Phân loại | Công nghệ | Mục đích sử dụng |
 | :--- | :--- | :--- |
-| **Core Framework** | `Next.js 14.x` (App Router) | SSR/SSG tối ưu SEO Google vượt trội, Streaming UI cho AI, tải trang tức thì. |
-| **Routing** | `Next.js File-based Routing` | Cấu trúc `src/app/` tự động phân tách bundle và code-splitting tối ưu. |
+| **Core Framework** | `Next.js 15` (React 19, TypeScript) | SSR/SSG tối ưu SEO Google vượt trội, Streaming UI cho AI, tải trang tức thì. |
 | **Design System** | `Mystic Luxury 2.0` | Ngôn ngữ thiết kế Dark Gold Glassmorphism, hiệu ứng Shimmer Shading, 3D Card Parallax. |
-| **CSS & Utilities** | `Tailwind CSS` + `Bootstrap 5` | Kết hợp linh hoạt giữa Tailwind utility-first và hệ thống Grid Bootstrap responsive. |
-| **State Management** | `Context API` + Custom Events | Quản lý trạng thái toàn cục (`Auth`, `Alert`, `Cart`) và đồng bộ thời gian thực qua `userChanged`. |
-| **Network Client** | `Axios Interceptors` + Rewrites | Centralized API client kết hợp Next.js API Proxy chuyển tiếp sang Laravel Backend. |
-| **Icons & Media** | `React Icons` + Video Background | Icon vector sắc nét kết hợp background video mờ ảo tăng trải nghiệm huyền bí. |
+| **Interactive 3D** | `Three.js` / WebGL | Gieo 3 đồng xu 3D và 78 lá bài Tarot mượt mà 60 FPS. |
+| **Cloud Hosting** | `Vercel Cloud (Free Tier)` | Tự động CI/CD từ GitHub, SSL HTTPS bảo mật, CDN toàn cầu siêu tốc. |
 
-### ⚙️ Backend (Server-Side)
+### ⚡ Core Business Backend (.NET 10 Web API)
 | Phân loại | Công nghệ | Mục đích sử dụng |
 | :--- | :--- | :--- |
-| **Framework** | `Laravel 12.x` (PHP 8.2+) | Xây dựng RESTful API chuẩn mực theo mô hình Clean Architecture (Controller $\rightarrow$ Service $\rightarrow$ Model). |
-| **Service Layer** | `WalletService`, `EsotericService` | Tách biệt hoàn toàn nghiệp vụ tài chính và giải thuật huyền học khỏi Controller. |
-| **Authentication** | `Laravel Sanctum` | Xác thực API an toàn qua Bearer Token, hỗ trợ phiên đăng nhập đa thiết bị. |
-| **Security & 2FA** | `Google Authenticator` (TOTP) | Bảo mật tài khoản 2 lớp, mã hóa mật khẩu Bcrypt, chống SQL Injection & XSS. |
-| **Concurrency Control** | `Pessimistic Locking` | Dùng `lockForUpdate()` và Database Transactions ngăn chặn Race Condition khi thanh toán ví. |
-| **API Response Trait** | `ApiResponse.php` | Chuẩn hóa cấu trúc dữ liệu JSON phản hồi (`success`, `data`, `message`, `meta`, `errors`). |
+| **Framework** | `C# .NET 10 Web API` | Nền tảng tài chính, sổ cái kế toán và nghiệp vụ doanh nghiệp hiệu năng cao số 1. |
+| **Data Access** | `Entity Framework Core 10` | ORM chuẩn mực kết nối PostgreSQL Cloud, hỗ trợ Migration và Type-Safety. |
+| **Concurrency & ACID** | `Serializable & Row Locking` | Ngăn chặn 100% Race Condition và gian lận tiền tệ khi nạp/rút Linh Tệ. |
+| **Authentication** | `JWT Bearer` + `Google 2FA` | Bảo mật tài khoản đa lớp, xác thực không mật khẩu (QR Code login). |
 
-### 🗄️ Database & Storage
+### 🧠 AI & RAG Engine (Python FastAPI)
 | Phân loại | Công nghệ | Mục đích sử dụng |
 | :--- | :--- | :--- |
-| **Database Engine** | `MySQL 8.0+` (InnoDB) | Đảm bảo tính toàn vẹn giao dịch ACID, hỗ trợ chuẩn ký tự `utf8mb4_unicode_ci`. |
-| **Data Modeling** | `3NF Normalized` (15 Bảng) | Thiết kế quan hệ đa hình (`Polymorphic order_items`), khóa ngoại Cascade an toàn. |
-| **High-Speed Query** | `Composite Indexing` | Đánh chỉ mục tối ưu cho các trường tìm kiếm/lọc thường xuyên (`user_id`, `status`, `created_at`). |
-| **Knowledge Base** | `JSON Columns & Embeddings` | Lưu trữ cấu trúc 64 Quẻ Kinh Dịch, 78 Lá Tarot, giải nghĩa 6 Hào và lịch sử AI Luận giải. |
+| **Framework** | `Python 3.14 FastAPI` | API bất đồng bộ siêu nhẹ, chuyên xử lý prompt, vector embeddings và streaming. |
+| **LLM Model** | `Google Gemini 2.0 Flash API` | Luận giải số mệnh, Kinh Dịch, Tarot theo thời gian thực (1500 lượt miễn phí/ngày). |
+| **Streaming UI** | `Server-Sent Events (SSE)` | Bắn luồng chữ AI gõ từng từ về trình duyệt mượt mà như ChatGPT. |
+
+### 🗄️ Database & Cloud Storage
+| Phân loại | Công nghệ | Mục đích sử dụng |
+| :--- | :--- | :--- |
+| **Managed Database** | `PostgreSQL 16` (`pgvector`) | Supabase / Neon Cloud (Free Tier) - Lưu trữ quan hệ ACID và Vector AI trong 1 DB duy nhất. |
+| **Cache & Real-time** | `Upstash Redis Cloud` | Cache giỏ hàng, Session đăng nhập QR Code, Rate Limiting chống spam. |
 
 ---
 
-## 🌟 3. Điểm Nổi Bật Của Hệ Sinh Thái
-
-* 🎨 **Giao diện Mystic Luxury 2.0**: Thiết kế Dark Mode kết hợp sắc Vàng Hoàng Kim (`#ffd700`), hiệu ứng Glassmorphism tinh xảo, thẻ bài 3D và khung chờ tải Shimmer.
-* 📜 **Khoa Học Hóa Tri Thức Cổ Thư**:
-  * **Kinh Dịch Gieo Quẻ 3D**: Mô phỏng gieo 3 đồng xu 6 lần, kiến lập Quẻ Chủ, bắt Hào Động và sinh Quẻ Biến theo chuẩn 64 Quẻ Kinh Dịch.
-  * **Thần Số Học Pythagoras**: Trực quan hóa Ma trận ngày sinh 3x3 và Kim Tự Tháp 4 Đỉnh Cao cuộc đời.
-  * **Tử Vi & Bản Đồ Sao**: Lập lá số Bát Tự, Can Chi, 12 Cung vị và các vòng sao.
-  * **Trải Bài Tarot 3D**: Bộ 78 lá bài Major & Minor Arcana với hiệu ứng lật bài xoay chiều và phân tích đa khía cạnh (Tình duyên, Sự nghiệp, Tài chính, Sức khỏe).
-* 🎓 **Học Viện Huyền Học & Khảo Thí Trắc Nghiệm**: Lộ trình học từ cơ bản đến chuyên sâu, hệ thống thi online có bấm giờ và cấp Chứng Chỉ Số (Certificate).
-* 🛍️ **Thương Mại Đa Năng (Polymorphic Commerce)**: Giỏ hàng thông minh hỗ trợ mua cùng lúc Vật phẩm phong thủy vật lý, Khóa học và Dịch vụ số.
-* 💳 **Sổ Cái Ví Linh Tệ (Financial Ledger)**: Hệ thống tiền tệ nội bộ được bảo vệ bởi Pessimistic Locking và ACID Transactions, chống race condition / double spending.
-* 🛡️ **Bảo Mật & Định Danh Toàn Diện**: Xác thực 2 lớp (2FA Google Authenticator), Đăng nhập QR Code, Tiếp thị liên kết (Affiliate) và Hệ thống Nhiệm vụ nhận thưởng (Gamification).
-
----
-
-## 🏛️ 4. Cấu Trúc Dự Án (Folder Structure)
+## 🏛️ 3. Cấu Trúc Dự Án (Folder Structure)
 
 ```
 khoa-hoc-tam-linh/
-├── back-end/               # Laravel 12.x RESTful API Clean Architecture
-│   ├── app/
-│   │   ├── Http/Controllers/  # Controllers (ApiResponse Trait)
-│   │   ├── Models/            # Eloquent ORM (Polymorphic Relations)
-│   │   ├── Services/          # Service Layer (WalletService, EsotericService)
-│   │   └── Traits/            # ApiResponse Trait chuẩn hóa JSON
-│   ├── database/
-│   │   ├── migrations/        # 15+ Migrations (Composite Indexes, Constraints)
-│   │   └── seeders/           # Seeders nạp tri thức Kinh Dịch, Tarot, Khóa học
-│   └── routes/api.php         # API Endpoints
-├── front-end/              # React 18.x Mystic Luxury UI/UX
-│   ├── src/
-│   │   ├── components/        # Reusable UI (Navbar, SkeletonLoader, ServiceGuard...)
-│   │   ├── contexts/          # Context API (Auth, Alert, Cart)
-│   │   ├── data/              # 78 Lá bài Tarot & Tri thức huyền học
-│   │   ├── pages/             # Trang chủ, Dịch vụ, Học viện, Cửa hàng, Tài khoản
-│   │   └── services/          # Centralized Axios Client (Auto Bearer Token & 401 Catch)
-└── database/                  # Tài liệu chi tiết 15 bảng cơ sở dữ liệu
+├── core-backend/       # C# .NET 10 Web API (Sổ cái ví, E-Commerce, 2FA, Clean Architecture)
+│   ├── Controllers/    # RESTful API Endpoints (Auth, Wallet, Shop, Academy, Esoteric)
+│   ├── Services/       # Service Layer (WalletService, AuthService, EsotericService)
+│   ├── Models/         # Entity Framework Core 10 Entities (PostgreSQL)
+│   ├── Data/           # AppDbContext (PostgreSQL 16 + pgvector)
+│   └── appsettings.json# Connection String & JWT Config
+│
+├── ai-service/         # Python 3.14 FastAPI (AI Luận giải, Gemini 2.0 Streaming Engine)
+│   ├── main.py         # Streaming SSE Server
+│   └── requirements.txt# Dependencies
+│
+├── front-end/          # Next.js 15 App Router (TypeScript, Tailwind v4, 3D Cards)
+│   ├── src/app/        # App Router Pages (Kinh Dịch, Thần Số, Tử Vi, Tarot, Shop, Academy)
+│   ├── src/components/ # Reusable UI (SkeletonLoader, Navbar, 3D Cards)
+│   └── src/services/   # Centralized API Clients
+│
+└── docs/               # Tài liệu kiến trúc & Hướng dẫn Deploy Cloud Online
+    ├── ARCHITECTURE_BLUEPRINT.md
+    └── CLOUD_DEPLOYMENT_GUIDE.md
 ```
 
 ---
 
-## 🚀 5. Hướng Dẫn Cài Đặt & Khởi Chạy (Quick Start)
+## 🚀 4. Hướng Dẫn Khởi Chạy Local Nhanh
 
-### 📋 Yêu cầu môi trường
-* **Node.js**: v16+ & **npm**
-* **PHP**: v8.1+ & **Composer**
-* **MySQL**: v8.0+ (qua XAMPP hoặc MySQL Service)
-
-### 🔹 Bước 1: Khởi động Backend (Laravel)
+### 🔹 Khởi chạy Core Backend (.NET 10):
 ```bash
-cd back-end
-composer install
-cp .env.example .env
-
-# Tạo Key và Migrate cơ sở dữ liệu
-php artisan key:generate
-php artisan migrate --seed
-
-# Khởi chạy Backend server tại cổng 8001
-php artisan serve --port=8001
+cd core-backend
+dotnet run
 ```
+👉 *API & Swagger UI chạy tại:* `http://localhost:5000/swagger`
 
-### 🔹 Bước 2: Khởi động Frontend (React)
+### 🔹 Khởi chạy AI Service (Python):
+```bash
+cd ai-service
+pip install -r requirements.txt
+python main.py
+```
+👉 *AI Streaming Engine chạy tại:* `http://localhost:8000`
+
+### 🔹 Khởi chạy Frontend (Next.js 15):
 ```bash
 cd front-end
 npm install
-npm start
+npm run dev
 ```
-🌐 **Truy cập ứng dụng tại:** [http://localhost:3000/khoa-hoc-tam-linh](http://localhost:3000/khoa-hoc-tam-linh)
+👉 *Giao diện ứng dụng chạy tại:* `http://localhost:3000`
 
 ---
 
-## 🔐 6. Tài Khoản Trải Nghiệm Mẫu
+## ☁️ 5. Hướng Dẫn Đưa Lên Mạng Online Miễn Phí 100%
 
-| Vai trò | Email | Tên đăng nhập | Mật khẩu | Số dư Linh Tệ |
-| :--- | :--- | :--- | :--- | :--- |
-| **Quản trị viên (Admin)** | `admin@dokhacgiakhoa.vn` | `giakhoa` | `password` | **1,000,000 🔮** |
-| **Học viên mẫu (User)** | `hocvien@fpt.edu.vn` | `hocvien` | `password` | **500 🔮** |
+Xem chi tiết từng bước tạo Database và Deploy không cần thẻ tín dụng tại:
+📖 [**docs/CLOUD_DEPLOYMENT_GUIDE.md**](./docs/CLOUD_DEPLOYMENT_GUIDE.md)
 
 ---
 
-## 🧑‍💻 7. Thông Tin Tác Giả & Bản Quyền
+## 🧑‍💻 6. Thông Tin Tác Giả & Bản Quyền
 
-* **Tác giả / Full-stack Developer**: **Đỗ Khắc Gia Khoa**
+* **Tác giả / Software Architect**: **Đỗ Khắc Gia Khoa**
 * **Đơn vị đào tạo**: FPT Aptech
 * **Email liên hệ**: [contact@dokhacgiakhoa.vn](mailto:contact@dokhacgiakhoa.vn)
 * **GitHub Repository**: [https://github.com/Dokhacgiakhoa/khoa-hoc-tam-linh](https://github.com/Dokhacgiakhoa/khoa-hoc-tam-linh)
-
----
-
-_Dự án được xây dựng với mục tiêu "Số hóa tâm linh - Nâng tầm trí tuệ bằng khoa học và công nghệ"._
